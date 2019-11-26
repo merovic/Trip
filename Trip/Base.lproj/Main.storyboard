@@ -21,8 +21,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fie-an-Iuk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRw-1c-vpU">
-                                        <rect key="frame" x="0.0" y="-26" width="414" height="895"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRw-1c-vpU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="895"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gk7-m7-5NY">
                                                 <rect key="frame" x="0.0" y="365" width="414" height="165"/>
@@ -293,6 +293,7 @@
         <!--View Controller-->
         <scene sceneID="W3L-DK-Us6">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48Y-L5-DxP" sceneMemberID="firstResponder"/>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Qs-a0-F73" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="052-bP-8G2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -529,7 +530,6 @@
                         <outlet property="usernameTextField" destination="R2v-W3-gpz" id="FCs-HX-6Nv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="48Y-L5-DxP" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1608.6956521739132" y="137.94642857142856"/>
         </scene>
