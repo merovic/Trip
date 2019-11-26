@@ -21,6 +21,8 @@ pod 'LocationPicker'
 pod 'FacebookCore' , '~> 0.6.0'
 pod 'FacebookLogin' , '~> 0.6.0'
 pod 'SideMenu'
+pod 'BEMCheckBox'
+
 
   target 'TripTests' do
     inherit! :search_paths
