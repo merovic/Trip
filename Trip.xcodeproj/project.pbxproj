@@ -27,6 +27,7 @@
 		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
 		81638040238E908E002B58D7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163803F238E908E002B58D7 /* Login.swift */; };
 		81638042238E9E6A002B58D7 /* GetRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638041238E9E6A002B58D7 /* GetRequests.swift */; };
+		81638064238ED568002B58D7 /* second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81638063238ED568002B58D7 /* second.storyboard */; };
 		E11A07E6A8316476C0BB3E6B /* Pods_TripTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116ADE0C4FA0B95350277D2 /* Pods_TripTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		8163803F238E908E002B58D7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		81638041238E9E6A002B58D7 /* GetRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequests.swift; sourceTree = "<group>"; };
+		81638063238ED568002B58D7 /* second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = second.storyboard; sourceTree = "<group>"; };
 		91C4BBEA25965A0590A26ECF /* Pods_Trip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00D0E18D77A60A26CF40F60 /* Pods_TripUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50631FA617AD9203FE5DF24 /* Pods-Trip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trip.release.xcconfig"; path = "Target Support Files/Pods-Trip/Pods-Trip.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				81638041238E9E6A002B58D7 /* GetRequests.swift */,
 				8163803F238E908E002B58D7 /* Login.swift */,
 				18059E0923801E740007CA0A /* Main.storyboard */,
+				81638063238ED568002B58D7 /* second.storyboard */,
 				18059E0C23801E760007CA0A /* Assets.xcassets */,
 				18059E0E23801E760007CA0A /* LaunchScreen.storyboard */,
 				18059E1123801E760007CA0A /* Info.plist */,
@@ -354,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81638064238ED568002B58D7 /* second.storyboard in Resources */,
 				18059E1023801E760007CA0A /* LaunchScreen.storyboard in Resources */,
 				18059E0D23801E760007CA0A /* Assets.xcassets in Resources */,
 				18059E0B23801E740007CA0A /* Main.storyboard in Resources */,
