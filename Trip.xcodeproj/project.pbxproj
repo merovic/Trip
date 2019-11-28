@@ -13,6 +13,11 @@
 		18059E1023801E760007CA0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18059E0E23801E760007CA0A /* LaunchScreen.storyboard */; };
 		18059E1B23801E760007CA0A /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18059E1A23801E760007CA0A /* TripTests.swift */; };
 		18059E2623801E760007CA0A /* TripUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18059E2523801E760007CA0A /* TripUITests.swift */; };
+		3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C0238FC9BD00CDED5A /* ReservationViewController.swift */; };
+		3B0BC9C4238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C2238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift */; };
+		3B0BC9C5238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C3238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib */; };
+		3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */; };
+		3B0BC9C9238FCB2900CDED5A /* CurrentReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */; };
 		3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14AB73238D22360065EB8C /* AppDelegate.swift */; };
 		3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB4238E673300272A42 /* MenuViewController.swift */; };
 		3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB6238E673300272A42 /* MenuTableViewCell.swift */; };
@@ -65,6 +70,11 @@
 		18059E2523801E760007CA0A /* TripUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripUITests.swift; sourceTree = "<group>"; };
 		18059E2723801E760007CA0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3116ADE0C4FA0B95350277D2 /* Pods_TripTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0BC9C0238FC9BD00CDED5A /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		3B0BC9C2238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousReservationTableViewCell.swift; sourceTree = "<group>"; };
+		3B0BC9C3238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousReservationTableViewCell.xib; sourceTree = "<group>"; };
+		3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentReservationTableViewCell.swift; sourceTree = "<group>"; };
+		3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentReservationTableViewCell.xib; sourceTree = "<group>"; };
 		3B14AB73238D22360065EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B150FB4238E673300272A42 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3B150FB6238E673300272A42 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -178,9 +188,38 @@
 			path = TripUITests;
 			sourceTree = "<group>";
 		};
+		3B0BC9BD238FC97300CDED5A /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+				3B0BC9BF238FC98700CDED5A /* View */,
+				3B0BC9BE238FC97D00CDED5A /* Controller */,
+			);
+			path = Reservations;
+			sourceTree = "<group>";
+		};
+		3B0BC9BE238FC97D00CDED5A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B0BC9C0238FC9BD00CDED5A /* ReservationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B0BC9BF238FC98700CDED5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B0BC9C2238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift */,
+				3B0BC9C3238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib */,
+				3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */,
+				3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3B150FB1238E673300272A42 /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				3B0BC9BD238FC97300CDED5A /* Reservations */,
 				81034E59238FC02E00A9AC53 /* rigester */,
 				81034E56238FBFF500A9AC53 /* Log In */,
 				3B150FB2238E673300272A42 /* Menu */,
@@ -401,6 +440,8 @@
 				81638064238ED568002B58D7 /* second.storyboard in Resources */,
 				18059E1023801E760007CA0A /* LaunchScreen.storyboard in Resources */,
 				18059E0D23801E760007CA0A /* Assets.xcassets in Resources */,
+				3B0BC9C5238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib in Resources */,
+				3B0BC9C9238FCB2900CDED5A /* CurrentReservationTableViewCell.xib in Resources */,
 				18059E0B23801E740007CA0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +560,7 @@
 				3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */,
 				8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */,
 				3B150FBE238E673400272A42 /* Alert.swift in Sources */,
+				3B0BC9C4238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift in Sources */,
 				81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */,
 				3B150FC0238E673400272A42 /* DesignableUITextField.swift in Sources */,
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,
@@ -528,6 +570,8 @@
 				3B150FC1238E673400272A42 /* Maps.swift in Sources */,
 				18059E0823801E740007CA0A /* ViewController.swift in Sources */,
 				8163803A238E6F9A002B58D7 /* Constants.swift in Sources */,
+				3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */,
+				3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
