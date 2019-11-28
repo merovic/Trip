@@ -31,6 +31,8 @@
 		81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5B238FC07200A9AC53 /* RegisterViewController.swift */; };
 		81034E5F238FC2B000A9AC53 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */; };
 		8135851E238FE52F006978CE /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135851D238FE52F006978CE /* Upload.swift */; };
+		81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358523238FEC7E006978CE /* NotificationsViewController.swift */; };
+		81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */; };
 		8163803A238E6F9A002B58D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638037238E6F9A002B58D7 /* Constants.swift */; };
 		8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638038238E6F9A002B58D7 /* APIClient.swift */; };
 		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
@@ -90,6 +92,8 @@
 		81034E5B238FC07200A9AC53 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		8135851D238FE52F006978CE /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		81358523238FEC7E006978CE /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticicationsTableViewCell.swift; sourceTree = "<group>"; };
 		81638037238E6F9A002B58D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81638038238E6F9A002B58D7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		3B150FB1238E673300272A42 /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				81358520238FEC39006978CE /* Notifications */,
 				3B0BC9BD238FC97300CDED5A /* Reservations */,
 				81034E59238FC02E00A9AC53 /* rigester */,
 				81034E56238FBFF500A9AC53 /* Log In */,
@@ -318,6 +323,31 @@
 			children = (
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		81358520238FEC39006978CE /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				81358522238FEC54006978CE /* View */,
+				81358521238FEC4A006978CE /* Controller */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		81358521238FEC4A006978CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81358523238FEC7E006978CE /* NotificationsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81358522238FEC54006978CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		81638036238E6F9A002B58D7 /* Networking */ = {
@@ -572,10 +602,12 @@
 				8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */,
 				3B150FBE238E673400272A42 /* Alert.swift in Sources */,
 				3B0BC9C4238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift in Sources */,
+				81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */,
 				81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */,
 				3B150FC0238E673400272A42 /* DesignableUITextField.swift in Sources */,
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,
 				8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */,
+				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
 				81638042238E9E6A002B58D7 /* GetRequests.swift in Sources */,
 				8135851E238FE52F006978CE /* Upload.swift in Sources */,
 				81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */,

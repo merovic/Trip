@@ -19,14 +19,17 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var mailTF: UITextField!
     @IBOutlet weak var attachBut: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
-    @IBOutlet weak var ownerOrTenant: BEMCheckBox!
+    @IBOutlet var userType: [BEMCheckBox]!
+    @IBOutlet weak var licenseView: UIView!
+    @IBOutlet weak var licenseViewHeight: NSLayoutConstraint!
+    
     
     let ImagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFieldDelegates()
     }
-
     
     func setTextFieldDelegates(){
         nameTF.delegate = self
@@ -41,6 +44,12 @@ class RegisterViewController: UIViewController {
         ImagePicker.delegate = self
         ImagePicker.sourceType = .photoLibrary
     }
+    
+    @IBAction func chooseUserType(_ sender: Any) {
+        
+    }
+    
+    
     
     @IBAction func attachBtnPressed(_ sender: UIButton) {
         present(ImagePicker, animated: true, completion: nil)
