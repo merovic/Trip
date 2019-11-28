@@ -33,6 +33,8 @@
 		8135851E238FE52F006978CE /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135851D238FE52F006978CE /* Upload.swift */; };
 		81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358523238FEC7E006978CE /* NotificationsViewController.swift */; };
 		81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */; };
+		8135852823902639006978CE /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135852723902639006978CE /* Cars.swift */; };
+		8135852A2390289D006978CE /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813585292390289D006978CE /* Notes.swift */; };
 		8163803A238E6F9A002B58D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638037238E6F9A002B58D7 /* Constants.swift */; };
 		8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638038238E6F9A002B58D7 /* APIClient.swift */; };
 		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
@@ -94,6 +96,8 @@
 		8135851D238FE52F006978CE /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		81358523238FEC7E006978CE /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticicationsTableViewCell.swift; sourceTree = "<group>"; };
+		8135852723902639006978CE /* Cars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
+		813585292390289D006978CE /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		81638037238E6F9A002B58D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81638038238E6F9A002B58D7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -167,7 +171,9 @@
 				81638041238E9E6A002B58D7 /* GetRequests.swift */,
 				8163803F238E908E002B58D7 /* Login.swift */,
 				3B14AB73238D22360065EB8C /* AppDelegate.swift */,
+				813585292390289D006978CE /* Notes.swift */,
 				18059E0923801E740007CA0A /* Main.storyboard */,
+				8135852723902639006978CE /* Cars.swift */,
 				81638063238ED568002B58D7 /* second.storyboard */,
 				18059E0C23801E760007CA0A /* Assets.xcassets */,
 				18059E0E23801E760007CA0A /* LaunchScreen.storyboard */,
@@ -615,7 +621,9 @@
 				18059E0823801E740007CA0A /* ViewController.swift in Sources */,
 				8163803A238E6F9A002B58D7 /* Constants.swift in Sources */,
 				3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */,
+				8135852823902639006978CE /* Cars.swift in Sources */,
 				3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */,
+				8135852A2390289D006978CE /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

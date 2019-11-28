@@ -78,16 +78,21 @@ class APIClient {
         performRequestSimple(route: APIRouter.update_user(id_user: id_user, name: name, email: email, password: password, phone: phone, address: address, license: license), completion: completion)
         
     }
-    static func getNoteByUserID(id_user : Int ,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_note_by_id_user(id_user: id_user), completion: completion)
+    static func getNoteByUserID(id_user : Int ,completion: @escaping (Result<[Note],AFError>)->Void){
+        performRequest(route: APIRouter.select_note_by_id_user(id_user: id_user), completion: completion)
     }
     
+    static func getAllNoteByOwnerID(id_owner: Int ,completion: @escaping (Result<[Note],AFError>)->Void) {
+        performRequest(route: APIRouter.select_note_by_id_owner(id_owner: id_owner), completion: completion)
+    }
+                                    
+                                    
     static func getAllCarsByRate(number_of_select : Int ,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.select_all_cars_by_rate(number_of_select: number_of_select), completion: completion)
     }
     
-    static func getAllCars(number_of_select : Int ,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_all_cars(number_of_select: number_of_select), completion: completion)
+    static func getAllCars(number_of_select : Int ,completion: @escaping (Result<[Car],AFError>)->Void){
+        performRequest(route: APIRouter.select_all_cars(number_of_select: number_of_select), completion: completion)
     }
     
     static func getAllCarsById(id : Int ,completion: @escaping (Result<String,AFError>)->Void){

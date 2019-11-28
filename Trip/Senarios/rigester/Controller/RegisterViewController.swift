@@ -29,6 +29,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFieldDelegates()
+        
     }
     
     func setTextFieldDelegates(){
@@ -43,10 +44,22 @@ class RegisterViewController: UIViewController {
         
         ImagePicker.delegate = self
         ImagePicker.sourceType = .photoLibrary
+        
+        licenseView.isHidden = true
+        licenseViewHeight.constant = 0
+        userType[0].on = true
     }
     
-    @IBAction func chooseUserType(_ sender: Any) {
-        
+    @IBAction func chooseUserType(_ sender: BEMCheckBox) {
+        if sender.tag == 1 {
+            userType[1].on = false
+            licenseView.isHidden = true
+            licenseViewHeight.constant = 0
+        } else {
+            userType[0].on = false
+            licenseView.isHidden = false
+            licenseViewHeight.constant = 100
+        }
     }
     
     
