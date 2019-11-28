@@ -56,7 +56,7 @@ class ProfileImageView: UIImageView {
 //        imageView.layer.borderColor = #colorLiteral(red: 0.5132408738, green: 0.8211410642, blue: 0.2199990749, alpha: 1)
     }
     
-    static func roundedButton1(button: UIButton) {
+    static func roundedCornerButton1(button: UIButton) {
         button.layer.cornerRadius = 8
         button.layer.shadowRadius = 3
 
@@ -65,7 +65,7 @@ class ProfileImageView: UIImageView {
         button.layer.shadowOpacity = 0.4
     }
     
-    static func roundedButton2(button: UIButton) {
+    static func roundButton2(button: UIButton) {
         button.layer.cornerRadius = button.frame.height / 2 
           button.layer.shadowRadius = 3
 

@@ -13,7 +13,7 @@
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogIn" id="BYZ-38-t0r" customClass="LogInViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +141,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGd-d4-Wnn"/>
-                                                    <segue destination="zyB-5Y-EKt" kind="show" id="BBp-S1-bKR"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qEy-VP-bgJ">
@@ -299,7 +298,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="e6U-89-TuP">
             <objects>
-                <viewController id="irG-1T-4pn" customClass="ForgotPasswordViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPassword" id="irG-1T-4pn" customClass="ForgotPasswordViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ewg-at-Q8l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -404,7 +403,7 @@
         <!--Register View Controller-->
         <scene sceneID="ILw-ek-umj">
             <objects>
-                <viewController id="bgj-Tj-Qga" customClass="RegisterViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" id="bgj-Tj-Qga" customClass="RegisterViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jjm-Xt-ZoF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -879,11 +878,11 @@
             <objects>
                 <viewController id="PXN-63-Qon" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9e-lT-Ykr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1096"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter city , address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CV8-XF-6cf" customClass="DesignableUITextField" customModule="Trip" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="374" height="34"/>
+                                <rect key="frame" x="20" y="96" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -894,10 +893,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQX-h9-imR">
-                                <rect key="frame" x="0.0" y="106" width="414" height="907"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="929"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyI-XP-jsc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="877"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="898.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Cars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-t8-mgG">
                                                 <rect key="frame" x="20" y="30" width="112" height="24"/>
@@ -1217,25 +1216,25 @@
             <objects>
                 <viewController id="Uis-Fw-NW2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Vd-e9-29B">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yi-Dp-ys9">
-                                <rect key="frame" x="0.0" y="56" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
                                 <color key="backgroundColor" name="TripColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Uur-xN-Y3v"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Jw-2u-Lnj">
-                                <rect key="frame" x="157" y="106" width="100" height="100"/>
+                                <rect key="frame" x="157" y="138" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="TE0-qz-79N"/>
                                     <constraint firstAttribute="width" constant="100" id="jSm-gE-qxu"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="54y-K0-EaH">
-                                <rect key="frame" x="15" y="256" width="384" height="220"/>
+                                <rect key="frame" x="15" y="288" width="384" height="220"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4C-gc-knM">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
@@ -1386,11 +1385,11 @@
             <objects>
                 <viewController id="qI8-Zp-jRC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yum-Lz-xM0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jym-V0-Tk5">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCX-A2-tVf">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="703"/>
@@ -1709,11 +1708,11 @@
             <objects>
                 <viewController id="Srz-bq-lKe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p9v-R5-d4O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2246"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="2300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAV-kZ-yn0">
-                                <rect key="frame" x="0.0" y="56" width="414" height="2107"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="2129"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xih-YS-ttT">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2107"/>
@@ -2498,11 +2497,11 @@
             <objects>
                 <viewController id="yi8-CQ-NoV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pFl-43-psh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uxv-sH-N3j">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="KtV-Fg-Jcl">
@@ -2786,7 +2785,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QM8-bM-xhV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.96888393159999997" green="0.92540192600000004" blue="0.09391892701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -2806,7 +2805,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="icon7" id="zJw-bQ-a2n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pmD-yT-SkZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="TripColor"/>
                     </navigationBar>
@@ -2985,7 +2984,7 @@
                     <tabBarItem key="tabBarItem" title="Notification" image="notificationWhite" id="dWh-ob-5kD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="avs-8A-t2D">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="TripColor"/>
                     </navigationBar>
