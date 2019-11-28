@@ -57,12 +57,12 @@ class ProfileImageView: UIImageView {
     }
     
     static func roundedCornerButton1(button: UIButton) {
-        button.layer.cornerRadius = 8
-        button.layer.shadowRadius = 3
+        button.layer.cornerRadius = 4
+        button.layer.shadowRadius = 2
 
         button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2.5)
-        button.layer.shadowOpacity = 0.4
+        button.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        button.layer.shadowOpacity = 0.3
     }
     
     static func roundButton2(button: UIButton) {

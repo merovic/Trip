@@ -25,6 +25,7 @@
 		81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E57238FC02A00A9AC53 /* LogInViewController.swift */; };
 		81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5B238FC07200A9AC53 /* RegisterViewController.swift */; };
 		81034E5F238FC2B000A9AC53 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */; };
+		8135851E238FE52F006978CE /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135851D238FE52F006978CE /* Upload.swift */; };
 		8163803A238E6F9A002B58D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638037238E6F9A002B58D7 /* Constants.swift */; };
 		8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638038238E6F9A002B58D7 /* APIClient.swift */; };
 		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
@@ -78,6 +79,7 @@
 		81034E57238FC02A00A9AC53 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		81034E5B238FC07200A9AC53 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		8135851D238FE52F006978CE /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		81638037238E6F9A002B58D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81638038238E6F9A002B58D7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -144,17 +146,18 @@
 		18059E0223801E740007CA0A /* Trip */ = {
 			isa = PBXGroup;
 			children = (
-				3B14AB73238D22360065EB8C /* AppDelegate.swift */,
 				3B150FB7238E673400272A42 /* Utitlites */,
 				81638036238E6F9A002B58D7 /* Networking */,
 				3B150FB1238E673300272A42 /* Senarios */,
 				18059E0723801E740007CA0A /* ViewController.swift */,
 				81638041238E9E6A002B58D7 /* GetRequests.swift */,
 				8163803F238E908E002B58D7 /* Login.swift */,
+				3B14AB73238D22360065EB8C /* AppDelegate.swift */,
 				18059E0923801E740007CA0A /* Main.storyboard */,
 				81638063238ED568002B58D7 /* second.storyboard */,
 				18059E0C23801E760007CA0A /* Assets.xcassets */,
 				18059E0E23801E760007CA0A /* LaunchScreen.storyboard */,
+				81034E60238FDC9E00A9AC53 /* SupportFiles */,
 				18059E1123801E760007CA0A /* Info.plist */,
 			);
 			path = Trip;
@@ -216,6 +219,7 @@
 		3B150FB7238E673400272A42 /* Utitlites */ = {
 			isa = PBXGroup;
 			children = (
+				8135851D238FE52F006978CE /* Upload.swift */,
 				3B150FB8238E673400272A42 /* Alert.swift */,
 				3B150FB9238E673400272A42 /* CardView.swift */,
 				3B150FBA238E673400272A42 /* DesignableUITextField.swift */,
@@ -268,6 +272,13 @@
 				81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		81034E60238FDC9E00A9AC53 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		81638036238E6F9A002B58D7 /* Networking */ = {
@@ -524,6 +535,7 @@
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,
 				8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */,
 				81638042238E9E6A002B58D7 /* GetRequests.swift in Sources */,
+				8135851E238FE52F006978CE /* Upload.swift in Sources */,
 				81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */,
 				3B150FC1238E673400272A42 /* Maps.swift in Sources */,
 				18059E0823801E740007CA0A /* ViewController.swift in Sources */,
