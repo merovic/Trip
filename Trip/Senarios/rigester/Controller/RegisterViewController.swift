@@ -88,6 +88,11 @@ class RegisterViewController: UIViewController {
             Alert.show("Error", massege: "all Fields are required", context: self)
         }
     }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension RegisterViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {

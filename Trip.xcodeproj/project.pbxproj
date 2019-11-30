@@ -25,6 +25,8 @@
 		3B150FBF238E673400272A42 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB9238E673400272A42 /* CardView.swift */; };
 		3B150FC0238E673400272A42 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FBA238E673400272A42 /* DesignableUITextField.swift */; };
 		3B150FC1238E673400272A42 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FBB238E673400272A42 /* Maps.swift */; };
+		3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B79882392935B0071853C /* InviteFriendViewController.swift */; };
+		3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */; };
 		6853591C1B8BBFBEC058E730 /* Pods_Trip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C4BBEA25965A0590A26ECF /* Pods_Trip.framework */; };
 		7274CDF3E11DAA7FE550425A /* Pods_TripUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00D0E18D77A60A26CF40F60 /* Pods_TripUITests.framework */; };
 		81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E57238FC02A00A9AC53 /* LogInViewController.swift */; };
@@ -87,6 +89,8 @@
 		3B150FB9238E673400272A42 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3B150FBA238E673400272A42 /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		3B150FBB238E673400272A42 /* Maps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
+		3B6B79882392935B0071853C /* InviteFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendViewController.swift; sourceTree = "<group>"; };
+		3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinksCollectionViewCell.swift; sourceTree = "<group>"; };
 		651A078D2B566B6D10F44B67 /* Pods-Trip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trip.debug.xcconfig"; path = "Target Support Files/Pods-Trip/Pods-Trip.debug.xcconfig"; sourceTree = "<group>"; };
 		74D56256D24FE49A85310761 /* Pods-TripUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripUITests/Pods-TripUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B9C62475F4CD85454C33673 /* Pods-TripUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripUITests.release.xcconfig"; path = "Target Support Files/Pods-TripUITests/Pods-TripUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 		3B150FB1238E673300272A42 /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				3B6B7984239292D80071853C /* Home */,
 				81358520238FEC39006978CE /* Notifications */,
 				3B0BC9BD238FC97300CDED5A /* Reservations */,
 				81034E59238FC02E00A9AC53 /* rigester */,
@@ -276,6 +281,31 @@
 				3B150FBB238E673400272A42 /* Maps.swift */,
 			);
 			path = Utitlites;
+			sourceTree = "<group>";
+		};
+		3B6B7984239292D80071853C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3B6B7987239292FA0071853C /* Controller */,
+				3B6B7986239292EC0071853C /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3B6B7986239292EC0071853C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B6B7987239292FA0071853C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B6B79882392935B0071853C /* InviteFriendViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		6C5768CC5D8326E1553CA698 /* Pods */ = {
@@ -613,7 +643,9 @@
 				3B150FC0238E673400272A42 /* DesignableUITextField.swift in Sources */,
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,
 				8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */,
+				3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */,
 				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
+				3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */,
 				81638042238E9E6A002B58D7 /* GetRequests.swift in Sources */,
 				8135851E238FE52F006978CE /* Upload.swift in Sources */,
 				81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */,
