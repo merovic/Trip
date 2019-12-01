@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Cosmos
 class NotificationDetailsViewController: UIViewController {
 
     @IBOutlet weak var rejectBut: UIButton!
