@@ -45,6 +45,12 @@
 		814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140141F2393057600B89210 /* NewReservationDetailsViewController.swift */; };
 		814014242393B9B200B89210 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014232393B9B200B89210 /* ProfileViewController.swift */; };
 		814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014252393BABD00B89210 /* EditCarDetailsViewController.swift */; };
+		814014282393EB7E00B89210 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014272393EB7E00B89210 /* model.swift */; };
+		8140142A2393FCAB00B89210 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014292393FCAB00B89210 /* AddCarViewController.swift */; };
+		8140142C2393FE7B00B89210 /* NotificationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142B2393FE7B00B89210 /* NotificationDetailsViewController.swift */; };
+		8140142E2393FEA900B89210 /* EditeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142D2393FEA900B89210 /* EditeProfileViewController.swift */; };
+		814014302393FF0D00B89210 /* StartPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142F2393FF0D00B89210 /* StartPopUp.swift */; };
+		814014322393FF2400B89210 /* CancelPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014312393FF2400B89210 /* CancelPopUp.swift */; };
 		8163803A238E6F9A002B58D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638037238E6F9A002B58D7 /* Constants.swift */; };
 		8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638038238E6F9A002B58D7 /* APIClient.swift */; };
 		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
@@ -118,6 +124,12 @@
 		8140141F2393057600B89210 /* NewReservationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReservationDetailsViewController.swift; sourceTree = "<group>"; };
 		814014232393B9B200B89210 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		814014252393BABD00B89210 /* EditCarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCarDetailsViewController.swift; sourceTree = "<group>"; };
+		814014272393EB7E00B89210 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		814014292393FCAB00B89210 /* AddCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
+		8140142B2393FE7B00B89210 /* NotificationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsViewController.swift; sourceTree = "<group>"; };
+		8140142D2393FEA900B89210 /* EditeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditeProfileViewController.swift; sourceTree = "<group>"; };
+		8140142F2393FF0D00B89210 /* StartPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPopUp.swift; sourceTree = "<group>"; };
+		814014312393FF2400B89210 /* CancelPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopUp.swift; sourceTree = "<group>"; };
 		81638037238E6F9A002B58D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81638038238E6F9A002B58D7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -191,6 +203,7 @@
 				81638041238E9E6A002B58D7 /* GetRequests.swift */,
 				8163803F238E908E002B58D7 /* Login.swift */,
 				3B14AB73238D22360065EB8C /* AppDelegate.swift */,
+				814014272393EB7E00B89210 /* model.swift */,
 				813585292390289D006978CE /* Notes.swift */,
 				18059E0923801E740007CA0A /* Main.storyboard */,
 				8135852723902639006978CE /* Cars.swift */,
@@ -236,6 +249,8 @@
 				3B0BC9C0238FC9BD00CDED5A /* ReservationViewController.swift */,
 				8140141F2393057600B89210 /* NewReservationDetailsViewController.swift */,
 				8140141D2393026400B89210 /* ReservationDetailsViewController.swift */,
+				8140142F2393FF0D00B89210 /* StartPopUp.swift */,
+				814014312393FF2400B89210 /* CancelPopUp.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +342,7 @@
 			children = (
 				3B6B79882392935B0071853C /* InviteFriendViewController.swift */,
 				814014172392DB5D00B89210 /* HomeViewController.swift */,
+				814014292393FCAB00B89210 /* AddCarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -397,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				81358523238FEC7E006978CE /* NotificationsViewController.swift */,
+				8140142B2393FE7B00B89210 /* NotificationDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -438,6 +455,7 @@
 			children = (
 				814014232393B9B200B89210 /* ProfileViewController.swift */,
 				814014252393BABD00B89210 /* EditCarDetailsViewController.swift */,
+				8140142D2393FEA900B89210 /* EditeProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -688,15 +706,19 @@
 			files = (
 				81034E5F238FC2B000A9AC53 /* ForgotPasswordViewController.swift in Sources */,
 				8140141A2392DCBA00B89210 /* RecentCollectionViewCell.swift in Sources */,
+				8140142C2393FE7B00B89210 /* NotificationDetailsViewController.swift in Sources */,
 				3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */,
+				8140142A2393FCAB00B89210 /* AddCarViewController.swift in Sources */,
 				3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */,
 				81638040238E908E002B58D7 /* Login.swift in Sources */,
+				814014282393EB7E00B89210 /* model.swift in Sources */,
 				814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */,
 				814014242393B9B200B89210 /* ProfileViewController.swift in Sources */,
 				8135852E2392C9FC006978CE /* TabBarViewController.swift in Sources */,
 				3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */,
 				8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */,
 				3B150FBE238E673400272A42 /* Alert.swift in Sources */,
+				814014322393FF2400B89210 /* CancelPopUp.swift in Sources */,
 				3B0BC9C4238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift in Sources */,
 				81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */,
 				81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */,
@@ -707,6 +729,8 @@
 				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
 				3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */,
 				8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */,
+				814014302393FF0D00B89210 /* StartPopUp.swift in Sources */,
+				8140142E2393FEA900B89210 /* EditeProfileViewController.swift in Sources */,
 				81638042238E9E6A002B58D7 /* GetRequests.swift in Sources */,
 				8135851E238FE52F006978CE /* Upload.swift in Sources */,
 				814014182392DB5D00B89210 /* HomeViewController.swift in Sources */,
