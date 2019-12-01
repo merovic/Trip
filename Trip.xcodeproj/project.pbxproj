@@ -51,6 +51,14 @@
 		8140142E2393FEA900B89210 /* EditeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142D2393FEA900B89210 /* EditeProfileViewController.swift */; };
 		814014302393FF0D00B89210 /* StartPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142F2393FF0D00B89210 /* StartPopUp.swift */; };
 		814014322393FF2400B89210 /* CancelPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014312393FF2400B89210 /* CancelPopUp.swift */; };
+		814014342394009900B89210 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014332394009900B89210 /* AddCarViewController.swift */; };
+		814014362394073800B89210 /* InviteByPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014352394073800B89210 /* InviteByPhoneViewController.swift */; };
+		814014382394074700B89210 /* InviteByMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014372394074600B89210 /* InviteByMailViewController.swift */; };
+		8140143A2394089D00B89210 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014392394089D00B89210 /* TermsViewController.swift */; };
+		8140143C239408B200B89210 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140143B239408B200B89210 /* PolicyViewController.swift */; };
+		8140143E2394090400B89210 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140143D2394090400B89210 /* HelpViewController.swift */; };
+		814014402394094400B89210 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140143F2394094400B89210 /* ContactUsViewController.swift */; };
+		8140144223940A5F00B89210 /* AgreementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140144123940A5F00B89210 /* AgreementsViewController.swift */; };
 		8163803A238E6F9A002B58D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638037238E6F9A002B58D7 /* Constants.swift */; };
 		8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638038238E6F9A002B58D7 /* APIClient.swift */; };
 		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
@@ -130,6 +138,14 @@
 		8140142D2393FEA900B89210 /* EditeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditeProfileViewController.swift; sourceTree = "<group>"; };
 		8140142F2393FF0D00B89210 /* StartPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPopUp.swift; sourceTree = "<group>"; };
 		814014312393FF2400B89210 /* CancelPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopUp.swift; sourceTree = "<group>"; };
+		814014332394009900B89210 /* AddCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
+		814014352394073800B89210 /* InviteByPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteByPhoneViewController.swift; sourceTree = "<group>"; };
+		814014372394074600B89210 /* InviteByMailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteByMailViewController.swift; sourceTree = "<group>"; };
+		814014392394089D00B89210 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		8140143B239408B200B89210 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		8140143D2394090400B89210 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		8140143F2394094400B89210 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		8140144123940A5F00B89210 /* AgreementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementsViewController.swift; sourceTree = "<group>"; };
 		81638037238E6F9A002B58D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81638038238E6F9A002B58D7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -294,6 +310,11 @@
 			isa = PBXGroup;
 			children = (
 				3B150FB4238E673300272A42 /* MenuViewController.swift */,
+				814014392394089D00B89210 /* TermsViewController.swift */,
+				8140144123940A5F00B89210 /* AgreementsViewController.swift */,
+				8140143B239408B200B89210 /* PolicyViewController.swift */,
+				8140143D2394090400B89210 /* HelpViewController.swift */,
+				8140143F2394094400B89210 /* ContactUsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,8 +362,11 @@
 			isa = PBXGroup;
 			children = (
 				3B6B79882392935B0071853C /* InviteFriendViewController.swift */,
+				814014352394073800B89210 /* InviteByPhoneViewController.swift */,
+				814014372394074600B89210 /* InviteByMailViewController.swift */,
 				814014172392DB5D00B89210 /* HomeViewController.swift */,
 				3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */,
+				814014332394009900B89210 /* AddCarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -706,11 +730,14 @@
 			files = (
 				81034E5F238FC2B000A9AC53 /* ForgotPasswordViewController.swift in Sources */,
 				3B1414E42393C0E7003DD08C /* CarDetailsViewController.swift in Sources */,
+				8140143C239408B200B89210 /* PolicyViewController.swift in Sources */,
+				8140144223940A5F00B89210 /* AgreementsViewController.swift in Sources */,
 				8140141A2392DCBA00B89210 /* RecentCollectionViewCell.swift in Sources */,
 				8140142C2393FE7B00B89210 /* NotificationDetailsViewController.swift in Sources */,
 				3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */,
 				3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */,
 				81638040238E908E002B58D7 /* Login.swift in Sources */,
+				814014382394074700B89210 /* InviteByMailViewController.swift in Sources */,
 				814014282393EB7E00B89210 /* model.swift in Sources */,
 				814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */,
 				814014242393B9B200B89210 /* ProfileViewController.swift in Sources */,
@@ -723,14 +750,18 @@
 				81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */,
 				81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */,
 				3B150FC0238E673400272A42 /* DesignableUITextField.swift in Sources */,
+				8140143E2394090400B89210 /* HelpViewController.swift in Sources */,
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,
 				8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */,
+				8140143A2394089D00B89210 /* TermsViewController.swift in Sources */,
 				3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */,
 				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
 				3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */,
+				814014342394009900B89210 /* AddCarViewController.swift in Sources */,
 				8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */,
 				814014302393FF0D00B89210 /* StartPopUp.swift in Sources */,
 				8140142E2393FEA900B89210 /* EditeProfileViewController.swift in Sources */,
+				814014402394094400B89210 /* ContactUsViewController.swift in Sources */,
 				81638042238E9E6A002B58D7 /* GetRequests.swift in Sources */,
 				8135851E238FE52F006978CE /* Upload.swift in Sources */,
 				814014182392DB5D00B89210 /* HomeViewController.swift in Sources */,
@@ -740,6 +771,7 @@
 				8163803A238E6F9A002B58D7 /* Constants.swift in Sources */,
 				814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */,
 				8140141E2393026400B89210 /* ReservationDetailsViewController.swift in Sources */,
+				814014362394073800B89210 /* InviteByPhoneViewController.swift in Sources */,
 				3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */,
 				8135852823902639006978CE /* Cars.swift in Sources */,
 				3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */,

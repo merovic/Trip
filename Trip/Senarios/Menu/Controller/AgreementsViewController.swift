@@ -1,5 +1,5 @@
 //
-//  CancelPopUp.swift
+//  AgreementsViewController.swift
 //  Trip
 //
 //  Created by Ali Mohamed on 12/1/19.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CancelPopUp: UIViewController {
+class AgreementsViewController: UIViewController {
 
-    @IBOutlet weak var cancelBut: UIButton!
-    @IBOutlet weak var kmRead: UITextField!
+    @IBOutlet weak var terms: UILabel!
+    @IBOutlet weak var agreements: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +19,5 @@ class CancelPopUp: UIViewController {
     }
     
 
-    @IBAction func CancelBut(_ sender: UIButton) {
-    }
-    
-
+   
 }

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Agreements View Controller-->
         <scene sceneID="tt5-k1-1ie">
             <objects>
-                <viewController storyboardIdentifier="agreements" id="1eI-LR-4Nn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="agreements" id="1eI-LR-4Nn" customClass="AgreementsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jMQ-N9-fgf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,15 +86,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FFf-cm-zMH"/>
                     </view>
+                    <connections>
+                        <outlet property="agreements" destination="BHx-Aa-LLc" id="dqK-tS-xvK"/>
+                        <outlet property="terms" destination="L6N-2O-uY1" id="ydq-wz-hwB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9g-UE-gFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-126.08695652173914" y="202.90178571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Help View Controller-->
         <scene sceneID="x10-Z3-UcN">
             <objects>
-                <viewController id="WW2-J4-qF5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Help" id="WW2-J4-qF5" customClass="HelpViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="help" id="7B3-Lv-zTh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +127,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fSV-If-5cm"/>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="AmT-Yi-edE" id="EhN-Ke-ivL"/>
+                        <outlet property="label2" destination="xAz-Av-3BM" id="CdX-yy-ABA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kf-GC-E1N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1233" y="203"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Us View Controller-->
         <scene sceneID="F1x-nD-4fN">
             <objects>
-                <viewController id="veC-II-mhx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactUs" id="veC-II-mhx" customClass="ContactUsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="knW-T2-OLA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,7 +287,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3j2-Im-IVm">
                                                                 <rect key="frame" x="0.0" y="111" width="168.5" height="20"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mailYellow" translatesAutoresizingMaskIntoConstraints="NO" id="grF-wt-DeJ">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contactUs" translatesAutoresizingMaskIntoConstraints="NO" id="grF-wt-DeJ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="GhO-Cp-cPx"/>
@@ -401,6 +409,9 @@
                                                 <state key="normal" title="Send">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sendPressed:" destination="veC-II-mhx" eventType="touchUpInside" id="Lbd-GI-uM0"/>
+                                                </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type message here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y46-Ai-omS">
                                                 <rect key="frame" x="20" y="628" width="374" height="50"/>
@@ -507,6 +518,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g27-BA-qmL"/>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="9Zy-x0-zKU" id="FYf-So-gHl"/>
+                        <outlet property="fax" destination="NTq-DT-1uE" id="XIS-dx-MHi"/>
+                        <outlet property="mail" destination="yLD-QA-wzB" id="fxa-Gx-5aM"/>
+                        <outlet property="message" destination="y46-Ai-omS" id="3D1-Df-Qat"/>
+                        <outlet property="name" destination="ajY-zv-geq" id="2wa-Gs-BC8"/>
+                        <outlet property="phone" destination="Gqj-zY-uSd" id="G5K-dJ-cHa"/>
+                        <outlet property="sendBut" destination="iJ1-SY-g0n" id="aOv-IQ-TCo"/>
+                        <outlet property="site" destination="8ef-ev-UDN" id="MUO-pT-qAi"/>
+                        <outlet property="userEmail" destination="32f-jY-ECa" id="oiY-XJ-mzT"/>
+                        <outlet property="userPhone" destination="bGF-57-371" id="xAu-mQ-479"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWp-5n-miP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -514,9 +537,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="contactUs" width="28" height="28.5"/>
         <image name="faxYellow" width="10" height="10"/>
         <image name="locationYellow" width="10" height="10"/>
-        <image name="mailYellow" width="10" height="10"/>
         <image name="networkYellow" width="10" height="10"/>
         <image name="phoneYellow" width="16" height="16"/>
     </resources>

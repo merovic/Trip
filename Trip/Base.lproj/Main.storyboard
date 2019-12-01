@@ -898,7 +898,7 @@
         <!--Home-->
         <scene sceneID="CNb-kG-EyW">
             <objects>
-                <viewController id="PXN-63-Qon" customClass="HomeViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="PXN-63-Qon" customClass="HomeViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9e-lT-Ykr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1246"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -951,10 +951,10 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellLatest" id="bu0-Qk-38m" customClass="RecentCollectionViewCell" customModule="Trip" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="21" width="344" height="213"/>
+                                                        <rect key="frame" x="0.0" y="11" width="344" height="233"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yxp-tL-7BX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="344" height="213"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="344" height="233"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mCi-YB-W46">
@@ -971,8 +971,8 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOE-5D-bKF" customClass="CosmosView" customModule="Cosmos">
-                                                                    <rect key="frame" x="2" y="197.5" width="120" height="0.0"/>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOE-5D-bKF" customClass="CosmosView" customModule="Cosmos">
+                                                                    <rect key="frame" x="2" y="197.5" width="120" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -986,7 +986,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-oY-enk">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-oY-enk">
                                                                     <rect key="frame" x="127" y="197.5" width="44" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -1075,7 +1075,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-dB-eFC" customClass="CosmosView" customModule="Cosmos">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-dB-eFC" customClass="CosmosView" customModule="Cosmos">
                                                                     <rect key="frame" x="2" y="197.5" width="120" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -1090,7 +1090,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-a6-IJ0">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-a6-IJ0">
                                                                     <rect key="frame" x="127" y="197.5" width="44" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -1279,7 +1279,7 @@
         <!--Car Details View Controller-->
         <scene sceneID="FsH-ci-pNZ">
             <objects>
-                <viewController id="fQ9-Fg-O0a" customClass="CarDetailsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarDetails" id="fQ9-Fg-O0a" customClass="CarDetailsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3C6-nR-FNK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1526,6 +1526,9 @@
                                                             <constraint firstAttribute="height" constant="150" id="PXe-34-eoW"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="map1"/>
+                                                        <connections>
+                                                            <action selector="showMaps:" destination="fQ9-Fg-O0a" eventType="touchUpInside" id="w1f-H6-Xix"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show In Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xib-NS-72D">
                                                         <rect key="frame" x="15" y="415.5" width="107" height="21"/>
@@ -1539,7 +1542,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HyH-4c-gtr"/>
                                                         </constraints>
-                                                        <state key="normal" title="Reserv">
+                                                        <state key="normal" title="Reserve">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
@@ -1589,10 +1592,10 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500  Dollar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8n-hT-Xd9">
-                                                <rect key="frame" x="20" y="210" width="82.5" height="50"/>
+                                                <rect key="frame" x="20" y="210" width="82.5" height="35"/>
                                                 <color key="backgroundColor" red="1" green="0.94253206249999999" blue="0.25369930270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="GNr-n1-Mjd"/>
+                                                    <constraint firstAttribute="height" constant="35" id="GNr-n1-Mjd"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -1636,8 +1639,20 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="address" destination="JMf-51-VUx" id="vCZ-fT-phS"/>
                         <outlet property="detailsCarView" destination="aeu-P1-Qeo" id="p2o-Hd-48I"/>
+                        <outlet property="from" destination="u3U-pg-uik" id="Bhz-aP-h4z"/>
+                        <outlet property="fromHour" destination="cTi-zf-vXO" id="B09-kd-2PC"/>
                         <outlet property="imageCarSlider" destination="jca-cG-Xwk" id="6d6-me-i44"/>
+                        <outlet property="model" destination="Z23-ZP-Z6x" id="d2l-wj-88O"/>
+                        <outlet property="name" destination="4xI-qZ-awh" id="Lci-EX-Gwa"/>
+                        <outlet property="price" destination="X8n-hT-Xd9" id="tck-e4-aeW"/>
+                        <outlet property="rate" destination="8Uj-NI-Y3Q" id="V83-0k-5JF"/>
+                        <outlet property="reserveBut" destination="OrN-Hg-nA2" id="fqn-e9-clE"/>
+                        <outlet property="to" destination="g0h-32-Vgh" id="NK5-tU-FV5"/>
+                        <outlet property="toHour" destination="CjJ-Hs-MWr" id="5Mn-Kg-2T3"/>
+                        <outlet property="tripsNum" destination="VOe-sr-Ouw" id="lz9-lj-55Q"/>
+                        <outlet property="userType" destination="oyQ-vb-fYm" id="Swk-u1-FkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYd-j2-yyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1673,7 +1688,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6n-2x-oMT">
-                                                <rect key="frame" x="0.0" y="8" width="129" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="151" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Edit Profile" image="editYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1705,7 +1720,7 @@
                                         <rect key="frame" x="0.0" y="60" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-h5-ge3">
-                                                <rect key="frame" x="0.0" y="8" width="169" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="191" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Edit Car Details" image="carYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1736,7 +1751,7 @@
                                         <rect key="frame" x="0.0" y="120" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-yS-vee">
-                                                <rect key="frame" x="0.0" y="8" width="148" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="170" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Reservations" image="steetYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1766,7 +1781,7 @@
                                         <rect key="frame" x="0.0" y="180" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-An-FJ5">
-                                                <rect key="frame" x="0.0" y="6" width="113" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="-8.5" width="141" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   SignOut" image="signOut">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1830,7 +1845,7 @@
         <!--Edit Profile-->
         <scene sceneID="D6j-bi-KAd">
             <objects>
-                <viewController id="qI8-Zp-jRC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfile" id="qI8-Zp-jRC" customClass="EditeProfileViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yum-Lz-xM0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2029,6 +2044,9 @@
                                                         <state key="normal" title="Save">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="savePressed:" destination="qI8-Zp-jRC" eventType="touchUpInside" id="32I-LS-vN3"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2145,6 +2163,15 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Address" destination="mCB-5w-cjj" id="Btt-5A-a1Q"/>
+                        <outlet property="comfirmPass" destination="sh4-Eg-fqR" id="vvZ-pk-xiA"/>
+                        <outlet property="mail" destination="iMZ-Oy-8sL" id="mZi-fq-oS2"/>
+                        <outlet property="name" destination="AhX-R5-3AD" id="M5X-Ya-MrA"/>
+                        <outlet property="password" destination="E7C-zv-IDj" id="3mU-PQ-YpF"/>
+                        <outlet property="phone" destination="mMz-w4-2IV" id="365-pw-PxI"/>
+                        <outlet property="saveBut" destination="c2J-SQ-OKG" id="QdX-Fo-BYi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHe-MM-cPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2153,7 +2180,7 @@
         <!--Edit Car Details-->
         <scene sceneID="Lzf-vs-GuZ">
             <objects>
-                <viewController id="Srz-bq-lKe" customClass="EditCarDetailsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditCarDetails" id="Srz-bq-lKe" customClass="EditCarDetailsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p9v-R5-d4O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2246"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2959,7 +2986,7 @@
         <!--Reservations-->
         <scene sceneID="hOv-UR-ovx">
             <objects>
-                <viewController id="xRw-11-TLY" customClass="ReservationViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Reservations" id="xRw-11-TLY" customClass="ReservationViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tia-Q4-ies">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3979,7 +4006,7 @@
         <!--Invite a Friend-->
         <scene sceneID="rsC-em-P9R">
             <objects>
-                <viewController id="Gon-qj-3Og" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InviteByPhone" id="Gon-qj-3Og" customClass="InviteByPhoneViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PfR-ry-pg2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4015,6 +4042,9 @@
                                 <state key="normal" title="Invite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="invitePressed:" destination="Gon-qj-3Og" eventType="touchUpInside" id="9AF-93-u2T"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -4035,6 +4065,10 @@
                         <viewLayoutGuide key="safeArea" id="oPg-ib-73A"/>
                     </view>
                     <navigationItem key="navigationItem" title="Invite a Friend" id="3P1-BF-Lvz"/>
+                    <connections>
+                        <outlet property="inviteBut" destination="QHw-jW-11q" id="bFE-aO-Z8N"/>
+                        <outlet property="phone" destination="9aJ-7p-yg0" id="iV1-Ii-t25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsf-SH-VfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4043,7 +4077,7 @@
         <!--Invite a Friend-->
         <scene sceneID="mrl-t5-Jpv">
             <objects>
-                <viewController id="8Ur-A5-2L1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InviteByMail" id="8Ur-A5-2L1" customClass="InviteByMailViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ST6-zy-BAe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4079,6 +4113,9 @@
                                 <state key="normal" title="Invite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="invitePressed:" destination="8Ur-A5-2L1" eventType="touchUpInside" id="uQp-Wm-KQa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -4099,15 +4136,19 @@
                         <viewLayoutGuide key="safeArea" id="Etp-gv-g47"/>
                     </view>
                     <navigationItem key="navigationItem" title="Invite a Friend" id="Hh0-yp-vOW"/>
+                    <connections>
+                        <outlet property="inviteBut" destination="jhn-Ra-wIy" id="jpk-M8-poN"/>
+                        <outlet property="mail" destination="gRo-c4-J4y" id="WyL-Mc-BTg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-UR-DQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6319" y="6338"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Pop Up-->
         <scene sceneID="dzE-0l-Z2Y">
             <objects>
-                <viewController id="RXA-wK-TL1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartReservation" id="RXA-wK-TL1" customClass="StartPopUp" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIX-YW-aDm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4192,6 +4233,9 @@
                                         <state key="normal" title="Start Trip ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="start:" destination="RXA-wK-TL1" eventType="touchUpInside" id="Y1O-d6-1jO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -4222,15 +4266,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Ar-gh-wj4"/>
                     </view>
+                    <connections>
+                        <outlet property="kmRead" destination="KYz-1z-0IQ" id="ZSN-Me-wv8"/>
+                        <outlet property="startBut" destination="w9y-Qk-qCK" id="YGj-ZS-0s3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUu-o3-2oh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7799" y="5621"/>
         </scene>
-        <!--View Controller-->
+        <!--Cancel Pop Up-->
         <scene sceneID="nCp-2x-g9f">
             <objects>
-                <viewController id="ef1-4m-tkP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CancelReservation" id="ef1-4m-tkP" customClass="CancelPopUp" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IXS-R3-Th0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4315,6 +4363,9 @@
                                         <state key="normal" title="Cancel Trip ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="CancelBut:" destination="ef1-4m-tkP" eventType="touchUpInside" id="97z-RJ-qYM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -4345,6 +4396,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TAg-5p-rP3"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelBut" destination="6FS-96-fx9" id="tj2-Pr-DjF"/>
+                        <outlet property="kmRead" destination="8ML-vc-zKA" id="FT2-FS-trg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piv-bz-gRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4353,7 +4408,7 @@
         <!--Notification-->
         <scene sceneID="RFk-Vl-GBH">
             <objects>
-                <viewController id="yi8-CQ-NoV" customClass="NotificationsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Notifications" id="yi8-CQ-NoV" customClass="NotificationsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pFl-43-psh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4463,10 +4518,10 @@
             </objects>
             <point key="canvasLocation" x="4300" y="3605"/>
         </scene>
-        <!--View Controller-->
+        <!--Notification Details View Controller-->
         <scene sceneID="d8k-JP-dO9">
             <objects>
-                <viewController id="hgb-fa-p9X" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationDetails" id="hgb-fa-p9X" customClass="NotificationDetailsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Arx-r4-eYO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4598,6 +4653,9 @@
                                                 <state key="normal" title="Accepted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="acceptPressed:" destination="hgb-fa-p9X" eventType="touchUpInside" id="EEd-hq-8ES"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuN-Ny-iEM">
                                                 <rect key="frame" x="203" y="0.0" width="141" height="30"/>
@@ -4605,6 +4663,9 @@
                                                 <state key="normal" title="Refused">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="rejectPressed:" destination="hgb-fa-p9X" eventType="touchUpInside" id="6eV-FS-eC7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -4641,6 +4702,19 @@
                         <viewLayoutGuide key="safeArea" id="UOj-gj-xUU"/>
                     </view>
                     <navigationItem key="navigationItem" id="BB4-kS-hsu"/>
+                    <connections>
+                        <outlet property="acceptBut" destination="ZcD-MI-aCg" id="qZI-sY-bIu"/>
+                        <outlet property="description1" destination="W18-En-ZHE" id="O5G-9F-dOI"/>
+                        <outlet property="descrtition2" destination="yks-1F-3Ci" id="dzs-D0-RnQ"/>
+                        <outlet property="image" destination="prC-X9-NTN" id="Gt4-fS-Ww1"/>
+                        <outlet property="name" destination="QDL-95-RuL" id="by4-zy-lAy"/>
+                        <outlet property="phone" destination="GvH-Do-RYj" id="wul-0F-n5y"/>
+                        <outlet property="rate" destination="b4l-sq-hcb" id="HhC-hc-yW5"/>
+                        <outlet property="ratelbl" destination="fzv-h0-Gfs" id="moh-gp-DhO"/>
+                        <outlet property="rejectBut" destination="WuN-Ny-iEM" id="RwW-27-28e"/>
+                        <outlet property="title" destination="r9C-tx-si1" id="aCU-o7-2qx"/>
+                        <outlet property="trips" destination="bBn-2f-B4F" id="69E-yt-YNF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQ2-Tn-heU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4649,7 +4723,7 @@
         <!--Add Your Car-->
         <scene sceneID="WeB-Pk-KXv">
             <objects>
-                <viewController id="9Kk-rE-KR6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCar" id="9Kk-rE-KR6" customClass="AddCarViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpo-nK-Z5N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5128,6 +5202,9 @@
                                                     <constraint firstAttribute="height" constant="150" id="DxP-22-oVl"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="map1"/>
+                                                <connections>
+                                                    <action selector="showMap:" destination="9Kk-rE-KR6" eventType="touchUpInside" id="P9f-sI-QkZ"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="op7-PY-tEz">
                                                 <rect key="frame" x="0.0" y="1564" width="414" height="153"/>
@@ -5142,6 +5219,9 @@
                                                         <state key="normal" title="Add">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="addPressed:" destination="9Kk-rE-KR6" eventType="touchUpInside" id="ozs-uS-iyA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -5366,6 +5446,22 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
+                        <outlet property="addPressed" destination="LDm-N3-nGv" id="xtp-0g-xYu"/>
+                        <outlet property="apartmentName" destination="DJm-Zg-Fkd" id="tW8-3K-HDH"/>
+                        <outlet property="attatchBut" destination="Z1V-Zv-Ezr" id="CMZ-Ae-bC6"/>
+                        <outlet property="city" destination="FGA-t7-OKT" id="ogJ-Nn-Joj"/>
+                        <outlet property="color" destination="Xbq-yi-n7d" id="QT7-a4-p5O"/>
+                        <outlet property="dateFrom" destination="ixt-SP-h9P" id="B3O-94-cUI"/>
+                        <outlet property="dateTo" destination="Jnr-6l-ZIV" id="RdG-c3-9Nm"/>
+                        <outlet property="km" destination="y1v-G4-SKT" id="P39-9O-YZm"/>
+                        <outlet property="kmPrice" destination="8vY-ND-Jsg" id="jbQ-ue-q5G"/>
+                        <outlet property="model" destination="r2p-pj-dzK" id="9nJ-c8-5Il"/>
+                        <outlet property="name" destination="Ia2-Mk-dI9" id="0ou-UM-SHf"/>
+                        <outlet property="number" destination="w9G-ka-3xE" id="CcE-Ys-KOA"/>
+                        <outlet property="pricePerDay" destination="VRR-e4-6pM" id="9es-yw-fc4"/>
+                        <outlet property="refion" destination="kCp-g0-22w" id="Zgd-h3-nc3"/>
+                        <outlet property="stname" destination="Qle-c6-PTy" id="EHp-BL-pC1"/>
+                        <outlet property="tripPrice" destination="wdO-qu-BOl" id="0sY-9m-PgX"/>
                         <segue destination="8Ur-A5-2L1" kind="show" id="2Bx-9m-qO9"/>
                         <segue destination="Gon-qj-3Og" kind="show" id="iYm-mu-DUS"/>
                     </connections>
@@ -5659,7 +5755,7 @@
             <color red="0.85900002717971802" green="0.3059999942779541" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="garyColor">
-            <color red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.90200001001358032" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

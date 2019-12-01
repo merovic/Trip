@@ -10,9 +10,22 @@ import UIKit
 import Auk
 
 class CarDetailsViewController: UIViewController {
-
+    
+    @IBOutlet weak var tripsNum: UILabel!
+    @IBOutlet weak var reserveBut: UIButton!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var toHour: UILabel!
+    @IBOutlet weak var fromHour: UILabel!
+    @IBOutlet weak var to: UILabel!
+    @IBOutlet weak var from: UILabel!
+    @IBOutlet weak var rate: CosmosView!
+    @IBOutlet weak var model: UILabel!
+    @IBOutlet weak var userType: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var price: UILabel!
     @IBOutlet weak var detailsCarView: UIView!
     @IBOutlet weak var imageCarSlider: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         readius()
@@ -24,21 +37,12 @@ class CarDetailsViewController: UIViewController {
         if let image = UIImage(named: "map2.jpg") {
           imageCarSlider.auk.show(image: image)
         }
-               //
-
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func showMaps(_ sender: UIButton) {
     }
-    */
+    
     func readius() {
            detailsCarView.layer.cornerRadius = 30
            detailsCarView.clipsToBounds = true
