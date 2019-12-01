@@ -19,6 +19,9 @@
 		3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */; };
 		3B0BC9C9238FCB2900CDED5A /* CurrentReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */; };
 		3B1414E42393C0E7003DD08C /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */; };
+		3B1414E823941F1A003DD08C /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1414E723941F1A003DD08C /* Search.xib */; };
+		3B1414EA239420C5003DD08C /* SearchNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1414E9239420C5003DD08C /* SearchNormal.swift */; };
+		3B1414EE2394211A003DD08C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1414ED2394211A003DD08C /* SearchViewController.swift */; };
 		3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14AB73238D22360065EB8C /* AppDelegate.swift */; };
 		3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB4238E673300272A42 /* MenuViewController.swift */; };
 		3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB6238E673300272A42 /* MenuTableViewCell.swift */; };
@@ -105,6 +108,9 @@
 		3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentReservationTableViewCell.swift; sourceTree = "<group>"; };
 		3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentReservationTableViewCell.xib; sourceTree = "<group>"; };
 		3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
+		3B1414E723941F1A003DD08C /* Search.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Search.xib; sourceTree = "<group>"; };
+		3B1414E9239420C5003DD08C /* SearchNormal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNormal.swift; sourceTree = "<group>"; };
+		3B1414ED2394211A003DD08C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3B14AB73238D22360065EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B150FB4238E673300272A42 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3B150FB6238E673300272A42 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -222,6 +228,8 @@
 				814014272393EB7E00B89210 /* model.swift */,
 				813585292390289D006978CE /* Notes.swift */,
 				18059E0923801E740007CA0A /* Main.storyboard */,
+				3B1414E723941F1A003DD08C /* Search.xib */,
+				3B1414E9239420C5003DD08C /* SearchNormal.swift */,
 				8135852723902639006978CE /* Cars.swift */,
 				81638063238ED568002B58D7 /* second.storyboard */,
 				18059E0C23801E760007CA0A /* Assets.xcassets */,
@@ -282,9 +290,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3B1414EB239420EF003DD08C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3B1414EC239420FB003DD08C /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		3B1414EC239420FB003DD08C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B1414ED2394211A003DD08C /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3B150FB1238E673300272A42 /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				3B1414EB239420EF003DD08C /* Search */,
 				814014212393B99300B89210 /* Profile */,
 				81034E56238FBFF500A9AC53 /* Log In */,
 				8135852B2392C9CF006978CE /* TabBar */,
@@ -616,6 +641,7 @@
 				18059E1023801E760007CA0A /* LaunchScreen.storyboard in Resources */,
 				18059E0D23801E760007CA0A /* Assets.xcassets in Resources */,
 				3B0BC9C5238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib in Resources */,
+				3B1414E823941F1A003DD08C /* Search.xib in Resources */,
 				3B0BC9C9238FCB2900CDED5A /* CurrentReservationTableViewCell.xib in Resources */,
 				18059E0B23801E740007CA0A /* Main.storyboard in Resources */,
 			);
@@ -757,6 +783,7 @@
 				3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */,
 				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
 				3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */,
+				3B1414EA239420C5003DD08C /* SearchNormal.swift in Sources */,
 				814014342394009900B89210 /* AddCarViewController.swift in Sources */,
 				8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */,
 				814014302393FF0D00B89210 /* StartPopUp.swift in Sources */,
@@ -767,6 +794,7 @@
 				814014182392DB5D00B89210 /* HomeViewController.swift in Sources */,
 				81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */,
 				3B150FC1238E673400272A42 /* Maps.swift in Sources */,
+				3B1414EE2394211A003DD08C /* SearchViewController.swift in Sources */,
 				18059E0823801E740007CA0A /* ViewController.swift in Sources */,
 				8163803A238E6F9A002B58D7 /* Constants.swift in Sources */,
 				814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */,
