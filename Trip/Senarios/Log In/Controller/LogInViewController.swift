@@ -72,6 +72,69 @@ class LogInViewController: UIViewController{
         let vc = segue.destination as! TabBarViewController
         vc.modalPresentationStyle = .fullScreen
     }
+    
+   /*
+    func facebooklogin() {
+        let fbLoginManager : LoginManager = LoginManager()
+
+        fbLoginManager.logIn(permissions: ["email"], from: self, handler: { (result, error) -> Void in
+            
+
+
+            print("\n\n result: \(result)")
+            print("\n\n Error: \(error)")
+            
+            if (error == nil) {
+                let fbloginresult : LoginManagerLoginResult = result!
+                if(fbloginresult.isCancelled) {
+                    //Show Cancel alert
+                } else if(fbloginresult.grantedPermissions.contains("email")) {
+                    self.returnUserData()
+                    //fbLoginManager.logOut()
+                }
+            }
+        })
+    }
+    
+    
+    func returnUserData() {
+        let graphRequest : GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"email,name"])
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            if ((error) != nil) {
+                // Process error
+                print("\n\n Error: \(error)")
+            } else {
+                let resultDic = result as! NSDictionary
+                print("\n\n  fetched user: \(result)")
+                
+                if (resultDic.value(forKey:"token") != nil) {
+                    let userName = resultDic.value(forKey:"access_token")! as! String as NSString?
+                    print("\n User Name is: \(userName)")
+                }
+                if(AccessToken.current != nil){
+                    print(AccessToken.current)
+                }
+                
+                if (resultDic.value(forKey:"email") != nil) {
+                    let userEmail = resultDic.value(forKey:"email")! as! String as NSString?
+                    print("\n User Email is: \(userEmail)")
+                }
+                
+            
+            }
+        })
+    }
+ */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 extension UIViewController: UITextFieldDelegate{
