@@ -10,7 +10,11 @@ import UIKit
 
 class CancelPopUp: UIViewController {
 
-    @IBOutlet weak var cancelBut: UIButton!
+    @IBOutlet weak var cancelBut: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: cancelBut)
+        }
+    }
     @IBOutlet weak var kmRead: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()

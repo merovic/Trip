@@ -11,15 +11,18 @@ import UIKit
 class StartPopUp: UIViewController {
 
     @IBOutlet weak var kmRead: UITextField!
-    @IBOutlet weak var startBut: UIButton!
+    @IBOutlet weak var startBut: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: startBut)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
     @IBAction func start(_ sender: UIButton) {
+        
     }
     
 
