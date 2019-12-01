@@ -43,6 +43,8 @@
 		8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140141B2392DD3B00B89210 /* TopRatedCollectionViewCell.swift */; };
 		8140141E2393026400B89210 /* ReservationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140141D2393026400B89210 /* ReservationDetailsViewController.swift */; };
 		814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140141F2393057600B89210 /* NewReservationDetailsViewController.swift */; };
+		814014242393B9B200B89210 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014232393B9B200B89210 /* ProfileViewController.swift */; };
+		814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014252393BABD00B89210 /* EditCarDetailsViewController.swift */; };
 		8163803A238E6F9A002B58D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638037238E6F9A002B58D7 /* Constants.swift */; };
 		8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638038238E6F9A002B58D7 /* APIClient.swift */; };
 		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
@@ -114,6 +116,8 @@
 		8140141B2392DD3B00B89210 /* TopRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		8140141D2393026400B89210 /* ReservationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailsViewController.swift; sourceTree = "<group>"; };
 		8140141F2393057600B89210 /* NewReservationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReservationDetailsViewController.swift; sourceTree = "<group>"; };
+		814014232393B9B200B89210 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		814014252393BABD00B89210 /* EditCarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCarDetailsViewController.swift; sourceTree = "<group>"; };
 		81638037238E6F9A002B58D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81638038238E6F9A002B58D7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 		3B150FB1238E673300272A42 /* Senarios */ = {
 			isa = PBXGroup;
 			children = (
+				814014212393B99300B89210 /* Profile */,
 				81034E56238FBFF500A9AC53 /* Log In */,
 				8135852B2392C9CF006978CE /* TabBar */,
 				3B6B7984239292D80071853C /* Home */,
@@ -416,6 +421,23 @@
 			isa = PBXGroup;
 			children = (
 				8135852D2392C9FC006978CE /* TabBarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		814014212393B99300B89210 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				814014222393B9A100B89210 /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		814014222393B9A100B89210 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				814014232393B9B200B89210 /* ProfileViewController.swift */,
+				814014252393BABD00B89210 /* EditCarDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -670,6 +692,7 @@
 				3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */,
 				81638040238E908E002B58D7 /* Login.swift in Sources */,
 				814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */,
+				814014242393B9B200B89210 /* ProfileViewController.swift in Sources */,
 				8135852E2392C9FC006978CE /* TabBarViewController.swift in Sources */,
 				3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */,
 				8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */,
@@ -691,6 +714,7 @@
 				3B150FC1238E673400272A42 /* Maps.swift in Sources */,
 				18059E0823801E740007CA0A /* ViewController.swift in Sources */,
 				8163803A238E6F9A002B58D7 /* Constants.swift in Sources */,
+				814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */,
 				8140141E2393026400B89210 /* ReservationDetailsViewController.swift in Sources */,
 				3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */,
 				8135852823902639006978CE /* Cars.swift in Sources */,
