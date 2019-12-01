@@ -9,8 +9,14 @@
 import UIKit
 
 class NotificationsViewController: UIViewController {
-
-    @IBOutlet weak var TabelView: UITableView!
+    
+    @IBOutlet weak var TabelView: UITableView!{
+        didSet{
+            TabelView.rowHeight = UITableView.automaticDimension
+            TabelView.estimatedRowHeight = 150
+            
+        }
+    }
     
     var notes: [Note]?
     override func viewDidLoad() {
@@ -20,7 +26,6 @@ class NotificationsViewController: UIViewController {
     }
     
     func getData(){
-        
         DispatchQueue.global().async { [weak self] in
             APIClient.getAllNoteByOwnerID(id_owner: 5) { (Result) in
                 switch Result {
@@ -42,6 +47,8 @@ class NotificationsViewController: UIViewController {
     }
     
 }
+
+
 extension NotificationsViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes?.count ?? 0
@@ -52,7 +59,6 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
         
         cell.dateLbl.text = notes?[indexPath.row].datee
         cell.messagelbl.text = notes?[indexPath.row].details
-        
         
         return cell
     }

@@ -15,17 +15,14 @@ class ReservationViewController: UIViewController {
 
 
     @IBOutlet weak var reservationSegmented: UISegmentedControl!
-    
     @IBOutlet weak var reservationTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
          reservationTableView.register(UINib(nibName: "CurrentReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentReservationTableViewCell")
          reservationTableView.register(UINib(nibName: "PreviousReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousReservationTableViewCell")
-               reservationTableView.rowHeight = UITableView.automaticDimension
+        reservationTableView.rowHeight = UITableView.automaticDimension
         reservationTableView.estimatedRowHeight = 120
-
-
         // Do any additional setup after loading the view.
     }
     

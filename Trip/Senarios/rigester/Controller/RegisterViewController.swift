@@ -47,7 +47,6 @@ class RegisterViewController: UIViewController {
         
         licenseView.isHidden = true
         licenseViewHeight.constant = 0
-        userType[0].on = true
     }
     
     @IBAction func chooseUserType(_ sender: BEMCheckBox) {
@@ -88,11 +87,17 @@ class RegisterViewController: UIViewController {
             Alert.show("Error", massege: "all Fields are required", context: self)
         }
     }
+    @IBAction func showPass(_ sender: UIButton) {
+        if sender.tag == 0 {
+            passwordTF.isSecureTextEntry = !passwordTF.isSecureTextEntry
+        } else {
+            passwordComfirmTF.isSecureTextEntry = !passwordComfirmTF.isSecureTextEntry
+        }
+    }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension RegisterViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {

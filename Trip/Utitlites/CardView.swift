@@ -8,7 +8,7 @@ class CardView: UIView {
     
     @IBInspectable var shadowOffsetWidth: Int = 0
     @IBInspectable var shadowOffsetHeight: Int = 3
-    @IBInspectable var shadowColor: UIColor? = UIColor.black
+    @IBInspectable var shadowColor: UIColor? = UIColor.darkGray
     @IBInspectable var shadowOpacity: Float = 0.5
     
     override func layoutSubviews() {

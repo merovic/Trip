@@ -12,7 +12,11 @@ class NoticicationsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var messagelbl: UILabel!
-    @IBOutlet weak var detailsBtn: UIButton!
+    @IBOutlet weak var detailsBtn: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: detailsBtn )
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
