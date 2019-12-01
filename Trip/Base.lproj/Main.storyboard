@@ -4710,12 +4710,12 @@
                         <outlet property="description1" destination="W18-En-ZHE" id="O5G-9F-dOI"/>
                         <outlet property="descrtition2" destination="yks-1F-3Ci" id="dzs-D0-RnQ"/>
                         <outlet property="image" destination="prC-X9-NTN" id="Gt4-fS-Ww1"/>
+                        <outlet property="messageTitle" destination="r9C-tx-si1" id="Hdh-XI-a8P"/>
                         <outlet property="name" destination="QDL-95-RuL" id="by4-zy-lAy"/>
                         <outlet property="phone" destination="GvH-Do-RYj" id="wul-0F-n5y"/>
                         <outlet property="rate" destination="b4l-sq-hcb" id="HhC-hc-yW5"/>
                         <outlet property="ratelbl" destination="fzv-h0-Gfs" id="moh-gp-DhO"/>
                         <outlet property="rejectBut" destination="WuN-Ny-iEM" id="RwW-27-28e"/>
-                        <outlet property="title" destination="r9C-tx-si1" id="aCU-o7-2qx"/>
                         <outlet property="trips" destination="bBn-2f-B4F" id="69E-yt-YNF"/>
                     </connections>
                 </viewController>

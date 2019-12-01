@@ -8,7 +8,7 @@
 
 import UIKit
 import Auk
-
+import Cosmos
 class CarDetailsViewController: UIViewController {
     
     @IBOutlet weak var tripsNum: UILabel!

@@ -14,7 +14,7 @@ class NotificationDetailsViewController: UIViewController {
     @IBOutlet weak var acceptBut: UIButton!
     @IBOutlet weak var descrtition2: UILabel!
     @IBOutlet weak var description1: UILabel!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var messageTitle: UILabel!
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var trips: UILabel!
     @IBOutlet weak var ratelbl: UILabel!
