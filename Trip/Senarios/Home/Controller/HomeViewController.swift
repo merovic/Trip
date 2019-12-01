@@ -13,11 +13,11 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var recentCollectionView: UICollectionView!
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
+    @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var backView: UIView!
     
     var latestCars: [Car]?
     var topRatedCars: [Car]?
-    @IBOutlet weak var scrollview: UIScrollView!
-    @IBOutlet weak var backView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func addCarPressed(_ sender: UIButton) {
-        
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "AddCar") as! AddCarViewController
+            vc.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func addFriendPressed(_ sender: UIButton) {
@@ -67,7 +71,6 @@ class HomeViewController: UIViewController {
                         self?.topRatedCars = response
                         self?.topRatedCollectionView.reloadData()
                     case .failure(let error):
-                        print("FAILLLLLLLLLLL")
                         print(error.localizedDescription)
                 }
             }
@@ -104,7 +107,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 if  let rating = Double(car.rate) {
                     cell.rate.rating = rating
                 }
-                cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: #imageLiteral(resourceName: "bg"))
+                cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.stName
                 cell.price.text = car.priceRentPerDay
                 cell.trips.text = car.numberOfTrip

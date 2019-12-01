@@ -31,6 +31,4 @@ class NotificationDetailsViewController: UIViewController {
     }
     @IBAction func rejectPressed(_ sender: UIButton) {
     }
-    
-    
 }

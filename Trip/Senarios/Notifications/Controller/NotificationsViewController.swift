@@ -43,7 +43,10 @@ class NotificationsViewController: UIViewController {
     
     
     @IBAction func menu(_ sender: UIBarButtonItem) {
-        
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
+            present(vc!, animated: true, completion: nil)
+        }
     }
     
 }

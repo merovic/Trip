@@ -29,11 +29,13 @@ class AddCarViewController: UIViewController {
             Rounded.roundedCornerButton1(button: attatchBut)
         }
     }
+    
     @IBOutlet weak var addPressed: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: addPressed)
         }
     }
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,7 @@ class AddCarViewController: UIViewController {
     }
     
     @IBAction func addPressed(_ sender: UIButton) {
-        APIClient.addCar(id_owner: 0, owner: name.text ?? "", image: "", price_rent_per_day: pricePerDay.text ?? "", available_date_from: dateFrom.text ?? "", available_date_to: dateTo.text ?? "", number_km: km.text ?? "", price_km: kmPrice.text ?? "", price_trip: tripPrice.text ?? "", city: city.text ?? "", area: refion.text ?? "", st_name: stname.text ?? "", number_hone: "" , lon: "", lat: "", number_of_trip: "", model: model.text ?? "", type:"" , rate: "") { (Result) in
+        APIClient.addCar(id_owner: 5, owner: name.text ?? "", image: "noImage", price_rent_per_day: pricePerDay.text ?? "", available_date_from: dateFrom.text ?? "", available_date_to: dateTo.text ?? "", number_km: km.text ?? "", price_km: kmPrice.text ?? "", price_trip: tripPrice.text ?? "", city: city.text ?? "", area: refion.text ?? "", st_name: stname.text ?? "", number_hone: "22" , lon: "31.1234", lat: "34.221", number_of_trip: "19", model: model.text ?? "", type:"ali" , rate: "2") { (Result) in
             switch Result {
             case .success(let respnse):
                 print(respnse)
@@ -49,10 +51,16 @@ class AddCarViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    @IBAction func showMap(_ sender: UIButton) {
         
     }
-    @IBAction func showMap(_ sender: UIButton) {
+    
+}
+
+extension AddCarViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
     }
-    
-    
 }

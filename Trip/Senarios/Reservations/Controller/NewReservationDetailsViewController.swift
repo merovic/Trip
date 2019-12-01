@@ -38,6 +38,10 @@ class NewReservationDetailsViewController: UIViewController {
     @IBAction func cancelPressed(_ sender: UIButton) {
     }
     @IBAction func menuPressed(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
+            present(vc!, animated: true, completion: nil)
+        }
     }
     
 
