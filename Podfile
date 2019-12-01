@@ -22,6 +22,8 @@ pod 'FacebookCore' , '~> 0.6.0'
 pod 'FacebookLogin' , '~> 0.6.0'
 pod 'SideMenu'
 pod 'BEMCheckBox'
+pod 'Auk'
+
 
 
   target 'TripTests' do

@@ -18,6 +18,7 @@
 		3B0BC9C5238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C3238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib */; };
 		3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */; };
 		3B0BC9C9238FCB2900CDED5A /* CurrentReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */; };
+		3B1414E42393C0E7003DD08C /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */; };
 		3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14AB73238D22360065EB8C /* AppDelegate.swift */; };
 		3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB4238E673300272A42 /* MenuViewController.swift */; };
 		3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB6238E673300272A42 /* MenuTableViewCell.swift */; };
@@ -95,6 +96,7 @@
 		3B0BC9C3238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousReservationTableViewCell.xib; sourceTree = "<group>"; };
 		3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentReservationTableViewCell.swift; sourceTree = "<group>"; };
 		3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentReservationTableViewCell.xib; sourceTree = "<group>"; };
+		3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
 		3B14AB73238D22360065EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B150FB4238E673300272A42 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3B150FB6238E673300272A42 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			children = (
 				3B6B79882392935B0071853C /* InviteFriendViewController.swift */,
 				814014172392DB5D00B89210 /* HomeViewController.swift */,
+				3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81034E5F238FC2B000A9AC53 /* ForgotPasswordViewController.swift in Sources */,
+				3B1414E42393C0E7003DD08C /* CarDetailsViewController.swift in Sources */,
 				8140141A2392DCBA00B89210 /* RecentCollectionViewCell.swift in Sources */,
 				8140142C2393FE7B00B89210 /* NotificationDetailsViewController.swift in Sources */,
 				3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */,
