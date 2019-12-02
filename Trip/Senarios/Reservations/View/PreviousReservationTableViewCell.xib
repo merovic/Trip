@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="321" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cg3-LP-qiM">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cg3-LP-qiM" customClass="CardView" customModule="Trip" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="321" height="120"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9H-8e-Sis">
