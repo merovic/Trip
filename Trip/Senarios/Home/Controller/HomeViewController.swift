@@ -118,3 +118,11 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
     return UICollectionViewCell()
     }
 }
+extension NSAttributedString {
+    static func withDualText(text1: String , text2: String) -> NSMutableAttributedString{
+        let text = NSMutableAttributedString()
+        text.append(NSAttributedString(string: text1, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]))
+        text.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]))
+        return text
+    }
+}

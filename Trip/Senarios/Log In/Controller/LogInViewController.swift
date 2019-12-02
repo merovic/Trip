@@ -23,7 +23,6 @@ class LogInViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -33,6 +32,7 @@ class LogInViewController: UIViewController{
                     switch Result {
                     case .success(let response):
                         print(response)
+                        Shared.user = response.first
                         self?.performSegue(withIdentifier: "Log In", sender: self)
                     case .failure(let error):
                         print(error.localizedDescription)

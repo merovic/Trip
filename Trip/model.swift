@@ -3,3 +3,7 @@ struct Controllers {
     
     var controller = ["Home" , "Home" ,"AddCar" , "AboutUs" , "" , "AddFriend" , "agreements" , "Help" , "agreements" , "agreements" , "" , "ContactUs" , "SignOut"]
 }
+
+class Shared {
+    static var user: Login?
+}

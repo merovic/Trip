@@ -17,7 +17,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var passwordComfirmTF: UITextField!
     @IBOutlet weak var mailTF: UITextField!
-    @IBOutlet weak var attachBut: UIButton!
+    @IBOutlet weak var attachBut: UIButton!{
+        didSet{
+            attachBut.layer.cornerRadius = 20
+            attachBut.layer.borderColor = UIColor.black.cgColor
+            attachBut.layer.borderWidth = 3
+        }
+    }
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet var userType: [BEMCheckBox]!
     @IBOutlet weak var licenseView: UIView!
