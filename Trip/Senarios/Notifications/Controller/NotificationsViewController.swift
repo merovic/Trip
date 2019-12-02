@@ -63,7 +63,7 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
         
         cell.dateLbl.text = notes?[indexPath.row].datee
         cell.messagelbl.text = notes?[indexPath.row].details
-        
+        cell.notNameLbl.text = notes?[indexPath.row].title
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

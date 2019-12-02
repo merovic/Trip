@@ -16,13 +16,14 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func editProfile(_ sender: UIButton) {
+        
     }
     
     @IBAction func editCarDetails(_ sender: UIButton) {
+        
     }
     
     @IBAction func reservations(_ sender: UIButton) {
@@ -36,6 +37,7 @@ class ProfileViewController: UIViewController {
     @IBAction func signOut(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func showMenuPressed(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
@@ -44,6 +46,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func changePhoto(_ sender: UIButton) {
+        
     }
     
     
