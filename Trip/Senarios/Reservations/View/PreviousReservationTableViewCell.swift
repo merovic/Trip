@@ -15,6 +15,7 @@ class PreviousReservationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var someOfDetailsOfReservationLbl: UILabel!
     
+    @IBOutlet weak var detailsBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

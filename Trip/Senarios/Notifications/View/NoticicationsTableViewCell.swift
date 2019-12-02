@@ -10,6 +10,7 @@ import UIKit
 
 class NoticicationsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var notNameLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var messagelbl: UILabel!
     @IBOutlet weak var detailsBtn: UIButton!{

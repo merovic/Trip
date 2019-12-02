@@ -101,8 +101,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressReservation" destination="Uju-xL-Zpf" id="d34-yW-Rfy"/>
+                <outlet property="cancleBtn" destination="got-Nh-3hB" id="7Jl-LV-kMm"/>
                 <outlet property="dateOfReservation" destination="haG-Yw-06L" id="Abk-dg-CQ0"/>
+                <outlet property="detailsBtn" destination="3TI-63-mdu" id="TFn-ey-VcM"/>
                 <outlet property="someOfDetailsOfReservationLbl" destination="IbQ-0l-MNx" id="lSR-5R-QrB"/>
+                <outlet property="startBtn" destination="js8-IC-saB" id="5LD-1b-0II"/>
             </connections>
             <point key="canvasLocation" x="111.59420289855073" y="77.34375"/>
         </tableViewCell>

@@ -81,6 +81,7 @@
             <connections>
                 <outlet property="addressReservation" destination="n9H-8e-Sis" id="CMK-wH-BPQ"/>
                 <outlet property="dateOfReservation" destination="hxv-cv-dvY" id="iZu-JM-rgd"/>
+                <outlet property="detailsBtn" destination="MkQ-9C-WXy" id="gQj-HO-5R2"/>
                 <outlet property="someOfDetailsOfReservationLbl" destination="WlT-dz-Q9j" id="bZd-EE-XLD"/>
             </connections>
             <point key="canvasLocation" x="103.62318840579711" y="84.709821428571431"/>
