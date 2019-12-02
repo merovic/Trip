@@ -14,20 +14,21 @@ class NotificationsViewController: UIViewController {
         didSet{
             TabelView.rowHeight = UITableView.automaticDimension
             TabelView.estimatedRowHeight = 150
-            
+            TabelView.sectionHeaderHeight = 20
+            TabelView.sectionIndexColor = .black
+            TabelView.separatorStyle = .none
         }
     }
     
     var notes: [Note]?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    override func viewDidAppear(_ animated: Bool) {
         getData()
     }
     
     func getData(){
         DispatchQueue.global().async { [weak self] in
-            APIClient.getAllNoteByOwnerID(id_owner: 5) { (Result) in
+            APIClient.getAllNoteByOwnerID(id_owner: 6) { (Result) in
                 switch Result {
                 case .success(let response):
                     print(response)
@@ -65,6 +66,20 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "NotificationDetails") as! NotificationDetailsViewController
+            vc.modalPresentationStyle = .overFullScreen
+            vc.note = notes?[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ""
+    }
     
+}
+
+extension UITableView{
     
 }
