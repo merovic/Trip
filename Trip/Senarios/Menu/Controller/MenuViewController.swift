@@ -20,22 +20,32 @@ class MenuViewController: UIViewController {
     }
     
     let data = Controllers()
+    let user = Shared.user
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
+    }
+    
+    func updateView(){
+        nameLbl.text = user?.name
+        profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: ""))
     }
     
     @IBAction func goToProfile(sender: UIButton) {
-        print("go")
-        
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
     }
     
     @IBAction func closeMenu(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-        
     }
     
 }
+
+
 
 extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
     
@@ -54,12 +64,13 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if #available(iOS 13.0, *) {
-            guard let vc = storyboard?.instantiateViewController(identifier: "ForgotPassword") else { return  }
-            
-            
-            self.navigationController?.pushViewController(vc, animated: false)
-            
-            
+            if indexPath.row < data.controller.count-2 {
+                guard let vc = storyboard?.instantiateViewController(identifier: data.controller[indexPath.row]) else { return  }
+                self.navigationController?.pushViewController(vc, animated: false)
+            }
+            else {
+                print("logOut")
+            }
         }
         
     }

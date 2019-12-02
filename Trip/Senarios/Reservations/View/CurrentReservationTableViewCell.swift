@@ -12,21 +12,21 @@ class CurrentReservationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var addressReservation: UILabel!
     @IBOutlet weak var dateOfReservation: UILabel!
-    
     @IBOutlet weak var someOfDetailsOfReservationLbl: UILabel!
-
-    @IBOutlet weak var detailsBtn: UIButton!
-    @IBOutlet weak var cancleBtn: UIButton!
-    @IBOutlet weak var startBtn: UIButton!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var detailsBtn: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: detailsBtn)
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var cancleBtn: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: cancleBtn)
+        }
+    }
+    @IBOutlet weak var startBtn: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: startBtn)
+        }
     }
     
     @IBAction func detailsBtnPressed(_ sender: UIButton) {

@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
-class AddCarViewController: UIViewController {
-
+import NVActivityIndicatorView
+class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorViewable {
+    
     @IBOutlet weak var apartmentName: UITextField!
     @IBOutlet weak var stname: UITextField!
     @IBOutlet weak var refion: UITextField!
@@ -24,6 +24,31 @@ class AddCarViewController: UIViewController {
     @IBOutlet weak var color: UITextField!
     @IBOutlet weak var model: UITextField!
     @IBOutlet weak var name: UITextField!
+    
+    @IBAction func addPressed(_ sender: UIButton) {
+        if apartmentName.text == "" , stname.text == "" , refion.text == "" , city.text == "" , tripPrice.text == "" , kmPrice.text == "" , km.text == "" , number.text == "" , dateTo.text == "" , dateFrom.text == "" , pricePerDay.text == "" , color.text == "" , model.text == "" , name.text == ""{
+            Alert.show("Failed", massege: "All fields are requires", context: self)
+        }else {
+            self.startAnimating()
+            DispatchQueue.main.async { [weak self ] in
+                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: "noImage", price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.dateFrom.text ?? "", available_date_to: self?.dateTo.text ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2") { (Result) in
+                    switch Result {
+                    case .success(let respnse):
+                        print(respnse)
+                        self?.stopAnimating()
+                        Alert.show("Success", massege: "Car added Successfully", context: self!)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        self?.stopAnimating()
+                        Alert.show("Failed", massege: error.localizedDescription, context: self!)
+                    }
+                }
+            }
+        }
+    }
+    
+    var lat: String = ""
+    var long: String = ""
     @IBOutlet weak var attatchBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: attatchBut)
@@ -39,23 +64,23 @@ class AddCarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-    @IBAction func addPressed(_ sender: UIButton) {
-        APIClient.addCar(id_owner: 5, owner: name.text ?? "", image: "noImage", price_rent_per_day: pricePerDay.text ?? "", available_date_from: dateFrom.text ?? "", available_date_to: dateTo.text ?? "", number_km: km.text ?? "", price_km: kmPrice.text ?? "", price_trip: tripPrice.text ?? "", city: city.text ?? "", area: refion.text ?? "", st_name: stname.text ?? "", number_hone: "22" , lon: "31.1234", lat: "34.221", number_of_trip: "19", model: model.text ?? "", type:"ali" , rate: "2") { (Result) in
-            switch Result {
-            case .success(let respnse):
-                print(respnse)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+    
+    
+    @IBAction func showMap(_ sender: UIButton) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "Map") as! MapKitViewController
+            vc.delegate = self
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    @IBAction func showMap(_ sender: UIButton) {
-        
+    func dataReceived(lat: String, long: String) {
+        self.lat = lat; self.long = long
     }
+    
     
 }
 
