@@ -19,8 +19,6 @@
 		3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */; };
 		3B0BC9C9238FCB2900CDED5A /* CurrentReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */; };
 		3B1414E42393C0E7003DD08C /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */; };
-		3B1414E823941F1A003DD08C /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1414E723941F1A003DD08C /* Search.xib */; };
-		3B1414EA239420C5003DD08C /* SearchNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1414E9239420C5003DD08C /* SearchNormal.swift */; };
 		3B1414EE2394211A003DD08C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1414ED2394211A003DD08C /* SearchViewController.swift */; };
 		3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14AB73238D22360065EB8C /* AppDelegate.swift */; };
 		3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FB4238E673300272A42 /* MenuViewController.swift */; };
@@ -31,6 +29,9 @@
 		3B150FC1238E673400272A42 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FBB238E673400272A42 /* Maps.swift */; };
 		3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B79882392935B0071853C /* InviteFriendViewController.swift */; };
 		3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */; };
+		3B72024823950F810088714B /* SearchNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024723950F810088714B /* SearchNormalViewController.swift */; };
+		3B72024A23950FB60088714B /* SearchAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024923950FB60088714B /* SearchAdvancedViewController.swift */; };
+		3B72024D2395206D0088714B /* SearchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024C2395206D0088714B /* SearchCellTableViewCell.swift */; };
 		6853591C1B8BBFBEC058E730 /* Pods_Trip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C4BBEA25965A0590A26ECF /* Pods_Trip.framework */; };
 		7274CDF3E11DAA7FE550425A /* Pods_TripUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00D0E18D77A60A26CF40F60 /* Pods_TripUITests.framework */; };
 		81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E57238FC02A00A9AC53 /* LogInViewController.swift */; };
@@ -108,8 +109,6 @@
 		3B0BC9C6238FCB2900CDED5A /* CurrentReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentReservationTableViewCell.swift; sourceTree = "<group>"; };
 		3B0BC9C7238FCB2900CDED5A /* CurrentReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentReservationTableViewCell.xib; sourceTree = "<group>"; };
 		3B1414E32393C0E7003DD08C /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
-		3B1414E723941F1A003DD08C /* Search.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Search.xib; sourceTree = "<group>"; };
-		3B1414E9239420C5003DD08C /* SearchNormal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNormal.swift; sourceTree = "<group>"; };
 		3B1414ED2394211A003DD08C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3B14AB73238D22360065EB8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B150FB4238E673300272A42 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +119,9 @@
 		3B150FBB238E673400272A42 /* Maps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		3B6B79882392935B0071853C /* InviteFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendViewController.swift; sourceTree = "<group>"; };
 		3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinksCollectionViewCell.swift; sourceTree = "<group>"; };
+		3B72024723950F810088714B /* SearchNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNormalViewController.swift; sourceTree = "<group>"; };
+		3B72024923950FB60088714B /* SearchAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdvancedViewController.swift; sourceTree = "<group>"; };
+		3B72024C2395206D0088714B /* SearchCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellTableViewCell.swift; sourceTree = "<group>"; };
 		651A078D2B566B6D10F44B67 /* Pods-Trip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trip.debug.xcconfig"; path = "Target Support Files/Pods-Trip/Pods-Trip.debug.xcconfig"; sourceTree = "<group>"; };
 		74D56256D24FE49A85310761 /* Pods-TripUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripUITests/Pods-TripUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B9C62475F4CD85454C33673 /* Pods-TripUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripUITests.release.xcconfig"; path = "Target Support Files/Pods-TripUITests/Pods-TripUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,8 +230,6 @@
 				814014272393EB7E00B89210 /* model.swift */,
 				813585292390289D006978CE /* Notes.swift */,
 				18059E0923801E740007CA0A /* Main.storyboard */,
-				3B1414E723941F1A003DD08C /* Search.xib */,
-				3B1414E9239420C5003DD08C /* SearchNormal.swift */,
 				8135852723902639006978CE /* Cars.swift */,
 				81638063238ED568002B58D7 /* second.storyboard */,
 				18059E0C23801E760007CA0A /* Assets.xcassets */,
@@ -293,6 +293,7 @@
 		3B1414EB239420EF003DD08C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				3B72024B239520440088714B /* View */,
 				3B1414EC239420FB003DD08C /* Controller */,
 			);
 			path = Search;
@@ -302,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				3B1414ED2394211A003DD08C /* SearchViewController.swift */,
+				3B72024723950F810088714B /* SearchNormalViewController.swift */,
+				3B72024923950FB60088714B /* SearchAdvancedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -394,6 +397,14 @@
 				814014332394009900B89210 /* AddCarViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B72024B239520440088714B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B72024C2395206D0088714B /* SearchCellTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6C5768CC5D8326E1553CA698 /* Pods */ = {
@@ -641,7 +652,6 @@
 				18059E1023801E760007CA0A /* LaunchScreen.storyboard in Resources */,
 				18059E0D23801E760007CA0A /* Assets.xcassets in Resources */,
 				3B0BC9C5238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib in Resources */,
-				3B1414E823941F1A003DD08C /* Search.xib in Resources */,
 				3B0BC9C9238FCB2900CDED5A /* CurrentReservationTableViewCell.xib in Resources */,
 				18059E0B23801E740007CA0A /* Main.storyboard in Resources */,
 			);
@@ -761,11 +771,13 @@
 				8140141A2392DCBA00B89210 /* RecentCollectionViewCell.swift in Sources */,
 				8140142C2393FE7B00B89210 /* NotificationDetailsViewController.swift in Sources */,
 				3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */,
+				3B72024A23950FB60088714B /* SearchAdvancedViewController.swift in Sources */,
 				3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */,
 				81638040238E908E002B58D7 /* Login.swift in Sources */,
 				814014382394074700B89210 /* InviteByMailViewController.swift in Sources */,
 				814014282393EB7E00B89210 /* model.swift in Sources */,
 				814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */,
+				3B72024D2395206D0088714B /* SearchCellTableViewCell.swift in Sources */,
 				814014242393B9B200B89210 /* ProfileViewController.swift in Sources */,
 				8135852E2392C9FC006978CE /* TabBarViewController.swift in Sources */,
 				3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */,
@@ -776,6 +788,7 @@
 				81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */,
 				81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */,
 				3B150FC0238E673400272A42 /* DesignableUITextField.swift in Sources */,
+				3B72024823950F810088714B /* SearchNormalViewController.swift in Sources */,
 				8140143E2394090400B89210 /* HelpViewController.swift in Sources */,
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,
 				8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */,
@@ -783,7 +796,6 @@
 				3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */,
 				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
 				3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */,
-				3B1414EA239420C5003DD08C /* SearchNormal.swift in Sources */,
 				814014342394009900B89210 /* AddCarViewController.swift in Sources */,
 				8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */,
 				814014302393FF0D00B89210 /* StartPopUp.swift in Sources */,
