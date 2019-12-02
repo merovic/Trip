@@ -1873,6 +1873,16 @@
                                     <constraint firstAttribute="height" constant="220" id="iKP-5s-myi"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHP-rx-uz6">
+                                <rect key="frame" x="157" y="106" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="gyP-Cm-fmP"/>
+                                    <constraint firstAttribute="height" constant="100" id="jlK-0f-c6f"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changePhoto:" destination="Uis-Fw-NW2" eventType="touchUpInside" id="8yV-VD-qad"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1880,9 +1890,12 @@
                             <constraint firstItem="0Jw-2u-Lnj" firstAttribute="top" secondItem="AYV-5v-Rer" secondAttribute="top" constant="50" id="8Ax-qA-0sg"/>
                             <constraint firstItem="0Jw-2u-Lnj" firstAttribute="centerX" secondItem="7Vd-e9-29B" secondAttribute="centerX" id="8Lj-2a-yG7"/>
                             <constraint firstItem="54y-K0-EaH" firstAttribute="top" secondItem="0Jw-2u-Lnj" secondAttribute="bottom" constant="50" id="9fp-NY-sKY"/>
+                            <constraint firstItem="fHP-rx-uz6" firstAttribute="centerX" secondItem="7Vd-e9-29B" secondAttribute="centerX" id="AfW-97-Hpn"/>
+                            <constraint firstItem="54y-K0-EaH" firstAttribute="top" secondItem="fHP-rx-uz6" secondAttribute="bottom" constant="50" id="IY7-5N-dGk"/>
                             <constraint firstItem="54y-K0-EaH" firstAttribute="leading" secondItem="AYV-5v-Rer" secondAttribute="leading" constant="15" id="KAE-lW-uyl"/>
                             <constraint firstItem="4Yi-Dp-ys9" firstAttribute="leading" secondItem="AYV-5v-Rer" secondAttribute="leading" id="bGn-Ah-meV"/>
                             <constraint firstItem="4Yi-Dp-ys9" firstAttribute="top" secondItem="AYV-5v-Rer" secondAttribute="top" id="hvt-7h-ZVK"/>
+                            <constraint firstItem="fHP-rx-uz6" firstAttribute="top" secondItem="AYV-5v-Rer" secondAttribute="top" constant="50" id="lSP-zv-O6B"/>
                             <constraint firstItem="4Yi-Dp-ys9" firstAttribute="trailing" secondItem="AYV-5v-Rer" secondAttribute="trailing" id="mOh-rq-bl4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AYV-5v-Rer"/>
@@ -1901,7 +1914,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCS-0F-Hcw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2338" y="3573"/>
+            <point key="canvasLocation" x="2337.68115942029" y="3572.5446428571427"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="D6j-bi-KAd">
@@ -1984,7 +1997,7 @@
                                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCB-5w-cjj">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCB-5w-cjj" customClass="DesignableUITextField" customModule="Trip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="213" width="354" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="4wh-Ju-ZKD"/>

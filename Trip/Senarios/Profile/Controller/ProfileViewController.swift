@@ -43,4 +43,8 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    @IBAction func changePhoto(_ sender: UIButton) {
+    }
+    
+    
 }
