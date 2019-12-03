@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import FBSDKLoginKit
+import FBSDKCoreKit
 @available(iOS 13.0, *)
 class LogInViewController: UIViewController{
 
@@ -61,7 +62,7 @@ class LogInViewController: UIViewController{
     }
     
     @IBAction func signUpWithFb(_ sender: UIButton) {
-        
+      //  facebooklogin()
     }
     @IBAction func showPassWord(_ sender: UIButton) {
         passwordTF.isSecureTextEntry = !passwordTF.isSecureTextEntry
@@ -73,14 +74,10 @@ class LogInViewController: UIViewController{
         vc.modalPresentationStyle = .fullScreen
     }
     
-   /*
+   
     func facebooklogin() {
         let fbLoginManager : LoginManager = LoginManager()
-
         fbLoginManager.logIn(permissions: ["email"], from: self, handler: { (result, error) -> Void in
-            
-
-
             print("\n\n result: \(result)")
             print("\n\n Error: \(error)")
             
@@ -89,14 +86,14 @@ class LogInViewController: UIViewController{
                 if(fbloginresult.isCancelled) {
                     //Show Cancel alert
                 } else if(fbloginresult.grantedPermissions.contains("email")) {
-                    self.returnUserData()
+                 //  self.returnUserData()
                     //fbLoginManager.logOut()
                 }
             }
         })
     }
     
-    
+    /*
     func returnUserData() {
         let graphRequest : GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"email,name"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
@@ -125,6 +122,8 @@ class LogInViewController: UIViewController{
         })
     }
  */
+
+
     
     
     
