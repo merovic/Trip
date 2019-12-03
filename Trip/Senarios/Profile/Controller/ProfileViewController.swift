@@ -33,8 +33,10 @@ class ProfileViewController: UIViewController {
     @IBAction func reservations(_ sender: UIButton) {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "Reservations") as! ReservationViewController
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+
+          //  vc.modalPresentationStyle = .fullScreen
+           // self.present(vc, animated: true, completion: nil)
         }
     }
     
