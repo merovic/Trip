@@ -15,7 +15,7 @@ struct Car: Codable {
     let city, area, stName, numberHone: String
     let lon, lat, numberOfTrip, model: String
     let type: String
-    let datee: JSONNull?
+    let datee: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -43,5 +43,6 @@ enum AvailableDateFrom: String, Codable {
 
 enum AvailableDateTo: String, Codable {
     case date1575010800000 = "/Date(1575010800000)/"
-}
+    case date1575097200000 = "/Date(1575097200000)/"
 
+}

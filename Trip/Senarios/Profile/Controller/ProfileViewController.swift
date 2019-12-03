@@ -11,11 +11,15 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!{
+        didSet{
+            profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     @IBAction func editProfile(_ sender: UIButton) {

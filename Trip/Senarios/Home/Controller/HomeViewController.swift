@@ -10,7 +10,7 @@ import UIKit
 import Cosmos
 import SDWebImage
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var recentCollectionView: UICollectionView!
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     @IBOutlet weak var scrollview: UIScrollView!
@@ -66,12 +66,12 @@ class HomeViewController: UIViewController {
             }
             APIClient.getAllCarsByRate(number_of_select: 20) { (Result) in
                 switch Result{
-                    case .success(let response):
-                        print(response)
-                        self?.topRatedCars = response
-                        self?.topRatedCollectionView.reloadData()
-                    case .failure(let error):
-                        print(error.localizedDescription)
+                case .success(let response):
+                    print("111111111111111111111111111111111111111" , response)
+                    self?.topRatedCars = response
+                    self?.topRatedCollectionView.reloadData()
+                case .failure(let error):
+                    print("111111111111111111111111111111111111111" , error.localizedDescription)
                 }
             }
         }
@@ -80,16 +80,20 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if collectionView.tag == 0 {
             return latestCars?.count ?? 0
         } else if collectionView.tag == 1{
             return topRatedCars?.count ?? 0
         }
         return 0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if collectionView.tag == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellLatest", for: indexPath) as! RecentCollectionViewCell
             let car = latestCars?[indexPath.row]
@@ -101,6 +105,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
             cell.price.text = car?.priceRentPerDay
             cell.trips.text = car?.numberOfTrip
             return cell
+            
         } else if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellTopRated", for: indexPath) as! TopRatedCollectionViewCell
             if let car = topRatedCars?[indexPath.row] {
@@ -111,13 +116,30 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 cell.name.text = car.stName
                 cell.price.text = car.priceRentPerDay
                 cell.trips.text = car.numberOfTrip
+                
             }
-
+            
             return cell
         }
-    return UICollectionViewCell()
+        return UICollectionViewCell()
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CarDetails") as! CarDetailsViewController
+        vc.modalPresentationStyle = .fullScreen
+        switch collectionView.tag {
+        case 0:
+            vc.carDetails = latestCars?[indexPath.row]
+        case 1:
+            vc.carDetails = topRatedCars?[indexPath.row]
+        default:
+            break
+        }
+        self.present(vc, animated: true, completion: nil)
     }
 }
+
+
+
 extension NSAttributedString {
     static func withDualText(text1: String , text2: String) -> NSMutableAttributedString{
         let text = NSMutableAttributedString()

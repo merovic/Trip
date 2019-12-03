@@ -24,6 +24,50 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     @IBOutlet weak var color: UITextField!
     @IBOutlet weak var model: UITextField!
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var addPressed: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: addPressed)
+        }
+    }
+    let imagePicker = UIImagePickerController()
+    var datePicker = UIDatePicker()
+    var pickerView = UIPickerView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        open()
+        updateView()
+    }
+    
+    func updateView(){
+        
+        apartmentName.delegate = self
+        stname.delegate = self
+        refion.delegate = self
+        city.delegate = self
+        tripPrice.delegate = self
+        kmPrice.delegate = self
+        km.delegate = self
+        number.delegate = self
+        pricePerDay.delegate = self
+        name.delegate = self
+        
+        if let user = Shared.user {
+            name.text = user.name
+            number.text = user.phone
+        }
+    }
+    
+    @IBAction func showMap(_ sender: UIButton) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "Map") as! MapKitViewController
+            vc.delegate = self
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func dataReceived(lat: String, long: String) {
+        self.lat = lat; self.long = long
+    }
     
     @IBAction func addPressed(_ sender: UIButton) {
         if apartmentName.text == "" , stname.text == "" , refion.text == "" , city.text == "" , tripPrice.text == "" , kmPrice.text == "" , km.text == "" , number.text == "" , dateTo.text == "" , dateFrom.text == "" , pricePerDay.text == "" , color.text == "" , model.text == "" , name.text == ""{
@@ -54,36 +98,43 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
             Rounded.roundedCornerButton1(button: attatchBut)
         }
     }
-    
-    @IBOutlet weak var addPressed: UIButton!{
-        didSet{
-            Rounded.roundedCornerButton1(button: addPressed)
-        }
-    }
-    let imagePicker = UIImagePickerController()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func open() {
+        openDatePicker(for: dateFrom)
     }
     
-    
-    
-    @IBAction func showMap(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "Map") as! MapKitViewController
-            vc.delegate = self
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+    func openDatePicker(for textField: UITextField) {
+          datePicker.datePickerMode = .date
+          textField.inputView = datePicker
+          let toolbaar = UIToolbar()
+          toolbaar.sizeToFit()
+          let doneBut = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action:#selector(doneClicked))
+          toolbaar.setItems([doneBut], animated: true)
+          textField.inputAccessoryView = toolbaar
+      }
+      
+    @objc func doneClicked() {
+          let dateformter = DateFormatter()
+          dateformter.dateStyle = .short
+          dateFrom.text = dateformter.string(from: datePicker.date)
+          self.view.endEditing(true)
+          
+      }
+    func openPickerView(for textField: UITextField){
+//        pickerView.dataSource = ["","","","",""]
+    }
+}
+
+extension AddCarViewController: UIPickerViewDelegate , UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    func dataReceived(lat: String, long: String) {
-        self.lat = lat; self.long = long
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 5
     }
     
     
 }
-
 extension AddCarViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
