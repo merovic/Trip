@@ -6,4 +6,5 @@ struct Controllers {
 
 class Shared {
     static var user: Login?
+    static var Image: String?
 }
