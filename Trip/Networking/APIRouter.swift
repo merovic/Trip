@@ -25,10 +25,25 @@ enum APIRouter: URLRequestConvertible {
     case select_all_cars_by_rate (number_of_select : Int)
     case select_note_by_id_owner(id_owner : Int)
     case select_note_by_id_user(id_user : Int)
-    case select_request_by_id_owner (id_request : Int)
+    case select_request_by_id_request (id_request : Int)
     case update_user (id_user: Int ,name: String ,
          email : String , password: String , phone: String ,address: String ,license: String)
- 
+    case delete_not(id: String)
+    case end_trip(id_request: Int , new_km: Double)
+    case select_all_request_by_id_owner(id_owner: Int)
+    case select_all_request_by_id_user(id_user: Int)
+    case select_request_that_have_aggree_by_id_owner (id_owner: Int)
+    case select_request_that_have_aggree_by_id_user(id_user: Int)
+    case select_request_that_have_endtrip_by_id_owner(id_owner: Int)
+    case select_request_that_have_endtrip_by_id_user(id_user: Int)
+    case select_request_that_have_starttrip_by_id_owner(id_owner: Int)
+    case select_request_that_have_starttrip_by_id_user(id_user: Int)
+    case select_user_by_id(id_user: Int)
+    case start_trip(id_request: Int , new_km: Double)
+    case update_car_rate(id_car: Int , number_rate: Double)
+    case update_user_rate(id_user: Int , number_rate: Double)
+    case update_car( id_car: Int ,id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String)
+    
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
@@ -63,9 +78,39 @@ enum APIRouter: URLRequestConvertible {
             return .get
         case .select_note_by_id_user:
             return .get
-        case .select_request_by_id_owner:
+        case .select_request_by_id_request:
             return .get
         case .update_user:
+            return .get
+        case .delete_not:
+            return .get
+        case .end_trip:
+            return .get
+        case .select_all_request_by_id_owner:
+            return .get
+        case .select_all_request_by_id_user:
+            return .get
+        case .select_request_that_have_aggree_by_id_owner:
+            return .get
+        case .select_request_that_have_aggree_by_id_user:
+            return .get
+        case .select_request_that_have_endtrip_by_id_owner:
+            return .get
+        case .select_request_that_have_endtrip_by_id_user:
+            return .get
+        case .select_request_that_have_starttrip_by_id_owner:
+            return .get
+        case .select_request_that_have_starttrip_by_id_user:
+            return .get
+        case .select_user_by_id:
+            return .get
+        case .start_trip:
+            return .get
+        case .update_car_rate:
+            return .get
+        case .update_user_rate:
+            return .get
+        case .update_car:
             return .get
         }
     }
@@ -104,10 +149,40 @@ enum APIRouter: URLRequestConvertible {
             return "/select_note_by_id_owner"
         case .select_note_by_id_user:
             return "/select_note_by_id_user"
-        case .select_request_by_id_owner:
+        case .select_request_by_id_request:
             return "/select_request_by_id_owner"
         case .update_user:
             return "/update_user"
+        case .delete_not:
+            return "/delete_not"
+        case .end_trip:
+            return "/end_trip"
+        case .select_all_request_by_id_owner:
+            return "/select_all_request_by_id_owner"
+        case .select_all_request_by_id_user:
+            return "/select_all_request_by_id_user"
+        case .select_request_that_have_aggree_by_id_owner:
+            return "/login_user"
+        case .select_request_that_have_aggree_by_id_user:
+            return "/select_request_that_have_aggree_by_id_user"
+        case .select_request_that_have_endtrip_by_id_owner:
+            return "/select_request_that_have_endtrip_by_id_owner"
+        case .select_request_that_have_endtrip_by_id_user:
+            return "/select_request_that_have_endtrip_by_id_user"
+        case .select_request_that_have_starttrip_by_id_owner:
+            return "/select_request_that_have_starttrip_by_id_owner"
+        case .select_request_that_have_starttrip_by_id_user:
+            return "/select_request_that_have_starttrip_by_id_user"
+        case .select_user_by_id:
+            return "/select_user_by_id"
+        case .start_trip:
+            return "/start_trip"
+        case .update_car_rate:
+            return "/update_car_rate"
+        case .update_user_rate:
+            return "/update_user_rate"
+        case .update_car:
+            return "/update_car"
         }
     }
     
@@ -145,10 +220,40 @@ enum APIRouter: URLRequestConvertible {
             return [K.select_note_by_id_owner.id_owner: id_owner]
         case .select_note_by_id_user(let id_user):
             return [K.select_note_by_id_user.id_user: id_user]
-        case .select_request_by_id_owner(let id_request):
-            return [K.select_request_by_id_owner.id_request: id_request]
+        case .select_request_by_id_request(let id_request):
+            return [K.select_request_by_id_request.id_request: id_request]
         case .update_user(let id_user, let name, let email, let password, let phone, let address, let license):
             return [K.update_user.id_user: id_user ,K.update_user.name: name ,K.update_user.email: email ,K.update_user.password: password ,K.update_user.phone: phone ,K.update_user.address: address ,K.update_user.license: license]
+        case .delete_not(let id):
+            return [K.delete_not.id: id]
+        case .end_trip(let id_request, let new_km):
+            return[K.end_trip.id_request: id_request ,K.end_trip.new_km: new_km]
+        case .select_all_request_by_id_owner(let id_owner):
+            return [K.select_all_request_by_id_owner.id_owner: id_owner]
+        case .select_all_request_by_id_user(let id_user):
+            return [K.select_all_request_by_id_user.id_user: id_user]
+        case .select_request_that_have_aggree_by_id_owner(let id_owner):
+            return [K.select_request_that_have_aggree_by_id_owner.id_owner: id_owner]
+        case .select_request_that_have_aggree_by_id_user(let id_user):
+            return [K.select_request_that_have_aggree_by_id_user.id_user: id_user]
+        case .select_request_that_have_endtrip_by_id_owner(let id_owner):
+            return [K.select_request_that_have_endtrip_by_id_owner.id_owner: id_owner]
+        case .select_request_that_have_endtrip_by_id_user(let id_user):
+            return [K.select_request_that_have_endtrip_by_id_user.id_user: id_user]
+        case .select_request_that_have_starttrip_by_id_owner(let id_owner):
+            return [K.select_request_that_have_starttrip_by_id_owner.id_owner: id_owner]
+        case .select_request_that_have_starttrip_by_id_user(let id_user):
+            return [K.select_request_that_have_starttrip_by_id_user.id_user: id_user]
+        case .select_user_by_id(let id_user):
+            return [K.select_user_by_id.id_user: id_user]
+        case .start_trip(let id_request, let new_km):
+            return[K.end_trip.id_request: id_request ,K.end_trip.new_km: new_km]
+        case .update_car_rate(let id_car, let number_rate):
+            return[K.update_car_rate.id_car: id_car ,K.update_car_rate.number_rate: number_rate]
+        case .update_user_rate(let id_user, let number_rate):
+            return[K.update_user_rate.id_user: id_user ,K.update_user_rate.id_user: number_rate]
+        case .update_car(let id_car, let id_owner, let owner, let image, let price_rent_per_day, let available_date_from, let available_date_to, let number_km, let price_km, let price_trip, let city, let area, let st_name, let number_hone, let lon, let lat, let number_of_trip, let model, let type, let rate):
+            return [K.update_car.id_car: id_car , K.update_car.id_owner: id_owner ,K.update_car.owner: owner ,K.update_car.image: image ,K.update_car.price_rent_per_day: price_rent_per_day ,K.update_car.available_date_from: available_date_from ,K.update_car.available_date_to: available_date_to ,K.update_car.number_km: number_km ,K.update_car.price_km: price_km ,K.update_car.price_trip: price_trip ,K.update_car.city: city ,K.update_car.area: area ,K.update_car.st_name: st_name ,K.update_car.number_hone: number_hone ,K.update_car.lon: lon ,K.update_car.lat: lat ,K.update_car.number_of_trip: number_of_trip ,K.insert_car.model: model ,K.update_car.type: type ,K.update_car.rate: rate]
         }
 }
     

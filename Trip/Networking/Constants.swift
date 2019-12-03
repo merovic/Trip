@@ -118,7 +118,7 @@ struct K {
         static let id_user = "id_user"
     }
     
-    struct select_request_by_id_owner {
+    struct select_request_by_id_request {
         static let id_request = "id_request"
     }
     
@@ -131,6 +131,77 @@ struct K {
         static let address = "address"
         static let license = "license"
     }
+    
+    struct delete_not {
+        static let id = "id"
+    }
+    
+    struct end_trip {
+           static let id_request = "id_request"
+        static let new_km = "new_km"
+       }
+    struct select_all_request_by_id_owner {
+           static let id_owner = "id_owner"
+       }
+    struct select_all_request_by_id_user {
+           static let id_user = "id_user"
+       }
+    struct select_request_that_have_aggree_by_id_owner {
+           static let id_owner = "id_owner"
+       }
+    struct select_request_that_have_aggree_by_id_user {
+           static let id_user = "id_user"
+       }
+    struct select_request_that_have_endtrip_by_id_owner {
+        static let id_owner = "id_owner"
+    }
+    struct select_request_that_have_endtrip_by_id_user {
+        static let id_user = "id_user"
+    }
+    struct select_request_that_have_starttrip_by_id_owner {
+        static let id_owner = "id_owner"
+    }
+    struct select_request_that_have_starttrip_by_id_user {
+        static let id_user = "id_user"
+    }
+    struct select_user_by_id {
+        static let id_user = "id_user"
+    }
+    struct start_trip {
+        static let id_request = "id_request"
+        static let new_km = "new_km"
+    }
+    struct update_car_rate {
+        static let id_car = "id_car"
+        static let number_rate = "number_rate"
+    }
+    struct update_user_rate {
+        static let id_user = "id_user"
+        static let number_rate = "number_rate"
+    }
+    struct update_car {
+        static let id_car = "id_car"
+        static let id_owner = "id_owner"
+        static let owner = "owner"
+        static let image = "image"
+        static let price_rent_per_day = "price_rent_per_day"
+        static let available_date_from = "available_date_from"
+        static let available_date_to = "available_date_to"
+        static let number_km = "number_km"
+        static let price_km = "price_km"
+        static let price_trip = "price_trip"
+        static let city = "city"
+        static let area = "area"
+        static let st_name = "st_name"
+        static let number_hone = "number_hone"
+        static let lon = "lon"
+        static let lat = "lat"
+        static let number_of_trip = "number_of_trip"
+        static let model = "model"
+        static let type = "type"
+        static let rate = "rate"
+    }
+    
 }
 
 

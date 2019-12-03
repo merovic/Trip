@@ -12,8 +12,9 @@ import Cosmos
 class CarDetailsViewController: UIViewController {
     
     @IBOutlet weak var imageCarSlider: UIScrollView!
-    @IBOutlet weak var price: UILabel!
     
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var showNumber: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var userType: UILabel!
     @IBOutlet weak var model: UILabel!
@@ -67,9 +68,5 @@ class CarDetailsViewController: UIViewController {
             Maps.openMaps(lat: "21.332", long: "31.341", distance: 1000, name: model)
         }
     }
-    
-    
-    
-    
     
 }
