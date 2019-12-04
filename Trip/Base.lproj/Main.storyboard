@@ -1721,7 +1721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDm-Zk-dND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10818.840579710146" y="5576.7857142857138"/>
+            <point key="canvasLocation" x="10864" y="6275"/>
         </scene>
         <!--Profile-->
         <scene sceneID="9yX-HN-KWF">
@@ -1752,7 +1752,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6n-2x-oMT">
-                                                <rect key="frame" x="0.0" y="-2" width="151" height="44"/>
+                                                <rect key="frame" x="0.0" y="8" width="129" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Edit Profile" image="editYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1784,7 +1784,7 @@
                                         <rect key="frame" x="0.0" y="60" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-h5-ge3">
-                                                <rect key="frame" x="0.0" y="-2" width="191" height="44"/>
+                                                <rect key="frame" x="0.0" y="8" width="169" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Edit Car Details" image="carYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1815,7 +1815,7 @@
                                         <rect key="frame" x="0.0" y="120" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-yS-vee">
-                                                <rect key="frame" x="0.0" y="-2" width="170" height="44"/>
+                                                <rect key="frame" x="0.0" y="8" width="148" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Reservations" image="steetYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1845,7 +1845,7 @@
                                         <rect key="frame" x="0.0" y="180" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-An-FJ5">
-                                                <rect key="frame" x="0.0" y="-8.5" width="141" height="57"/>
+                                                <rect key="frame" x="0.0" y="6" width="113" height="28.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   SignOut" image="Sign Out">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6206,7 +6206,7 @@
         <!--Reserve-->
         <scene sceneID="eYP-1U-adY">
             <objects>
-                <viewController id="PIN-vk-1am" sceneMemberID="viewController">
+                <viewController id="PIN-vk-1am" customClass="ReserveTripViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CQk-VC-BaW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1196"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6527,6 +6527,9 @@
                                                         <state key="normal" title="Send">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="sendPressed:" destination="PIN-vk-1am" eventType="touchUpInside" id="hWX-d4-9WC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -6605,6 +6608,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reserve" id="Brp-te-5G6"/>
                     <size key="freeformSize" width="414" height="1250"/>
+                    <connections>
+                        <outlet property="dateFrom" destination="MMR-se-aki" id="fIw-0b-e41"/>
+                        <outlet property="dateTo" destination="k0V-4i-kxA" id="0qW-dZ-0Om"/>
+                        <outlet property="details" destination="0fM-td-Sc5" id="t2j-8r-I6l"/>
+                        <outlet property="hourFrom" destination="lku-l6-WSK" id="5jJ-t8-xqA"/>
+                        <outlet property="hourTo" destination="FQu-qc-JYp" id="Fth-Cc-vCz"/>
+                        <outlet property="km" destination="IpR-vx-Rxt" id="YVm-i4-lpP"/>
+                        <outlet property="price" destination="gPC-gY-iGq" id="TGZ-wz-sCc"/>
+                        <outlet property="sendBut" destination="sS9-mK-fRF" id="NUj-79-HBg"/>
+                        <outlet property="tax" destination="GnX-Mh-BCB" id="YqM-SR-j3W"/>
+                        <outlet property="totalPrice" destination="gBJ-QX-fjl" id="YHM-oY-NuC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-Gb-H2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

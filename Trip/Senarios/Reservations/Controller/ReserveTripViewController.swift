@@ -10,6 +10,8 @@ import UIKit
 
 class ReserveTripViewController: UIViewController {
     
+    @IBOutlet weak var hourTo: UILabel!
+    @IBOutlet weak var hourFrom: UILabel!
     @IBOutlet weak var sendBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: sendBut)
