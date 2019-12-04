@@ -20,6 +20,10 @@ class InviteFriendViewController: UIViewController {
        
     }
     
+  @IBAction func cancelBtn(_ sender: UIButton) {
+      dismiss(animated: true, completion: nil)
+  
+  }
   
     
 }

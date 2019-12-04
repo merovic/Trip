@@ -24,7 +24,14 @@ class CancelPopUp: UIViewController {
     
 
     @IBAction func CancelBut(_ sender: UIButton) {
+       
     }
+    
+    @IBAction func cancelBtn(_ sender: UIButton) {
+          dismiss(animated: true, completion: nil)
+      
+      }
+  
     
 
 }

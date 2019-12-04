@@ -29,6 +29,7 @@
 		3B150FC1238E673400272A42 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B150FBB238E673400272A42 /* Maps.swift */; };
 		3B177EC42397BB48001E5523 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B177EC32397BB48001E5523 /* RequestsViewController.swift */; };
 		3B177EC72397BB86001E5523 /* RequestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B177EC62397BB86001E5523 /* RequestCellTableViewCell.swift */; };
+		3B177EC92397E8BB001E5523 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B177EC82397E8BB001E5523 /* SettingsViewController.swift */; };
 		3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B79882392935B0071853C /* InviteFriendViewController.swift */; };
 		3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */; };
 		3B72024823950F810088714B /* SearchNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024723950F810088714B /* SearchNormalViewController.swift */; };
@@ -124,6 +125,7 @@
 		3B150FBB238E673400272A42 /* Maps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		3B177EC32397BB48001E5523 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		3B177EC62397BB86001E5523 /* RequestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCellTableViewCell.swift; sourceTree = "<group>"; };
+		3B177EC82397E8BB001E5523 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3B6B79882392935B0071853C /* InviteFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendViewController.swift; sourceTree = "<group>"; };
 		3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinksCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B72024723950F810088714B /* SearchNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNormalViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				8140143B239408B200B89210 /* PolicyViewController.swift */,
 				8140143D2394090400B89210 /* HelpViewController.swift */,
 				8140143F2394094400B89210 /* ContactUsViewController.swift */,
+				3B177EC82397E8BB001E5523 /* SettingsViewController.swift */,
 				3B177EC32397BB48001E5523 /* RequestsViewController.swift */,
 			);
 			path = Controller;
@@ -826,6 +829,7 @@
 				81D66E3323954892009F8A13 /* Cars.swift in Sources */,
 				3B177EC72397BB86001E5523 /* RequestCellTableViewCell.swift in Sources */,
 				3B150FBE238E673400272A42 /* Alert.swift in Sources */,
+				3B177EC92397E8BB001E5523 /* SettingsViewController.swift in Sources */,
 				814014322393FF2400B89210 /* CancelPopUp.swift in Sources */,
 				3B0BC9C4238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift in Sources */,
 				81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */,

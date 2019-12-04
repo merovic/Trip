@@ -53,6 +53,11 @@ class NotificationDetailsViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
         self.present(vc, animated: true, completion: nil)
     }
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    
+    }
+    
     
     @IBAction func rejectPressed(_ sender: UIButton) {
         if let note = note {

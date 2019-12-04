@@ -24,6 +24,10 @@ class StartPopUp: UIViewController {
     @IBAction func start(_ sender: UIButton) {
         
     }
+    @IBAction func cancelBtn(_ sender: UIButton) {
+          dismiss(animated: true, completion: nil)
+      
+      }
     
 
 }

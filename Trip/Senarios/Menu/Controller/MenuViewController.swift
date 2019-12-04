@@ -66,15 +66,19 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if #available(iOS 13.0, *) {
-            if indexPath.row < data.controller.count-2 {
+            if indexPath.row < data.controller.count-1 {
                 guard let vc = storyboard?.instantiateViewController(identifier: data.controller[indexPath.row]) else { return  }
                 self.navigationController?.pushViewController(vc, animated: false)
             }
             else {
                 print("logOut")
+                if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
+                           vc.modalPresentationStyle = .fullScreen
+                           self.present(vc, animated: true, completion: nil)
             }
         }
         
+        }
     }
     
 }

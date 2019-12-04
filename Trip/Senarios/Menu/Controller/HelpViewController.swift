@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class HelpViewController: UIViewController {
 
     @IBOutlet weak var label2: UILabel!
@@ -19,5 +20,8 @@ class HelpViewController: UIViewController {
         
     }
  
-
+    @IBAction func menuBtnPreseed(_ sender: UIBarButtonItem) {
+        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
+                   present(vc!, animated: true, completion: nil)
+    }
 }

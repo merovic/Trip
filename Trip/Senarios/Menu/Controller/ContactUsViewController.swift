@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class ContactUsViewController: UIViewController {
 
     @IBOutlet weak var sendBut: UIButton!{
@@ -33,5 +34,8 @@ class ContactUsViewController: UIViewController {
     @IBAction func sendPressed(_ sender: UIButton) {
     }
     
-
+    @IBAction func menuBtnPreseed(_ sender: UIBarButtonItem) {
+        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
+                   present(vc!, animated: true, completion: nil)
+    }
 }
