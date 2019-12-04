@@ -96,14 +96,15 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
         
         if collectionView.tag == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellLatest", for: indexPath) as! RecentCollectionViewCell
-            let car = latestCars?[indexPath.row]
-            if let rate = car?.rate , let rating = Double(rate) {
-                cell.rate.rating = rating
+            if let car = latestCars?[indexPath.row] {
+                if  let rating = Double(car.rate) {
+                    cell.rate.rating = rating
+                }
+                cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carPlaceholder"))
+                cell.name.text = car.stName
+                cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:" SR/Day" , ofSizeText2: 13)
+                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip ?? "0", ofSizeText1: 14, text2: " Trips", ofSizeText2: 10)
             }
-            cell.image.sd_setImage(with: URL(string: car?.image ?? ""), placeholderImage: UIImage(named: "carPlaceholder"))
-            cell.name.text = car?.stName
-            cell.price.text = car?.priceRentPerDay
-            cell.trips.text = car?.numberOfTrip
             return cell
             
         } else if collectionView.tag == 1 {
@@ -114,37 +115,45 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 }
                 cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.stName
-                cell.price.text = car.priceRentPerDay
+                cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:" SR/Day" , ofSizeText2: 13)
                 cell.trips.text = car.numberOfTrip
-                
             }
             
             return cell
         }
         return UICollectionViewCell()
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "CarDetails") as! CarDetailsViewController
         vc.modalPresentationStyle = .fullScreen
         switch collectionView.tag {
         case 0:
             vc.carDetails = latestCars?[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
         case 1:
             vc.carDetails = topRatedCars?[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }
-        self.present(vc, animated: true, completion: nil)
     }
 }
 
-
-
 extension NSAttributedString {
-    static func withDualText(text1: String , text2: String) -> NSMutableAttributedString{
+    static func withDualText(text1: String ,ofSizeText1: CGFloat ,text2: String ,ofSizeText2: CGFloat ) -> NSMutableAttributedString{
         let text = NSMutableAttributedString()
-        text.append(NSAttributedString(string: text1, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]))
-        text.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]))
+        text.append(NSAttributedString(string: text1, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: ofSizeText1)]))
+        text.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray , NSAttributedString.Key.font: UIFont.systemFont(ofSize: ofSizeText2)]))
+        return text
+    }
+    
+    static func withDualText2(text1: String ,ofSizeText1: CGFloat ,text2: String ,ofSizeText2: CGFloat ) -> NSMutableAttributedString{
+        let text = NSMutableAttributedString()
+        
+        text.append(NSAttributedString(string: text1, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray , NSAttributedString.Key.font: UIFont.systemFont(ofSize: ofSizeText1)]))
+        text.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: ofSizeText2)]))
+        
         return text
     }
 }

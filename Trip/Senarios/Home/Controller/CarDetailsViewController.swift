@@ -39,6 +39,7 @@ class CarDetailsViewController: UIViewController {
         updateView()
     }
     
+    
     func updateView(){
         
         imageCarSlider.auk.show(url: "https://scarfi-hijabs.com/wp-content/uploads/2019/10/4.jpg")
@@ -53,13 +54,13 @@ class CarDetailsViewController: UIViewController {
         detailsCarView.clipsToBounds = true
         
         if let car = carDetails {
-            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, text2: "SR/Day")
+            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 24, text2: " SR/Day", ofSizeText2: 18)
             name.text = car.owner
             model.text = car.model
-            from.text = "\(car.availableDateFrom)"
-            to.text = "\(car.availableDateTo)"
+            from.attributedText = NSAttributedString.withDualText2(text1: "From ", ofSizeText1: 12, text2: "\(car.availableDateFrom)", ofSizeText2: 18)
+            to.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: 13, text2: "\(car.availableDateTo)", ofSizeText2: 18)
             address.text = "\(car.city) ,\(car.area)"
-            
+            tripsNum.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip, ofSizeText1: 14, text2: "Trips ", ofSizeText2: 10)
         }
     }
     
@@ -69,4 +70,13 @@ class CarDetailsViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Reserve" {
+            if #available(iOS 13.0, *) {
+                let vc = storyboard?.instantiateViewController(identifier: "Reserve") as! ReserveTripViewController
+                vc.modalPresentationStyle = .fullScreen
+                vc.reservationDetails = carDetails
+            }
+        }
+    }
 }

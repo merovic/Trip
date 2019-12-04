@@ -11,33 +11,31 @@ import UIKit
 @available(iOS 13.0, *)
 class RequestsViewController: UIViewController {
     var text = ["12" , "23" , "34"]
-
+    var requests: [Request]?
     @IBOutlet weak var requestTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestTableView.rowHeight = UITableView.automaticDimension
-        requestTableView.estimatedRowHeight = 220
-
-
-
-        // Do any additional setup after loading the view.
+        getUpdateData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getUpdateData(){
+        if let user = Shared.user {
+            APIClient.selectAllRequestByOwnerId(id_owner: user.id) { (Result) in
+                switch Result{
+                case.success(let response):
+                    print(response)
+                    self.requestTableView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
-    */
     
     @IBAction func menuBtnPreseed(_ sender: UIBarButtonItem) {
         let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-                   present(vc!, animated: true, completion: nil)
+        present(vc!, animated: true, completion: nil)
     }
     
 }
@@ -50,9 +48,24 @@ extension RequestsViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let  cell = tableView.dequeueReusableCell(withIdentifier: "RequestCellTableViewCell", for: indexPath) as! RequestCellTableViewCell
+        let  cell = tableView.dequeueReusableCell(withIdentifier: "RequestCellTableViewCell", for: indexPath) as! RequestCellTableViewCell
+        
         cell.requestNameLbl.text = text[indexPath.row]
-         return cell
+        if let request = requests?[indexPath.row] {
+            cell.photo.sd_setImage(with: URL(string: request.image), placeholderImage: UIImage(named:"userPlaceholder"))
+//            cell.rate.rating = request.rate
+            cell.rateLbl.text = "Rate \(request.rate)"
+            cell.requestDateLabl.text = request.datee
+            cell.requestNameLbl.text = request.message
+            cell.nameLbl.text = request.name
+            
+        }
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        requestTableView.rowHeight = UITableView.automaticDimension
+        requestTableView.estimatedRowHeight = 220
     }
     
     
