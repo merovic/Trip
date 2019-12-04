@@ -37,6 +37,7 @@
 		81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E57238FC02A00A9AC53 /* LogInViewController.swift */; };
 		81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5B238FC07200A9AC53 /* RegisterViewController.swift */; };
 		81034E5F238FC2B000A9AC53 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */; };
+		8103B8DE2397A6D800A171A6 /* RequestAgree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103B8DD2397A6D800A171A6 /* RequestAgree.swift */; };
 		8135851E238FE52F006978CE /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135851D238FE52F006978CE /* Upload.swift */; };
 		81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358523238FEC7E006978CE /* NotificationsViewController.swift */; };
 		81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */; };
@@ -129,6 +130,7 @@
 		81034E57238FC02A00A9AC53 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		81034E5B238FC07200A9AC53 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		8103B8DD2397A6D800A171A6 /* RequestAgree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAgree.swift; sourceTree = "<group>"; };
 		8135851D238FE52F006978CE /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		81358523238FEC7E006978CE /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticicationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				3B150FB1238E673300272A42 /* Senarios */,
 				18059E0723801E740007CA0A /* ViewController.swift */,
 				81638041238E9E6A002B58D7 /* GetRequests.swift */,
+				8103B8DD2397A6D800A171A6 /* RequestAgree.swift */,
 				3B14AB73238D22360065EB8C /* AppDelegate.swift */,
 				814014272393EB7E00B89210 /* model.swift */,
 				18059E0923801E740007CA0A /* Main.storyboard */,
@@ -807,6 +810,7 @@
 				814014242393B9B200B89210 /* ProfileViewController.swift in Sources */,
 				81D66E35239551B1009F8A13 /* MapKitViewController.swift in Sources */,
 				8135852E2392C9FC006978CE /* TabBarViewController.swift in Sources */,
+				8103B8DE2397A6D800A171A6 /* RequestAgree.swift in Sources */,
 				3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */,
 				81D66E302395486D009F8A13 /* Notes.swift in Sources */,
 				8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */,

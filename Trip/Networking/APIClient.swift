@@ -153,16 +153,16 @@ class APIClient {
     }
     
     static func selectRequestHaveEndTripByIdUser(id_user: Int,completion: @escaping (Result<String,AFError>)->Void){
-           performRequestSimple(route: APIRouter.select_request_that_have_endtrip_by_id_user(id_user: id_user), completion: completion)
-       }
+        performRequestSimple(route: APIRouter.select_request_that_have_endtrip_by_id_user(id_user: id_user), completion: completion)
+    }
     
     static func selectRequestHaveEndTripByIdOwner(id_owner: Int,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.select_request_that_have_endtrip_by_id_owner(id_owner: id_owner), completion: completion)
     }
     
     static func selectRequestHaveStartTripByIdUser(id_user: Int,completion: @escaping (Result<String,AFError>)->Void){
-           performRequestSimple(route: APIRouter.select_request_that_have_starttrip_by_id_user(id_user: id_user), completion: completion)
-       }
+        performRequestSimple(route: APIRouter.select_request_that_have_starttrip_by_id_user(id_user: id_user), completion: completion)
+    }
     
     static func selectRequestHaveStartTripByIdOwner(id_owner: Int,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.select_request_that_have_starttrip_by_id_owner(id_owner: id_owner), completion: completion)
@@ -175,6 +175,11 @@ class APIClient {
     static func updateUserRate(id_car: Int, number_rate:Double ,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.update_car_rate(id_car: id_car, number_rate: number_rate), completion: completion)
     }
+    
+    static func selectUserById(id_user: Int,completion: @escaping (Result<String,AFError>)->Void){
+        performRequestSimple(route: APIRouter.select_user_by_id(id_user: id_user), completion: completion)
+    }
+    
     static func updateCar(id_car: Int, id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String ,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.update_car(id_car: id_car,id_owner: id_owner, owner: owner, image: image, price_rent_per_day: price_rent_per_day, available_date_from: available_date_from, available_date_to: available_date_to, number_km: number_km, price_km: price_km, price_trip: price_trip, city: city, area: area, st_name: st_name, number_hone: number_hone, lon: lon, lat: lat, number_of_trip: number_of_trip, model: model, type: type, rate: rate), completion: completion)
     }

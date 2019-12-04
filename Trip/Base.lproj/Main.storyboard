@@ -31,7 +31,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="315"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-J9-9sI">
-                                                        <rect key="frame" x="144" y="94.5" width="126" height="126"/>
+                                                        <rect key="frame" x="81" y="31.5" width="252" height="252"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -352,7 +352,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="428"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="7Ym-TR-OZR">
-                                        <rect key="frame" x="144" y="151" width="126" height="126"/>
+                                        <rect key="frame" x="81" y="88" width="252" height="252"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hf-VI-cnG">
                                         <rect key="frame" x="20" y="40" width="20" height="20"/>
@@ -965,14 +965,14 @@
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="hSe-7a-BlH"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mercedes Benz 2018 new" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4h-gE-yJh">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes Benz 2018 new" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4h-gE-yJh">
                                                                     <rect key="frame" x="2" y="168" width="209" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOE-5D-bKF" customClass="CosmosView" customModule="Cosmos">
-                                                                    <rect key="frame" x="2" y="197.5" width="120" height="20"/>
+                                                                    <rect key="frame" x="2" y="197.5" width="120" height="16"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -1076,7 +1076,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-dB-eFC" customClass="CosmosView" customModule="Cosmos">
+                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-dB-eFC" customClass="CosmosView" customModule="Cosmos">
                                                                     <rect key="frame" x="2" y="197.5" width="120" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -1091,7 +1091,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-a6-IJ0">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-a6-IJ0">
                                                                     <rect key="frame" x="127" y="197.5" width="44" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -6672,7 +6672,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0t6-Pr-sCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1106" y="3497"/>
+            <point key="canvasLocation" x="-991" y="3497"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="LwL-ea-VLf">
@@ -6962,7 +6962,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX8-yl-X7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2072" y="4933"/>
+            <point key="canvasLocation" x="-1841" y="4873"/>
         </scene>
         <!--Help-->
         <scene sceneID="yF4-OI-jo4">
@@ -7010,7 +7010,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSJ-Ld-fKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1159" y="4933"/>
+            <point key="canvasLocation" x="-1043" y="4873"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dWT-kQ-eqP">
@@ -7038,7 +7038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAO-tS-4dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459.4202898550725" y="4960.7142857142853"/>
+            <point key="canvasLocation" x="494" y="4859"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="8Su-kL-lou">
@@ -7382,7 +7382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e48-Gg-6B6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223" y="4919"/>
+            <point key="canvasLocation" x="-223" y="4859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g06-AP-gSN">
@@ -7401,7 +7401,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QU6-Ey-b5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2072" y="4187"/>
+            <point key="canvasLocation" x="-1841" y="4187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vuq-TJ-8UE">
@@ -7420,7 +7420,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Inr-Cz-ilV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1159" y="4187"/>
+            <point key="canvasLocation" x="-1043" y="4187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5qE-ka-cWz">

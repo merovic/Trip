@@ -19,6 +19,20 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateData()
+    }
+    
+    func updateData(){
+        if let user = Shared.user {
+            APIClient.logIn(email: user.email, password: user.password) { (Result) in
+                switch Result {
+                case .success(let response):
+                    print(response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
         
     }
     
