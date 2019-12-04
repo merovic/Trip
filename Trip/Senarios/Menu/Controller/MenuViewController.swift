@@ -16,7 +16,9 @@ class MenuViewController: UIViewController {
         {
         didSet{
             Rounded.roundedImage(imageView: profileImage)
-            profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
+        
+            
+              profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
         }
     }
     
@@ -30,7 +32,7 @@ class MenuViewController: UIViewController {
     
     func updateView(){
         nameLbl.text = user?.name
-        profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: ""))
+        profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
     }
     
     @IBAction func goToProfile(sender: UIButton) {
