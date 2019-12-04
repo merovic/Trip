@@ -17,7 +17,6 @@ class MenuViewController: UIViewController {
         didSet{
             Rounded.roundedImage(imageView: profileImage)
         
-            
               profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
         }
     }

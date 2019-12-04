@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import Cosmos
 
 class RequestCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var requestNameLbl: UILabel!
+    @IBOutlet weak var requestDateLabl: UILabel!
+    
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var rate: CosmosView!
+    @IBOutlet weak var rateLbl: UILabel!
+    
+    @IBOutlet weak var refused: UIButton!
+    
+    @IBOutlet weak var Accepated: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
