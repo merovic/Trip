@@ -38,10 +38,8 @@ class APIClient {
     }
     //---------------------------------------------------
     
-    //    static func loginCenterAndTrainer(email: String, password: String, completion:@escaping (Result<[LoginResponse],AFError>)->Void) {
-    //      performRequest(route: APIRouter.agrre_refuse(id_request: <#T##Int#>), completion: completion)
-    //
-    //    }
+    
+    
     static func agrre_refuse(id_request: Int , completion: @escaping (Result<String,AFError>)->Void) {
         performRequestSimple(route: APIRouter.agrre_refuse(id_request: id_request), completion: completion)
     }
@@ -66,9 +64,9 @@ class APIClient {
         performRequestSimple(route: APIRouter.insert_car(id_owner: id_owner, owner: owner, image: image, price_rent_per_day: price_rent_per_day, available_date_from: available_date_from, available_date_to: available_date_to, number_km: number_km, price_km: price_km, price_trip: price_trip, city: city, area: area, st_name: st_name, number_hone: number_hone, lon: lon, lat: lat, number_of_trip: number_of_trip, model: model, type: type, rate: rate), completion: completion)
     }
     
-    //    static func getAllRequestsByRequestID(Id_Request: Int , completion: @escaping (Result<[GetRequest],AFError>)->Void) {
-    //        performRequest(route: APIRouter.select_request_by_id_request(id_request: Id_Request), completion: completion)
-    //    }
+        static func getAllRequestsByRequestID(Id_Request: Int , completion: @escaping (Result<[Request],AFError>)->Void) {
+            performRequest(route: APIRouter.select_request_by_id_request(id_request: Id_Request), completion: completion)
+        }
     
     static func addRequest(id_user:Int ,id_owner:Int , id_car:Int , message:String , datee:String,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.insert_request_car(id_user: id_user, id_owner: id_owner, id_car: id_car, message: message, datee: datee), completion: completion)
@@ -124,7 +122,7 @@ class APIClient {
     // Newly added functions --------------------------------------
     
     
-    static func deleteNote(id: String ,completion: @escaping (Result<String,AFError>)->Void){
+    static func deleteNote(id: Int ,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.delete_not(id: id), completion: completion)
     }
     
@@ -140,32 +138,32 @@ class APIClient {
         performRequestSimple(route: APIRouter.select_all_request_by_id_user(id_user: id_user), completion: completion)
     }
     
-    static func selectAllRequestByOwnerId(id_owner: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_all_request_by_id_owner(id_owner: id_owner), completion: completion)
+    static func selectAllRequestByOwnerId(id_owner: Int,completion: @escaping (Result<[Request],AFError>)->Void){
+        performRequest(route: APIRouter.select_all_request_by_id_owner(id_owner: id_owner), completion: completion)
     }
     
-    static func selectRequestHaveAgreedbyOwnerId(id_owner: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_request_that_have_aggree_by_id_owner(id_owner: id_owner), completion: completion)
+    static func selectRequestHaveAgreedbyOwnerId(id_owner: Int,completion: @escaping (Result<[RequestAgree],AFError>)->Void){
+        performRequest(route: APIRouter.select_request_that_have_aggree_by_id_owner(id_owner: id_owner), completion: completion)
     }
     
-    static func selectRequestHaveAgreedByUserId(id_user: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_request_that_have_aggree_by_id_user(id_user: id_user), completion: completion)
+    static func selectRequestHaveAgreedByUserId(id_user: Int,completion: @escaping (Result<[RequestAgree],AFError>)->Void){
+        performRequest(route: APIRouter.select_request_that_have_aggree_by_id_user(id_user: id_user), completion: completion)
     }
     
-    static func selectRequestHaveEndTripByIdUser(id_user: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_request_that_have_endtrip_by_id_user(id_user: id_user), completion: completion)
+    static func selectRequestHaveEndTripByIdUser(id_user: Int,completion: @escaping (Result<[RequestAgree],AFError>)->Void){
+        performRequest(route: APIRouter.select_request_that_have_endtrip_by_id_user(id_user: id_user), completion: completion)
     }
     
-    static func selectRequestHaveEndTripByIdOwner(id_owner: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_request_that_have_endtrip_by_id_owner(id_owner: id_owner), completion: completion)
+    static func selectRequestHaveEndTripByIdOwner(id_owner: Int,completion: @escaping (Result<[RequestAgree],AFError>)->Void){
+        performRequest(route: APIRouter.select_request_that_have_endtrip_by_id_owner(id_owner: id_owner), completion: completion)
     }
     
-    static func selectRequestHaveStartTripByIdUser(id_user: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_request_that_have_starttrip_by_id_user(id_user: id_user), completion: completion)
+    static func selectRequestHaveStartTripByIdUser(id_user: Int,completion: @escaping (Result<[RequestAgree],AFError>)->Void){
+        performRequest(route: APIRouter.select_request_that_have_starttrip_by_id_user(id_user: id_user), completion: completion)
     }
     
-    static func selectRequestHaveStartTripByIdOwner(id_owner: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_request_that_have_starttrip_by_id_owner(id_owner: id_owner), completion: completion)
+    static func selectRequestHaveStartTripByIdOwner(id_owner: Int,completion: @escaping (Result<[RequestAgree],AFError>)->Void){
+        performRequest(route: APIRouter.select_request_that_have_starttrip_by_id_owner(id_owner: id_owner), completion: completion)
     }
     
     static func updateCarRate(id_car: Int, number_rate:Double ,completion: @escaping (Result<String,AFError>)->Void){

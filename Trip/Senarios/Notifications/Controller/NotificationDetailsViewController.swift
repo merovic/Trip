@@ -38,11 +38,9 @@ class NotificationDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-        
     }
     
     func updateView(){
-        
         messageTitle.text = note?.title
         description1.text = note?.details
     }
@@ -52,19 +50,22 @@ class NotificationDetailsViewController: UIViewController {
     }
     
     @IBAction func acceptPressed(_ sender: UIButton) {
-        print("////////////")
-        
         let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
         self.present(vc, animated: true, completion: nil)
     }
+    
     @IBAction func rejectPressed(_ sender: UIButton) {
-        APIClient.refuseRequest(id_request: note?.id ?? 0) { (Result) in
-            switch Result {
-            case .success(let response):
-                print(response)
-                self.dismiss(animated: true, completion: nil)
-            case .failure(let error):
-                print(error.localizedDescription)
+        if let note = note {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.deleteNote(id: note.id) { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        self?.dismiss(animated: true, completion: nil)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             }
         }
     }
