@@ -31,7 +31,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="315"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-J9-9sI">
-                                                        <rect key="frame" x="81" y="31.5" width="252" height="252"/>
+                                                        <rect key="frame" x="144" y="94.5" width="126" height="126"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -352,7 +352,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="428"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="7Ym-TR-OZR">
-                                        <rect key="frame" x="81" y="88" width="252" height="252"/>
+                                        <rect key="frame" x="144" y="151" width="126" height="126"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hf-VI-cnG">
                                         <rect key="frame" x="20" y="40" width="20" height="20"/>
@@ -1751,7 +1751,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6n-2x-oMT">
-                                                <rect key="frame" x="0.0" y="-2" width="151" height="44"/>
+                                                <rect key="frame" x="0.0" y="8" width="129" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Edit Profile" image="editYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1783,7 +1783,7 @@
                                         <rect key="frame" x="0.0" y="60" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-h5-ge3">
-                                                <rect key="frame" x="0.0" y="-2" width="191" height="44"/>
+                                                <rect key="frame" x="0.0" y="8" width="169" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Edit Car Details" image="carYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1814,7 +1814,7 @@
                                         <rect key="frame" x="0.0" y="120" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-yS-vee">
-                                                <rect key="frame" x="0.0" y="-2" width="170" height="44"/>
+                                                <rect key="frame" x="0.0" y="8" width="148" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   Reservations" image="steetYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1844,7 +1844,7 @@
                                         <rect key="frame" x="0.0" y="180" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-An-FJ5">
-                                                <rect key="frame" x="0.0" y="-8.5" width="141" height="57"/>
+                                                <rect key="frame" x="0.0" y="6" width="113" height="28.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="   SignOut" image="Sign Out">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2248,7 +2248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHe-MM-cPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673.913043478261" y="4312.5"/>
+            <point key="canvasLocation" x="2584.057971014493" y="4312.5"/>
         </scene>
         <!--Edit Car Details-->
         <scene sceneID="Lzf-vs-GuZ">
@@ -3022,7 +3022,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZU-5R-6rT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5068.115942028986" y="4782.5892857142853"/>
+            <point key="canvasLocation" x="5978.2608695652179" y="4782.5892857142853"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="jFw-MC-TSx">
@@ -3853,7 +3853,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-uZ-wmM" customClass="CosmosView" customModule="Cosmos">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-uZ-wmM" customClass="CosmosView" customModule="Cosmos">
                                                         <rect key="frame" x="109.5" y="75.5" width="195" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -3965,7 +3965,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGW-IM-34W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11168.115942028986" y="4679.4642857142853"/>
+            <point key="canvasLocation" x="12078.260869565218" y="4679.4642857142853"/>
         </scene>
         <!--Reservations Details-->
         <scene sceneID="Xsk-Kd-SMp">
@@ -4371,7 +4371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8n-ek-Qzu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11942.028985507248" y="4645.3125"/>
+            <point key="canvasLocation" x="12852.17391304348" y="4645.3125"/>
         </scene>
         <!--Invite Friend View Controller-->
         <scene sceneID="FD0-RQ-72r">
@@ -4480,7 +4480,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIg-YT-QCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8007.2463768115949" y="4865.625"/>
+            <point key="canvasLocation" x="8917.391304347826" y="4865.625"/>
         </scene>
         <!--Invite a Friend-->
         <scene sceneID="rsC-em-P9R">
@@ -5459,7 +5459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQ2-Tn-heU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7126.0869565217399" y="4482.5892857142853"/>
+            <point key="canvasLocation" x="8036.2318840579719" y="4482.5892857142853"/>
         </scene>
         <!--Add Your Car-->
         <scene sceneID="WeB-Pk-KXv">
@@ -6200,7 +6200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr0-4v-PuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8913.04347826087" y="5035.7142857142853"/>
+            <point key="canvasLocation" x="9823.188405797102" y="5035.7142857142853"/>
         </scene>
         <!--Reserve-->
         <scene sceneID="eYP-1U-adY">
@@ -6607,7 +6607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-Gb-H2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9952.1739130434798" y="5460.2678571428569"/>
+            <point key="canvasLocation" x="10862.318840579712" y="5460.2678571428569"/>
         </scene>
         <!--Home-->
         <scene sceneID="Jgr-j2-Tdp">
@@ -6868,7 +6868,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kO-as-gHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9952.1739130434798" y="4585.7142857142853"/>
+            <point key="canvasLocation" x="10862.318840579712" y="4585.7142857142853"/>
         </scene>
         <!--Convention -->
         <scene sceneID="gbL-03-WQ0">
@@ -7012,33 +7012,25 @@
             </objects>
             <point key="canvasLocation" x="-1043" y="4873"/>
         </scene>
-        <!--View Controller-->
+        <!--Requests-->
         <scene sceneID="dWT-kQ-eqP">
             <objects>
                 <viewController id="SE2-8T-DV5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ent-NA-PDd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vX-N2-wcU">
-                                <rect key="frame" x="20" y="169" width="374" height="0.5"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="0.59999999999999998" id="Vye-SR-LWX"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ihu-O4-Rit" firstAttribute="trailing" secondItem="5vX-N2-wcU" secondAttribute="trailing" constant="20" id="Iu6-f4-Fuo"/>
-                            <constraint firstItem="5vX-N2-wcU" firstAttribute="leading" secondItem="ihu-O4-Rit" secondAttribute="leading" constant="20" id="VNc-j3-ncY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ihu-O4-Rit"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Requests" id="Wx5-x4-KVT">
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="tEV-Ah-80V">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAO-tS-4dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="494" y="4859"/>
+            <point key="canvasLocation" x="551" y="4859"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="8Su-kL-lou">
@@ -7440,6 +7432,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3V-r2-F5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-223" y="4187"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TGa-sS-Tt1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B4b-NE-sh8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Go-Yw-JYF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="TripColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SE2-8T-DV5" kind="relationship" relationship="rootViewController" id="xhr-N5-YMS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5y-yB-izz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="4187"/>
         </scene>
     </scenes>
     <resources>
