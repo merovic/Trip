@@ -40,6 +40,7 @@
 		81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5B238FC07200A9AC53 /* RegisterViewController.swift */; };
 		81034E5F238FC2B000A9AC53 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */; };
 		8103B8DE2397A6D800A171A6 /* RequestAgree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103B8DD2397A6D800A171A6 /* RequestAgree.swift */; };
+		8103B8E02397CF1900A171A6 /* ReserveTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103B8DF2397CF1900A171A6 /* ReserveTripViewController.swift */; };
 		8135851E238FE52F006978CE /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135851D238FE52F006978CE /* Upload.swift */; };
 		81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358523238FEC7E006978CE /* NotificationsViewController.swift */; };
 		81358526238FECA1006978CE /* NoticicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */; };
@@ -135,6 +136,7 @@
 		81034E5B238FC07200A9AC53 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		81034E5E238FC2B000A9AC53 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		8103B8DD2397A6D800A171A6 /* RequestAgree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAgree.swift; sourceTree = "<group>"; };
+		8103B8DF2397CF1900A171A6 /* ReserveTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveTripViewController.swift; sourceTree = "<group>"; };
 		8135851D238FE52F006978CE /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		81358523238FEC7E006978CE /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		81358525238FECA1006978CE /* NoticicationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticicationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				8140141D2393026400B89210 /* ReservationDetailsViewController.swift */,
 				8140142F2393FF0D00B89210 /* StartPopUp.swift */,
 				814014312393FF2400B89210 /* CancelPopUp.swift */,
+				8103B8DF2397CF1900A171A6 /* ReserveTripViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				81034E5C238FC07200A9AC53 /* RegisterViewController.swift in Sources */,
 				3B150FC0238E673400272A42 /* DesignableUITextField.swift in Sources */,
 				3B72024823950F810088714B /* SearchNormalViewController.swift in Sources */,
+				8103B8E02397CF1900A171A6 /* ReserveTripViewController.swift in Sources */,
 				8140143E2394090400B89210 /* HelpViewController.swift in Sources */,
 				81D66E2D2395483F009F8A13 /* Login.swift in Sources */,
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,

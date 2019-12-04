@@ -9,31 +9,29 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    
+    @IBOutlet weak var profileImage: UIImageView!
 
-    
-    @IBOutlet weak var profileImage: UIImageView!{
-        didSet{
-            profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateData()
     }
-    
     func updateData(){
         if let user = Shared.user {
-            APIClient.logIn(email: user.email, password: user.password) { (Result) in
-                switch Result {
-                case .success(let response):
-                    print(response)
-                case .failure(let error):
-                    print(error.localizedDescription)
+            profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+            DispatchQueue.global(qos: .background).async { [weak self] in
+                APIClient.logIn(email: user.email, password: user.password) { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        self?.profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }
-        
     }
     
     @IBAction func editProfile(_ sender: UIButton) {
@@ -48,9 +46,9 @@ class ProfileViewController: UIViewController {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "Reservations") as! ReservationViewController
             self.navigationController?.pushViewController(vc, animated: true)
-
-          //  vc.modalPresentationStyle = .fullScreen
-           // self.present(vc, animated: true, completion: nil)
+            
+            //  vc.modalPresentationStyle = .fullScreen
+            // self.present(vc, animated: true, completion: nil)
         }
     }
     

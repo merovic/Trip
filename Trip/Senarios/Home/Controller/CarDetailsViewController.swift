@@ -56,8 +56,8 @@ class CarDetailsViewController: UIViewController {
             price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, text2: "SR/Day")
             name.text = car.owner
             model.text = car.model
-//            from.text = car.availableDateFrom
-//            to.text = car.availableDateTo
+            from.text = "\(car.availableDateFrom)"
+            to.text = "\(car.availableDateTo)"
             address.text = "\(car.city) ,\(car.area)"
             
         }

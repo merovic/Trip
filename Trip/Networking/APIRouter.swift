@@ -28,7 +28,7 @@ enum APIRouter: URLRequestConvertible {
     case select_request_by_id_request (id_request : Int)
     case update_user (id_user: Int ,name: String ,
          email : String , password: String , phone: String ,address: String ,license: String)
-    case delete_not(id: String)
+    case delete_not(id: Int)
     case end_trip(id_request: Int , new_km: Double)
     case select_all_request_by_id_owner(id_owner: Int)
     case select_all_request_by_id_user(id_user: Int)
