@@ -19,9 +19,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var mailTF: UITextField!
     @IBOutlet weak var attachBut: UIButton!{
         didSet{
-            attachBut.layer.cornerRadius = 20
+            attachBut.layer.cornerRadius = 8
             attachBut.layer.borderColor = UIColor.black.cgColor
-            attachBut.layer.borderWidth = 3
+            attachBut.layer.borderWidth = 1
         }
     }
     @IBOutlet weak var registerBtn: UIButton!
@@ -31,10 +31,14 @@ class RegisterViewController: UIViewController {
     
     
     let ImagePicker = UIImagePickerController()
+    let currencyPicker = UIPickerView()
+    let currencyArray = ["Egypt", "Barcelon","ManCity","Mailn","InterMailn","Roma","Real","Atm"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        openPicker(for: addressTF)
         setTextFieldDelegates()
+        
         
     }
     
@@ -50,7 +54,8 @@ class RegisterViewController: UIViewController {
         
         ImagePicker.delegate = self
         ImagePicker.sourceType = .photoLibrary
-        
+        currencyPicker.delegate = self
+        currencyPicker.dataSource = self
         licenseView.isHidden = true
         licenseViewHeight.constant = 0
     }
@@ -66,6 +71,14 @@ class RegisterViewController: UIViewController {
             licenseViewHeight.constant = 100
         }
     }
+  
+    
+    func openPicker(for textField: UITextField) {
+        
+        textField.inputView = currencyPicker
+       
+    }
+    
     
     
     
@@ -112,3 +125,27 @@ extension RegisterViewController: UINavigationControllerDelegate , UIImagePicker
     }
     
 }
+
+extension RegisterViewController: UIPickerViewDataSource , UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return currencyArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+           return currencyArray[row]
+       }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      //  addressTF.text = 
+        self.view.endEditing(true)
+        
+           
+       }
+       
+    
+    
+}
+

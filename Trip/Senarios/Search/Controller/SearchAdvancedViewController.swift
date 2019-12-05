@@ -19,6 +19,9 @@ class SearchAdvancedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBAction func searchBtnPressed(_ sender: UIButton) {
+      }
+    
 
 
 }
