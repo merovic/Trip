@@ -15,13 +15,10 @@ class SearchAdvancedViewController: UIViewController {
             Rounded.roundedCornerButton1(button: searchBut)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
-    
 
-   
 
 }

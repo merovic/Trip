@@ -64,9 +64,9 @@ class APIClient {
         performRequestSimple(route: APIRouter.insert_car(id_owner: id_owner, owner: owner, image: image, price_rent_per_day: price_rent_per_day, available_date_from: available_date_from, available_date_to: available_date_to, number_km: number_km, price_km: price_km, price_trip: price_trip, city: city, area: area, st_name: st_name, number_hone: number_hone, lon: lon, lat: lat, number_of_trip: number_of_trip, model: model, type: type, rate: rate), completion: completion)
     }
     
-        static func getAllRequestsByRequestID(Id_Request: Int , completion: @escaping (Result<[Request],AFError>)->Void) {
-            performRequest(route: APIRouter.select_request_by_id_request(id_request: Id_Request), completion: completion)
-        }
+    static func getAllRequestsByRequestID(Id_Request: Int , completion: @escaping (Result<[Request],AFError>)->Void) {
+        performRequest(route: APIRouter.select_request_by_id_request(id_request: Id_Request), completion: completion)
+    }
     
     static func addRequest(id_user:Int ,id_owner:Int , id_car:Int , message:String , datee:String,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.insert_request_car(id_user: id_user, id_owner: id_owner, id_car: id_car, message: message, datee: datee), completion: completion)
@@ -174,8 +174,8 @@ class APIClient {
         performRequestSimple(route: APIRouter.update_car_rate(id_car: id_car, number_rate: number_rate), completion: completion)
     }
     
-    static func selectUserById(id_user: Int,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_user_by_id(id_user: id_user), completion: completion)
+    static func selectUserById(id_user: Int,completion: @escaping (Result<[Login],AFError>)->Void){
+        performRequest(route: APIRouter.select_user_by_id(id_user: id_user), completion: completion)
     }
     
     static func updateCar(id_car: Int, id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String ,completion: @escaping (Result<String,AFError>)->Void){

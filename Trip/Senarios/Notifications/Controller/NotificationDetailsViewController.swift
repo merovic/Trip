@@ -11,21 +11,7 @@ import Cosmos
 @available(iOS 13.0, *)
 class NotificationDetailsViewController: UIViewController {
 
-    @IBOutlet weak var rejectBut: UIButton!{
-        didSet{
-            Rounded.roundedCornerButton1(button: rejectBut)
-        }
-    }
-    @IBOutlet weak var acceptBut: UIButton!{
-        didSet{
-            Rounded.roundedCornerButton1(button: acceptBut)
-        }
-    }
-    @IBOutlet weak var popView: UIView!{
-        didSet{
-            popView.layer.cornerRadius = 15
-        }
-    }
+    
     @IBOutlet weak var descrtition2: UILabel!
     @IBOutlet weak var description1: UILabel!
     @IBOutlet weak var messageTitle: UILabel!
@@ -39,26 +25,73 @@ class NotificationDetailsViewController: UIViewController {
             Rounded.roundedImage(imageView: image)
         }
     }
+    @IBOutlet weak var rejectBut: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: rejectBut)
+        }
+    }
+    @IBOutlet weak var acceptBut: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: acceptBut)
+        }
+    }
+    
     var note: Note?
+    var user: Login?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        getUserDetails()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+    }
+    
+    func updateUserInfo(){
+        if let user = user {
+            phone.text = user.phone
+            name.text = user.name
+            image.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+            ratelbl.text = "Rate \(user.rate)"
+            guard let rateing = Double(user.rate) else { return }
+            rate.rating = rateing
+        }
     }
     
     func updateView(){
+        
         messageTitle.text = note?.title
         description1.text = note?.details
+        descrtition2.text = ""
+        
     }
     
     func getUserDetails() {
-        
+        if let note = note {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.selectUserById(id_user: note.idUser) { (Result) in
+                    switch Result{
+                    case .success(let response):
+                        print(response)
+                        self?.user = response.first
+                        self?.updateUserInfo()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func acceptPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
+        
         self.present(vc, animated: true, completion: nil)
     }
+    
     @IBAction func cancelBtn(_ sender: UIButton) {
+        self.view.backgroundColor = .clear
         dismiss(animated: true, completion: nil)
     
     }

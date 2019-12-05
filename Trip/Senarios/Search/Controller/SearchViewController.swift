@@ -16,19 +16,16 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchChk: BEMCheckBox!
     @IBOutlet weak var bigView: UIView!
     let v  = SearchNormalViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchNormalViewController")
         self.currentViewController?.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(self.currentViewController!)
-       // self.bigView.addSubview(self.currentViewController!.view)
+        // self.bigView.addSubview(self.currentViewController!.view)
         self.addSubview(subView: self.currentViewController!.view, toView: self.bigView)
         super.viewDidLoad()
-        
-        
-     
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func chechSearch(_ sender: BEMCheckBox) {
@@ -36,20 +33,18 @@ class SearchViewController: UIViewController {
         if sender.tag == 1 {
             advanSearchChk.on = false
             let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchNormalViewController")
-                   newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-                   self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
-                   self.currentViewController = newViewController
-                 
-              } else {
+            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
+            self.currentViewController = newViewController
+            
+        } else {
             searchChk.on = false
             let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchAdvancedViewController")
-                  newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-                  self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
-                  self.currentViewController = newViewController
-                  
-              }
-        
-        
+            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
+            self.currentViewController = newViewController
+            
+        }
     }
     
     func addSubview(subView:UIView, toView parentView:UIView) {
@@ -60,11 +55,7 @@ class SearchViewController: UIViewController {
                                                                  options: [], metrics: nil, views: viewBindingsDict))
         parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|",
                                                                  options: [], metrics: nil, views: viewBindingsDict))
-        
-        
-        
     }
-    
     
     func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
         oldViewController.willMove(toParent: nil)
@@ -75,12 +66,12 @@ class SearchViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             newViewController.view.alpha = 1
             oldViewController.view.alpha = 0
-        },
-                       completion: { finished in
-                        oldViewController.view.removeFromSuperview()
-                        oldViewController.removeFromParent()
-                        newViewController.didMove(toParent: self)
-        })
+        },completion: { finished in
+            oldViewController.view.removeFromSuperview()
+            oldViewController.removeFromParent()
+            newViewController.didMove(toParent: self)
+        }
+        )
     }
     
 }

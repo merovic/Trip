@@ -22,7 +22,7 @@ class NotificationsViewController: UIViewController {
     
     var notes: [Note]?
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         getData()
     }
     
@@ -66,6 +66,7 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
         cell.notNameLbl.text = notes?[indexPath.row].title
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "NotificationDetails") as! NotificationDetailsViewController
@@ -74,12 +75,4 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
             self.present(vc, animated: true, completion: nil)
         }
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
-    }
-    
-}
-
-extension UITableView{
-    
 }

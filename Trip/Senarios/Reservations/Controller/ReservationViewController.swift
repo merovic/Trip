@@ -18,9 +18,7 @@ class ReservationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reservationSegmented.selectedSegmentIndex = 0
-        reservationsSegChanged(self.reservationSegmented)
-        
+        getAgreedRequests()
     }
     
     func getAgreedRequests(){
@@ -37,35 +35,36 @@ class ReservationViewController: UIViewController {
                     }
                 }
             }
+            
         }
     }
     
     func getFinishedRequests(){
         if let user = Shared.user {
-            APIClient.selectRequestHaveEndTripByIdUser(id_user: user.id) { (Result) in
-                switch Result{
-                case .success(let ressponse):
-                    print(ressponse)
-                    self.requestFinished = ressponse
-                    self.reservationTableView.reloadData()
-                case .failure(let error):
-                    print(error.localizedDescription)
+            DispatchQueue.global().async {
+                APIClient.selectRequestHaveEndTripByIdUser(id_user: user.id) { (Result) in
+                    switch Result{
+                    case .success(let ressponse):
+                        print(ressponse)
+                        self.requestFinished = ressponse
+                        self.reservationTableView.reloadData()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }
-        
-        
     }
     
     @IBAction func reservationsSegChanged(_ sender: UISegmentedControl) {
         if reservationSegmented.selectedSegmentIndex == 0 {
             getAgreedRequests()
+            self.reservationTableView.reloadData()
         } else {
             getFinishedRequests()
             
         }
     }
-    
     
     @IBAction func menuBtn(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
