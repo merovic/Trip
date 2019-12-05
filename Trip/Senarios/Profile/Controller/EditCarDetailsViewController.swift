@@ -11,7 +11,13 @@ import UIKit
 class EditCarDetailsViewController: UIViewController {
 
     @IBOutlet weak var ownerName: UITextField!
-    @IBOutlet weak var attachButn: UIButton!
+    @IBOutlet weak var attachButn: UIButton!{
+    didSet{
+        attachButn.layer.cornerRadius = 8
+        attachButn.layer.borderColor = #colorLiteral(red: 0.9725490196, green: 0.9529411765, blue: 0.003921568627, alpha: 1)
+        attachButn.layer.borderWidth = 1
+    }
+    }
     @IBOutlet weak var model: UITextField!
     @IBOutlet weak var color: UITextField!
     @IBOutlet weak var rentPricePerDay: UITextField!

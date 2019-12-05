@@ -900,7 +900,7 @@
             <objects>
                 <viewController storyboardIdentifier="Home" id="PXN-63-Qon" customClass="HomeViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9e-lT-Ykr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1246"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1092"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter city , address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CV8-XF-6cf" customClass="DesignableUITextField" customModule="Trip" customModuleProvider="target">
@@ -918,10 +918,10 @@
                                 </connections>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQX-h9-imR">
-                                <rect key="frame" x="0.0" y="106" width="414" height="1057"/>
+                                <rect key="frame" x="0.0" y="106" width="414" height="903"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyI-XP-jsc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="957"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest 5 cars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-t8-mgG">
                                                 <rect key="frame" x="20" y="30" width="119" height="24"/>
@@ -1214,6 +1214,7 @@
                                             <constraint firstItem="0Oa-ZO-Eor" firstAttribute="top" secondItem="Px7-dT-qlU" secondAttribute="bottom" constant="30" id="87h-Og-BP0"/>
                                             <constraint firstAttribute="trailing" secondItem="QI5-qe-d8i" secondAttribute="trailing" constant="20" id="8aO-Ye-n9u"/>
                                             <constraint firstItem="Px7-dT-qlU" firstAttribute="leading" secondItem="dyI-XP-jsc" secondAttribute="leading" id="8fy-Fq-9lP"/>
+                                            <constraint firstAttribute="height" constant="957" id="9QO-B7-WB4"/>
                                             <constraint firstAttribute="trailing" secondItem="caO-q6-9Kr" secondAttribute="trailing" id="9RP-7c-lXt"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Umj-t8-mgG" secondAttribute="trailing" constant="20" symbolic="YES" id="9eZ-NY-BLp"/>
                                             <constraint firstItem="aS3-9F-lLP" firstAttribute="top" secondItem="caO-q6-9Kr" secondAttribute="bottom" constant="30" id="FGo-mm-yqM"/>
@@ -1241,7 +1242,6 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="dyI-XP-jsc" firstAttribute="height" secondItem="iQX-h9-imR" secondAttribute="height" multiplier="1.13529" id="E1w-hY-egh"/>
                                     <constraint firstAttribute="trailing" secondItem="dyI-XP-jsc" secondAttribute="trailing" id="E78-gr-BIz"/>
                                     <constraint firstAttribute="bottom" secondItem="dyI-XP-jsc" secondAttribute="bottom" id="KCD-hT-2dU"/>
                                     <constraint firstItem="dyI-XP-jsc" firstAttribute="leading" secondItem="iQX-h9-imR" secondAttribute="leading" id="a4i-gS-JtP"/>
@@ -1272,7 +1272,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="1300"/>
+                    <size key="freeformSize" width="414" height="1146"/>
                     <connections>
                         <outlet property="addCar" destination="aS3-9F-lLP" id="Vm9-5E-6xb"/>
                         <outlet property="inviteFriend" destination="QI5-qe-d8i" id="ct7-Fh-Deq"/>
@@ -1989,7 +1989,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6n-2x-oMT">
-                                                <rect key="frame" x="0.0" y="8" width="132" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="154" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="   Edit Profile" image="editYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2021,7 +2021,7 @@
                                         <rect key="frame" x="0.0" y="55" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-h5-ge3">
-                                                <rect key="frame" x="0.0" y="8" width="173" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="195" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="   Edit Car Details" image="carYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2052,7 +2052,7 @@
                                         <rect key="frame" x="0.0" y="110" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-yS-vee">
-                                                <rect key="frame" x="0.0" y="8" width="152" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="174" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="   Reservations" image="steetYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2082,7 +2082,7 @@
                                         <rect key="frame" x="0.0" y="165" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-An-FJ5">
-                                                <rect key="frame" x="0.0" y="6" width="117" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="-8.5" width="145" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="   Sign out" image="Sign Out">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3492,6 +3492,9 @@
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchBtnPressed:" destination="u23-LB-ywe" eventType="touchUpInside" id="af3-B6-I6i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3699,6 +3702,9 @@
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchBtnPressed:" destination="8ZA-Uu-RnD" eventType="touchUpInside" id="Q6G-12-4XJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4106,7 +4112,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-uZ-wmM" customClass="CosmosView" customModule="Cosmos">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-uZ-wmM" customClass="CosmosView" customModule="Cosmos">
                                                         <rect key="frame" x="109.5" y="75.5" width="195" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -8027,7 +8033,7 @@
             <color red="0.14900000393390656" green="0.72899997234344482" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TripColor">
-            <color red="0.97299998998641968" green="0.95300000905990601" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97254901960784312" green="0.95294117647058818" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="cancleColor">
             <color red="0.85900002717971802" green="0.3059999942779541" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

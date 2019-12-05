@@ -25,7 +25,10 @@ class SearchNormalViewController: UIViewController {
         super.viewDidLoad()
 
     }
-
+    
+    @IBAction func searchBtnPressed(_ sender: UIButton) {
+    }
+    
 }
 
 extension SearchNormalViewController : UITableViewDelegate , UITableViewDataSource {
