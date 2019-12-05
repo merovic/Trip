@@ -30,6 +30,7 @@
 		3B177EC42397BB48001E5523 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B177EC32397BB48001E5523 /* RequestsViewController.swift */; };
 		3B177EC72397BB86001E5523 /* RequestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B177EC62397BB86001E5523 /* RequestCellTableViewCell.swift */; };
 		3B177EC92397E8BB001E5523 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B177EC82397E8BB001E5523 /* SettingsViewController.swift */; };
+		3B35F82B239942F400B51572 /* EndTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B35F82A239942F400B51572 /* EndTripViewController.swift */; };
 		3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B79882392935B0071853C /* InviteFriendViewController.swift */; };
 		3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */; };
 		3B72024823950F810088714B /* SearchNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024723950F810088714B /* SearchNormalViewController.swift */; };
@@ -126,6 +127,7 @@
 		3B177EC32397BB48001E5523 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		3B177EC62397BB86001E5523 /* RequestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCellTableViewCell.swift; sourceTree = "<group>"; };
 		3B177EC82397E8BB001E5523 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3B35F82A239942F400B51572 /* EndTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTripViewController.swift; sourceTree = "<group>"; };
 		3B6B79882392935B0071853C /* InviteFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendViewController.swift; sourceTree = "<group>"; };
 		3B6B798A239293A70071853C /* SocialLinksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinksCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B72024723950F810088714B /* SearchNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNormalViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				8140142F2393FF0D00B89210 /* StartPopUp.swift */,
 				814014312393FF2400B89210 /* CancelPopUp.swift */,
 				8103B8DF2397CF1900A171A6 /* ReserveTripViewController.swift */,
+				3B35F82A239942F400B51572 /* EndTripViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
 				3B177EC42397BB48001E5523 /* RequestsViewController.swift in Sources */,
 				3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */,
+				3B35F82B239942F400B51572 /* EndTripViewController.swift in Sources */,
 				814014342394009900B89210 /* AddCarViewController.swift in Sources */,
 				8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */,
 				814014302393FF0D00B89210 /* StartPopUp.swift in Sources */,

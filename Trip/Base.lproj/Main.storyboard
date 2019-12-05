@@ -5151,10 +5151,10 @@
             </objects>
             <point key="canvasLocation" x="9794" y="6610"/>
         </scene>
-        <!--View Controller-->
+        <!--End Trip View Controller-->
         <scene sceneID="aCf-qG-Ndy">
             <objects>
-                <viewController id="Kxb-xh-31U" sceneMemberID="viewController">
+                <viewController id="Kxb-xh-31U" customClass="EndTripViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fmD-cf-jnX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5306,6 +5306,9 @@
                                                 <state key="normal" title="Colsed Trip ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="colsedTripBtnPreesed:" destination="Kxb-xh-31U" eventType="touchUpInside" id="pEB-nu-j9Z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -5370,6 +5373,9 @@
                                     <constraint firstAttribute="width" constant="30" id="fFC-QE-agO"/>
                                 </constraints>
                                 <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="cancelBtn:" destination="Kxb-xh-31U" eventType="touchUpInside" id="pw6-dt-DNm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5383,6 +5389,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lw3-1q-YFc"/>
                     </view>
+                    <connections>
+                        <outlet property="colsedTripBtn" destination="ZTb-Ig-9Q1" id="OyZ-Z7-qWE"/>
+                        <outlet property="comment" destination="ZLp-Qy-6qY" id="15c-KO-4hl"/>
+                        <outlet property="extraKmPrice" destination="MOT-qG-GjD" id="Qg0-YR-XIm"/>
+                        <outlet property="numOfExtraKm" destination="JhN-mH-vRA" id="GtW-BJ-X5r"/>
+                        <outlet property="numOfFreeKm" destination="2Ya-b4-rn1" id="645-mM-WxW"/>
+                        <outlet property="numOfKm" destination="O9e-RY-PDH" id="E1T-xt-GFR"/>
+                        <outlet property="rate" destination="H0D-HR-qjP" id="KY5-PN-5fI"/>
+                        <outlet property="totalAddtionalCost" destination="Q0d-aB-cvB" id="7pG-T3-KAq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jd-jc-Gk6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
