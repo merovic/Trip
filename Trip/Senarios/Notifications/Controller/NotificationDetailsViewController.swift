@@ -12,6 +12,11 @@ import Cosmos
 class NotificationDetailsViewController: UIViewController {
 
     
+    @IBOutlet weak var bigView: UIView!{
+        didSet{
+            bigView.layer.cornerRadius = 8
+        }
+    }
     @IBOutlet weak var descrtition2: UILabel!
     @IBOutlet weak var description1: UILabel!
     @IBOutlet weak var messageTitle: UILabel!
