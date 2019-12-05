@@ -13,12 +13,10 @@ class RequestCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var requestNameLbl: UILabel!
     @IBOutlet weak var requestDateLabl: UILabel!
-    
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var rate: CosmosView!
     @IBOutlet weak var rateLbl: UILabel!
-    
     @IBOutlet weak var refused: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: refused)
@@ -26,18 +24,30 @@ class RequestCellTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var Accepated: UIButton!{
         didSet{
-            Rounded.roundedCornerButton1(button: refused)
+            Rounded.roundedCornerButton1(button: Accepated)
         }
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var idRequest: Int?
+    
+    @IBAction func acceptRequest(_ sender: UIButton){
+        APIClient.agrre_request(id_request: 0, km: 0) { (Result) in
+            switch Result {
+            case .success(let ressponse):
+                print(ressponse)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func refuseRequest(_ sender: UIButton){
+        APIClient.refuseRequest(id_request: 0) { (Result) in
+            switch Result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
-
 }

@@ -11,23 +11,20 @@ import UIKit
 class SearchNormalViewController: UIViewController {
     
     @IBOutlet var currentView: UIView!
-    var arrayText = ["egy" , "bra" , "alg" , "mrc" ]
-
+    @IBOutlet weak var srarchBarText: UISearchBar!
+    @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: searchBut)
         }
     }
-    @IBOutlet weak var srarchBarText: UISearchBar!
-    @IBOutlet weak var searchTableView: UITableView!
+    
+    var arrayText = ["egy" , "bra" , "alg" , "mrc" ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-   
 
 }
 

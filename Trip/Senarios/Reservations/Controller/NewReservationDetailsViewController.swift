@@ -26,11 +26,15 @@ class NewReservationDetailsViewController: UIViewController {
     @IBOutlet weak var tax: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var details: UILabel!
+    
+    var idCar: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
        
     }
+    
     
     @IBAction func startPressed(_ sender: UIButton) {
     }
