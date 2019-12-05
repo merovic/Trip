@@ -49,6 +49,11 @@ class CarDetailsViewController: UIViewController {
         imageCarSlider.auk.settings.contentMode = .scaleAspectFill
         imageCarSlider.auk.settings.pageControl.marginToScrollViewBottom = 30
         
+        price.layer.cornerRadius = 10
+        price.layer.masksToBounds = true
+        price.layer.borderWidth = 0
+
+        
         imageCarSlider.auk.show(url: "https://scarfi-hijabs.com/wp-content/uploads/2019/10/4.jpg")
         if let image = UIImage(named: "map1.jpg") {
             imageCarSlider.auk.show(image: image)
