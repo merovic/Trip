@@ -130,6 +130,7 @@ struct K {
         static let phone = "phone"
         static let address = "address"
         static let license = "license"
+        static let img = "img"
     }
     
     struct delete_not {

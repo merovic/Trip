@@ -4,11 +4,11 @@ PODS:
     - moa
   - BEMCheckBox (1.4.1)
   - Cosmos (19.0.3)
-  - FBSDKCoreKit (5.11.1):
-    - FBSDKCoreKit/Basics (= 5.11.1)
-    - FBSDKCoreKit/Core (= 5.11.1)
-  - FBSDKCoreKit/Basics (5.11.1)
-  - FBSDKCoreKit/Core (5.11.1):
+  - FBSDKCoreKit (5.12.0):
+    - FBSDKCoreKit/Basics (= 5.12.0)
+    - FBSDKCoreKit/Core (= 5.12.0)
+  - FBSDKCoreKit/Basics (5.12.0)
+  - FBSDKCoreKit/Core (5.12.0):
     - FBSDKCoreKit/Basics
   - FBSDKLoginKit (5.11.1):
     - FBSDKLoginKit/Login (= 5.11.1)
@@ -169,7 +169,7 @@ SPEC CHECKSUMS:
   Auk: 7cc533252e2caaaa36b2be19c0b799f6057c365a
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
-  FBSDKCoreKit: 5aada61a229054694810f3cee231f986004b3c49
+  FBSDKCoreKit: fa3ac4dc9b1afc9ae70b3de4dd704d1b6aeeed0d
   FBSDKLoginKit: 0e4572e0279e477103b57978e3ea05fac1dd673d
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a

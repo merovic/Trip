@@ -50,13 +50,13 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
         if let user = user ,password.text == comfirmPass.text , name.text != "" , phone.text != "" , Address.text != "" , mail.text != "" , password.text != "" {
             
             DispatchQueue.main.async { [weak self] in
-                APIClient.updateUser(id_user: user.id, name: self?.name.text ?? user.name , email: self?.mail.text ?? user.email, password: self?.password.text ?? user.password, phone: self?.phone.text ?? user.phone, address: self?.Address.text ?? user.address, license: user.license) { (Result) in
+                APIClient.updateUser(id_user: user.id, name: self?.name.text ?? user.name , email: self?.mail.text ?? user.email, password: self?.password.text ?? user.password, phone: self?.phone.text ?? user.phone, address: self?.Address.text ?? user.address, license: user.license, img: user.img ?? "") { (Result) in
                     switch Result {
                     case .success(let respnse):
                         print(respnse)
                         self?.stopAnimating()
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        print("///////////////////////",error.localizedDescription)
                         self?.stopAnimating()
                     }
                     

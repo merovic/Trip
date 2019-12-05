@@ -72,8 +72,8 @@ class APIClient {
         performRequestSimple(route: APIRouter.insert_request_car(id_user: id_user, id_owner: id_owner, id_car: id_car, message: message, datee: datee), completion: completion)
     }
     static func updateUser (id_user: Int ,name: String ,
-                            email : String , password: String , phone: String ,address: String ,license: String,completion: @escaping (Result<String,AFError>)->Void) {
-        performRequestSimple(route: APIRouter.update_user(id_user: id_user, name: name, email: email, password: password, phone: phone, address: address, license: license), completion: completion)
+                            email : String , password: String , phone: String ,address: String ,license: String ,img:String ,completion: @escaping (Result<String,AFError>)->Void) {
+        performRequestSimple(route: APIRouter.update_user(id_user: id_user, name: name, email: email, password: password, phone: phone, address: address, license: license,img: img), completion: completion)
         
     }
     static func getNoteByUserID(id_user : Int ,completion: @escaping (Result<[Note],AFError>)->Void){

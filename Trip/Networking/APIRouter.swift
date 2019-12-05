@@ -27,7 +27,7 @@ enum APIRouter: URLRequestConvertible {
     case select_note_by_id_user(id_user : Int)
     case select_request_by_id_request (id_request : Int)
     case update_user (id_user: Int ,name: String ,
-         email : String , password: String , phone: String ,address: String ,license: String)
+        email : String , password: String , phone: String ,address: String ,license: String ,img: String)
     case delete_not(id: Int)
     case end_trip(id_request: Int , new_km: Double)
     case select_all_request_by_id_owner(id_owner: Int)
@@ -114,11 +114,11 @@ enum APIRouter: URLRequestConvertible {
             return .get
         }
     }
-
+    
     // MARK: - Path
     private var path: String {
         switch self {
-
+            
         case .agrre_refuse:
             return "/agrre_refuse"
         case .forgete_password_by_email:
@@ -189,7 +189,7 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-                 
+            
         case .agrre_refuse(let id_request):
             return [K.agrre_refuse.id_request: id_request]
         case .forgete_password_by_email(let email):
@@ -222,8 +222,6 @@ enum APIRouter: URLRequestConvertible {
             return [K.select_note_by_id_user.id_user: id_user]
         case .select_request_by_id_request(let id_request):
             return [K.select_request_by_id_request.id_request: id_request]
-        case .update_user(let id_user, let name, let email, let password, let phone, let address, let license):
-            return [K.update_user.id_user: id_user ,K.update_user.name: name ,K.update_user.email: email ,K.update_user.password: password ,K.update_user.phone: phone ,K.update_user.address: address ,K.update_user.license: license]
         case .delete_not(let id):
             return [K.delete_not.id: id]
         case .end_trip(let id_request, let new_km):
@@ -254,10 +252,12 @@ enum APIRouter: URLRequestConvertible {
             return[K.update_user_rate.id_user: id_user ,K.update_user_rate.id_user: number_rate]
         case .update_car(let id_car, let id_owner, let owner, let image, let price_rent_per_day, let available_date_from, let available_date_to, let number_km, let price_km, let price_trip, let city, let area, let st_name, let number_hone, let lon, let lat, let number_of_trip, let model, let type, let rate):
             return [K.update_car.id_car: id_car , K.update_car.id_owner: id_owner ,K.update_car.owner: owner ,K.update_car.image: image ,K.update_car.price_rent_per_day: price_rent_per_day ,K.update_car.available_date_from: available_date_from ,K.update_car.available_date_to: available_date_to ,K.update_car.number_km: number_km ,K.update_car.price_km: price_km ,K.update_car.price_trip: price_trip ,K.update_car.city: city ,K.update_car.area: area ,K.update_car.st_name: st_name ,K.update_car.number_hone: number_hone ,K.update_car.lon: lon ,K.update_car.lat: lat ,K.update_car.number_of_trip: number_of_trip ,K.insert_car.model: model ,K.update_car.type: type ,K.update_car.rate: rate]
+        case .update_user(let id_user, let name, let email, let password, let phone, let address, let license, let img):
+            return [K.update_user.id_user: id_user , K.update_user.name: name ,K.update_user.email: email ,K.update_user.password: password ,K.update_user.phone: phone ,K.update_user.address: address, K.update_user.license: license, K.update_user.img: img]
         }
-}
+    }
     
-// MARK: - URLRequestConvertible
+    // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
         
         let url = try K.ProductionServer.baseURL.asURL()
@@ -277,7 +277,7 @@ enum APIRouter: URLRequestConvertible {
         var encodedURLRequest:URLRequest? = nil
         
         var Vparameters: [String: Any]
-        
+        print(urlRequest)
         if(parameters == nil)
         {
             encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: nil)

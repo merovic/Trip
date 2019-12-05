@@ -16,8 +16,12 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         updateData()
     }
+    
     func updateData(){
         if let user = Shared.user {
             profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
@@ -27,7 +31,7 @@ class ProfileViewController: UIViewController {
                     switch Result {
                     case .success(let response):
                         print(response)
-                        
+                        Shared.user = response.first
                         self?.profileImage.sd_setImage(with: URL(string: response.first?.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
                         self?.name.text = response.first?.name
                     case .failure(let error):
@@ -50,9 +54,6 @@ class ProfileViewController: UIViewController {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "Reservations") as! ReservationViewController
             self.navigationController?.pushViewController(vc, animated: true)
-            
-            //  vc.modalPresentationStyle = .fullScreen
-            // self.present(vc, animated: true, completion: nil)
         }
     }
     
