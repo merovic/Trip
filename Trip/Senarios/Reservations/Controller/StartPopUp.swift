@@ -16,6 +16,12 @@ class StartPopUp: UIViewController {
             Rounded.roundedCornerButton1(button: startBut)
         }
     }
+    
+    @IBOutlet weak var popView: UIView!{
+         didSet{
+             popView.layer.cornerRadius = 15
+         }
+     }
     override func viewDidLoad() {
         super.viewDidLoad()
 

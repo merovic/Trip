@@ -1678,10 +1678,10 @@
             </objects>
             <point key="canvasLocation" x="7161" y="4347"/>
         </scene>
-        <!--View Controller-->
+        <!--Map Kit View Controller-->
         <scene sceneID="XnZ-P0-Lly">
             <objects>
-                <viewController storyboardIdentifier="Map" id="WpT-iG-sts" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="WpT-iG-sts" customClass="MapKitViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ORQ-Pv-uvA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1699,6 +1699,9 @@
                                             <constraint firstAttribute="width" constant="40" id="azX-GE-gYX"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="pointer"/>
+                                        <connections>
+                                            <action selector="getLocation:" destination="WpT-iG-sts" eventType="touchUpInside" id="71o-1e-M4l"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTz-W5-kwW">
                                         <rect key="frame" x="349" y="756" width="40" height="40"/>
@@ -1707,6 +1710,9 @@
                                             <constraint firstAttribute="width" constant="40" id="Ngc-7J-gvo"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="check"/>
+                                        <connections>
+                                            <action selector="doneChoosingLocation:" destination="WpT-iG-sts" eventType="touchUpInside" id="Ve7-HC-GuO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1731,6 +1737,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sjd-Dz-shD"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="yew-23-4NV" id="sqt-5p-sEw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDm-Zk-dND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4705,6 +4714,7 @@
                     </view>
                     <connections>
                         <outlet property="SocialCollectionView" destination="00d-3P-V8l" id="Y82-ww-csw"/>
+                        <outlet property="popView" destination="Yxl-1b-08L" id="Naa-gb-fWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIg-YT-QCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4989,6 +4999,7 @@
                     </view>
                     <connections>
                         <outlet property="kmRead" destination="KYz-1z-0IQ" id="ZSN-Me-wv8"/>
+                        <outlet property="popView" destination="o7B-0C-Dmx" id="PxG-8H-HcK"/>
                         <outlet property="startBut" destination="w9y-Qk-qCK" id="YGj-ZS-0s3"/>
                     </connections>
                 </viewController>
@@ -5133,6 +5144,7 @@
                     <connections>
                         <outlet property="cancelBut" destination="6FS-96-fx9" id="tj2-Pr-DjF"/>
                         <outlet property="kmRead" destination="8ML-vc-zKA" id="FT2-FS-trg"/>
+                        <outlet property="popView" destination="roI-wN-FfP" id="gA6-gt-ahT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piv-bz-gRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5596,7 +5608,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2g-NK-l0p">
                                         <rect key="frame" x="15" y="185" width="344" height="1"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="C9d-4O-rxC"/>
                                         </constraints>
@@ -5620,11 +5632,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="EN6-FY-nni">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EN6-FY-nni">
                                         <rect key="frame" x="15" y="495" width="344" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-MI-aCg">
-                                                <rect key="frame" x="0.0" y="0.0" width="141" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Accept">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5634,7 +5646,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuN-Ny-iEM">
-                                                <rect key="frame" x="203" y="0.0" width="141" height="30"/>
+                                                <rect key="frame" x="182" y="0.0" width="162" height="30"/>
                                                 <color key="backgroundColor" name="cancleColor"/>
                                                 <state key="normal" title="Refuse">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5699,6 +5711,7 @@
                         <outlet property="messageTitle" destination="r9C-tx-si1" id="Hdh-XI-a8P"/>
                         <outlet property="name" destination="QDL-95-RuL" id="by4-zy-lAy"/>
                         <outlet property="phone" destination="GvH-Do-RYj" id="wul-0F-n5y"/>
+                        <outlet property="popView" destination="8TD-9N-49S" id="nVz-Hr-71A"/>
                         <outlet property="rate" destination="b4l-sq-hcb" id="HhC-hc-yW5"/>
                         <outlet property="ratelbl" destination="fzv-h0-Gfs" id="moh-gp-DhO"/>
                         <outlet property="rejectBut" destination="WuN-Ny-iEM" id="RwW-27-28e"/>

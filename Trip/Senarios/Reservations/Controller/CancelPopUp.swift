@@ -15,6 +15,12 @@ class CancelPopUp: UIViewController {
             Rounded.roundedCornerButton1(button: cancelBut)
         }
     }
+    @IBOutlet weak var popView: UIView!{
+         didSet{
+             popView.layer.cornerRadius = 15
+         }
+     }
+    
     @IBOutlet weak var kmRead: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()

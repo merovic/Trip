@@ -21,6 +21,11 @@ class NotificationDetailsViewController: UIViewController {
             Rounded.roundedCornerButton1(button: acceptBut)
         }
     }
+    @IBOutlet weak var popView: UIView!{
+        didSet{
+            popView.layer.cornerRadius = 15
+        }
+    }
     @IBOutlet weak var descrtition2: UILabel!
     @IBOutlet weak var description1: UILabel!
     @IBOutlet weak var messageTitle: UILabel!

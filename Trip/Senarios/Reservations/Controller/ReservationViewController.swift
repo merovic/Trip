@@ -18,25 +18,28 @@ class ReservationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reservationSegmented.selectedSegmentIndex = 0
+        reservationsSegChanged(self.reservationSegmented)
         
     }
     
     func getAgreedRequests(){
         if let user = Shared.user {
-            APIClient.selectRequestHaveAgreedByUserId(id_user: user.id) { (Result) in
-                switch Result{
-                case .success(let response):
-                    print(response)
-                    self.reservationTableView.reloadData()
-                    self.requestAgreed = response
-                case .failure(let error):
-                    print(error.localizedDescription)
+            DispatchQueue.global().async {
+                APIClient.selectRequestHaveAgreedByUserId(id_user: user.id) { (Result) in
+                    switch Result{
+                    case .success(let response):
+                        print(response)
+                        self.reservationTableView.reloadData()
+                        self.requestAgreed = response
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
                 }
             }
-
         }
     }
-     
+    
     func getFinishedRequests(){
         if let user = Shared.user {
             APIClient.selectRequestHaveEndTripByIdUser(id_user: user.id) { (Result) in
@@ -55,11 +58,11 @@ class ReservationViewController: UIViewController {
     }
     
     @IBAction func reservationsSegChanged(_ sender: UISegmentedControl) {
-        if sender.tag == 0 {
+        if reservationSegmented.selectedSegmentIndex == 0 {
             getAgreedRequests()
         } else {
             getFinishedRequests()
-
+            
         }
     }
     
@@ -80,12 +83,12 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
         } else {
             return requestFinished?.count ?? 0
         }
-       
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         reservationTableView.register(UINib(nibName: "CurrentReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentReservationTableViewCell")
-               reservationTableView.register(UINib(nibName: "PreviousReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousReservationTableViewCell")
+        reservationTableView.register(UINib(nibName: "PreviousReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousReservationTableViewCell")
         if reservationSegmented.selectedSegmentIndex == 0 {
             let  cell = tableView.dequeueReusableCell(withIdentifier: "CurrentReservationTableViewCell", for: indexPath) as! CurrentReservationTableViewCell
             cell.addressReservation.text = requestAgreed?[indexPath.row].agrreOrRefuse

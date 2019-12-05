@@ -12,7 +12,11 @@ class InviteFriendViewController: UIViewController {
     var soicalNameArray = ["Phone" , "Facebook" , "Whatsapp" , "Messenger" , "Email" , "More"]
     var soicalImageArray = ["mobile" , "fbIcon" , "what'sIcon" , "messengerIcon" , "emailIcon" , "moreIcon"]
     
-    
+    @IBOutlet weak var popView: UIView!{
+         didSet{
+             popView.layer.cornerRadius = 15
+         }
+     }
     @IBOutlet weak var SocialCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
