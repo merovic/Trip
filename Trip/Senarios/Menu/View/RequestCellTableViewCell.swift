@@ -19,9 +19,16 @@ class RequestCellTableViewCell: UITableViewCell {
     @IBOutlet weak var rate: CosmosView!
     @IBOutlet weak var rateLbl: UILabel!
     
-    @IBOutlet weak var refused: UIButton!
-    
-    @IBOutlet weak var Accepated: UIButton!
+    @IBOutlet weak var refused: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: refused)
+        }
+    }
+    @IBOutlet weak var Accepated: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: refused)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

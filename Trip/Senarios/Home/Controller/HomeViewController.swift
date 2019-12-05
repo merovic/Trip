@@ -11,7 +11,9 @@ import Cosmos
 import SDWebImage
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var inviteFriend: UIButton!{didSet{Rounded.roundedCornerButton1(button: inviteFriend)}}
     @IBOutlet weak var recentCollectionView: UICollectionView!
+    @IBOutlet weak var addCar: UIButton!{didSet{Rounded.roundedCornerButton1(button: addCar)}}
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var backView: UIView!
@@ -64,7 +66,7 @@ class HomeViewController: UIViewController {
                     print(error.localizedDescription)
                 }
             }
-            APIClient.getAllCarsByRate(number_of_select: 20) { (Result) in
+            APIClient.getAllCarsByRate(number_of_select: 4) { (Result) in
                 switch Result{
                 case .success(let response):
                     print("111111111111111111111111111111111111111" , response)
@@ -100,7 +102,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 if  let rating = Double(car.rate) {
                     cell.rate.rating = rating
                 }
-                cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carPlaceholder"))
+                cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carSale"))
                 cell.name.text = car.stName
                 cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:" SR/Day" , ofSizeText2: 13)
                 cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip ?? "0", ofSizeText1: 14, text2: " Trips", ofSizeText2: 10)

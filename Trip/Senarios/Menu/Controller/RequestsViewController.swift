@@ -12,8 +12,9 @@ import UIKit
 class RequestsViewController: UIViewController {
     var text = ["12" , "23" , "34"]
     var requests: [Request]?
-    @IBOutlet weak var requestTableView: UITableView!
     
+    @IBOutlet weak var requestTableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         getUpdateData()

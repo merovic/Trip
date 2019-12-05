@@ -24,6 +24,13 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     @IBOutlet weak var color: UITextField!
     @IBOutlet weak var model: UITextField!
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var attatchBut: UIButton!{didSet{
+        self.attatchBut.layer.cornerRadius = 10
+        self.attatchBut.layer.borderColor = UIColor.black.cgColor
+        self.attatchBut.layer.borderWidth = 1.5
+        }
+        
+    }
     @IBOutlet weak var addPressed: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: addPressed)
@@ -93,11 +100,7 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     
     var lat: String = ""
     var long: String = ""
-    @IBOutlet weak var attatchBut: UIButton!{
-        didSet{
-            Rounded.roundedCornerButton1(button: attatchBut)
-        }
-    }
+    
     func open() {
         openDatePicker(for: dateFrom)
     }

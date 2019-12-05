@@ -13,6 +13,11 @@ class SearchNormalViewController: UIViewController {
     @IBOutlet var currentView: UIView!
     var arrayText = ["egy" , "bra" , "alg" , "mrc" ]
 
+    @IBOutlet weak var searchBut: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: searchBut)
+        }
+    }
     @IBOutlet weak var srarchBarText: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {

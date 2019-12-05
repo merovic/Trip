@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import SideMenu
 class ProfileViewController: UIViewController {
     
     
     @IBOutlet weak var profileImage: UIImageView!
-
+    @IBOutlet weak var name: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateData()
@@ -20,12 +21,15 @@ class ProfileViewController: UIViewController {
     func updateData(){
         if let user = Shared.user {
             profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+            name.text = user.name
             DispatchQueue.global(qos: .background).async { [weak self] in
                 APIClient.logIn(email: user.email, password: user.password) { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)
-                        self?.profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+                        
+                        self?.profileImage.sd_setImage(with: URL(string: response.first?.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+                        self?.name.text = response.first?.name
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -58,12 +62,15 @@ class ProfileViewController: UIViewController {
     
     @IBAction func showMenuPressed(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-            present(vc!, animated: true, completion: nil)
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+           
+            vc.settings = Shared.settings(view: self.view)
+            present(vc, animated: true, completion: nil)
         }
     }
     
     @IBAction func changePhoto(_ sender: UIButton) {
+        
         
     }
     

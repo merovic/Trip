@@ -19,7 +19,11 @@ class LogInViewController: UIViewController{
     }
     @IBOutlet weak var passwordTF: UITextField!{didSet{ passwordTF.delegate = self }}
     @IBOutlet weak var mailTF: UITextField!{didSet{ mailTF.delegate = self }}
-    @IBOutlet weak var fbBut: UIButton!
+    @IBOutlet weak var fbBut: UIButton!{
+        didSet{
+            Rounded.roundedCornerButton1(button: fbBut)
+        }
+    }
     
     
     override func viewDidLoad() {

@@ -30,7 +30,12 @@ class CarDetailsViewController: UIViewController {
             Rounded.roundedCornerButton1(button: reserveBut)
         }
     }
-    @IBOutlet weak var detailsCarView: UIView!
+    @IBOutlet weak var detailsCarView: UIView!{
+        didSet{
+            detailsCarView.layer.cornerRadius = 40
+            detailsCarView.clipsToBounds = true
+        }
+    }
     
     var carDetails: Car?
     
@@ -41,24 +46,22 @@ class CarDetailsViewController: UIViewController {
     
     
     func updateView(){
+        imageCarSlider.auk.settings.contentMode = .scaleAspectFill
+        imageCarSlider.auk.settings.pageControl.marginToScrollViewBottom = 30
         
         imageCarSlider.auk.show(url: "https://scarfi-hijabs.com/wp-content/uploads/2019/10/4.jpg")
         if let image = UIImage(named: "map1.jpg") {
             imageCarSlider.auk.show(image: image)
         }
-        if let image = UIImage(named: "map2.jpg") {
+        if let image = UIImage(named: "carSale") {
             imageCarSlider.auk.show(image: image)
         }
-        
-        detailsCarView.layer.cornerRadius = 30
-        detailsCarView.clipsToBounds = true
-        
         if let car = carDetails {
             price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 24, text2: " SR/Day", ofSizeText2: 18)
             name.text = car.owner
             model.text = car.model
-            from.attributedText = NSAttributedString.withDualText2(text1: "From ", ofSizeText1: 12, text2: "\(car.availableDateFrom)", ofSizeText2: 18)
-            to.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: 13, text2: "\(car.availableDateTo)", ofSizeText2: 18)
+            from.attributedText = NSAttributedString.withDualText2(text1: "From ", ofSizeText1: 12, text2: "15/7/2019", ofSizeText2: 18)
+            to.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: 13, text2: "25/12/2019", ofSizeText2: 18)
             address.text = "\(car.city) ,\(car.area)"
             tripsNum.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip, ofSizeText1: 14, text2: "Trips ", ofSizeText2: 10)
         }
