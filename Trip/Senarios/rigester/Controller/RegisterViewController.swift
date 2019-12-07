@@ -139,7 +139,7 @@ extension RegisterViewController: UIPickerViewDataSource , UIPickerViewDelegate 
            return currencyArray[row]
        }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-      //  addressTF.text = 
+        addressTF.text = currencyArray[row]
         self.view.endEditing(true)
         
            
