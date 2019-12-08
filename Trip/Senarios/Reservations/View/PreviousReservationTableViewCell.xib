@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cg3-LP-qiM" customClass="CardView" customModule="Trip" customModuleProvider="target">
-                        <rect key="frame" x="20" y="10" width="281" height="120"/>
+                        <rect key="frame" x="5" y="10" width="311" height="120"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9H-8e-Sis">
                                 <rect key="frame" x="10" y="10" width="47.5" height="21"/>
@@ -28,19 +28,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-cv-dvY">
-                                <rect key="frame" x="240" y="15" width="31" height="14.5"/>
+                                <rect key="frame" x="270" y="15" width="31" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlT-dz-Q9j">
-                                <rect key="frame" x="10" y="41" width="261" height="18"/>
+                                <rect key="frame" x="10" y="41" width="291" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkQ-9C-WXy">
-                                <rect key="frame" x="191" y="80" width="80" height="30"/>
+                                <rect key="frame" x="221" y="80" width="80" height="30"/>
                                 <color key="backgroundColor" name="TripColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9UX-1R-jgf"/>
@@ -72,8 +72,8 @@
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="Cg3-LP-qiM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="42n-Ov-xNR"/>
-                    <constraint firstAttribute="trailing" secondItem="Cg3-LP-qiM" secondAttribute="trailing" constant="20" id="Jte-yh-wcT"/>
+                    <constraint firstItem="Cg3-LP-qiM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="42n-Ov-xNR"/>
+                    <constraint firstAttribute="trailing" secondItem="Cg3-LP-qiM" secondAttribute="trailing" constant="5" id="Jte-yh-wcT"/>
                     <constraint firstAttribute="bottom" secondItem="Cg3-LP-qiM" secondAttribute="bottom" constant="10" id="ojw-uK-h1M"/>
                     <constraint firstItem="Cg3-LP-qiM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="qCL-aA-8dh"/>
                 </constraints>
