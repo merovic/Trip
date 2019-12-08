@@ -93,8 +93,8 @@ class APIClient {
         performRequest(route: APIRouter.select_all_cars(number_of_select: number_of_select), completion: completion)
     }
     
-    static func getAllCarsById(id : Int ,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_all_car_by_id(id: id), completion: completion)
+    static func getAllCarsById(id : Int ,completion: @escaping (Result<[Car],AFError>)->Void){
+        performRequest(route: APIRouter.select_all_car_by_id(id: id), completion: completion)
     }
     
     static func getAllCarsByCityAndDate(city: String ,available_date_from: String , available_date_to: String ,completion: @escaping (Result<String,AFError>)->Void){

@@ -26,7 +26,7 @@ class FirebaseUploader
         return randomString
     }
     
-    static func uploadToFirebase(viewController:UIViewController,imagePicker:UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) -> String
+    static func uploadToFirebase(viewController:UIViewController ,imagePicker:UIImagePickerController , didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any] ,completion: (() -> Void)? = nil ) -> String
     {
         
         //to upload image to firebase storage
@@ -57,7 +57,7 @@ class FirebaseUploader
                             // Here you can get the download URL for 'simpleImage.jpg'
                             print(url?.absoluteString ?? "link")
                             imageURl = url?.absoluteString ?? "link"
-                            
+                            Shared.Image = imageURl
                         }
                     }
                 }

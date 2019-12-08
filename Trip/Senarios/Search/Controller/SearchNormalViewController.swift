@@ -10,8 +10,8 @@ import UIKit
 
 class SearchNormalViewController: UIViewController {
     
+    @IBOutlet weak var searchTF: DesignableUITextField!
     @IBOutlet var currentView: UIView!
-    @IBOutlet weak var srarchBarText: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchBut: UIButton!{
         didSet{
@@ -27,6 +27,18 @@ class SearchNormalViewController: UIViewController {
     }
     
     @IBAction func searchBtnPressed(_ sender: UIButton) {
+        if searchTF.text != "" {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.getAllCarsByCity(city: self?.searchTF.text ?? "") { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
     
 }
@@ -42,6 +54,8 @@ extension SearchNormalViewController : UITableViewDelegate , UITableViewDataSour
                  return cell
         
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchTF.text = arrayText[indexPath.row]
+    }
     
 }

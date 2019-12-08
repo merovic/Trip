@@ -74,4 +74,7 @@ class SearchViewController: UIViewController {
         )
     }
     
+    @IBAction func closeSearchDidPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
