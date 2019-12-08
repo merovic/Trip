@@ -23,11 +23,17 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
     @IBOutlet weak var name: UITextField!
     
     var user = Shared.user
+     let currencyPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        doneButtonForCitiesPicker(for: Address)
+
     }
+    
+    
+ 
     
     func updateView(){
         name.text = user?.name
@@ -43,7 +49,24 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
         Address.delegate = self
         password.delegate = self
         comfirmPass.delegate = self
+        currencyPicker.delegate = self
+        currencyPicker.dataSource = self
     }
+    
+    func doneButtonForCitiesPicker(for textField: UITextField){
+             textField.inputView = currencyPicker
+             let toolbar = UIToolbar()
+             toolbar.sizeToFit()
+             let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneCityPicker));
+             toolbar.setItems([doneButton], animated: true)
+             toolbar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+             textField.inputAccessoryView = toolbar
+         }
+      
+      @objc func doneCityPicker(){
+          self.view.endEditing(true)
+      }
+     
     
     @IBAction func savePressed(_ sender: UIButton) {
         self.startAnimating()
@@ -73,3 +96,30 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
     }
     
 }
+
+
+extension EditeProfileViewController: UIPickerViewDataSource , UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Shared.addressArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+           return Shared.addressArray[row]
+       }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+   
+        Address.text = Shared.addressArray[row]
+ 
+        
+           
+       }
+       
+    
+    
+}
+
+

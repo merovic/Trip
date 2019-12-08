@@ -32,8 +32,7 @@ class RegisterViewController: UIViewController {
     
     let ImagePicker = UIImagePickerController()
     let currencyPicker = UIPickerView()
-    let currencyArray = ["Egypt", "Barcelon","ManCity","Mailn","InterMailn","Roma","Real","Atm"]
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButtonForCitiesPicker(for: addressTF)
@@ -140,15 +139,15 @@ extension RegisterViewController: UIPickerViewDataSource , UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencyArray.count
+        return Shared.addressArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-           return currencyArray[row]
+           return Shared.addressArray[row]
        }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
    
-        addressTF.text = currencyArray[row]
+        addressTF.text = Shared.addressArray[row]
  
         
            
