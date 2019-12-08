@@ -36,7 +36,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        openPicker(for: addressTF)
+        doneButtonForCitiesPicker(for: addressTF)
         setTextFieldDelegates()
         
         
@@ -73,13 +73,21 @@ class RegisterViewController: UIViewController {
     }
   
     
-    func openPicker(for textField: UITextField) {
-        
-        textField.inputView = currencyPicker
-       
+
+    func doneButtonForCitiesPicker(for textField: UITextField){
+           textField.inputView = currencyPicker
+           let toolbar = UIToolbar()
+           toolbar.sizeToFit()
+           let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneCityPicker));
+           toolbar.setItems([doneButton], animated: true)
+           toolbar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+           textField.inputAccessoryView = toolbar
+       }
+    
+    @objc func doneCityPicker(){
+        self.view.endEditing(true)
     }
-    
-    
+   
     
     
     @IBAction func attachBtnPressed(_ sender: UIButton) {
@@ -139,8 +147,9 @@ extension RegisterViewController: UIPickerViewDataSource , UIPickerViewDelegate 
            return currencyArray[row]
        }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+   
         addressTF.text = currencyArray[row]
-        self.view.endEditing(true)
+ 
         
            
        }
