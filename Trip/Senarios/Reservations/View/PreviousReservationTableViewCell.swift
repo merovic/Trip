@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol PreviosReservationCellDelegate {
+    func previosReservationDetails(id: Int)
+}
 
 class PreviousReservationTableViewCell: UITableViewCell {
     
@@ -19,6 +22,12 @@ class PreviousReservationTableViewCell: UITableViewCell {
         }
     }
     
+    var idCar: Int?
+    var delegate: PreviosReservationCellDelegate?
+    
     @IBAction func detailsBtnPressed(_ sender: UIButton) {
+        if let id = idCar {
+            delegate?.previosReservationDetails(id: id)
+        }
     }
 }

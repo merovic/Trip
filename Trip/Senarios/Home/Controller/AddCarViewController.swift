@@ -41,6 +41,7 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     var datePicker = UIDatePicker()
     var pickerView = UIPickerView()
     var imageUrl: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         open()
@@ -128,12 +129,14 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     @objc func doneClicked() {
         let dateformter = DateFormatter()
         dateformter.dateStyle = .short
+        dateformter.dateFormat = "MM/dd/YYYY"
+        
         dateFrom.text = dateformter.string(from: datePicker.date)
         self.view.endEditing(true)
         
     }
     func openPickerView(for textField: UITextField){
-        //        pickerView.dataSource = ["","","","",""]
+        
     }
 }
 

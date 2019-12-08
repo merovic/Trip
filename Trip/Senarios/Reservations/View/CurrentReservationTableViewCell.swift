@@ -7,6 +7,10 @@
 //
 
 import UIKit
+protocol CurrentReservationDelegate {
+    func startTrip(id: Int)
+    func details(id: Int)
+}
 
 class CurrentReservationTableViewCell: UITableViewCell {
     
@@ -28,11 +32,34 @@ class CurrentReservationTableViewCell: UITableViewCell {
             Rounded.roundedCornerButton1(button: startBtn)
         }
     }
+    var delegate: CurrentReservationDelegate?
+    var idRequest: Int?
+    var idCar: Int?
     
     @IBAction func detailsBtnPressed(_ sender: UIButton) {
+        if let id = idCar {
+            delegate?.details(id: id)
+        }
     }
+    
     @IBAction func cancelBtnPressed(_ sender: UIButton) {
+        if let id = idRequest {
+            DispatchQueue.global().async {
+                APIClient.refuseRequest(id_request: id) { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
+    
     @IBAction func startBtnPressed(_ sender: UIButton) {
+        if let id = idRequest {
+            delegate?.startTrip(id: id)
+        }
     }
 }

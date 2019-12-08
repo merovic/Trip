@@ -22,7 +22,7 @@ class RequestsViewController: UIViewController {
     func getData(){
         if let user = Shared.user {
             DispatchQueue.main.async { [weak self] in
-                APIClient.selectAllRequestByOwnerId(id_owner: user.id) { (Result) in
+                APIClient.selectAllRequestByOwnerId(id_owner: 6) { (Result) in
                     switch Result{
                     case.success(let response):
                         print("///////////////////////////////////////////// \(response)")
@@ -56,7 +56,6 @@ extension RequestsViewController : UITableViewDelegate , UITableViewDataSource {
         let request = requests?[indexPath.row]
         
         cell.photo.sd_setImage(with: URL(string: request?.image ?? ""), placeholderImage: UIImage(named:"userPlaceholder"))
-        //            cell.rate.rating = request.rate
         cell.rateLbl.text = "Rate \(request?.rate ?? "")"
         cell.requestDateLabl.text = request?.datee
         cell.requestNameLbl.text = request?.message
@@ -69,6 +68,28 @@ extension RequestsViewController : UITableViewDelegate , UITableViewDataSource {
         requestTableView.rowHeight = UITableView.automaticDimension
         requestTableView.estimatedRowHeight = 220
     }
+}
+
+@available(iOS 13.0, *)
+extension RequestsViewController: RequestCellDelegate {
+    func acceptRequest(id: Int) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "StartTrip") as! StartPopUp
+        vc.modalPresentationStyle = .overFullScreen
+        vc.idRequest = id
+        self.present(vc, animated: true, completion: nil)
+    }
     
-    
+    func refuseRequest(id: Int) {
+        DispatchQueue.global().async { [weak self] in
+            APIClient.refuseRequest(id_request: id) { (Result) in
+                switch Result {
+                case .success(let response):
+                    print(response)
+                    self?.requestTableView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 }

@@ -9,6 +9,12 @@
 import UIKit
 import Cosmos
 
+protocol RequestCellDelegate {
+    func acceptRequest(id: Int)
+    func refuseRequest(id: Int)
+}
+
+
 class RequestCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var requestNameLbl: UILabel!
@@ -28,26 +34,17 @@ class RequestCellTableViewCell: UITableViewCell {
         }
     }
     var idRequest: Int?
+    var delegate: RequestCellDelegate?
     
     @IBAction func acceptRequest(_ sender: UIButton){
-        APIClient.agrre_request(id_request: 0, km: 0) { (Result) in
-            switch Result {
-            case .success(let ressponse):
-                print(ressponse)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        if let id = idRequest {
+            delegate?.acceptRequest(id: id)
         }
     }
     
     @IBAction func refuseRequest(_ sender: UIButton){
-        APIClient.refuseRequest(id_request: 0) { (Result) in
-            switch Result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        if let id = idRequest {
+            delegate?.refuseRequest(id: id)
         }
     }
 }

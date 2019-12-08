@@ -91,7 +91,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate , 
         )
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-       print("NOOOO")
+        self.dismiss(animated: true, completion: nil)
     }
     
     func updateUser(){

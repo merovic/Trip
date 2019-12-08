@@ -91,11 +91,15 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
         if reservationSegmented.selectedSegmentIndex == 0 {
             let  cell = tableView.dequeueReusableCell(withIdentifier: "CurrentReservationTableViewCell", for: indexPath) as! CurrentReservationTableViewCell
             cell.addressReservation.text = requestAgreed?[indexPath.row].agrreOrRefuse
-            
+            cell.idRequest = requestAgreed?[indexPath.row].id
+            cell.idCar = requestAgreed?[indexPath.row].idCar
+            cell.delegate = self
             return cell
         } else {
             let  cell = tableView.dequeueReusableCell(withIdentifier: "PreviousReservationTableViewCell", for: indexPath) as! PreviousReservationTableViewCell
             cell.addressReservation.text = requestFinished?[indexPath.row].agrreOrRefuse
+            cell.idCar = requestAgreed?[indexPath.row].idCar
+            cell.delegate = self
             return cell
         }
     }
@@ -104,6 +108,29 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
         reservationTableView.rowHeight = UITableView.automaticDimension
         reservationTableView.estimatedRowHeight = 120
     }
+}
+
+
+extension ReservationViewController: CurrentReservationDelegate , PreviosReservationCellDelegate {
+    func previosReservationDetails(id: Int) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "NewDetails") as! NewReservationDetailsViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.idCar = id
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
+    func startTrip(id: Int) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "StartTrip") as! StartPopUp
+            vc.modalPresentationStyle = .overFullScreen
+            vc.idRequest = id
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
     
+    func details(id: Int) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "") as! NewReservationDetailsViewController
+        vc.idCar = id
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

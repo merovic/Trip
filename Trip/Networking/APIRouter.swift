@@ -29,7 +29,7 @@ enum APIRouter: URLRequestConvertible {
     case update_user (id_user: Int ,name: String ,
         email : String , password: String , phone: String ,address: String ,license: String ,img: String)
     case delete_not(id: Int)
-    case end_trip(id_request: Int , new_km: Double)
+    case end_trip(id_request: Int , new_km: String)
     case select_all_request_by_id_owner(id_owner: Int)
     case select_all_request_by_id_user(id_user: Int)
     case select_request_that_have_aggree_by_id_owner (id_owner: Int)
@@ -39,7 +39,7 @@ enum APIRouter: URLRequestConvertible {
     case select_request_that_have_starttrip_by_id_owner(id_owner: Int)
     case select_request_that_have_starttrip_by_id_user(id_user: Int)
     case select_user_by_id(id_user: Int)
-    case start_trip(id_request: Int , new_km: Double)
+    case start_trip(id_request: Int , new_km: String)
     case update_car_rate(id_car: Int , number_rate: Double)
     case update_user_rate(id_user: Int , number_rate: Double)
     case update_car( id_car: Int ,id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String)

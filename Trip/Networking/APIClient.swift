@@ -126,11 +126,11 @@ class APIClient {
         performRequestSimple(route: APIRouter.delete_not(id: id), completion: completion)
     }
     
-    static func statTrip(id_request: Int, new_km: Double,completion: @escaping (Result<String,AFError>)->Void){
+    static func statTrip(id_request: Int, new_km: String,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.start_trip(id_request: id_request, new_km: new_km), completion: completion)
     }
     
-    static func endTrip(id_request: Int, new_km: Double,completion: @escaping (Result<String,AFError>)->Void){
+    static func endTrip(id_request: Int, new_km: String,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.end_trip(id_request: id_request, new_km: new_km), completion: completion)
     }
     

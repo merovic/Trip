@@ -27,21 +27,21 @@ class NotificationsViewController: UIViewController {
     }
     
     func getData(){
-        DispatchQueue.global().async { [weak self] in
-            APIClient.getAllNoteByOwnerID(id_owner: 6) { (Result) in
-                switch Result {
-                case .success(let response):
-                    print(response)
-                    self?.notes = response
-                    self?.TabelView.reloadData()
-                case .failure(let error):
-                    print(error.localizedDescription)
+        if let id = Shared.user?.id {
+            DispatchQueue.global().async { [weak self] in
+                APIClient.getAllNoteByOwnerID(id_owner: id) { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        self?.notes = response
+                        self?.TabelView.reloadData()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }
-        
     }
-    
     
     @IBAction func menu(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
@@ -51,7 +51,6 @@ class NotificationsViewController: UIViewController {
     }
     
 }
-
 
 extension NotificationsViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
