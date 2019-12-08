@@ -17,12 +17,10 @@ pod 'NVActivityIndicatorView'
 pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Firebase/Messaging'
-pod 'LocationPicker'
 pod 'SideMenu'
 pod 'BEMCheckBox'
 pod 'Auk'
 pod 'FBSDKLoginKit'
-
 
 
 

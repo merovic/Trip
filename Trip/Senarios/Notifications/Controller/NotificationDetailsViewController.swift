@@ -90,9 +90,12 @@ class NotificationDetailsViewController: UIViewController {
     }
     
     @IBAction func acceptPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
-        
-        self.present(vc, animated: true, completion: nil)
+        if let car = note?.idCar {
+            let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
+            vc.idCar = car
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancelBtn(_ sender: UIButton) {

@@ -15,8 +15,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var recentCollectionView: UICollectionView!
     @IBOutlet weak var addCar: UIButton!{didSet{Rounded.roundedCornerButton1(button: addCar)}}
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
-    @IBOutlet weak var scrollview: UIScrollView!
-    @IBOutlet weak var backView: UIView!
     
     var latestCars: [Car]?
     var topRatedCars: [Car]?
@@ -49,9 +47,15 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction func searchTapped(_ sender: UITextField) {
-        
+   
+    @IBAction func search(_ sender: DesignableUITextField) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "Search") as! SearchViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController( vc , animated: true)
+        }
     }
+
     
     func getCars(){
         DispatchQueue.main.async { [ weak self ] in
@@ -78,6 +82,8 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    
 }
 
 
@@ -158,4 +164,5 @@ extension NSAttributedString {
         
         return text
     }
+    
 }
