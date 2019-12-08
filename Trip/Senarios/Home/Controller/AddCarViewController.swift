@@ -25,20 +25,22 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     @IBOutlet weak var model: UITextField!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var attatchBut: UIButton!{
-    didSet{
-        attatchBut.layer.cornerRadius = 8
-        attatchBut.layer.borderColor = #colorLiteral(red: 0.9725490196, green: 0.9529411765, blue: 0.003921568627, alpha: 1)
-        attatchBut.layer.borderWidth = 1
-    }
+        didSet{
+            attatchBut.layer.cornerRadius = 8
+            attatchBut.layer.borderColor = #colorLiteral(red: 0.9725490196, green: 0.9529411765, blue: 0.003921568627, alpha: 1)
+            attatchBut.layer.borderWidth = 1
+        }
     }
     @IBOutlet weak var addPressed: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: addPressed)
         }
     }
+    
     let imagePicker = UIImagePickerController()
     var datePicker = UIDatePicker()
     var pickerView = UIPickerView()
+    var imageUrl: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         open()
@@ -64,6 +66,12 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         }
     }
     
+    @IBAction func attachPressed(_ sender: UIButton) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func showMap(_ sender: UIButton) {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "Map") as! MapKitViewController
@@ -77,12 +85,11 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     }
     
     @IBAction func addPressed(_ sender: UIButton) {
-        if apartmentName.text == "" , stname.text == "" , refion.text == "" , city.text == "" , tripPrice.text == "" , kmPrice.text == "" , km.text == "" , number.text == "" , dateTo.text == "" , dateFrom.text == "" , pricePerDay.text == "" , color.text == "" , model.text == "" , name.text == ""{
-            Alert.show("Failed", massege: "All fields are requires", context: self)
-        }else {
+        if apartmentName.text != "" , stname.text != "" , refion.text != "" , city.text != "" , tripPrice.text != "" , kmPrice.text != "" , km.text != "" , number.text != "" , dateTo.text != "" , dateFrom.text != "" , pricePerDay.text != "" , color.text != "" , model.text != "" , name.text != "" , let image = Shared.Image{
             self.startAnimating()
+            
             DispatchQueue.main.async { [weak self ] in
-                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: "noImage", price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.dateFrom.text ?? "", available_date_to: self?.dateTo.text ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2") { (Result) in
+                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.dateFrom.text ?? "", available_date_to: self?.dateTo.text ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2") { (Result) in
                     switch Result {
                     case .success(let respnse):
                         print(respnse)
@@ -96,6 +103,9 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
                 }
             }
         }
+        else {
+            Alert.show("Failed", massege: "All fields are requires", context: self)
+        }
     }
     
     var lat: String = ""
@@ -106,24 +116,24 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     }
     
     func openDatePicker(for textField: UITextField) {
-          datePicker.datePickerMode = .date
-          textField.inputView = datePicker
-          let toolbaar = UIToolbar()
-          toolbaar.sizeToFit()
-          let doneBut = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action:#selector(doneClicked))
-          toolbaar.setItems([doneBut], animated: true)
-          textField.inputAccessoryView = toolbaar
-      }
-      
+        datePicker.datePickerMode = .date
+        textField.inputView = datePicker
+        let toolbaar = UIToolbar()
+        toolbaar.sizeToFit()
+        let doneBut = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action:#selector(doneClicked))
+        toolbaar.setItems([doneBut], animated: true)
+        textField.inputAccessoryView = toolbaar
+    }
+    
     @objc func doneClicked() {
-          let dateformter = DateFormatter()
-          dateformter.dateStyle = .short
-          dateFrom.text = dateformter.string(from: datePicker.date)
-          self.view.endEditing(true)
-          
-      }
+        let dateformter = DateFormatter()
+        dateformter.dateStyle = .short
+        dateFrom.text = dateformter.string(from: datePicker.date)
+        self.view.endEditing(true)
+        
+    }
     func openPickerView(for textField: UITextField){
-//        pickerView.dataSource = ["","","","",""]
+        //        pickerView.dataSource = ["","","","",""]
     }
 }
 
@@ -141,6 +151,6 @@ extension AddCarViewController: UIPickerViewDelegate , UIPickerViewDataSource {
 
 extension AddCarViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info)
     }
 }
