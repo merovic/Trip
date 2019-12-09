@@ -44,8 +44,8 @@ class APIClient {
         performRequestSimple(route: APIRouter.agrre_refuse(id_request: id_request), completion: completion)
     }
     
-    static func agrre_request(id_request: Int ,km: Int , completion: @escaping (Result<String,AFError>)->Void) {
-        performRequestSimple(route: APIRouter.agrre_request(id_request: id_request, km: km), completion: completion)
+    static func agrre_request(id_request: Int , completion: @escaping (Result<String,AFError>)->Void) {
+        performRequestSimple(route: APIRouter.agrre_request(id_request: id_request), completion: completion)
     }
     
     static func forgete_password_by_email(email: String , completion: @escaping (Result<String,AFError>)->Void) {
@@ -113,8 +113,8 @@ class APIClient {
         performRequestSimple(route: APIRouter.agrre_refuse(id_request: id_request), completion: completion)
     }
     
-    static func acceptRequest(id_request: Int ,km: Int ,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.agrre_request(id_request: id_request, km: km), completion: completion)
+    static func acceptRequest(id_request: Int,completion: @escaping (Result<String,AFError>)->Void){
+        performRequestSimple(route: APIRouter.agrre_request(id_request: id_request), completion: completion)
     }
     
     

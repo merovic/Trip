@@ -16,24 +16,19 @@ class MenuViewController: UIViewController {
         {
         didSet{
             Rounded.roundedImage(imageView: profileImage)
-        
-              profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
+            profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
         }
     }
     
     let data = Controllers()
-    let user = Shared.user
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
     }
     
-    func updateView(){
-        nameLbl.text = user?.name
-        profileImage.sd_setImage(with: URL(string: ""), placeholderImage: UIImage(named: "userPlaceholder"))
-    }
-    
+    //MARK:- IBActions
     @IBAction func goToProfile(sender: UIButton) {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
@@ -45,10 +40,15 @@ class MenuViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func updateView(){
+        if let user = Shared.user {
+            nameLbl.text = user.name
+            profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+        }
+    }
 }
 
-
-
+//MARK:- tableView setUp
 extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,13 +73,11 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
             else {
                 print("logOut")
                 if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
-                           vc.modalPresentationStyle = .fullScreen
-                           self.present(vc, animated: true, completion: nil)
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                }
             }
         }
-        
-        }
     }
-    
 }
 

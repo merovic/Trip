@@ -8,9 +8,13 @@
 
 import UIKit
 import Cosmos
+protocol NotificationsDelegate {
+    func acceptNote(car_id: Int)
+    func decilneNote()
+}
+
 @available(iOS 13.0, *)
 class NotificationDetailsViewController: UIViewController {
-
     
     @IBOutlet weak var bigView: UIView!{
         didSet{
@@ -41,16 +45,73 @@ class NotificationDetailsViewController: UIViewController {
         }
     }
     
+    var delegate: NotificationsDelegate?
     var note: Note?
     var user: Login?
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
         getUserDetails()
     }
+    
+    //MARK:- viewWillAppear
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+    }
+    
+    //MARK:- IBActions
+    
+    @IBAction func acceptPressed(_ sender: UIButton) {
+        if let car = note?.idCar {
+            delegate?.acceptNote(car_id: car)
+            self.dismiss(animated: true, completion: nil)
+
+        }
+    }
+    
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        
+        self.view.backgroundColor = .clear
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    //MARK:- Delete Note
+    @IBAction func rejectPressed(_ sender: UIButton) {
+        if let note = note {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.deleteNote(id: note.id) { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        self?.delegate?.decilneNote()
+                        self?.dismiss(animated: true, completion: nil)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK:- get user details by id
+    func getUserDetails() {
+        if let note = note {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.selectUserById(id_user: note.idUser) { (Result) in
+                    switch Result{
+                    case .success(let response):
+                        print(response)
+                        self?.user = response.first
+                        self?.updateUserInfo()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
     
     func updateUserInfo(){
@@ -70,54 +131,5 @@ class NotificationDetailsViewController: UIViewController {
         description1.text = note?.details
         descrtition2.text = ""
         
-    }
-    
-    func getUserDetails() {
-        if let note = note {
-            DispatchQueue.main.async { [weak self] in
-                APIClient.selectUserById(id_user: note.idUser) { (Result) in
-                    switch Result{
-                    case .success(let response):
-                        print(response)
-                        self?.user = response.first
-                        self?.updateUserInfo()
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
-    }
-    
-    @IBAction func acceptPressed(_ sender: UIButton) {
-        if let car = note?.idCar {
-            let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
-            vc.idCar = car
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func cancelBtn(_ sender: UIButton) {
-        self.view.backgroundColor = .clear
-        dismiss(animated: true, completion: nil)
-    
-    }
-    
-    
-    @IBAction func rejectPressed(_ sender: UIButton) {
-        if let note = note {
-            DispatchQueue.main.async { [weak self] in
-                APIClient.deleteNote(id: note.id) { (Result) in
-                    switch Result {
-                    case .success(let response):
-                        print(response)
-                        self?.dismiss(animated: true, completion: nil)
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
-            }
-        }
     }
 }

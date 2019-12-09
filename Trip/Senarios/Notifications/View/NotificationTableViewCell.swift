@@ -8,8 +8,8 @@
 
 import UIKit
 
-class NoticicationsTableViewCell: UITableViewCell {
-
+class NotificationTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var notNameLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var messagelbl: UILabel!
@@ -23,11 +23,11 @@ class NoticicationsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+}
+extension NotificationTableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        super.awakeFromNib()
+        contentView.backgroundColor = .none
     }
-
 }

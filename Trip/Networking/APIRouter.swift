@@ -12,7 +12,7 @@ enum APIRouter: URLRequestConvertible {
     
     case agrre_refuse(id_request:Int)
     case forgete_password_by_email(email:String)
-    case agrre_request(id_request: Int ,km: Int)
+    case agrre_request(id_request: Int)
     case insert_car( id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String)
     case insert_note_car(id_user:Int ,id_owner:Int , id_car:Int , title:String , details:String , datee:String)
     case insert_request_car(id_user:Int ,id_owner:Int , id_car:Int , message:String , datee:String)
@@ -194,8 +194,8 @@ enum APIRouter: URLRequestConvertible {
             return [K.agrre_refuse.id_request: id_request]
         case .forgete_password_by_email(let email):
             return [K.forgete_password_by_email.email: email]
-        case .agrre_request(let id_request, let km):
-            return [K.agrre_request.id_request: id_request , K.agrre_request.km: km]
+        case .agrre_request(let id_request):
+            return [K.agrre_request.id_request: id_request]
         case .insert_car(let id_owner, let owner, let image, let price_rent_per_day, let available_date_from, let available_date_to, let number_km, let price_km, let price_trip, let city, let area, let st_name, let number_hone, let lon, let lat, let number_of_trip, let model, let type, let rate):
             return [K.insert_car.id_owner: id_owner ,K.insert_car.owner: owner ,K.insert_car.image: image ,K.insert_car.price_rent_per_day: price_rent_per_day ,K.insert_car.available_date_from: available_date_from ,K.insert_car.available_date_to: available_date_to ,K.insert_car.number_km: number_km ,K.insert_car.price_km: price_km ,K.insert_car.price_trip: price_trip ,K.insert_car.city: city ,K.insert_car.area: area ,K.insert_car.st_name: st_name ,K.insert_car.number_hone: number_hone ,K.insert_car.lon: lon ,K.insert_car.lat: lat ,K.insert_car.number_of_trip: number_of_trip ,K.insert_car.model: model ,K.insert_car.type: type ,K.insert_car.rate: rate]
         case .insert_note_car(let id_user, let id_owner, let id_car, let title, let details, let datee):

@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import SideMenu
 
 class ReservationDetailsViewController: UIViewController {
 
     @IBOutlet weak var hourTo: UILabel!
     @IBOutlet weak var hourFrom: UILabel!
-    @IBOutlet weak var expireDate: UILabel!
-    @IBOutlet weak var natNum: UILabel!
-    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var dateTo: UILabel!
     @IBOutlet weak var dateFrom: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
@@ -29,19 +27,21 @@ class ReservationDetailsViewController: UIViewController {
         }
     }
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    
     @IBAction func cancelTripPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func menuPressed(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-            present(vc!, animated: true, completion: nil)
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+            vc.settings = Shared.settings(view: self.view)
+            present(vc, animated: true, completion: nil)
         }
     }
     

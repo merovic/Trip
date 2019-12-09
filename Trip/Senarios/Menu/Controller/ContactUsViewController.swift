@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SideMenu
 
 @available(iOS 13.0, *)
 class ContactUsViewController: UIViewController {
-
+    
     @IBOutlet weak var sendBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: sendBut)
@@ -30,12 +31,13 @@ class ContactUsViewController: UIViewController {
         super.viewDidLoad()
     }
     
-
+    
     @IBAction func sendPressed(_ sender: UIButton) {
     }
     
     @IBAction func menuBtnPreseed(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-                   present(vc!, animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        vc.settings = Shared.settings(view: self.view)
+        present(vc, animated: true, completion: nil)
     }
 }

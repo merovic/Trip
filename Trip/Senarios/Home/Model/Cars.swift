@@ -1,20 +1,18 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let cars = try? newJSONDecoder().decode(Cars.self, from: jsonData)
+//   let logins = try? newJSONDecoder().decode(Logins.self, from: jsonData)
 
 import Foundation
 
-// MARK: - Car
+// MARK: - Login
 struct Car: Codable {
     let id, idOwner: Int
-    let owner, image, priceRentPerDay: String
-    let availableDateFrom: AvailableDateFrom
-    let availableDateTo: AvailableDateTo
-    let numberKM, priceKM, priceTrip, rate: String
-    let city, area, stName, numberHone: String
-    let lon, lat, numberOfTrip, model: String
-    let type: String
+    let owner, image, priceRentPerDay, availableDateFrom: String
+    let availableDateTo, numberKM, priceKM, priceTrip: String
+    let rate, city, area, stName: String
+    let numberHone, lon, lat, numberOfTrip: String
+    let model, type: String
     let datee: String?
 
     enum CodingKeys: String, CodingKey {
@@ -37,12 +35,3 @@ struct Car: Codable {
     }
 }
 
-enum AvailableDateFrom: String, Codable {
-    case date1573714800000 = "/Date(1573714800000)/"
-}
-
-enum AvailableDateTo: String, Codable {
-    case date1575010800000 = "/Date(1575010800000)/"
-    case date1575097200000 = "/Date(1575097200000)/"
-
-}

@@ -22,7 +22,4 @@ class InviteByPhoneViewController: UIViewController {
             Alert.show("success", massege: "invitaion will be sent to this number \(phone)", context: self)
         }
     }
-    
-   
-
 }

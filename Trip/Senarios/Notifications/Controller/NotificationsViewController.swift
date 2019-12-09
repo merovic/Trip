@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SideMenu
 class NotificationsViewController: UIViewController {
     
     @IBOutlet weak var TabelView: UITableView!{
@@ -22,10 +22,20 @@ class NotificationsViewController: UIViewController {
     
     var notes: [Note]?
     
+    //MARK:- viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         getData()
     }
     
+    @IBAction func menu(_ sender: UIBarButtonItem) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+            vc.settings = Shared.settings(view: self.view)
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    //MARK:- get Notifications from API
     func getData(){
         if let id = Shared.user?.id {
             DispatchQueue.global().async { [weak self] in
@@ -42,23 +52,16 @@ class NotificationsViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func menu(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-            present(vc!, animated: true, completion: nil)
-        }
-    }
-    
 }
 
+//MARK:- tableView setUp
 extension NotificationsViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for: indexPath) as! NoticicationsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for: indexPath) as! NotificationTableViewCell
         
         cell.dateLbl.text = notes?[indexPath.row].datee
         cell.messagelbl.text = notes?[indexPath.row].details
@@ -66,12 +69,30 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
         return cell
     }
     
+    //MARK:- didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "NotificationDetails") as! NotificationDetailsViewController
             vc.modalPresentationStyle = .overFullScreen
             vc.note = notes?[indexPath.row]
+            vc.delegate = self
             self.present(vc, animated: true, completion: nil)
         }
     }
+}
+
+extension NotificationsViewController: NotificationsDelegate {
+    func acceptNote(car_id: Int) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
+            vc.idCar = car_id
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+    }
+    
+    func decilneNote() {
+        getData()
+    }
+    
 }

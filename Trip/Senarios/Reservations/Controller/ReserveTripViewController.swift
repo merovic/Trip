@@ -10,6 +10,7 @@ import UIKit
 
 class ReserveTripViewController: UIViewController {
     
+    @IBOutlet weak var note: UILabel!
     @IBOutlet weak var hourTo: UILabel!
     @IBOutlet weak var hourFrom: UILabel!
     @IBOutlet weak var sendBut: UIButton!{
@@ -27,20 +28,11 @@ class ReserveTripViewController: UIViewController {
     
     var reservationDetails: Car?
     var taxAmount = 0
+    
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-    }
-    
-    func updateView(){
-        
-        details.text = "There is no details"
-        price.attributedText = NSAttributedString.withDualText(text1: reservationDetails?.priceRentPerDay ?? "0", ofSizeText1: 18, text2: "SR", ofSizeText2: 14)
-        km.attributedText = NSAttributedString.withDualText(text1: reservationDetails?.numberKM ?? "0", ofSizeText1: 18, text2: "K/M", ofSizeText2: 14)
-        tax.attributedText = NSAttributedString.withDualText(text1: "\(taxAmount)", ofSizeText1: 18, text2: "SR", ofSizeText2: 14)
-        dateFrom.attributedText = NSAttributedString.withDualText(text1: "\(reservationDetails?.numberKM)", ofSizeText1: 18, text2: "From", ofSizeText2: 14)
-        dateTo.attributedText = NSAttributedString.withDualText(text1: "\(reservationDetails?.availableDateTo)", ofSizeText1: 18, text2: "To", ofSizeText2: 14)
-        totalPrice.attributedText = NSAttributedString.withDualText(text1: reservationDetails?.priceRentPerDay ?? "0", ofSizeText1: 24, text2: "SR", ofSizeText2: 20)
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -49,8 +41,8 @@ class ReserveTripViewController: UIViewController {
             let dateformter = DateFormatter()
             dateformter.dateStyle = .short
             let date = dateformter.string(from: currentDate)
-
-            APIClient.addRequest(id_user: user.id, id_owner: reservationDetails?.idOwner ?? 0, id_car: reservationDetails?.id ?? 0, message: "Hello ,can i reserve this car", datee: date) { (Result) in
+            
+            APIClient.addRequest(id_user: user.id, id_owner: reservationDetails?.idOwner ?? 0, id_car: reservationDetails?.id ?? 0, message: "New Car Rent Request", datee: date) { (Result) in
                 switch Result {
                 case .success(let response):
                     print(response)
@@ -61,4 +53,18 @@ class ReserveTripViewController: UIViewController {
         }
     }
     
+    func updateView(){
+   
+        if let car = reservationDetails {
+             
+            details.text = "There is no details"
+            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: Shared.Header, text2: " SR", ofSizeText2: Shared.body)
+            km.attributedText = NSAttributedString.withDualText(text1: car.numberKM, ofSizeText1: Shared.Header, text2: " KM", ofSizeText2: Shared.body)
+                   tax.attributedText = NSAttributedString.withDualText(text1: "\(taxAmount)", ofSizeText1: Shared.Header, text2: " SR", ofSizeText2: Shared.body)
+            dateFrom.attributedText = NSAttributedString.withDualText(text1: car.availableDateFrom, ofSizeText1: Shared.Header, text2: "From ", ofSizeText2: Shared.body)
+            dateTo.attributedText = NSAttributedString.withDualText(text1: car.availableDateTo, ofSizeText1: Shared.Header, text2: "To ", ofSizeText2: Shared.body)
+            totalPrice.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 24, text2: " SR", ofSizeText2: 16)
+            note.text = "Note: extra KM price is \(car.priceKM) SR"
+        }
+    }
 }

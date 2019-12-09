@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class ReservationViewController: UIViewController {
     
@@ -16,11 +17,37 @@ class ReservationViewController: UIViewController {
     var requestAgreed: [RequestAgree]?
     var requestFinished: [RequestAgree]?
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         getAgreedRequests()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reservationSegmented.selectedSegmentIndex = 0
+        reservationsSegChanged(reservationSegmented)
+    }
+    
+    //MARK:- IBActions
+    @IBAction func reservationsSegChanged(_ sender: UISegmentedControl) {
+        if reservationSegmented.selectedSegmentIndex == 0 {
+            getAgreedRequests()
+            self.reservationTableView.reloadData()
+        } else {
+            getFinishedRequests()
+            
+        }
+    }
+    
+    @IBAction func menuBtn(_ sender: UIBarButtonItem) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+            vc.settings = Shared.settings(view: self.view)
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    // get requests that have agreed by id user
     func getAgreedRequests(){
         if let user = Shared.user {
             DispatchQueue.global().async {
@@ -39,6 +66,7 @@ class ReservationViewController: UIViewController {
         }
     }
     
+    
     func getFinishedRequests(){
         if let user = Shared.user {
             DispatchQueue.global().async {
@@ -55,26 +83,9 @@ class ReservationViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func reservationsSegChanged(_ sender: UISegmentedControl) {
-        if reservationSegmented.selectedSegmentIndex == 0 {
-            getAgreedRequests()
-            self.reservationTableView.reloadData()
-        } else {
-            getFinishedRequests()
-            
-        }
-    }
-    
-    @IBAction func menuBtn(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-            present(vc!, animated: true, completion: nil)
-        }
-    }
 }
 
-
+//MARK:- tableView setUp
 extension ReservationViewController : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if reservationSegmented.selectedSegmentIndex == 0 {
@@ -82,13 +93,12 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
         } else {
             return requestFinished?.count ?? 0
         }
-        
     }
     
+    //MARK:- cellForRawAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        reservationTableView.register(UINib(nibName: "CurrentReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentReservationTableViewCell")
-        reservationTableView.register(UINib(nibName: "PreviousReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousReservationTableViewCell")
         if reservationSegmented.selectedSegmentIndex == 0 {
+            reservationTableView.register(UINib(nibName: "CurrentReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentReservationTableViewCell")
             let  cell = tableView.dequeueReusableCell(withIdentifier: "CurrentReservationTableViewCell", for: indexPath) as! CurrentReservationTableViewCell
             cell.addressReservation.text = requestAgreed?[indexPath.row].agrreOrRefuse
             cell.idRequest = requestAgreed?[indexPath.row].id
@@ -96,6 +106,7 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
             cell.delegate = self
             return cell
         } else {
+            reservationTableView.register(UINib(nibName: "PreviousReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousReservationTableViewCell")
             let  cell = tableView.dequeueReusableCell(withIdentifier: "PreviousReservationTableViewCell", for: indexPath) as! PreviousReservationTableViewCell
             cell.addressReservation.text = requestFinished?[indexPath.row].agrreOrRefuse
             cell.idCar = requestAgreed?[indexPath.row].idCar
@@ -110,8 +121,9 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
     }
 }
 
-
+//MARK:- extrntion - change Current and previous Reservation views
 extension ReservationViewController: CurrentReservationDelegate , PreviosReservationCellDelegate {
+    
     func previosReservationDetails(id: Int) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewDetails") as! NewReservationDetailsViewController
         vc.modalPresentationStyle = .fullScreen
@@ -121,7 +133,7 @@ extension ReservationViewController: CurrentReservationDelegate , PreviosReserva
     
     func startTrip(id: Int) {
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "StartTrip") as! StartPopUp
+            let vc = storyboard?.instantiateViewController(withIdentifier: "StartReservation") as! StartPopUp
             vc.modalPresentationStyle = .overFullScreen
             vc.idRequest = id
             self.present(vc, animated: true, completion: nil)
@@ -129,7 +141,7 @@ extension ReservationViewController: CurrentReservationDelegate , PreviosReserva
     }
     
     func details(id: Int) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "") as! NewReservationDetailsViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "NewDetails") as! NewReservationDetailsViewController
         vc.idCar = id
         self.navigationController?.pushViewController(vc, animated: true)
     }

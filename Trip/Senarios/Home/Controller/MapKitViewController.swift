@@ -10,16 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
-//create protcole
+//MARK:- Map protcole
 protocol CanReceive {
-    //create fun
     func dataReceived(lat : String , long : String)
     
 }
 
 class MapKitViewController: UIViewController{
-
-   
+    
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var lat:String = ""
@@ -27,19 +26,17 @@ class MapKitViewController: UIViewController{
     var delegate : CanReceive?
     let locationManger = CLLocationManager()
     let regionInMeters: Double = 1000000
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addPinToMap()
     }
     
-    
-    
     //-------------------------------------
     
     
     //MARK: - IBAction
-    
     @IBAction func getLocation(_ sender: UIButton) {
         
         checkLocationIsEnabled()
@@ -87,9 +84,9 @@ class MapKitViewController: UIViewController{
     //TODO :- add mark for location
     func addAnnotation(location: CLLocationCoordinate2D){
         
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = location
-            self.mapView.addAnnotation(annotation)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        self.mapView.addAnnotation(annotation)
     }
     
     
@@ -101,7 +98,7 @@ class MapKitViewController: UIViewController{
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-   //MARK :- Chick If Location Is Enabled
+    //MARK :- Chick If Location Is Enabled
     func checkLocationIsEnabled(){
         if CLLocationManager.locationServicesEnabled() {
             CLLocationSetUp()
@@ -118,7 +115,7 @@ class MapKitViewController: UIViewController{
             mapView.setRegion(region, animated: true)
         }
     }
-
+    
     //MARK :- Check for user authorization status
     func checkLocationAuthorization()  {
         switch CLLocationManager.authorizationStatus() {
@@ -134,8 +131,8 @@ class MapKitViewController: UIViewController{
             break
         }
     }
-
-   
+    
+    
     
 }
 
@@ -143,16 +140,15 @@ class MapKitViewController: UIViewController{
 extension MapKitViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-           
-           locationManger.stopUpdatingLocation()
-            guard let location = locations.last else { return }
-                  let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-           lat = String(location.coordinate.latitude)
-           long = String(location.coordinate.longitude)
-          
-                  mapView.setRegion(region, animated: true)
-       }
-       
+        
+        locationManger.stopUpdatingLocation()
+        guard let location = locations.last else { return }
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        lat = String(location.coordinate.latitude)
+        long = String(location.coordinate.longitude)
+        
+        mapView.setRegion(region, animated: true)
+    }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()

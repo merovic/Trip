@@ -9,35 +9,35 @@
 import UIKit
 
 class CancelPopUp: UIViewController {
-
+    
     @IBOutlet weak var cancelBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: cancelBut)
         }
     }
     @IBOutlet weak var popView: UIView!{
-         didSet{
-             popView.layer.cornerRadius = 15
-         }
-     }
+        didSet{
+            popView.layer.cornerRadius = 15
+        }
+    }
+    @IBOutlet weak var kmRead: UITextField!{
+        didSet{
+            kmRead.delegate = self
+        }
+    }
     
-    @IBOutlet weak var kmRead: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    //MARK:- viewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.352739726)
+    }
+    
+    @IBAction func CancelBut(_ sender: UIButton) {
         
     }
     
-
-    @IBAction func CancelBut(_ sender: UIButton) {
-       
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        self.view.backgroundColor = .clear
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func cancelBtn(_ sender: UIButton) {
-          dismiss(animated: true, completion: nil)
-      
-      }
-  
-    
-
 }

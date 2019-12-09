@@ -7,25 +7,30 @@
 //
 
 import UIKit
+import SideMenu
 
 @available(iOS 13.0, *)
 class RequestsViewController: UIViewController {
-    var requests: [Request]?
     
     @IBOutlet weak var requestTableView: UITableView!
     
+    var requests: [Request]?
+    
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
     }
     
+//MARK:- get requests by id owner
     func getData(){
         if let user = Shared.user {
             DispatchQueue.main.async { [weak self] in
-                APIClient.selectAllRequestByOwnerId(id_owner: 6) { (Result) in
+                APIClient.selectAllRequestByOwnerId(id_owner: user.id) { (Result) in
                     switch Result{
                     case.success(let response):
                         print("///////////////////////////////////////////// \(response)")
+                        print(user)
                         self?.requests = response
                         self?.requestTableView.reloadData()
                     case .failure(let error):
@@ -38,12 +43,14 @@ class RequestsViewController: UIViewController {
     
     
     @IBAction func menuBtnPreseed(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-        present(vc!, animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        vc.settings = Shared.settings(view: self.view)
+        present(vc, animated: true, completion: nil)
     }
     
 }
 
+//MARK:- tableView setUp
 @available(iOS 13.0, *)
 extension RequestsViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +67,11 @@ extension RequestsViewController : UITableViewDelegate , UITableViewDataSource {
         cell.requestDateLabl.text = request?.datee
         cell.requestNameLbl.text = request?.message
         cell.nameLbl.text = request?.name
-        
+        cell.idRequest = request?.id
+        cell.delegate = self
+        if let rating = Double(request?.rate ?? "0") {
+            cell.rate.rating = rating
+        }
         return cell
     }
     
@@ -70,13 +81,30 @@ extension RequestsViewController : UITableViewDelegate , UITableViewDataSource {
     }
 }
 
+//MARK:- request cell protocol methodes
 @available(iOS 13.0, *)
 extension RequestsViewController: RequestCellDelegate {
+    
     func acceptRequest(id: Int) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "StartTrip") as! StartPopUp
-        vc.modalPresentationStyle = .overFullScreen
-        vc.idRequest = id
-        self.present(vc, animated: true, completion: nil)
+        print(id)
+        DispatchQueue.global().async { [weak self] in
+            APIClient.agrre_request(id_request: id) { (Result) in
+                switch Result {
+                case .success(let response):
+                    print(response)
+                    if response == "True" {
+                        Alert.show("Done", massege: "", context: self!)
+                        self?.getData()
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "StartReservation") as! StartPopUp
+//        vc.modalPresentationStyle = .overFullScreen
+//        vc.idRequest = id
+//        self.present(vc, animated: true, completion: nil)
     }
     
     func refuseRequest(id: Int) {
@@ -85,7 +113,8 @@ extension RequestsViewController: RequestCellDelegate {
                 switch Result {
                 case .success(let response):
                     print(response)
-                    self?.requestTableView.reloadData()
+                    Alert.show("Deleted", massege:"", context: self!)
+                    self?.getData()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

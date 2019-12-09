@@ -14,10 +14,10 @@ class InviteFriendViewController: UIViewController {
     var soicalImageArray = ["mobile" , "fbIcon" , "what'sIcon" , "messengerIcon" , "emailIcon" , "moreIcon"]
     
     @IBOutlet weak var popView: UIView!{
-         didSet{
-             popView.layer.cornerRadius = 15
-         }
-     }
+        didSet{
+            popView.layer.cornerRadius = 15
+        }
+    }
     @IBOutlet weak var SocialCollectionView: UICollectionView!
     
     //MARK:- viewDidLoad
@@ -25,10 +25,14 @@ class InviteFriendViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.352739726)
+    }
     //MARK:- cancel
-  @IBAction func cancelBtn(_ sender: UIButton) {
-      dismiss(animated: true, completion: nil)
-  }
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        self.view.backgroundColor = .clear
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 

@@ -23,10 +23,13 @@ class StartPopUp: UIViewController {
     }
     
     var idRequest: Int?
+    
+    //MARK:- viewDidLoad
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3801369863)
     }
     
+    // Start Trip
     @IBAction func start(_ sender: UIButton) {
         if let id = idRequest , let km = kmRead.text{
             DispatchQueue.main.async { [weak self] in
@@ -42,7 +45,7 @@ class StartPopUp: UIViewController {
                             Alert.show("Failed", massege: "failed to start trip please try again", context: vc)
                         }
                         
-                     }
+                    }
                 }
             }
         }

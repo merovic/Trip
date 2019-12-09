@@ -9,6 +9,7 @@
 import UIKit
 import Cosmos
 import SDWebImage
+import SideMenu
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var inviteFriend: UIButton!{didSet{Rounded.roundedCornerButton1(button: inviteFriend)}}
@@ -42,11 +43,11 @@ class HomeViewController: UIViewController {
     
     @IBAction func menuPressed(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-            present(vc!, animated: true, completion: nil)
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+            vc.settings = Shared.settings(view: self.view)
+            present(vc, animated: true, completion: nil)
         }
     }
-    
    
     @IBAction func search(_ sender: DesignableUITextField) {
         if #available(iOS 13.0, *) {
@@ -56,7 +57,6 @@ class HomeViewController: UIViewController {
         }
     }
 
-    
     func getCars(){
         DispatchQueue.main.async { [ weak self ] in
             APIClient.getAllCars(number_of_select: 5) { (Result) in
@@ -66,27 +66,24 @@ class HomeViewController: UIViewController {
                     self?.latestCars = response
                     self?.recentCollectionView.reloadData()
                 case .failure(let error):
-                    print("FAILLLLLLLLLLL")
                     print(error.localizedDescription)
                 }
             }
-            APIClient.getAllCarsByRate(number_of_select: 4) { (Result) in
+            APIClient.getAllCarsByRate(number_of_select: 10) { (Result) in
                 switch Result{
                 case .success(let response):
-                    print("111111111111111111111111111111111111111" , response)
+                    print(response)
                     self?.topRatedCars = response
                     self?.topRatedCollectionView.reloadData()
                 case .failure(let error):
-                    print("111111111111111111111111111111111111111" , error.localizedDescription)
+                    print(error.localizedDescription)
                 }
             }
         }
     }
-    
-    
 }
 
-
+//MARK:- collectionView SetUp
 extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -108,10 +105,10 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 if  let rating = Double(car.rate) {
                     cell.rate.rating = rating
                 }
-                cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carSale"))
+                cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.stName
                 cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:" SR/Day" , ofSizeText2: 13)
-                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip ?? "0", ofSizeText1: 14, text2: " Trips", ofSizeText2: 10)
+                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: " Trips", ofSizeText2: 10)
             }
             return cell
             
@@ -121,7 +118,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 if  let rating = Double(car.rate) {
                     cell.rate.rating = rating
                 }
-                cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carPlaceholder"))
+                cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carSale"))
                 cell.name.text = car.stName
                 cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:" SR/Day" , ofSizeText2: 13)
                 cell.trips.text = car.numberOfTrip
@@ -151,7 +148,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
 extension NSAttributedString {
     static func withDualText(text1: String ,ofSizeText1: CGFloat ,text2: String ,ofSizeText2: CGFloat ) -> NSMutableAttributedString{
         let text = NSMutableAttributedString()
-        text.append(NSAttributedString(string: text1, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: ofSizeText1)]))
+        text.append(NSAttributedString(string: text1, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: ofSizeText1)]))
         text.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray , NSAttributedString.Key.font: UIFont.systemFont(ofSize: ofSizeText2)]))
         return text
     }
@@ -160,7 +157,7 @@ extension NSAttributedString {
         let text = NSMutableAttributedString()
         
         text.append(NSAttributedString(string: text1, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray , NSAttributedString.Key.font: UIFont.systemFont(ofSize: ofSizeText1)]))
-        text.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: ofSizeText2)]))
+        text.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: ofSizeText2)]))
         
         return text
     }

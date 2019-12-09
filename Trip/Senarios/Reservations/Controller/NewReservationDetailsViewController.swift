@@ -8,11 +8,10 @@
 
 import UIKit
 import Cosmos
-class NewReservationDetailsViewController: UIViewController {
-    @IBOutlet weak var expDate: UILabel!
-    @IBOutlet weak var natNumber: UILabel!
-    @IBOutlet weak var name: UILabel!
+import SideMenu
 
+class NewReservationDetailsViewController: UIViewController {
+    
     @IBOutlet weak var rate: CosmosView!
     @IBOutlet weak var dateTo: UILabel!
     @IBOutlet weak var dateFrom: UILabel!
@@ -27,35 +26,29 @@ class NewReservationDetailsViewController: UIViewController {
     
     var idCar: Int?
     var carInfo: Car?
+    
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
     }
     
-    func updateView() {
-        if let car = carInfo {
-            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2: " SR", ofSizeText2: 14)
-            tax.attributedText = NSAttributedString.withDualText(text1: "0", ofSizeText1: 18, text2: " SR", ofSizeText2: 14)
-            km.attributedText = NSAttributedString.withDualText(text1: car.numberKM, ofSizeText1: 18, text2: " KM", ofSizeText2: 14)
-            totalPrice.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 22, text2: " SR", ofSizeText2: 16)
-            dateFrom.attributedText = NSAttributedString.withDualText2(text1: "From ", ofSizeText1: 14, text2: "\(car.availableDateFrom)", ofSizeText2: 18)
-            dateTo.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: 14, text2: "\(car.availableDateTo)", ofSizeText2: 18)
-            if let rating = Double(car.rate) {
-                rate.rating = rating
-            }
-        }
-    }
-    
     @IBAction func menuPressed(_ sender: Any) {
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-            present(vc!, animated: true, completion: nil)
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+            vc.settings = Shared.settings(view: self.view)
+            present(vc, animated: true, completion: nil)
         }
     }
     
+    @IBAction func closeViewPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // Get car details by id
     func getData() {
         if let carID = idCar {
-            DispatchQueue.global().async { [weak self ] in
+            DispatchQueue.global().async { [ weak self ] in
                 APIClient.getAllCarsById(id: carID) { (Result) in
                     switch Result {
                     case .success(let response):
@@ -70,5 +63,19 @@ class NewReservationDetailsViewController: UIViewController {
         }
     }
     
-    
+    //MARK:- update View from model
+    func updateView() {
+        if let car = carInfo {
+            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2: " SR", ofSizeText2: 14)
+            tax.attributedText = NSAttributedString.withDualText(text1: "0", ofSizeText1: 18, text2: " SR", ofSizeText2: 14)
+            km.attributedText = NSAttributedString.withDualText(text1: car.numberKM, ofSizeText1: 18, text2: " KM", ofSizeText2: 14)
+            totalPrice.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 22, text2: " SR", ofSizeText2: 16)
+            dateFrom.attributedText = NSAttributedString.withDualText2(text1: "From ", ofSizeText1: 14, text2: "\(car.availableDateFrom)", ofSizeText2: 18)
+            dateTo.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: 14, text2: "\(car.availableDateTo)", ofSizeText2: 18)
+            note.text = "Note: extra KM price is \(car.priceKM) SR"
+            if let rating = Double(car.rate) {
+                rate.rating = rating
+            }
+        }
+    }
 }

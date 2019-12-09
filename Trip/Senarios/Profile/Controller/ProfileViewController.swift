@@ -69,7 +69,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate , 
     @IBAction func showMenuPressed(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
             let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
-           
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
@@ -85,17 +84,16 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate , 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as! UIImage
             profileImage.image = image
-        _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info, completion: { [weak self] in
-            self?.updateUser()
-        }
-        )
+        _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info, completion: self.updateUser)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
     
     func updateUser(){
+        print("NOW")
         if let imageUrl = Shared.Image , let user = Shared.user{
+            print("Updating")
             DispatchQueue.global().async { [weak self] in
                 APIClient.updateUser(id_user: user.id, name: user.name, email: user.email, password: user.password, phone: user.phone, address: user.address, license: user.license, img: imageUrl) { (Result) in
                     switch Result{

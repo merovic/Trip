@@ -45,7 +45,7 @@ class SearchAdvancedViewController: UIViewController {
     @objc func doneClicked() {
         let dateformter = DateFormatter()
         dateformter.dateStyle = .short
-        dateformter.dateFormat = "MM/dd/YYYY"
+        dateformter.dateFormat = Shared.dateFormate
         if dataFlag == false {
         from.text = dateformter.string(from: datePicker.date)
         } else {

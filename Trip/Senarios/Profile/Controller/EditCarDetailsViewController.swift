@@ -80,7 +80,7 @@ class EditCarDetailsViewController: UIViewController {
     @objc func doneClicked() {
         let dateformter = DateFormatter()
         dateformter.dateStyle = .short
-        dateformter.dateFormat = "MM/dd/YYYY"
+        dateformter.dateFormat = Shared.dateFormate
         if dataFlag == false {
         dateFrom.text = dateformter.string(from: datePicker.date)
         } else {
@@ -90,13 +90,6 @@ class EditCarDetailsViewController: UIViewController {
         self.view.endEditing(true)
         
     }
-    
-    
-    
-    
-    
-    
-    
     
     func doneButtonForCitiesPicker(for textField: UITextField){
         textField.inputView = currencyPicker

@@ -7,21 +7,21 @@
 //
 
 import UIKit
+import SideMenu
 
 @available(iOS 13.0, *)
 class HelpViewController: UIViewController {
-
+    
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label1: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
- 
+    
     @IBAction func menuBtnPreseed(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-                   present(vc!, animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        vc.settings = Shared.settings(view: self.view)
+        present(vc, animated: true, completion: nil)
     }
 }
