@@ -13,6 +13,7 @@
 		18059E1023801E760007CA0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18059E0E23801E760007CA0A /* LaunchScreen.storyboard */; };
 		18059E1B23801E760007CA0A /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18059E1A23801E760007CA0A /* TripTests.swift */; };
 		18059E2623801E760007CA0A /* TripUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18059E2523801E760007CA0A /* TripUITests.swift */; };
+		3B0BA495239E47600043D9FE /* Colortext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BA494239E47600043D9FE /* Colortext.swift */; };
 		3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C0238FC9BD00CDED5A /* ReservationViewController.swift */; };
 		3B0BC9C4238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C2238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift */; };
 		3B0BC9C5238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BC9C3238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib */; };
@@ -111,6 +112,7 @@
 		18059E2523801E760007CA0A /* TripUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripUITests.swift; sourceTree = "<group>"; };
 		18059E2723801E760007CA0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3116ADE0C4FA0B95350277D2 /* Pods_TripTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0BA494239E47600043D9FE /* Colortext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colortext.swift; sourceTree = "<group>"; };
 		3B0BC9C0238FC9BD00CDED5A /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		3B0BC9C2238FCAFC00CDED5A /* PreviousReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousReservationTableViewCell.swift; sourceTree = "<group>"; };
 		3B0BC9C3238FCAFC00CDED5A /* PreviousReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousReservationTableViewCell.xib; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				3B150FB9238E673400272A42 /* CardView.swift */,
 				3B150FBA238E673400272A42 /* DesignableUITextField.swift */,
 				3B150FBB238E673400272A42 /* Maps.swift */,
+				3B0BA494239E47600043D9FE /* Colortext.swift */,
 			);
 			path = Utitlites;
 			sourceTree = "<group>";
@@ -855,6 +858,7 @@
 				3B6B79892392935B0071853C /* InviteFriendViewController.swift in Sources */,
 				3B35F82B239942F400B51572 /* EndTripViewController.swift in Sources */,
 				814014342394009900B89210 /* AddCarViewController.swift in Sources */,
+				3B0BA495239E47600043D9FE /* Colortext.swift in Sources */,
 				8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */,
 				814014302393FF0D00B89210 /* StartPopUp.swift in Sources */,
 				8140142E2393FEA900B89210 /* EditeProfileViewController.swift in Sources */,
