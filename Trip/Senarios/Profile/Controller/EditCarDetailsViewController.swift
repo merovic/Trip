@@ -41,11 +41,12 @@ class EditCarDetailsViewController: UIViewController {
      var datePicker = UIDatePicker()
    
     var flag =  0
+    var dataFlag = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        open()
+        
        //doneButtonForCitiesPicker(for: model)
         
         
@@ -59,12 +60,12 @@ class EditCarDetailsViewController: UIViewController {
         doneButtonForCitiesPicker(for: model)
         doneButtonForCitiesPicker(for: city)
         doneButtonForCitiesPicker(for: color)
-    }
-    
-    
-    func open() {
         openDatePicker(for: dateFrom)
+        openDatePicker(for: dateTo)
     }
+    
+    
+  
     
     func openDatePicker(for textField: UITextField) {
         datePicker.datePickerMode = .date
@@ -79,7 +80,13 @@ class EditCarDetailsViewController: UIViewController {
     @objc func doneClicked() {
         let dateformter = DateFormatter()
         dateformter.dateStyle = .short
+        dateformter.dateFormat = "MM/dd/YYYY"
+        if dataFlag == false {
         dateFrom.text = dateformter.string(from: datePicker.date)
+        } else {
+            dateTo.text = dateformter.string(from: datePicker.date)
+
+        }
         self.view.endEditing(true)
         
     }
@@ -136,6 +143,14 @@ class EditCarDetailsViewController: UIViewController {
     
     
     
+    @IBAction func dataFromAction(_ sender: UITextField) {
+        dataFlag = false
+    }
+    
+    @IBAction func DataToAction(_ sender: UITextField) {
+        dataFlag = true
+    }
+    
 }
 
 
@@ -172,6 +187,7 @@ extension EditCarDetailsViewController: UIPickerViewDataSource , UIPickerViewDel
         if flag == 1 {
             model.text = Shared.modelArray[row]
         } else if flag == 2 {
+            color.textColor = UIColor(named: Shared.colorArray[row])
             color.text =  Shared.colorArray[row]
         } else {
             city.text = Shared.addressArray[row]

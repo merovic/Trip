@@ -38,14 +38,25 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     }
     
     let imagePicker = UIImagePickerController()
+   let currencyPicker = UIPickerView()
     var datePicker = UIDatePicker()
-    var pickerView = UIPickerView()
     var imageUrl: String!
+    var flag =  0
+    var dataFlag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        open()
         updateView()
+    }
+    
+    func setDelegates(){
+        currencyPicker.delegate = self
+        currencyPicker.dataSource = self
+        doneButtonForCitiesPicker(for: model)
+        doneButtonForCitiesPicker(for: city)
+        doneButtonForCitiesPicker(for: color)
+        openDatePicker(for: dateFrom)
+        openDatePicker(for: dateTo)
     }
     
     func updateView(){
@@ -60,11 +71,50 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         number.delegate = self
         pricePerDay.delegate = self
         name.delegate = self
+        setDelegates()
         
         if let user = Shared.user {
             name.text = user.name
             number.text = user.phone
         }
+    }
+    
+    func openDatePicker(for textField: UITextField) {
+        datePicker.datePickerMode = .date
+        textField.inputView = datePicker
+        let toolbaar = UIToolbar()
+        toolbaar.sizeToFit()
+        let doneBut = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action:#selector(doneClicked))
+        toolbaar.setItems([doneBut], animated: true)
+        textField.inputAccessoryView = toolbaar
+    }
+    
+    @objc func doneClicked() {
+        let dateformter = DateFormatter()
+        dateformter.dateStyle = .short
+        dateformter.dateFormat = "MM/dd/YYYY"
+        if dataFlag == false {
+        dateFrom.text = dateformter.string(from: datePicker.date)
+        } else {
+            dateTo.text = dateformter.string(from: datePicker.date)
+
+        }
+        self.view.endEditing(true)
+        
+    }
+    
+    func doneButtonForCitiesPicker(for textField: UITextField){
+        textField.inputView = currencyPicker
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneCityPicker));
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        textField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneCityPicker(){
+        self.view.endEditing(true)
     }
     
     @IBAction func attachPressed(_ sender: UIButton) {
@@ -112,45 +162,86 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     var lat: String = ""
     var long: String = ""
     
-    func open() {
-        openDatePicker(for: dateFrom)
+    
+    
+   
+    
+    @IBAction func modelCarAtion(_ sender: UITextField) {
+        flag = 1
+    }
+ 
+    
+    @IBAction func colorCarAction(_ sender: UITextField) {
+          flag = 2
     }
     
-    func openDatePicker(for textField: UITextField) {
-        datePicker.datePickerMode = .date
-        textField.inputView = datePicker
-        let toolbaar = UIToolbar()
-        toolbaar.sizeToFit()
-        let doneBut = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action:#selector(doneClicked))
-        toolbaar.setItems([doneBut], animated: true)
-        textField.inputAccessoryView = toolbaar
+    @IBAction func cityAction(_ sender: UITextField) {
+        flag = 3
     }
     
-    @objc func doneClicked() {
-        let dateformter = DateFormatter()
-        dateformter.dateStyle = .short
-        dateformter.dateFormat = "MM/dd/YYYY"
-        
-        dateFrom.text = dateformter.string(from: datePicker.date)
-        self.view.endEditing(true)
-        
+    
+    
+ 
+    @IBAction func dataFromAction(_ sender: UITextField) {
+         dataFlag = false
     }
-    func openPickerView(for textField: UITextField){
-        
+    
+
+    
+    @IBAction func DataToAction(_ sender: UITextField) {
+         dataFlag = true
     }
+    
 }
 
-extension AddCarViewController: UIPickerViewDelegate , UIPickerViewDataSource {
+extension AddCarViewController: UIPickerViewDataSource , UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 5
+        if flag == 1 {
+            return Shared.modelArray.count
+        } else if flag == 2 {
+            return Shared.colorArray.count
+        } else {
+            return Shared.addressArray.count
+        }
+        
     }
     
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if flag == 1 {
+            return Shared.modelArray[row]
+        } else if flag == 2 {
+            return Shared.colorArray[row]
+        } else {
+            return Shared.addressArray[row]
+        }
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if flag == 1 {
+            model.text = Shared.modelArray[row]
+        } else if flag == 2 {
+            color.textColor = UIColor(named: Shared.colorArray[row])
+            color.text =  Shared.colorArray[row]
+        } else {
+            city.text = Shared.addressArray[row]
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
 }
-
 
 extension AddCarViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
