@@ -9,6 +9,7 @@
 import UIKit
 
 class InviteFriendViewController: UIViewController {
+    
     var soicalNameArray = ["Phone" , "Facebook" , "Whatsapp" , "Messenger" , "Email" , "More"]
     var soicalImageArray = ["mobile" , "fbIcon" , "what'sIcon" , "messengerIcon" , "emailIcon" , "moreIcon"]
     
@@ -18,21 +19,21 @@ class InviteFriendViewController: UIViewController {
          }
      }
     @IBOutlet weak var SocialCollectionView: UICollectionView!
+    
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
     }
-    
+    //MARK:- cancel
   @IBAction func cancelBtn(_ sender: UIButton) {
       dismiss(animated: true, completion: nil)
-  
   }
-  
     
 }
 
-extension InviteFriendViewController : UICollectionViewDelegate , UICollectionViewDataSource {
+//MARK:- collectionView setUp
+extension InviteFriendViewController : UICollectionViewDelegate , UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return soicalNameArray.count
     }
@@ -47,15 +48,14 @@ extension InviteFriendViewController : UICollectionViewDelegate , UICollectionVi
         return UICollectionViewCell()
     }
     
-}
-
-extension InviteFriendViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cellSize = CGSize(width: (view.frame.width / 5) - 5  , height: 75)
         return cellSize
         
     }
+    
+    //MARK:- didSelectRowAt
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0: performSegue(withIdentifier: "inviteByPhone", sender: self)

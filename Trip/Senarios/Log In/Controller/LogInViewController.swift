@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 import FBSDKLoginKit
 import FBSDKCoreKit
 @available(iOS 13.0, *)
-class LogInViewController: UIViewController{
+class LogInViewController: UIViewController, NVActivityIndicatorViewable{
 
     @IBOutlet weak var logInBut: UIButton!{
         didSet{
@@ -25,12 +26,14 @@ class LogInViewController: UIViewController{
         }
     }
     
-    
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    //MARK:- logIn
     @IBAction func logInPressed(_ sender: UIButton) {
+        self.startAnimating()
         if mailTF.text != nil , passwordTF.text != nil , mailTF.text != "" , passwordTF.text != ""   {
             DispatchQueue.main.async { [weak self ] in
                 APIClient.logIn(email: self?.mailTF.text ?? "", password: self?.passwordTF.text ?? "") { (Result) in
@@ -38,19 +41,23 @@ class LogInViewController: UIViewController{
                     case .success(let response):
                         print(response)
                         Shared.user = response.first
+                        self?.stopAnimating()
                         self?.performSegue(withIdentifier: "Log In", sender: self)
                     case .failure(let error):
                         print(error.localizedDescription)
-                        Alert.show("Failed", massege: error.localizedDescription, context: self!)
+                        self?.stopAnimating()
+                        Alert.show("Failed", massege: "Wrong email or password", context: self!)
                     }
                 }
             }
         }
         else {
+            self.stopAnimating()
             Alert.show("Error", massege: "Enter email and Password", context: self)
         }
     }
     
+    //MARK:- register
     @IBAction func signUpPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(identifier: "Register") as? RegisterViewController {
             vc.modalPresentationStyle = .fullScreen
@@ -58,6 +65,7 @@ class LogInViewController: UIViewController{
         }
     }
     
+    //MARK:- forgot password
     @IBAction func forgotPassPressed(_ sender: UIButton) {
         if let vc = storyboard?.instantiateViewController(identifier: "ForgotPassword") as? ForgotPasswordViewController {
             vc.modalPresentationStyle = .fullScreen
@@ -65,26 +73,24 @@ class LogInViewController: UIViewController{
         }
     }
     
+    //MARK:- prepare for segue method
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! TabBarViewController
+        vc.modalPresentationStyle = .fullScreen
+    }
+    
+    //MARK:- facebook sign in methodes
     @IBAction func signUpWithFb(_ sender: UIButton) {
+        Alert.show("Error", massege: "Facebook login is not yet ready", context: self)
       //  facebooklogin()
     }
     @IBAction func showPassWord(_ sender: UIButton) {
         passwordTF.isSecureTextEntry = !passwordTF.isSecureTextEntry
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! TabBarViewController
-        vc.modalPresentationStyle = .fullScreen
-    }
-    
-   
     func facebooklogin() {
         let fbLoginManager : LoginManager = LoginManager()
         fbLoginManager.logIn(permissions: ["email"], from: self, handler: { (result, error) -> Void in
-            print("\n\n result: \(result)")
-            print("\n\n Error: \(error)")
-            
             if (error == nil) {
                 let fbloginresult : LoginManagerLoginResult = result!
                 if(fbloginresult.isCancelled) {

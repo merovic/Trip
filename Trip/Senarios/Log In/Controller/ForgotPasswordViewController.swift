@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController, NVActivityIndicatorViewable{
+    
     @IBOutlet weak var mailTF: UITextField!{
         didSet{
             mailTF.delegate = self
@@ -20,33 +22,38 @@ class ForgotPasswordViewController: UIViewController {
         }
     }
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
+    
     @IBAction func submitBtnPressed(_ sender: UIButton) {
+        self.startAnimating()
         if mailTF.text != nil , mailTF.text!.count > 4 {
             DispatchQueue.main.async { [weak self] in
                 APIClient.forgete_password_by_email(email: (self?.mailTF.text)!) { (Result) in
                     switch Result {
                     case .success(let respnse):
                         print(respnse)
+                        self?.stopAnimating()
                         Alert.show("Success", massege: "password changed Successfuly", context: self!)
                         self?.dismiss(animated: true, completion: nil)
                     case .failure(let error):
                         print(error.localizedDescription)
+                        self?.stopAnimating()
+                        Alert.show("Failed", massege: "Wrong email please try again", context: self!)
                     }
                 }
             }
         } else if mailTF.text!.count < 4 {
+            self.stopAnimating()
             Alert.show("Error", massege: "please enter valid email", context: self)
         }
         
     }
     
-    
+    //MARK:- back to Login
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

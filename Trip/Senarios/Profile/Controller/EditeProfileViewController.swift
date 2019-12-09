@@ -23,18 +23,17 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
     @IBOutlet weak var name: UITextField!
     
     var user = Shared.user
-     let currencyPicker = UIPickerView()
+    let currencyPicker = UIPickerView()
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.startAnimating()
         updateView()
         doneButtonForCitiesPicker(for: Address)
-
     }
     
-    
- 
-    
+    //MARK:- update View From Model
     func updateView(){
         name.text = user?.name
         mail.text = user?.email
@@ -51,23 +50,25 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
         comfirmPass.delegate = self
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
+        self.stopAnimating()
     }
     
+    //MARK:- inputAccessory Button Configuration
     func doneButtonForCitiesPicker(for textField: UITextField){
-             textField.inputView = currencyPicker
-             let toolbar = UIToolbar()
-             toolbar.sizeToFit()
-             let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneCityPicker));
-             toolbar.setItems([doneButton], animated: true)
-             toolbar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-             textField.inputAccessoryView = toolbar
-         }
-      
-      @objc func doneCityPicker(){
-          self.view.endEditing(true)
-      }
-     
+        textField.inputView = currencyPicker
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneCityPicker));
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        textField.inputAccessoryView = toolbar
+    }
     
+    @objc func doneCityPicker(){
+        self.view.endEditing(true)
+    }
+    
+    //MARK:- update user info
     @IBAction func savePressed(_ sender: UIButton) {
         self.startAnimating()
         if let user = user ,password.text == comfirmPass.text , name.text != "" , phone.text != "" , Address.text != "" , mail.text != "" , password.text != "" {
@@ -97,7 +98,7 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
     
 }
 
-
+//MARK:- pickerView setUp
 extension EditeProfileViewController: UIPickerViewDataSource , UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -108,18 +109,11 @@ extension EditeProfileViewController: UIPickerViewDataSource , UIPickerViewDeleg
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-           return Shared.addressArray[row]
-       }
+        return Shared.addressArray[row]
+    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-   
         Address.text = Shared.addressArray[row]
- 
-        
-           
-       }
-       
-    
-    
+    }
 }
 
 
