@@ -10,6 +10,7 @@ import UIKit
 protocol CurrentReservationDelegate {
     func startTrip(id: Int)
     func details(id: Int)
+    func endTrip(id: Int)
 }
 
 class CurrentReservationTableViewCell: UITableViewCell {
@@ -44,16 +45,7 @@ class CurrentReservationTableViewCell: UITableViewCell {
     
     @IBAction func cancelBtnPressed(_ sender: UIButton) {
         if let id = idRequest {
-            DispatchQueue.global().async {
-                APIClient.refuseRequest(id_request: id) { (Result) in
-                    switch Result {
-                    case .success(let response):
-                        print(response)
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
-            }
+            delegate?.endTrip(id: id)
         }
     }
     

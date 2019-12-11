@@ -85,6 +85,9 @@ class CarDetailsViewController: UIViewController {
             to.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: Shared.body, text2: car.availableDateTo, ofSizeText2: Shared.Header)
             address.text = "\(car.city) ,\(car.area)"
             tripsNum.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip, ofSizeText1: 14, text2: "Trips ", ofSizeText2: 10)
+            if let rating = Double(car.rate) {
+                rate.rating = rating
+            }
         }
     }
     

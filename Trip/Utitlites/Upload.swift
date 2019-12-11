@@ -26,7 +26,7 @@ class FirebaseUploader
         return randomString
     }
     
-    static func uploadToFirebase(viewController:UIViewController ,imagePicker:UIImagePickerController , didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any] ,completion: (() -> Void)? = nil ) -> String
+    static func uploadToFirebase(viewController:UIViewController ,imagePicker:UIImagePickerController , didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any], completion: ((_ success: Bool) -> Void)?)
     {
         
         //to upload image to firebase storage
@@ -36,7 +36,7 @@ class FirebaseUploader
         if let image = info[.originalImage] as? UIImage{
             
             var imageData = Data()
-            imageData = image.jpegData(compressionQuality: 0.5)!
+            imageData = image.jpegData(compressionQuality: 0.3)!
             
             
             let storeRef = Storage.storage().reference().child("images/" + randomString(length: 20))
@@ -50,14 +50,13 @@ class FirebaseUploader
                     
                     storeRef.downloadURL { url, error in
                         if let error = error {
-                            
                             print(error)
-                            
                         } else {
                             // Here you can get the download URL for 'simpleImage.jpg'
                             print(url?.absoluteString ?? "link")
                             imageURl = url?.absoluteString ?? "link"
                             Shared.Image = imageURl
+                            completion?(true) ?? nil
                         }
                     }
                 }
@@ -69,7 +68,7 @@ class FirebaseUploader
                 let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
                     / Double(snapshot.progress!.totalUnitCount)
                 
-                alert = UIAlertController(title: "جاري التحميل", message: "برجاء الانتظار", preferredStyle: UIAlertController.Style.alert)
+                alert = UIAlertController(title: "uploading", message: "please wait", preferredStyle: UIAlertController.Style.alert)
                 
                 viewController.present(alert!, animated: true, completion: nil)
                 
@@ -85,8 +84,6 @@ class FirebaseUploader
             //dismiss(animated: true, completion: nil)
             imagePicker.dismiss(animated: true, completion: nil)
         }
-        
-        return final ?? ""
         
     }
     
