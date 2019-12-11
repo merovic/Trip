@@ -200,7 +200,7 @@ extension EditCarDetailsViewController: UIPickerViewDataSource , UIPickerViewDel
 
 extension EditCarDetailsViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: ImagePicker, didFinishPickingMediaWithInfo: info)
+        _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: ImagePicker, didFinishPickingMediaWithInfo: info , completion: nil)
     }
     
 }

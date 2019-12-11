@@ -20,13 +20,14 @@ class EndTripViewController: UIViewController {
     @IBOutlet weak var comment: UITextView!
     @IBOutlet weak var colsedTripBtn: UIButton!
     
+    var idRequest: Int?
+    
     //MARK:- viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.345890411)
     }
     
     @IBAction func colsedTripBtnPreesed(_ sender: UIButton) {
-        
     }
     
     @IBAction func cancelBtn(_ sender: UIButton) {
