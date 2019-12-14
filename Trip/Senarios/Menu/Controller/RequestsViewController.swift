@@ -101,10 +101,6 @@ extension RequestsViewController: RequestCellDelegate {
                 }
             }
         }
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "StartReservation") as! StartPopUp
-//        vc.modalPresentationStyle = .overFullScreen
-//        vc.idRequest = id
-//        self.present(vc, animated: true, completion: nil)
     }
     
     func refuseRequest(id: Int) {

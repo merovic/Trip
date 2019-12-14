@@ -1,0 +1,804 @@
+
+/* Class = "UILabel"; text = "Contact Number\n"; ObjectID = "05R-0Q-tb5"; */
+"05R-0Q-tb5.text" = "Contact Number\n";
+
+/* Class = "UILabel"; text = "Contact Number\n"; ObjectID = "0Ce-Cp-eGu"; */
+"0Ce-Cp-eGu.text" = "Contact Number\n";
+
+/* Class = "UILabel"; text = "On"; ObjectID = "0ME-bu-Mvx"; */
+"0ME-bu-Mvx.text" = "On";
+
+/* Class = "UILabel"; text = "Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label"; ObjectID = "0fM-td-Sc5"; */
+"0fM-td-Sc5.text" = "Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label";
+
+/* Class = "UILabel"; text = "Rate 4 / 5"; ObjectID = "0ny-Ag-pUg"; */
+"0ny-Ag-pUg.text" = "Rate 4 / 5";
+
+/* Class = "UILabel"; text = "Show In Maps"; ObjectID = "16k-TM-Vc1"; */
+"16k-TM-Vc1.text" = "Show In Maps";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "17U-am-e20"; */
+"17U-am-e20.title" = "Settings";
+
+/* Class = "UILabel"; text = "Owner Of The Car\n"; ObjectID = "1HW-m1-aWT"; */
+"1HW-m1-aWT.text" = "Owner Of The Car\n";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "1Xt-Ng-wr7"; */
+"1Xt-Ng-wr7.text" = "Email";
+
+/* Class = "UILabel"; text = "Do not have an account ?"; ObjectID = "1qL-02-3zG"; */
+"1qL-02-3zG.text" = "Do not have an account ?";
+
+/* Class = "UINavigationItem"; title = "Edit Profile"; ObjectID = "2Rz-na-FMg"; */
+"2Rz-na-FMg.title" = "Edit Profile";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password ?"; ObjectID = "2Vg-Sq-oMl"; */
+"2Vg-Sq-oMl.normalTitle" = "Forgot Password ?";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "2XE-Ez-vXg"; */
+"2XE-Ez-vXg.text" = "To";
+
+/* Class = "UILabel"; text = "Search "; ObjectID = "2YT-cs-Ryf"; */
+"2YT-cs-Ryf.text" = "Search ";
+
+/* Class = "UILabel"; text = "Number Of Free kilometers"; ObjectID = "2Ya-b4-rn1"; */
+"2Ya-b4-rn1.text" = "Number Of Free kilometers";
+
+/* Class = "UILabel"; text = "Total Price\n"; ObjectID = "2ig-6u-f1S"; */
+"2ig-6u-f1S.text" = "Total Price\n";
+
+/* Class = "UILabel"; text = "Tax"; ObjectID = "2lo-Z0-qUA"; */
+"2lo-Z0-qUA.text" = "Tax";
+
+/* Class = "UINavigationItem"; title = "Add Your Car"; ObjectID = "2oE-Rf-tnL"; */
+"2oE-Rf-tnL.title" = "Add Your Car";
+
+/* Class = "UILabel"; text = "Appointment\n"; ObjectID = "2si-CH-dwv"; */
+"2si-CH-dwv.text" = "Appointment\n";
+
+/* Class = "UILabel"; text = "Color"; ObjectID = "37x-bL-ep4"; */
+"37x-bL-ep4.text" = "Color";
+
+/* Class = "UINavigationItem"; title = "Invite a Friend"; ObjectID = "3P1-BF-Lvz"; */
+"3P1-BF-Lvz.title" = "Invite a Friend";
+
+/* Class = "UILabel"; text = "LabelLabel"; ObjectID = "3VX-d2-j3v"; */
+"3VX-d2-j3v.text" = "LabelLabel";
+
+/* Class = "UILabel"; text = "Price Trip\n"; ObjectID = "3jc-0a-VyZ"; */
+"3jc-0a-VyZ.text" = "Price Trip\n";
+
+/* Class = "UILabel"; text = "Number Of Kilometers\n"; ObjectID = "4We-zp-zSj"; */
+"4We-zp-zSj.text" = "Number Of Kilometers\n";
+
+/* Class = "UILabel"; text = "Mobile Number\n"; ObjectID = "4Xg-Ua-cHm"; */
+"4Xg-Ua-cHm.text" = "Mobile Number\n";
+
+/* Class = "UILabel"; text = "123123123123123"; ObjectID = "4Y8-OP-RsU"; */
+"4Y8-OP-RsU.text" = "123123123123123";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4fR-7Y-iGD"; */
+"4fR-7Y-iGD.text" = "Label";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "4nX-wb-Hrc"; */
+"4nX-wb-Hrc.text" = "From";
+
+/* Class = "UILabel"; text = "Leo Messi"; ObjectID = "4xI-qZ-awh"; */
+"4xI-qZ-awh.text" = "Leo Messi";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "56N-IU-6bz"; */
+"56N-IU-6bz.text" = "Label";
+
+/* Class = "UILabel"; text = "Contact us"; ObjectID = "5Zr-jm-7sA"; */
+"5Zr-jm-7sA.text" = "Contact us";
+
+/* Class = "UILabel"; text = "LabelLabel"; ObjectID = "5an-Hj-0SB"; */
+"5an-Hj-0SB.text" = "LabelLabel";
+
+/* Class = "UILabel"; text = "Street Name\n"; ObjectID = "69N-Wt-ILe"; */
+"69N-Wt-ILe.text" = "Street Name\n";
+
+/* Class = "UIButton"; normalTitle = "Cancel Trip "; ObjectID = "6FS-96-fx9"; */
+"6FS-96-fx9.normalTitle" = "Cancel Trip ";
+
+/* Class = "UILabel"; text = "Top Rated"; ObjectID = "6GC-Y6-wA9"; */
+"6GC-Y6-wA9.text" = "Top Rated";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "6dN-FM-k92"; */
+"6dN-FM-k92.text" = "Password";
+
+/* Class = "UILabel"; text = "Region"; ObjectID = "72o-dR-BBH"; */
+"72o-dR-BBH.text" = "Region";
+
+/* Class = "UILabel"; text = "Reservation details"; ObjectID = "7Xq-Cq-c4a"; */
+"7Xq-Cq-c4a.text" = "Reservation details";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "7sN-gz-f9p"; */
+"7sN-gz-f9p.text" = "To";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "7sg-rk-6JJ"; */
+"7sg-rk-6JJ.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Write a Comment\n"; ObjectID = "7vB-m7-ykm"; */
+"7vB-m7-ykm.text" = "Write a Comment\n";
+
+/* Class = "UILabel"; text = "Total Price\n"; ObjectID = "801-Tu-F9G"; */
+"801-Tu-F9G.text" = "Total Price\n";
+
+/* Class = "UILabel"; text = "Total Price\n"; ObjectID = "8We-Lh-5hV"; */
+"8We-Lh-5hV.text" = "Total Price\n";
+
+/* Class = "UILabel"; text = "Add Other Details"; ObjectID = "8eu-vF-AxK"; */
+"8eu-vF-AxK.text" = "Add Other Details";
+
+/* Class = "UILabel"; text = "Contact info"; ObjectID = "8ul-I4-e5I"; */
+"8ul-I4-e5I.text" = "Contact info";
+
+/* Class = "UITextField"; placeholder = "Enter E-Mail"; ObjectID = "9bj-5A-uTl"; */
+"9bj-5A-uTl.placeholder" = "Enter E-Mail";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "9p6-Kj-Sc5"; */
+"9p6-Kj-Sc5.text" = "Email";
+
+/* Class = "UILabel"; text = "Current Meter Reading"; ObjectID = "A0S-SV-J0v"; */
+"A0S-SV-J0v.text" = "Current Meter Reading";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "BFe-aP-Jjv"; */
+"BFe-aP-Jjv.normalTitle" = "Accept";
+
+/* Class = "UILabel"; text = "29 / 12 / 2019"; ObjectID = "BGF-mG-Ctw"; */
+"BGF-mG-Ctw.text" = "29 / 12 / 2019";
+
+/* Class = "UILabel"; text = "Edit Email"; ObjectID = "BY7-Av-Wha"; */
+"BY7-Av-Wha.text" = "Edit Email";
+
+/* Class = "UILabel"; text = "End Of The Trip\n"; ObjectID = "Bgg-HW-pJl"; */
+"Bgg-HW-pJl.text" = "End Of The Trip\n";
+
+/* Class = "UILabel"; text = "Arabic"; ObjectID = "BnH-i7-vOC"; */
+"BnH-i7-vOC.text" = "Arabic";
+
+/* Class = "UINavigationItem"; title = "Reserve"; ObjectID = "Brp-te-5G6"; */
+"Brp-te-5G6.title" = "Reserve";
+
+/* Class = "UITextField"; placeholder = "Enter E-Mail"; ObjectID = "C1x-g5-FpM"; */
+"C1x-g5-FpM.placeholder" = "Enter E-Mail";
+
+/* Class = "UILabel"; text = "Extra Kilometer Price\n"; ObjectID = "CLs-NQ-lYp"; */
+"CLs-NQ-lYp.text" = "Extra Kilometer Price\n";
+
+/* Class = "UILabel"; text = "Rent Price Per Day"; ObjectID = "CPN-to-gSX"; */
+"CPN-to-gSX.text" = "Rent Price Per Day";
+
+/* Class = "UITextField"; placeholder = "Enter city , address"; ObjectID = "CV8-XF-6cf"; */
+"CV8-XF-6cf.placeholder" = "Enter city , address";
+
+/* Class = "UIButton"; normalTitle = "Cancel Trip "; ObjectID = "CgR-m9-d9C"; */
+"CgR-m9-d9C.normalTitle" = "Cancel Trip ";
+
+/* Class = "UILabel"; text = "12 PM"; ObjectID = "CjJ-Hs-MWr"; */
+"CjJ-Hs-MWr.text" = "12 PM";
+
+/* Class = "UILabel"; text = "Available"; ObjectID = "CqB-bW-rKQ"; */
+"CqB-bW-rKQ.text" = "Available";
+
+/* Class = "UILabel"; text = "Start Trip "; ObjectID = "DNP-AP-Tyg"; */
+"DNP-AP-Tyg.text" = "Start Trip ";
+
+/* Class = "UILabel"; text = "Car Image"; ObjectID = "EFj-PC-XoF"; */
+"EFj-PC-XoF.text" = "Car Image";
+
+/* Class = "UILabel"; text = "Reservation details"; ObjectID = "EY4-gz-WEF"; */
+"EY4-gz-WEF.text" = "Reservation details";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "EsC-6o-Uw8"; */
+"EsC-6o-Uw8.placeholder" = "Enter Password";
+
+/* Class = "UILabel"; text = "123123123123123"; ObjectID = "F7Z-IF-bkz"; */
+"F7Z-IF-bkz.text" = "123123123123123";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FQu-qc-JYp"; */
+"FQu-qc-JYp.text" = "Label";
+
+/* Class = "UILabel"; text = "Kilometers"; ObjectID = "Fhe-9F-mC5"; */
+"Fhe-9F-mC5.text" = "Kilometers";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Fvq-QC-kre"; */
+"Fvq-QC-kre.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Details"; ObjectID = "G2k-Ov-4qZ"; */
+"G2k-Ov-4qZ.normalTitle" = "Details";
+
+/* Class = "UINavigationItem"; title = "Reservations"; ObjectID = "Gm3-2G-2TL"; */
+"Gm3-2G-2TL.title" = "Reservations";
+
+/* Class = "UILabel"; text = "LabelLabel"; ObjectID = "GnX-Mh-BCB"; */
+"GnX-Mh-BCB.text" = "LabelLabel";
+
+/* Class = "UILabel"; text = "01002698208"; ObjectID = "GvH-Do-RYj"; */
+"GvH-Do-RYj.text" = "01002698208";
+
+/* Class = "UINavigationItem"; title = "Invite a Friend"; ObjectID = "Hh0-yp-vOW"; */
+"Hh0-yp-vOW.title" = "Invite a Friend";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "HnG-vt-bP4"; */
+"HnG-vt-bP4.normalTitle" = "Sign Up";
+
+/* Class = "UITextView"; text = "Type message here"; ObjectID = "Hoh-Q3-qR2"; */
+"Hoh-Q3-qR2.text" = "Type message here";
+
+/* Class = "UINavigationItem"; title = "Convention\n"; ObjectID = "IRW-fJ-KXI"; */
+"IRW-fJ-KXI.title" = "Convention\n";
+
+/* Class = "UINavigationItem"; title = "Help"; ObjectID = "IS8-b3-4yF"; */
+"IS8-b3-4yF.title" = "Help";
+
+/* Class = "UILabel"; text = "LabelLabel"; ObjectID = "IpR-vx-Rxt"; */
+"IpR-vx-Rxt.text" = "LabelLabel";
+
+/* Class = "UILabel"; text = " "; ObjectID = "JTj-0e-9eY"; */
+"JTj-0e-9eY.text" = " ";
+
+/* Class = "UITextField"; placeholder = "Model"; ObjectID = "Jck-qR-DNn"; */
+"Jck-qR-DNn.placeholder" = "Model";
+
+/* Class = "UILabel"; text = "Number Extra Kilometer"; ObjectID = "JhN-mH-vRA"; */
+"JhN-mH-vRA.text" = "Number Extra Kilometer";
+
+/* Class = "UILabel"; text = "Color"; ObjectID = "KGB-nN-eHk"; */
+"KGB-nN-eHk.text" = "Color";
+
+/* Class = "UIButton"; normalTitle = "   Reservations"; ObjectID = "KKu-yS-vee"; */
+"KKu-yS-vee.normalTitle" = "   Reservations";
+
+/* Class = "UITabBarItem"; title = "Reservations"; ObjectID = "Kbo-hq-GEf"; */
+"Kbo-hq-GEf.title" = "Reservations";
+
+/* Class = "UITextField"; placeholder = "5/1/2020"; ObjectID = "L5U-xC-ZmD"; */
+"L5U-xC-ZmD.placeholder" = "5/1/2020";
+
+/* Class = "UIButton"; normalTitle = "   Edit Profile"; ObjectID = "L6n-2x-oMT"; */
+"L6n-2x-oMT.normalTitle" = "   Edit Profile";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "LDm-N3-nGv"; */
+"LDm-N3-nGv.normalTitle" = "Add";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "LHx-VI-Xdf"; */
+"LHx-VI-Xdf.text" = "From";
+
+/* Class = "UILabel"; text = "12 AM"; ObjectID = "Lff-f7-Eaa"; */
+"Lff-f7-Eaa.text" = "12 AM";
+
+/* Class = "UILabel"; text = "Attach Driving License"; ObjectID = "MEx-16-fkH"; */
+"MEx-16-fkH.text" = "Attach Driving License";
+
+/* Class = "UILabel"; text = "Notification Recepion"; ObjectID = "MFO-qP-cOY"; */
+"MFO-qP-cOY.text" = "Notification Recepion";
+
+/* Class = "UILabel"; text = "12 AM"; ObjectID = "MMR-se-aki"; */
+"MMR-se-aki.text" = "12 AM";
+
+/* Class = "UILabel"; text = "Extra Kilometer Price\n"; ObjectID = "MOT-qG-GjD"; */
+"MOT-qG-GjD.text" = "Extra Kilometer Price\n";
+
+/* Class = "UILabel"; text = "Kilometers"; ObjectID = "MqK-zu-mjo"; */
+"MqK-zu-mjo.text" = "Kilometers";
+
+/* Class = "UILabel"; text = "Rent Price Per Day"; ObjectID = "NmT-9j-ipY"; */
+"NmT-9j-ipY.text" = "Rent Price Per Day";
+
+/* Class = "UILabel"; text = "Number Of kilometers"; ObjectID = "O9e-RY-PDH"; */
+"O9e-RY-PDH.text" = "Number Of kilometers";
+
+/* Class = "UILabel"; text = "Show In Maps"; ObjectID = "OGv-7C-v5C"; */
+"OGv-7C-v5C.text" = "Show In Maps";
+
+/* Class = "UILabel"; text = "Terms and conditions"; ObjectID = "OWQ-Us-OTL"; */
+"OWQ-Us-OTL.text" = "Terms and conditions";
+
+/* Class = "UILabel"; text = "Model "; ObjectID = "Oex-gH-DWV"; */
+"Oex-gH-DWV.text" = "Model ";
+
+/* Class = "UILabel"; text = "Register"; ObjectID = "Ofc-sC-qgC"; */
+"Ofc-sC-qgC.text" = "Register";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Oms-Rw-fQQ"; */
+"Oms-Rw-fQQ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Reserve"; ObjectID = "OrN-Hg-nA2"; */
+"OrN-Hg-nA2.normalTitle" = "Reserve";
+
+/* Class = "UILabel"; text = "Available From To\n"; ObjectID = "Pn8-Sh-Yd2"; */
+"Pn8-Sh-Yd2.text" = "Available From To\n";
+
+/* Class = "UILabel"; text = "Total Additional Cost"; ObjectID = "Q0d-aB-cvB"; */
+"Q0d-aB-cvB.text" = "Total Additional Cost";
+
+/* Class = "UILabel"; text = "Mostafa Ali Mostafa"; ObjectID = "QDL-95-RuL"; */
+"QDL-95-RuL.text" = "Mostafa Ali Mostafa";
+
+/* Class = "UIButton"; normalTitle = "Invite"; ObjectID = "QHw-jW-11q"; */
+"QHw-jW-11q.normalTitle" = "Invite";
+
+/* Class = "UIButton"; normalTitle = "Invite a friend"; ObjectID = "QI5-qe-d8i"; */
+"QI5-qe-d8i.normalTitle" = "Invite a friend";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QuY-ED-r6p"; */
+"QuY-ED-r6p.text" = "Label";
+
+/* Class = "UILabel"; text = "Notification Notification Notification "; ObjectID = "R3o-8q-SZp"; */
+"R3o-8q-SZp.text" = "Notification Notification Notification ";
+
+/* Class = "UISegmentedControl"; R8p-hB-Kxu.segmentTitles[0] = "Current Reservation"; ObjectID = "R8p-hB-Kxu"; */
+"R8p-hB-Kxu.segmentTitles[0]" = "Current Reservation";
+
+/* Class = "UISegmentedControl"; R8p-hB-Kxu.segmentTitles[1] = "Previous Reservation"; ObjectID = "R8p-hB-Kxu"; */
+"R8p-hB-Kxu.segmentTitles[1]" = "Previous Reservation";
+
+/* Class = "UILabel"; text = "Advanced Search"; ObjectID = "RBa-Mc-aTk"; */
+"RBa-Mc-aTk.text" = "Advanced Search";
+
+/* Class = "UILabel"; text = "Show Phon Number"; ObjectID = "RXJ-NI-2qs"; */
+"RXJ-NI-2qs.text" = "Show Phon Number";
+
+/* Class = "UILabel"; text = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."; ObjectID = "RiH-ZA-li2"; */
+"RiH-ZA-li2.text" = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.";
+
+/* Class = "UILabel"; text = "1 PM"; ObjectID = "Rzp-qx-HSL"; */
+"Rzp-qx-HSL.text" = "1 PM";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "S0k-DW-GKb"; */
+"S0k-DW-GKb.text" = "Label";
+
+/* Class = "UILabel"; text = "Note: extra KM price is 0 SR"; ObjectID = "S2A-mJ-f6B"; */
+"S2A-mJ-f6B.text" = "Note: extra KM price is 0 SR";
+
+/* Class = "UILabel"; text = "Notification Name"; ObjectID = "SSY-fP-Hhh"; */
+"SSY-fP-Hhh.text" = "Notification Name";
+
+/* Class = "UILabel"; text = "15 Trip"; ObjectID = "Suh-oY-enk"; */
+"Suh-oY-enk.text" = "15 Trip";
+
+/* Class = "UILabel"; text = "Car Owner "; ObjectID = "T6g-Kt-hde"; */
+"T6g-Kt-hde.text" = "Car Owner ";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Tdh-2v-5Os"; */
+"Tdh-2v-5Os.text" = "Email";
+
+/* Class = "UINavigationItem"; title = "Contact Us"; ObjectID = "U9f-ee-RFa"; */
+"U9f-ee-RFa.title" = "Contact Us";
+
+/* Class = "UILabel"; text = "1231231231"; ObjectID = "UQE-LA-tB9"; */
+"UQE-LA-tB9.text" = "1231231231";
+
+/* Class = "UILabel"; text = "Latest 5 cars"; ObjectID = "Umj-t8-mgG"; */
+"Umj-t8-mgG.text" = "Latest 5 cars";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "VIL-Cz-sS7"; */
+"VIL-Cz-sS7.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "Trips"; ObjectID = "VOe-sr-Ouw"; */
+"VOe-sr-Ouw.text" = "Trips";
+
+/* Class = "UIButton"; normalTitle = "   Sign out"; ObjectID = "Vq4-An-FJ5"; */
+"Vq4-An-FJ5.normalTitle" = "   Sign out";
+
+/* Class = "UILabel"; text = "Brows All Cars"; ObjectID = "VsF-7t-zS8"; */
+"VsF-7t-zS8.text" = "Brows All Cars";
+
+/* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "W18-En-ZHE"; */
+"W18-En-ZHE.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";
+
+/* Class = "UILabel"; text = "123123123123123"; ObjectID = "WNq-7d-HxM"; */
+"WNq-7d-HxM.text" = "123123123123123";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "WPB-KD-LSW"; */
+"WPB-KD-LSW.title" = "Home";
+
+/* Class = "UILabel"; text = "550 R/D"; ObjectID = "WUV-Gs-HAY"; */
+"WUV-Gs-HAY.text" = "550 R/D";
+
+/* Class = "UIButton"; normalTitle = "Refuse"; ObjectID = "WuN-Ny-iEM"; */
+"WuN-Ny-iEM.normalTitle" = "Refuse";
+
+/* Class = "UINavigationItem"; title = "Requests"; ObjectID = "Wx5-x4-KVT"; */
+"Wx5-x4-KVT.title" = "Requests";
+
+/* Class = "UILabel"; text = "1500  Dollar"; ObjectID = "X8n-hT-Xd9"; */
+"X8n-hT-Xd9.text" = "1500  Dollar";
+
+/* Class = "UILabel"; text = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum"; ObjectID = "XLA-JT-YuN"; */
+"XLA-JT-YuN.text" = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum";
+
+/* Class = "UILabel"; text = "550 R/D"; ObjectID = "XhC-bg-Cej"; */
+"XhC-bg-Cej.text" = "550 R/D";
+
+/* Class = "UILabel"; text = "Price Trip\n"; ObjectID = "Y7n-Kl-Eq3"; */
+"Y7n-Kl-Eq3.text" = "Price Trip\n";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YPO-sp-CDM"; */
+"YPO-sp-CDM.text" = "Label";
+
+/* Class = "UILabel"; text = " "; ObjectID = "YeX-rW-cdh"; */
+"YeX-rW-cdh.text" = " ";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "YkA-Ov-Ie6"; */
+"YkA-Ov-Ie6.text" = "English";
+
+/* Class = "UIButton"; normalTitle = "   Attach"; ObjectID = "Z1V-Zv-Ezr"; */
+"Z1V-Zv-Ezr.normalTitle" = "   Attach";
+
+/* Class = "UILabel"; text = "Car Model"; ObjectID = "Z23-ZP-Z6x"; */
+"Z23-ZP-Z6x.text" = "Car Model";
+
+/* Class = "UILabel"; text = "Rental Period"; ObjectID = "ZG5-Ag-t7d"; */
+"ZG5-Ag-t7d.text" = "Rental Period";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do "; ObjectID = "ZLp-Qy-6qY"; */
+"ZLp-Qy-6qY.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do ";
+
+/* Class = "UIButton"; normalTitle = "Colsed Trip "; ObjectID = "ZTb-Ig-9Q1"; */
+"ZTb-Ig-9Q1.normalTitle" = "Colsed Trip ";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "ZcD-MI-aCg"; */
+"ZcD-MI-aCg.normalTitle" = "Accept";
+
+/* Class = "UILabel"; text = "Or"; ObjectID = "Zcs-Ut-kba"; */
+"Zcs-Ut-kba.text" = "Or";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Zdu-7U-qP3"; */
+"Zdu-7U-qP3.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "   Attach"; ObjectID = "Zv0-b3-ztd"; */
+"Zv0-b3-ztd.normalTitle" = "   Attach";
+
+/* Class = "UIButton"; normalTitle = "  Attach"; ObjectID = "a6h-Bs-JMw"; */
+"a6h-Bs-JMw.normalTitle" = "  Attach";
+
+/* Class = "UIButton"; normalTitle = "Add Your Car"; ObjectID = "aS3-9F-lLP"; */
+"aS3-9F-lLP.normalTitle" = "Add Your Car";
+
+/* Class = "UIButton"; normalTitle = "Refuse"; ObjectID = "akh-B3-tRg"; */
+"akh-B3-tRg.normalTitle" = "Refuse";
+
+/* Class = "UILabel"; text = "Reservations Rate"; ObjectID = "anK-xA-xp0"; */
+"anK-xA-xp0.text" = "Reservations Rate";
+
+/* Class = "UITextField"; placeholder = "1/1/2020"; ObjectID = "aqx-zQ-F2z"; */
+"aqx-zQ-F2z.placeholder" = "1/1/2020";
+
+/* Class = "UILabel"; text = "1000 Rate"; ObjectID = "bBn-2f-B4F"; */
+"bBn-2f-B4F.text" = "1000 Rate";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "bMP-FR-5HP"; */
+"bMP-FR-5HP.text" = "City";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bdj-HB-36n"; */
+"bdj-HB-36n.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "c2J-SQ-OKG"; */
+"c2J-SQ-OKG.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "message"; ObjectID = "c3u-P6-plu"; */
+"c3u-P6-plu.text" = "message";
+
+/* Class = "UILabel"; text = "Application Language\n"; ObjectID = "c4q-a7-Vdy"; */
+"c4q-a7-Vdy.text" = "Application Language\n";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "c83-4C-kNk"; */
+"c83-4C-kNk.text" = "Phone";
+
+/* Class = "UIButton"; normalTitle = "   Edit Car Details"; ObjectID = "cBQ-h5-ge3"; */
+"cBQ-h5-ge3.normalTitle" = "   Edit Car Details";
+
+/* Class = "UIButton"; normalTitle = "Log In  "; ObjectID = "cGg-Qf-epI"; */
+"cGg-Qf-epI.normalTitle" = "Log In  ";
+
+/* Class = "UILabel"; text = "Number Of Kilometers\n"; ObjectID = "cIr-yQ-UJB"; */
+"cIr-yQ-UJB.text" = "Number Of Kilometers\n";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "cTV-4n-9CB"; */
+"cTV-4n-9CB.normalTitle" = "Search";
+
+/* Class = "UILabel"; text = "12 AM"; ObjectID = "cTi-zf-vXO"; */
+"cTi-zf-vXO.text" = "12 AM";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "d4d-za-mCP"; */
+"d4d-za-mCP.text" = "Label";
+
+/* Class = "UILabel"; text = "User type"; ObjectID = "dAl-JA-v4q"; */
+"dAl-JA-v4q.text" = "User type";
+
+/* Class = "UILabel"; text = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum"; ObjectID = "dDN-uF-706"; */
+"dDN-uF-706.text" = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum";
+
+/* Class = "UITextField"; placeholder = "Town , city"; ObjectID = "dU5-Uj-y72"; */
+"dU5-Uj-y72.placeholder" = "Town , city";
+
+/* Class = "UITabBarItem"; title = "Notification"; ObjectID = "dWh-ob-5kD"; */
+"dWh-ob-5kD.title" = "Notification";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "eHs-Se-Pfe"; */
+"eHs-Se-Pfe.text" = "To";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "eNZ-VL-onr"; */
+"eNZ-VL-onr.text" = "Name";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "eV9-jz-T74"; */
+"eV9-jz-T74.text" = "Price";
+
+/* Class = "UILabel"; text = "Attach License Image"; ObjectID = "ew9-ex-R4m"; */
+"ew9-ex-R4m.text" = "Attach License Image";
+
+/* Class = "UILabel"; text = "Kilometers"; ObjectID = "eyA-Ko-JYz"; */
+"eyA-Ko-JYz.text" = "Kilometers";
+
+/* Class = "UILabel"; text = "Mercedes Benz 2018 new"; ObjectID = "f4h-gE-yJh"; */
+"f4h-gE-yJh.text" = "Mercedes Benz 2018 new";
+
+/* Class = "UILabel"; text = "Tax"; ObjectID = "fG8-o1-qGA"; */
+"fG8-o1-qGA.text" = "Tax";
+
+/* Class = "UILabel"; text = "Evaluate The Tenant"; ObjectID = "flM-hB-yDv"; */
+"flM-hB-yDv.text" = "Evaluate The Tenant";
+
+/* Class = "UILabel"; text = "Rate 4 / 5"; ObjectID = "fzv-h0-Gfs"; */
+"fzv-h0-Gfs.text" = "Rate 4 / 5";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "g0h-32-Vgh"; */
+"g0h-32-Vgh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gBJ-QX-fjl"; */
+"gBJ-QX-fjl.text" = "Label";
+
+/* Class = "UILabel"; text = "LabelLabel"; ObjectID = "gPC-gY-iGq"; */
+"gPC-gY-iGq.text" = "LabelLabel";
+
+/* Class = "UILabel"; text = "City name"; ObjectID = "gf8-S5-rkW"; */
+"gf8-S5-rkW.text" = "City name";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "ggA-kZ-C09"; */
+"ggA-kZ-C09.text" = "Password";
+
+/* Class = "UILabel"; text = "12 AM"; ObjectID = "hGp-EW-0Ea"; */
+"hGp-EW-0Ea.text" = "12 AM";
+
+/* Class = "UILabel"; text = "Current Meter Reading"; ObjectID = "hcE-SI-p2p"; */
+"hcE-SI-p2p.text" = "Current Meter Reading";
+
+/* Class = "UILabel"; text = "House Number\n"; ObjectID = "hmT-gm-9RD"; */
+"hmT-gm-9RD.text" = "House Number\n";
+
+/* Class = "UITextField"; placeholder = "Choose Address"; ObjectID = "hth-bX-te5"; */
+"hth-bX-te5.placeholder" = "Choose Address";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "iI5-qk-okk"; */
+"iI5-qk-okk.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "iIO-ut-HMh"; */
+"iIO-ut-HMh.normalTitle" = "Send";
+
+/* Class = "UINavigationItem"; title = "Reservations Details"; ObjectID = "iOg-2D-w6t"; */
+"iOg-2D-w6t.title" = "Reservations Details";
+
+/* Class = "UILabel"; text = "Confirm Password"; ObjectID = "ikC-rc-lO0"; */
+"ikC-rc-lO0.text" = "Confirm Password";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "ilc-JZ-gkK"; */
+"ilc-JZ-gkK.text" = "Price";
+
+/* Class = "UILabel"; text = "Invite a Friend\n"; ObjectID = "jIN-nH-TNe"; */
+"jIN-nH-TNe.text" = "Invite a Friend\n";
+
+/* Class = "UILabel"; text = "Owner Of The Car\n"; ObjectID = "jNW-hz-XYr"; */
+"jNW-hz-XYr.text" = "Owner Of The Car\n";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "jce-aw-fqy"; */
+"jce-aw-fqy.text" = "Address";
+
+/* Class = "UIButton"; normalTitle = "Invite"; ObjectID = "jhn-Ra-wIy"; */
+"jhn-Ra-wIy.normalTitle" = "Invite";
+
+/* Class = "UILabel"; text = "15 Trip"; ObjectID = "jjZ-a6-IJ0"; */
+"jjZ-a6-IJ0.text" = "15 Trip";
+
+/* Class = "UILabel"; text = "12 PM"; ObjectID = "k0V-4i-kxA"; */
+"k0V-4i-kxA.text" = "12 PM";
+
+/* Class = "UILabel"; text = "Street Name\n"; ObjectID = "kPk-JQ-jAY"; */
+"kPk-JQ-jAY.text" = "Street Name\n";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "kSE-cp-Zj1"; */
+"kSE-cp-Zj1.text" = "City";
+
+/* Class = "UILabel"; text = "House Number\n"; ObjectID = "kVo-av-Zdz"; */
+"kVo-av-Zdz.text" = "House Number\n";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "kk2-z2-3cc"; */
+"kk2-z2-3cc.normalTitle" = "Search";
+
+/* Class = "UINavigationItem"; title = "Notification"; ObjectID = "klw-5m-R7n"; */
+"klw-5m-R7n.title" = "Notification";
+
+/* Class = "UILabel"; text = "123123123123123"; ObjectID = "lD3-qN-a38"; */
+"lD3-qN-a38.text" = "123123123123123";
+
+/* Class = "UILabel"; text = "Note: extra KM price is 0 SR"; ObjectID = "lDh-nb-Vzp"; */
+"lDh-nb-Vzp.text" = "Note: extra KM price is 0 SR";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lku-l6-WSK"; */
+"lku-l6-WSK.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "m3Y-MY-TIR"; */
+"m3Y-MY-TIR.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Enter Name"; ObjectID = "mE7-yC-efo"; */
+"mE7-yC-efo.placeholder" = "Enter Name";
+
+/* Class = "UILabel"; text = "Region"; ObjectID = "mMZ-fy-XlY"; */
+"mMZ-fy-XlY.text" = "Region";
+
+/* Class = "UINavigationItem"; title = "Edit Car Details"; ObjectID = "mMe-gz-Ffz"; */
+"mMe-gz-Ffz.title" = "Edit Car Details";
+
+/* Class = "UILabel"; text = "Reservation details"; ObjectID = "mOD-Cr-mNz"; */
+"mOD-Cr-mNz.text" = "Reservation details";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "mfX-sx-YP9"; */
+"mfX-sx-YP9.title" = "Profile";
+
+/* Class = "UILabel"; text = "Edit Name"; ObjectID = "myW-gl-xc5"; */
+"myW-gl-xc5.text" = "Edit Name";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "n0X-qC-Y4g"; */
+"n0X-qC-Y4g.placeholder" = "Enter Password";
+
+/* Class = "UILabel"; text = "Edit Phone Number"; ObjectID = "n7T-Q2-EQb"; */
+"n7T-Q2-EQb.text" = "Edit Phone Number";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "n7l-we-CN2"; */
+"n7l-we-CN2.text" = "Address";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "nax-7M-z0V"; */
+"nax-7M-z0V.text" = "Address";
+
+/* Class = "UILabel"; text = "Notice"; ObjectID = "nfV-jM-V7U"; */
+"nfV-jM-V7U.text" = "Notice";
+
+/* Class = "UITextField"; placeholder = "Enter E-Mail"; ObjectID = "npt-N0-y4q"; */
+"npt-N0-y4q.placeholder" = "Enter E-Mail";
+
+/* Class = "UILabel"; text = "Tax"; ObjectID = "nzC-lG-M5b"; */
+"nzC-lG-M5b.text" = "Tax";
+
+/* Class = "UILabel"; text = "Note: extra KM price is 0 SR"; ObjectID = "oMu-Vn-yge"; */
+"oMu-Vn-yge.text" = "Note: extra KM price is 0 SR";
+
+/* Class = "UILabel"; text = "Rental Period"; ObjectID = "ow6-J4-nnb"; */
+"ow6-J4-nnb.text" = "Rental Period";
+
+/* Class = "UILabel"; text = "Barcelona"; ObjectID = "oyQ-vb-fYm"; */
+"oyQ-vb-fYm.text" = "Barcelona";
+
+/* Class = "UITextField"; placeholder = "Enter Phone"; ObjectID = "pcx-Um-j4O"; */
+"pcx-Um-j4O.placeholder" = "Enter Phone";
+
+/* Class = "UILabel"; text = "Tenant and owner agreements"; ObjectID = "pxa-nw-xM7"; */
+"pxa-nw-xM7.text" = "Tenant and owner agreements";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "q34-Se-YXj"; */
+"q34-Se-YXj.text" = "Address";
+
+/* Class = "UILabel"; text = "1  PM"; ObjectID = "qOQ-xT-gAC"; */
+"qOQ-xT-gAC.text" = "1  PM";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."; ObjectID = "qhP-ej-eRd"; */
+"qhP-ej-eRd.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+
+/* Class = "UILabel"; text = "Appointment\n"; ObjectID = "qjp-Mh-ggw"; */
+"qjp-Mh-ggw.text" = "Appointment\n";
+
+/* Class = "UILabel"; text = "Appointment\n"; ObjectID = "qmb-9x-WCp"; */
+"qmb-9x-WCp.text" = "Appointment\n";
+
+/* Class = "UILabel"; text = "Car Image"; ObjectID = "qoF-ue-gis"; */
+"qoF-ue-gis.text" = "Car Image";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "r7A-yr-MZ9"; */
+"r7A-yr-MZ9.text" = "Label";
+
+/* Class = "UILabel"; text = "aaaaaaaaaaaaaaaaaaaa"; ObjectID = "r9C-tx-si1"; */
+"r9C-tx-si1.text" = "aaaaaaaaaaaaaaaaaaaa";
+
+/* Class = "UILabel"; text = "Extra Kilometer Price\n"; ObjectID = "rLM-89-RpU"; */
+"rLM-89-RpU.text" = "Extra Kilometer Price\n";
+
+/* Class = "UIButton"; normalTitle = "Register New Account"; ObjectID = "rPT-hC-BVa"; */
+"rPT-hC-BVa.normalTitle" = "Register New Account";
+
+/* Class = "UILabel"; text = "Please Receive The Value Of The Increased Kilometers From The Tenant"; ObjectID = "rSQ-a8-TIW"; */
+"rSQ-a8-TIW.text" = "Please Receive The Value Of The Increased Kilometers From The Tenant";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "rSd-MF-9kl"; */
+"rSd-MF-9kl.title" = "Search";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "rYH-WA-l6m"; */
+"rYH-WA-l6m.text" = "From";
+
+/* Class = "UILabel"; text = " "; ObjectID = "rf7-iC-h0a"; */
+"rf7-iC-h0a.text" = " ";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "sS9-mK-fRF"; */
+"sS9-mK-fRF.normalTitle" = "Send";
+
+/* Class = "UILabel"; text = "Car type"; ObjectID = "sxn-1x-ExC"; */
+"sxn-1x-ExC.text" = "Car type";
+
+/* Class = "UILabel"; text = "Tenant"; ObjectID = "tN8-0n-uyr"; */
+"tN8-0n-uyr.text" = "Tenant";
+
+/* Class = "UILabel"; text = "Model "; ObjectID = "tXe-Va-Yr5"; */
+"tXe-Va-Yr5.text" = "Model ";
+
+/* Class = "UILabel"; text = "mobile number"; ObjectID = "tz8-bV-0H4"; */
+"tz8-bV-0H4.text" = "mobile number";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "u1e-bV-JcY"; */
+"u1e-bV-JcY.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "u3U-pg-uik"; */
+"u3U-pg-uik.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Enter City , Address"; ObjectID = "uIQ-Jz-aLe"; */
+"uIQ-Jz-aLe.placeholder" = "Enter City , Address";
+
+/* Class = "UINavigationItem"; title = "Reservations Details"; ObjectID = "uc8-A3-9aA"; */
+"uc8-A3-9aA.title" = "Reservations Details";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "ued-Xt-6UG"; */
+"ued-Xt-6UG.text" = "name";
+
+/* Class = "UILabel"; text = "Confirm Password"; ObjectID = "ugV-7a-SI1"; */
+"ugV-7a-SI1.text" = "Confirm Password";
+
+/* Class = "UILabel"; text = "LabelLabel"; ObjectID = "uoT-CH-ltt"; */
+"uoT-CH-ltt.text" = "LabelLabel";
+
+/* Class = "UILabel"; text = "AA"; ObjectID = "uyR-wa-VTJ"; */
+"uyR-wa-VTJ.text" = "AA";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "vSg-6D-2Dv"; */
+"vSg-6D-2Dv.text" = "Price";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "vnu-Hw-T8n"; */
+"vnu-Hw-T8n.text" = "Address";
+
+/* Class = "UIButton"; normalTitle = "Start Trip "; ObjectID = "w9y-Qk-qCK"; */
+"w9y-Qk-qCK.normalTitle" = "Start Trip ";
+
+/* Class = "UILabel"; text = "Edit Password"; ObjectID = "wAv-dc-qe9"; */
+"wAv-dc-qe9.text" = "Edit Password";
+
+/* Class = "UITextField"; placeholder = "Enter Confirm Password"; ObjectID = "x6k-Sa-SMk"; */
+"x6k-Sa-SMk.placeholder" = "Enter Confirm Password";
+
+/* Class = "UILabel"; text = "Show In Maps"; ObjectID = "xib-NS-72D"; */
+"xib-NS-72D.text" = "Show In Maps";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "yA4-1d-veq"; */
+"yA4-1d-veq.text" = "Email";
+
+/* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "yks-1F-3Ci"; */
+"yks-1F-3Ci.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "zJw-bQ-a2n"; */
+"zJw-bQ-a2n.title" = "Profile";
+
+/* Class = "UILabel"; text = "Mercedes Benz 2018 new"; ObjectID = "zMJ-LA-KbS"; */
+"zMJ-LA-KbS.text" = "Mercedes Benz 2018 new";
+
+/* Class = "UILabel"; text = "email"; ObjectID = "zkZ-UF-rxU"; */
+"zkZ-UF-rxU.text" = "email";
+
+/* Class = "UILabel"; text = "Cancel Trip "; ObjectID = "zvH-TE-U6H"; */
+"zvH-TE-U6H.text" = "Cancel Trip ";

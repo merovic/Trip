@@ -106,7 +106,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                     cell.rate.rating = rating
                 }
                 cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carPlaceholder"))
-                cell.name.text = car.stName
+                cell.name.text = car.model
                 cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:" SR/Day" , ofSizeText2: 13)
                 cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: " Trips", ofSizeText2: 10)
             }
@@ -119,9 +119,9 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                     cell.rate.rating = rating
                 }
                 cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carSale"))
-                cell.name.text = car.stName
+                cell.name.text = car.model
                 cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:" SR/Day" , ofSizeText2: 13)
-                cell.trips.text = car.numberOfTrip
+                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: " Trips", ofSizeText2: 10)
             }
             
             return cell

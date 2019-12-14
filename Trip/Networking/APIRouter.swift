@@ -150,7 +150,7 @@ enum APIRouter: URLRequestConvertible {
         case .select_note_by_id_user:
             return "/select_note_by_id_user"
         case .select_request_by_id_request:
-            return "/select_request_by_id_owner"
+            return "/select_request_by_id_request"
         case .update_user:
             return "/update_user"
         case .delete_not:

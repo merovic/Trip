@@ -24,7 +24,7 @@ class ReservationViewController: UIViewController {
         reservationTableView.register(UINib(nibName: "PreviousReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousReservationTableViewCell")
         reservationSegmented.selectedSegmentIndex = 0
         reservationsSegChanged(reservationSegmented)
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,14 +100,14 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
     //MARK:- cellForRawAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if reservationSegmented.selectedSegmentIndex == 0 {
-           
+            
             if let request = requestAgreed?[indexPath.row] {
-               
-                           let  cell = tableView.dequeueReusableCell(withIdentifier: "CurrentReservationTableViewCell", for: indexPath) as! CurrentReservationTableViewCell
-                           cell.addressReservation.text = request.agrreOrRefuse
-                           cell.idRequest = request.id
-                           cell.idCar = request.idCar
-                           cell.delegate = self
+                
+                let  cell = tableView.dequeueReusableCell(withIdentifier: "CurrentReservationTableViewCell", for: indexPath) as! CurrentReservationTableViewCell
+                cell.addressReservation.text = request.agrreOrRefuse
+                cell.idRequest = request.id
+                cell.idCar = request.idCar
+                cell.delegate = self
                 return cell
             }
             
@@ -130,21 +130,26 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
 }
 
 //MARK:- extrntion - change Current and previous Reservation views
-extension ReservationViewController: CurrentReservationDelegate , PreviosReservationCellDelegate {
-    func endTrip(id: Int) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "CancelReservation") as! CancelPopUp
-            vc.id_request = id
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
-        }
-    }
+extension ReservationViewController: CurrentReservationDelegate , PreviosReservationCellDelegate ,EndTripDelegate {
     
+    //MARK:- Previous Reservations
     func previosReservationDetails(id: Int) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewDetails") as! NewReservationDetailsViewController
         vc.modalPresentationStyle = .fullScreen
         vc.idCar = id
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    //MARK:- Current Reservations
+    func endTrip(id: Int) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "CancelReservation") as! CancelPopUp
+            vc.id_request = id
+            vc.delegate = self
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     func startTrip(id: Int) {
@@ -160,5 +165,22 @@ extension ReservationViewController: CurrentReservationDelegate , PreviosReserva
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewDetails") as! NewReservationDetailsViewController
         vc.idCar = id
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK:- End Trip
+    
+    func endTrip(id: Int, endText: String) {
+        if #available(iOS 13.0, *) {
+            print("Try To Present")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                let vc = self?.storyboard?.instantiateViewController(identifier: "EndTrip") as! EndTripViewController
+                print(id)
+                print(endText)
+                vc.idRequest = id
+                vc.endKms = endText
+                vc.modalPresentationStyle = .overFullScreen
+                self?.present(vc, animated: true, completion: nil)
+            }
+        }
     }
 }
