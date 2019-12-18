@@ -54,17 +54,22 @@ class ReserveTripViewController: UIViewController {
     }
     
     func updateView(){
-   
+        
         if let car = reservationDetails {
-             
-            details.text = "There is no details"
-            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: Shared.Header, text2: " SR", ofSizeText2: Shared.body)
-            km.attributedText = NSAttributedString.withDualText(text1: car.numberKM, ofSizeText1: Shared.Header, text2: " KM", ofSizeText2: Shared.body)
-                   tax.attributedText = NSAttributedString.withDualText(text1: "\(taxAmount)", ofSizeText1: Shared.Header, text2: " SR", ofSizeText2: Shared.body)
-            dateFrom.attributedText = NSAttributedString.withDualText2(text1: "From ", ofSizeText1: Shared.body, text2: car.availableDateFrom, ofSizeText2: Shared.Header)
-            dateTo.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: Shared.body, text2: car.availableDateTo, ofSizeText2: Shared.Header)
-            totalPrice.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 24, text2: " SR", ofSizeText2: 16)
-            note.text = "Note: extra KM price is \(car.priceKM) SR"
+            
+            details.text = "There is no details".localized
+            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: Shared.Header, text2: "SR".localized, ofSizeText2: Shared.body)
+            km.attributedText = NSAttributedString.withDualText(text1: car.numberKM, ofSizeText1: Shared.Header, text2: "KM".localized, ofSizeText2: Shared.body)
+            tax.attributedText = NSAttributedString.withDualText(text1: "\(taxAmount)", ofSizeText1: Shared.Header, text2: "SR".localized, ofSizeText2: Shared.body)
+            dateFrom.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: Shared.body, text2: car.availableDateFrom, ofSizeText2: Shared.Header)
+            dateTo.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: Shared.body, text2: car.availableDateTo, ofSizeText2: Shared.Header)
+            totalPrice.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 24, text2: "SR".localized, ofSizeText2: 16)
+            if "Lang".localized == "ar"{
+                note.text = "ملاحظة: سعر الكيلومتر الزائد \(car.priceKM) ريال"
+            }else {
+                note.text = "Note: extra KM price is \(car.priceKM) SR"
+            }
+            
         }
     }
 }

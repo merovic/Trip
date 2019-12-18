@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Trip
+
+  Created by Ali Mohamed on 12/15/19.
+  Copyright © 2019 amirahmed. All rights reserved.
+*/
+
+"Lang" = "ar";
+"From" = " من";
+"To" = " الي";
+"Currency" = " ريال";
+"SR/Day" = " ريال/يوم";
+"Trips" = " رحلة";
+"Done" = "تم";
+"KM" = "كم ";
+"There is no details" = "لا توجد تفاصيل";
+"Total Kilometers" = "عدد الكيلومترات";
+"Trip free Kilometers" = "عدد الكيلومترات المجانية";
+"Extra Kilometers" = "عدد الكيلومترات الزيادة";
+"Extra Kilometer Price" = "سعر الكيلومتر الزيادة";
+"Extra Kilometers Price" = "اجمالي  التكلفة الاضافية";

@@ -42,7 +42,7 @@ class StartPopUp: UIViewController {
                         print(error.localizedDescription)
                         let vc = self?.storyboard?.instantiateViewController(withIdentifier: "Reservations") as! ReservationViewController
                         vc.dismiss(animated: true) {
-                            Alert.show("Failed", massege: "failed to start trip please try again", context: vc)
+                            Alert.show("Failed".localized, massege: "please try again".localized, context: vc)
                         }
                         
                     }

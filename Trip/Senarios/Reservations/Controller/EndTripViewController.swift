@@ -57,11 +57,11 @@ class EndTripViewController: UIViewController {
             let extraKm = totalKm - freeKm
             let extraPrice = extraKm * kmPrice
             
-            numOfKm.text = "Total Kilometers \(totalKm)"
-            numOfFreeKm.text = "Trip free Kilometers \(request.numberKM)"
-            numOfExtraKm.text = "Extra Kilometers \(extraKm)"
-            extraKmPrice.text = "Extra Kilometer Price \(request.priceKM)"
-            totalAddtionalCost.text = "Extra Kilometers Price \(extraPrice)"
+            numOfKm.text = "\("Total Kilometers".localized) \(totalKm)"
+            numOfFreeKm.text = "\("Trip free Kilometers".localized) \(request.numberKM)"
+            numOfExtraKm.text = "\("Extra Kilometers".localized) \(extraKm)"
+            extraKmPrice.text = "\("Extra Kilometer Price".localized) \(request.priceKM)"
+            totalAddtionalCost.text = "\("Extra Kilometers Price".localized) \(extraPrice)"
             
         }
     }

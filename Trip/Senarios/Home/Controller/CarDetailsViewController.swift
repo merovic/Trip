@@ -78,13 +78,13 @@ class CarDetailsViewController: UIViewController {
             imageCarSlider.auk.show(image: image)
         }
         if let car = carDetails {
-            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 28, text2: " SR/D", ofSizeText2: 14)
+            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 28, text2: "SR/Day".localized, ofSizeText2: 14)
             name.text = car.owner
             model.text = car.model
-            from.attributedText = NSAttributedString.withDualText2(text1: "From ", ofSizeText1: Shared.body, text2: car.availableDateFrom, ofSizeText2: Shared.Header)
-            to.attributedText = NSAttributedString.withDualText2(text1: "To ", ofSizeText1: Shared.body, text2: car.availableDateTo, ofSizeText2: Shared.Header)
+            from.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: Shared.body, text2: car.availableDateFrom, ofSizeText2: Shared.Header)
+            to.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: Shared.body, text2: car.availableDateTo, ofSizeText2: Shared.Header)
             address.text = "\(car.city) ,\(car.area)"
-            tripsNum.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip, ofSizeText1: 14, text2: "Trips ", ofSizeText2: 10)
+            tripsNum.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip, ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
             if let rating = Double(car.rate) {
                 rate.rating = rating
             }
