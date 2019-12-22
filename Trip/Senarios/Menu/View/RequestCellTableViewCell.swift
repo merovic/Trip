@@ -19,7 +19,11 @@ class RequestCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var requestNameLbl: UILabel!
     @IBOutlet weak var requestDateLabl: UILabel!
-    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var photo: UIImageView!{
+        didSet{
+            Rounded.roundedImage(imageView: self.photo)
+        }
+    }
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var rate: CosmosView!
     @IBOutlet weak var rateLbl: UILabel!

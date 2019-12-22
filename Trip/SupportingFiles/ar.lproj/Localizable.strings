@@ -7,13 +7,14 @@
 */
 
 "Lang" = "ar";
-"From" = " من";
-"To" = " الي";
-"Currency" = " ريال";
-"SR/Day" = " ريال/يوم";
-"Trips" = " رحلة";
-"Done" = "تم";
-"KM" = "كم ";
+"From" = " من ";
+"To" = " الي ";
+"Currency" = " ريال ";
+"SR/Day" = " ريال/يوم ";
+"SR" = " ريال ";
+"Trips" = " رحلة ";
+"Done" = "تم ";
+"KM" = " كم ";
 "There is no details" = "لا توجد تفاصيل";
 "Total Kilometers" = "عدد الكيلومترات";
 "Trip free Kilometers" = "عدد الكيلومترات المجانية";

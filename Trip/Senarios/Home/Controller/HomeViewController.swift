@@ -118,7 +118,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 if  let rating = Double(car.rate) {
                     cell.rate.rating = rating
                 }
-                cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carSale"))
+                cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.model
                 cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
                 cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)

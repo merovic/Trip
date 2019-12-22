@@ -60,11 +60,14 @@ extension RequestsViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let  cell = tableView.dequeueReusableCell(withIdentifier: "RequestCellTableViewCell", for: indexPath) as! RequestCellTableViewCell
+        
         let request = requests?[indexPath.row]
+        
+        let date = Shared.converDate(date: request?.datee ?? "")
         
         cell.photo.sd_setImage(with: URL(string: request?.image ?? ""), placeholderImage: UIImage(named:"userPlaceholder"))
         cell.rateLbl.text = "Rate \(request?.rate ?? "")"
-        cell.requestDateLabl.text = request?.datee
+        cell.requestDateLabl.text = date[0]
         cell.requestNameLbl.text = request?.message
         cell.nameLbl.text = request?.name
         cell.idRequest = request?.id

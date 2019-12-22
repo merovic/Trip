@@ -3,6 +3,7 @@ import SideMenu
 struct Controllers {
     var name = ["Browser cars" , "Recent adds" ,"Add car" , "About us" , "Requests" , "Add friend" , "Agreements" , "Help" , "privacy policy" , "Terms & conditions" , "Settings" , "Contact us" , "Sign Out"]
     
+    var nameAR = ["تصفح السيارات المعروضة" , "احدث الاعلانات" ,"اضافة سيارة" , "من نحن" , "الطلبات" , "دعوة صديق" , "الاتفاقية" , "المساعدة" , "سياسة الخصوصية" , "شروط الاستخدام" , "اعدادات التطبيق" , "اتصل بنا" , "تسجيل الخروج"]
     
     var controller = ["Home" , "Home" ,"AddCar" , "AboutUs" , "Requests" , "AddFriend" , "agreements" , "Help" , "agreements" , "agreements" , "Settings" , "ContactUs" , "SignOut"]
     
@@ -31,9 +32,41 @@ class Shared {
         var settings = SideMenuSettings()
         settings.statusBarEndAlpha = 0
         settings.presentationStyle = presentationStyle
-        settings.menuWidth = view.frame.width-view.frame.width*(1/6)
+        settings.menuWidth = view.frame.width-view.frame.width*(1/5)
         
     
         return settings
+    }
+    
+   static func converDate(date: String) -> [String] {
+        if let firstPracetIndex = date.firstIndex(of: "(") , let lastPracit = date.lastIndex(of: ")") {
+            let startIndex = date.index(firstPracetIndex, offsetBy: 1)
+            let finalDate = date[startIndex..<lastPracit]
+            print(finalDate)
+            guard let newDate = Int64(finalDate) else { return [""]}
+            let date = Date(milliseconds: newDate)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = DateFormatter.Style.long //Set date style
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+            dateFormatter.timeZone = .current
+            let timeFormatter = DateFormatter()
+            timeFormatter.timeStyle = DateFormatter.Style.medium
+            timeFormatter.dateFormat = "h:mm a"
+            let localDate = dateFormatter.string(from: date)
+            let localTime = timeFormatter.string(from: date)
+            print(localDate)
+            return [localDate , localTime]
+        }
+        return ["nil"]
+    }
+}
+
+extension Date {
+    var millisecondsSince1970:Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds:Int64) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
 }

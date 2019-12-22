@@ -3,7 +3,7 @@
 "05R-0Q-tb5.text" = "Contact Number\n";
 
 /* Class = "UILabel"; text = "Contact Number\n"; ObjectID = "0Ce-Cp-eGu"; */
-"0Ce-Cp-eGu.text" = "Contact Number\n";
+"0Ce-Cp-eGu.text" = "\n";
 
 /* Class = "UILabel"; text = "On"; ObjectID = "0ME-bu-Mvx"; */
 "0ME-bu-Mvx.text" = "On";
@@ -66,7 +66,7 @@
 "3VX-d2-j3v.text" = "LabelLabel";
 
 /* Class = "UILabel"; text = "Price Trip\n"; ObjectID = "3jc-0a-VyZ"; */
-"3jc-0a-VyZ.text" = "Price Trip\n";
+"3jc-0a-VyZ.text" = "سعر الرحلة\n";
 
 /* Class = "UILabel"; text = "Number Of Kilometers\n"; ObjectID = "4We-zp-zSj"; */
 "4We-zp-zSj.text" = "عدد الكيلومترات";
@@ -227,8 +227,8 @@
 /* Class = "UITextView"; text = "Type message here"; ObjectID = "Hoh-Q3-qR2"; */
 "Hoh-Q3-qR2.text" = "اكتب الرسالة هنا";
 
-/* Class = "UINavigationItem"; title = "Convention\n"; ObjectID = "IRW-fJ-KXI"; */
-"IRW-fJ-KXI.title" = "Convention\n";
+/* Class = "UINavigationItem"; title = "Terms and conditions"; ObjectID = "IRW-fJ-KXI"; */
+"IRW-fJ-KXI.title" = "الشروط و الاحكام";
 
 /* Class = "UINavigationItem"; title = "Help"; ObjectID = "IS8-b3-4yF"; */
 "IS8-b3-4yF.title" = "المساعدة";
@@ -273,7 +273,7 @@
 "MEx-16-fkH.text" = "ارفاق رخصة القيادة";
 
 /* Class = "UILabel"; text = "Notification Recepion"; ObjectID = "MFO-qP-cOY"; */
-"MFO-qP-cOY.text" = "Notification Recepion";
+"MFO-qP-cOY.text" = "استقبال الاشعارات";
 
 /* Class = "UILabel"; text = "12 AM"; ObjectID = "MMR-se-aki"; */
 "MMR-se-aki.text" = "١٢ ص";
@@ -354,7 +354,7 @@
 "S2A-mJ-f6B.text" = "ملاحظة: كل كيلو زياده سعره 0 ريال ";
 
 /* Class = "UILabel"; text = "Notification Name"; ObjectID = "SSY-fP-Hhh"; */
-"SSY-fP-Hhh.text" = "Notification Name";
+"SSY-fP-Hhh.text" = "اسم الاشعار";
 
 /* Class = "UILabel"; text = "15 Trip"; ObjectID = "Suh-oY-enk"; */
 "Suh-oY-enk.text" = "15 رحلة";

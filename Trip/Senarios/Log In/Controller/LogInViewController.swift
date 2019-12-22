@@ -19,7 +19,10 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
         }
     }
     @IBOutlet weak var passwordTF: UITextField!{didSet{ passwordTF.delegate = self }}
-    @IBOutlet weak var mailTF: UITextField!{didSet{ mailTF.delegate = self }}
+    @IBOutlet weak var mailTF: UITextField!{didSet{
+        mailTF.delegate = self
+        mailTF.isSecureTextEntry = false
+        }}
     @IBOutlet weak var fbBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: fbBut)

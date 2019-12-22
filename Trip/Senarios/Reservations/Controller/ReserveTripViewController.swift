@@ -56,14 +56,19 @@ class ReserveTripViewController: UIViewController {
     func updateView(){
         
         if let car = reservationDetails {
+            let availableDateFrom = Shared.converDate(date: car.availableDateFrom)
+            let availableDateTo = Shared.converDate(date: car.availableDateTo)
             
             details.text = "There is no details".localized
             price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: Shared.Header, text2: "SR".localized, ofSizeText2: Shared.body)
             km.attributedText = NSAttributedString.withDualText(text1: car.numberKM, ofSizeText1: Shared.Header, text2: "KM".localized, ofSizeText2: Shared.body)
             tax.attributedText = NSAttributedString.withDualText(text1: "\(taxAmount)", ofSizeText1: Shared.Header, text2: "SR".localized, ofSizeText2: Shared.body)
-            dateFrom.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: Shared.body, text2: car.availableDateFrom, ofSizeText2: Shared.Header)
-            dateTo.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: Shared.body, text2: car.availableDateTo, ofSizeText2: Shared.Header)
+            dateFrom.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: Shared.body, text2: availableDateFrom[0], ofSizeText2: Shared.Header)
+            dateTo.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: Shared.body, text2: availableDateTo[0], ofSizeText2: Shared.Header)
             totalPrice.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 24, text2: "SR".localized, ofSizeText2: 16)
+            hourFrom.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: 10, text2: availableDateFrom[1], ofSizeText2: 14)
+            hourTo.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: 10, text2: availableDateTo[1], ofSizeText2: 14)
+            
             if "Lang".localized == "ar"{
                 note.text = "ملاحظة: سعر الكيلومتر الزائد \(car.priceKM) ريال"
             }else {

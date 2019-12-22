@@ -107,6 +107,7 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
                 cell.addressReservation.text = request.agrreOrRefuse
                 cell.idRequest = request.id
                 cell.idCar = request.idCar
+                cell.dateOfReservation.text = request.datee
                 cell.delegate = self
                 return cell
             }
@@ -116,6 +117,7 @@ extension ReservationViewController : UITableViewDataSource , UITableViewDelegat
                 let  cell = tableView.dequeueReusableCell(withIdentifier: "PreviousReservationTableViewCell", for: indexPath) as! PreviousReservationTableViewCell
                 cell.addressReservation.text = request.agrreOrRefuse
                 cell.idCar = request.idCar
+                cell.dateOfReservation.text = request.datee
                 cell.delegate = self
                 return cell
             }

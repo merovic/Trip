@@ -8,13 +8,13 @@
 
 
 "Lang" = "en";
-"From" = "From ";
-"To" = "To ";
-"SR" = " SR";
-"SR/Day" = " SR/day";
-"Trips" = " Trips";
+"From" = " From ";
+"To" = " To ";
+"SR" = " SR ";
+"SR/Day" = " SR/day ";
+"Trips" = " Trips ";
 "Done" = "Done";
-"KM" = " KM";
+"KM" = " KM ";
 "There is no details" = "There is no details";
 "Total Kilometers" = "Total Kilometers";
 "Trip free Kilometers" = "Trip free Kilometers";
