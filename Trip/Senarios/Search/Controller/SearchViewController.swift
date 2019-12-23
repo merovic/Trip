@@ -23,7 +23,6 @@ class SearchViewController: UIViewController {
         self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchNormalViewController")
         self.currentViewController?.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(self.currentViewController!)
-        // self.bigView.addSubview(self.currentViewController!.view)
         self.addSubview(subView: self.currentViewController!.view, toView: self.bigView)
         super.viewDidLoad()
     }

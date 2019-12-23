@@ -173,7 +173,7 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         textField.inputView = currencyPicker
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneCityPicker));
+        let doneButton = UIBarButtonItem(title: "Done".localized, style: .plain, target: self, action: #selector(doneCityPicker));
         toolbar.setItems([doneButton], animated: true)
         toolbar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         textField.inputAccessoryView = toolbar

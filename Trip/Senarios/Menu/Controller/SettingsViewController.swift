@@ -9,7 +9,7 @@
 import UIKit
 import BEMCheckBox
 import SideMenu
-
+import MOLH
 @available(iOS 13.0, *)
 class SettingsViewController: UIViewController {
     
@@ -19,14 +19,28 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if "Lang".localized == "ar"{
+            arChk.on = true
+            enChk.on = false
+        }else if "Lang".localized == "en" {
+            arChk.on = false
+            enChk.on = true
+        }
     }
     
     @IBAction func arEnLangChk(_ sender: BEMCheckBox) {
         if sender.tag == 1 {
             arChk.on = false
-        } else {
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                MOLH.setLanguageTo("en")
+                MOLH.reset()
+            }
+        } else if sender.tag == 2 {
             enChk.on = false
+            if MOLHLanguage.currentAppleLanguage() == "en" {
+                MOLH.setLanguageTo("ar")
+                MOLH.reset()
+            }
         }
     }
     

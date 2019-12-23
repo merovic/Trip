@@ -58,7 +58,11 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuTableViewCell
-        cell.Label.text = data.name[indexPath.row]
+        if "Lang".localized == "en" {
+          cell.Label.text = data.name[indexPath.row]
+        } else if "Lang".localized == "ar"  {
+            cell.Label.text = data.nameAR[indexPath.row]
+        }
         cell.image1.image = UIImage(named: data.name[indexPath.row])
         return cell
     }

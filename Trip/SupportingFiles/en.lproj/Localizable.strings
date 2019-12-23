@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Trip
+
+  Created by Ali Mohamed on 12/15/19.
+  Copyright © 2019 amirahmed. All rights reserved.
+*/
+
+
+"Lang" = "en";
+"From" = " From ";
+"To" = " To ";
+"SR" = " SR ";
+"SR/Day" = " SR/day ";
+"Trips" = " Trips ";
+"Done" = "Done";
+"KM" = " KM ";
+"There is no details" = "There is no details";
+"Total Kilometers" = "Total Kilometers";
+"Trip free Kilometers" = "Trip free Kilometers";
+"Extra Kilometers" = "Extra Kilometers";
+"Extra Kilometer Price" = "Extra Kilometer Price";
+"Extra Kilometers Price" = "Extra Kilometers Price";
+"please try again" = "please try again";
+"Failed" = "Failed";

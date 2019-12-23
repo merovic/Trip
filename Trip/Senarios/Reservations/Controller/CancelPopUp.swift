@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EndTripDelegate {
+    func endTrip(id:Int , endText: String)
+}
+
 class CancelPopUp: UIViewController {
     
     @IBOutlet weak var cancelBut: UIButton!{
@@ -27,7 +31,7 @@ class CancelPopUp: UIViewController {
     }
     
     var id_request: Int?
-    
+    var delegate: EndTripDelegate?
     //MARK:- viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.352739726)
@@ -40,9 +44,9 @@ class CancelPopUp: UIViewController {
                     switch Result{
                     case .success(let response ):
                         print(response)
-                        if #available(iOS 13.0, *) {
-                            let vc = self?.storyboard?.instantiateViewController(identifier: "EndTrip") as! EndTripViewController
-                            self?.present(vc, animated: true, completion: nil)
+                        if response == "True"{
+                            self?.dismiss(animated: true, completion: nil)
+                            self?.delegate?.endTrip(id: id, endText: self?.kmRead.text ?? "0")
                         }
                     case .failure(let error):
                         print(error.localizedDescription)

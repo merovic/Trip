@@ -10,7 +10,11 @@ import UIKit
 
 class SearchNormalViewController: UIViewController {
     
-    @IBOutlet weak var searchTF: DesignableUITextField!
+    @IBOutlet weak var searchTF: DesignableUITextField!{
+        didSet{
+            searchTF.delegate = self
+        }
+    }
     @IBOutlet var currentView: UIView!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchBut: UIButton!{
@@ -24,6 +28,10 @@ class SearchNormalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchTF.becomeFirstResponder()
     }
     
     @IBAction func searchBtnPressed(_ sender: UIButton) {
