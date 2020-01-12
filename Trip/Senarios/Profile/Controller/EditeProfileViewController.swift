@@ -54,10 +54,10 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
             
         } else if password.text != comfirmPass.text {
             self.stopAnimating()
-            Alert.show("Error", massege: "Password does not match", context: self)
+            Alert.show("Error".localized, massege: "Passwords Don't Match".localized , context: self)
         } else if name.text == "" || phone.text == "" || Address.text == "" || mail.text == "" || password.text == "" {
             self.stopAnimating()
-            Alert.show("Error", massege: "All fields are required", context: self)
+            Alert.show("Error".localized, massege: "All Fields Are Required".localized , context: self)
         }
     }
     

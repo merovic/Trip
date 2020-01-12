@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 import NVActivityIndicatorView
 class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorViewable {
     
@@ -58,6 +59,13 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         imagePicker.sourceType = .photoLibrary
         self.present(imagePicker, animated: true, completion: nil)
     }
+    @IBAction func showMenu(_ sender: UIBarButtonItem) {
+        if #available(iOS 13.0, *) {
+            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+            vc.settings = Shared.settings(view: self.view)
+            present(vc, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func showMap(_ sender: UIButton) {
         if #available(iOS 13.0, *) {
@@ -78,17 +86,17 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
                     case .success(let respnse):
                         print(respnse)
                         self?.stopAnimating()
-                        Alert.show("Success", massege: "Car added Successfully", context: self!)
+                        Alert.show("Success".localized, massege: "Car Added Successfully".localized, context: self!)
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
-                        Alert.show("Failed", massege: error.localizedDescription, context: self!)
+                        Alert.show("Failed".localized, massege: error.localizedDescription, context: self!)
                     }
                 }
             }
         }
         else {
-            Alert.show("Failed", massege: "All fields are requires", context: self)
+            Alert.show("Failed".localized, massege: "All Fields Are Required" , context: self)
         }
     }
     

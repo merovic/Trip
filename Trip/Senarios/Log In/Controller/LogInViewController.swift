@@ -49,14 +49,14 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
-                        Alert.show("Failed", massege: "Wrong email or password", context: self!)
+                        Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
                     }
                 }
             }
         }
         else {
             self.stopAnimating()
-            Alert.show("Error", massege: "Enter email and Password", context: self)
+            Alert.show("Error".localized, massege: "Enter Your Email And Password".localized, context: self)
         }
     }
     
@@ -84,7 +84,7 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
     
     //MARK:- facebook sign in methodes
     @IBAction func signUpWithFb(_ sender: UIButton) {
-        Alert.show("Error", massege: "Facebook login is not yet ready", context: self)
+        Alert.show("Error".localized, massege: "Facebook login is not yet ready", context: self)
       //  facebooklogin()
     }
     @IBAction func showPassWord(_ sender: UIButton) {

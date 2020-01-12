@@ -37,18 +37,18 @@ class ForgotPasswordViewController: UIViewController, NVActivityIndicatorViewabl
                     case .success(let respnse):
                         print(respnse)
                         self?.stopAnimating()
-                        Alert.show("Success", massege: "password changed Successfuly", context: self!)
+                        Alert.show("Success".localized, massege: "Password Changed Successfully".localized, context: self!)
                         self?.dismiss(animated: true, completion: nil)
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
-                        Alert.show("Failed", massege: "Wrong email please try again", context: self!)
+                        Alert.show("Failed".localized, massege: "This Email Doesn't Exist".localized, context: self!)
                     }
                 }
             }
         } else if mailTF.text!.count < 4 {
             self.stopAnimating()
-            Alert.show("Error", massege: "please enter valid email", context: self)
+            Alert.show("Error".localized, massege: "Please Enter Valid Email".localized, context: self)
         }
         
     }

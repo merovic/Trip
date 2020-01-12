@@ -31,7 +31,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="315"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-J9-9sI">
-                                                        <rect key="frame" x="144" y="94.5" width="126" height="126"/>
+                                                        <rect key="frame" x="81" y="31.5" width="252" height="252"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -369,7 +369,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="428"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="7Ym-TR-OZR">
-                                        <rect key="frame" x="144" y="151" width="126" height="126"/>
+                                        <rect key="frame" x="81" y="88" width="252" height="252"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hf-VI-cnG">
                                         <rect key="frame" x="20" y="40" width="20" height="20"/>
@@ -441,7 +441,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="183"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-GI-0sO">
-                                                        <rect key="frame" x="144" y="28.5" width="126" height="126"/>
+                                                        <rect key="frame" x="81" y="-34.5" width="252" height="252"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mI-FZ-ThS">
                                                         <rect key="frame" x="20" y="20" width="20" height="20"/>
@@ -991,7 +991,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOE-5D-bKF" customClass="CosmosView" customModule="Cosmos">
+                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOE-5D-bKF" customClass="CosmosView" customModule="Cosmos">
                                                                     <rect key="frame" x="2" y="193.5" width="120" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -1010,7 +1010,7 @@
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-oY-enk">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-oY-enk">
                                                                     <rect key="frame" x="127" y="193.5" width="44" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -1100,7 +1100,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-dB-eFC" customClass="CosmosView" customModule="Cosmos">
+                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-dB-eFC" customClass="CosmosView" customModule="Cosmos">
                                                                     <rect key="frame" x="2" y="197.5" width="120" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -1119,7 +1119,7 @@
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-a6-IJ0">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="15 Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-a6-IJ0">
                                                                     <rect key="frame" x="127" y="197.5" width="44" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -1701,7 +1701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYd-j2-yyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5051" y="4266"/>
+            <point key="canvasLocation" x="5960.8695652173919" y="4265.625"/>
         </scene>
         <!--Map Kit View Controller-->
         <scene sceneID="XnZ-P0-Lly">
@@ -1955,7 +1955,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h93-lz-8NT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378.2608695652175" y="4858.9285714285716"/>
+            <point key="canvasLocation" x="1380" y="4906"/>
         </scene>
         <!--Profile-->
         <scene sceneID="9yX-HN-KWF">
@@ -1996,7 +1996,7 @@
                                                     <segue destination="qI8-Zp-jRC" kind="show" id="BYt-iL-ANp"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="FU6-Cd-ZtR">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FU6-Cd-ZtR">
                                                 <rect key="frame" x="369" y="12.5" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="15" id="COa-Sh-h55"/>
@@ -2493,7 +2493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHe-MM-cPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2799" y="4349"/>
+            <point key="canvasLocation" x="3708.6956521739135" y="4348.6607142857138"/>
         </scene>
         <!--Edit Car Details-->
         <scene sceneID="Lzf-vs-GuZ">
@@ -3282,7 +3282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZU-5R-6rT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2149" y="4819"/>
+            <point key="canvasLocation" x="3057.971014492754" y="4818.75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EHi-nd-8zJ">
@@ -4203,7 +4203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGW-IM-34W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6063.7681159420299" y="4382.8125"/>
+            <point key="canvasLocation" x="6973.913043478261" y="4382.8125"/>
         </scene>
         <!--Reservations Details-->
         <scene sceneID="Xsk-Kd-SMp">
@@ -4538,11 +4538,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8n-ek-Qzu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6765" y="4401"/>
+            <point key="canvasLocation" x="7673.9130434782619" y="4400.8928571428569"/>
         </scene>
         <!--Invite Friend View Controller-->
         <scene sceneID="FD0-RQ-72r">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iIg-YT-QCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AddFriend" id="gnb-6j-I8z" customClass="InviteFriendViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRY-3z-wXw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -4649,13 +4650,13 @@
                         <outlet property="popView" destination="Yxl-1b-08L" id="Naa-gb-fWq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iIg-YT-QCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8851" y="3497"/>
         </scene>
         <!--Invite a Friend-->
         <scene sceneID="rsC-em-P9R">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsf-SH-VfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="InviteByPhone" id="Gon-qj-3Og" customClass="InviteByPhoneViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PfR-ry-pg2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -4720,13 +4721,13 @@
                         <outlet property="phone" destination="9aJ-7p-yg0" id="iV1-Ii-t25"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nsf-SH-VfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3541" y="5934"/>
         </scene>
         <!--Invite a Friend-->
         <scene sceneID="mrl-t5-Jpv">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-UR-DQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="InviteByMail" id="8Ur-A5-2L1" customClass="InviteByMailViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ST6-zy-BAe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -4791,7 +4792,6 @@
                         <outlet property="mail" destination="gRo-c4-J4y" id="WyL-Mc-BTg"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-UR-DQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4271" y="5934"/>
         </scene>
@@ -6418,6 +6418,9 @@
                     <navigationItem key="navigationItem" title="Add Your Car" id="2oE-Rf-tnL">
                         <barButtonItem key="rightBarButtonItem" image="menu" id="g1b-I2-C7R">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="showMenu:" destination="9Kk-rE-KR6" id="7Db-WE-r7B"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="2000"/>
@@ -6444,7 +6447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr0-4v-PuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4270" y="4819"/>
+            <point key="canvasLocation" x="5179.7101449275369" y="4818.75"/>
         </scene>
         <!--Reserve-->
         <scene sceneID="eYP-1U-adY">
@@ -7047,7 +7050,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kO-as-gHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5052" y="5024"/>
+            <point key="canvasLocation" x="5960.8695652173919" y="5023.6607142857138"/>
+        </scene>
+        <!--About Us-->
+        <scene sceneID="keM-9y-vYn">
+            <objects>
+                <viewController storyboardIdentifier="AboutUs" id="BuR-ET-CeT" customClass="AboutUsViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kt4-JA-2eO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip is an app in which you can book a car or add your car online for booking on iOS and Android" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qub-W1-EQ9">
+                                <rect key="frame" x="20" y="118" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IR7-o7-1LN" firstAttribute="trailing" secondItem="qub-W1-EQ9" secondAttribute="trailing" constant="20" id="6eS-Wj-djA"/>
+                            <constraint firstItem="qub-W1-EQ9" firstAttribute="leading" secondItem="IR7-o7-1LN" secondAttribute="leading" constant="20" id="cSf-k6-R4o"/>
+                            <constraint firstItem="qub-W1-EQ9" firstAttribute="top" secondItem="IR7-o7-1LN" secondAttribute="top" constant="30" id="fbw-nF-nxa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IR7-o7-1LN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About Us" id="S0H-2I-jTE">
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="GRn-i9-i2k">
+                            <connections>
+                                <action selector="showMenu:" destination="BuR-ET-CeT" id="L22-hE-Vhb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="label1" destination="qub-W1-EQ9" id="pzP-ON-to6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ntp-nz-s5L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2623" y="4921"/>
         </scene>
         <!--Terms and condtiotons-->
         <scene sceneID="gbL-03-WQ0">
@@ -7142,7 +7183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX8-yl-X7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1841" y="4873"/>
+            <point key="canvasLocation" x="-1842" y="4921"/>
         </scene>
         <!--Help-->
         <scene sceneID="yF4-OI-jo4">
@@ -7192,7 +7233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSJ-Ld-fKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1043" y="4873"/>
+            <point key="canvasLocation" x="-1042" y="4921"/>
         </scene>
         <!--Requests-->
         <scene sceneID="dWT-kQ-eqP">
@@ -7387,7 +7428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAO-tS-4dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="550.72463768115949" y="4858.9285714285716"/>
+            <point key="canvasLocation" x="552" y="4906"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="8Su-kL-lou">
@@ -7734,7 +7775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e48-Gg-6B6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223" y="4859"/>
+            <point key="canvasLocation" x="-222" y="4906"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g06-AP-gSN">
@@ -7830,6 +7871,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnU-zQ-z8R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1380" y="4187"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g6G-vB-Jsw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bMK-wH-YAE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BAq-8E-6Df">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.96888393159999997" green="0.92540192600000004" blue="0.09391892701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BuR-ET-CeT" kind="relationship" relationship="rootViewController" id="HJI-E2-935"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVf-Ay-RJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2623" y="4187"/>
         </scene>
     </scenes>
     <resources>

@@ -30,7 +30,7 @@
 "1qL-02-3zG.text" = "ليس لديك حساب؟";
 
 /* Class = "UINavigationItem"; title = "Edit Profile"; ObjectID = "2Rz-na-FMg"; */
-"2Rz-na-FMg.title" = "تعديل الملف الشخصي";
+"2Rz-na-FMg.title" = "تعديل الملف الشخصي ";
 
 /* Class = "UIButton"; normalTitle = "Forgot Password ?"; ObjectID = "2Vg-Sq-oMl"; */
 "2Vg-Sq-oMl.normalTitle" = "نسيت كلمة المرور ؟";
@@ -210,7 +210,7 @@
 "G2k-Ov-4qZ.normalTitle" = "التفاصيل";
 
 /* Class = "UINavigationItem"; title = "Reservations"; ObjectID = "Gm3-2G-2TL"; */
-"Gm3-2G-2TL.title" = "حجوزاتي";
+"Gm3-2G-2TL.title" = "حجوزاتي ";
 
 /* Class = "UILabel"; text = "LabelLabel"; ObjectID = "GnX-Mh-BCB"; */
 "GnX-Mh-BCB.text" = "LabelLabel";
@@ -249,16 +249,16 @@
 "KGB-nN-eHk.text" = "اللون";
 
 /* Class = "UIButton"; normalTitle = "   Reservations"; ObjectID = "KKu-yS-vee"; */
-"KKu-yS-vee.normalTitle" = "حجوزاتي";
+"KKu-yS-vee.normalTitle" = "حجوزاتي ";
 
 /* Class = "UITabBarItem"; title = "Reservations"; ObjectID = "Kbo-hq-GEf"; */
-"Kbo-hq-GEf.title" = "حجوزاتي";
+"Kbo-hq-GEf.title" = "حجوزاتي ";
 
 /* Class = "UITextField"; placeholder = "5/1/2020"; ObjectID = "L5U-xC-ZmD"; */
 "L5U-xC-ZmD.placeholder" = "5/1/2020";
 
 /* Class = "UIButton"; normalTitle = "   Edit Profile"; ObjectID = "L6n-2x-oMT"; */
-"L6n-2x-oMT.normalTitle" = "تعديل الملف الشخصي";
+"L6n-2x-oMT.normalTitle" = "تعديل الملف الشخصي ";
 
 /* Class = "UIButton"; normalTitle = "Add"; ObjectID = "LDm-N3-nGv"; */
 "LDm-N3-nGv.normalTitle" = "اضافة";
@@ -381,7 +381,7 @@
 "VOe-sr-Ouw.text" = "رحلة";
 
 /* Class = "UIButton"; normalTitle = "   Sign out"; ObjectID = "Vq4-An-FJ5"; */
-"Vq4-An-FJ5.normalTitle" = "تسجيل الخروج";
+"Vq4-An-FJ5.normalTitle" = " تسجيل الخروج";
 
 /* Class = "UILabel"; text = "Brows All Cars"; ObjectID = "VsF-7t-zS8"; */
 "VsF-7t-zS8.text" = "تصفح السيارات";
@@ -489,7 +489,7 @@
 "c83-4C-kNk.text" = "رقم الهاتف";
 
 /* Class = "UIButton"; normalTitle = "   Edit Car Details"; ObjectID = "cBQ-h5-ge3"; */
-"cBQ-h5-ge3.normalTitle" = "تعديل بيانات السيارة";
+"cBQ-h5-ge3.normalTitle" = "تعديل بيانات السيارة ";
 
 /* Class = "UIButton"; normalTitle = "Log In  "; ObjectID = "cGg-Qf-epI"; */
 "cGg-Qf-epI.normalTitle" = "تسجيل الدخول";

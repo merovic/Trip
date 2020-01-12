@@ -96,7 +96,7 @@ extension RequestsViewController: RequestCellDelegate {
                 case .success(let response):
                     print(response)
                     if response == "True" {
-                        Alert.show("Done", massege: "", context: self!)
+                        Alert.show("Done".localized, massege: "", context: self!)
                         self?.getData()
                     }
                 case .failure(let error):
@@ -112,7 +112,7 @@ extension RequestsViewController: RequestCellDelegate {
                 switch Result {
                 case .success(let response):
                     print(response)
-                    Alert.show("Deleted", massege:"", context: self!)
+                    Alert.show("Deleted".localized, massege:"", context: self!)
                     self?.getData()
                 case .failure(let error):
                     print(error.localizedDescription)

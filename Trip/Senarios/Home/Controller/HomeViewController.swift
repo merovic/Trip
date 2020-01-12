@@ -34,10 +34,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func addFriendPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "AddFriend") as! InviteFriendViewController
-            vc.modalPresentationStyle = .overFullScreen
-            present(vc, animated: true, completion: nil)
+        if let name = URL(string: "https://itunes.apple.com/us/app/Trip"), !name.absoluteString.isEmpty {
+            let objectsToShare = [name]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
         }
     }
     
