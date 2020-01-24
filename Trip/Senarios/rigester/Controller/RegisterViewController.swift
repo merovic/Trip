@@ -76,7 +76,7 @@ class RegisterViewController: UIViewController {
             if let licence = Shared.Image {
                 registerNow()
             } else {
-                Alert.show("Error", massege: "upload licence image", context: self)
+                Alert.show("Error".localized, massege: "Please Upload Licence Image".localized, context: self)
             }
         }
     }
@@ -91,19 +91,19 @@ class RegisterViewController: UIViewController {
                         if response != "True" {
                             Alert.show("Error", massege: response, context: self)
                         } else {
-                            Alert.show("Done", massege: "", context: self)
+                            Alert.show("Done".localized, massege: "", context: self)
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
-                        Alert.show("Failed", massege: error.localizedDescription, context: self)
+                        Alert.show("Failed".localized, massege: error.localizedDescription, context: self)
                     }
                 }
             }
             
         } else if passwordComfirmTF.text != passwordTF.text {
-            Alert.show("Error", massege: "Password doesn't match", context: self)
+            Alert.show("Error".localized, massege: "Passwords Don't Match".localized, context: self)
         } else {
-            Alert.show("Error", massege: "all fields are required", context: self)
+            Alert.show("Error".localized, massege: "All Fields Are Required".localized, context: self)
         }
     }
     

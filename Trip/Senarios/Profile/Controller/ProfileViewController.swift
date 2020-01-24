@@ -9,16 +9,17 @@
 import UIKit
 import SideMenu
 
-class ProfileViewController: UIViewController, UINavigationControllerDelegate , UIImagePickerControllerDelegate{
-    
+class ProfileViewController: UIViewController {
+    //MARK:- IBActions
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: profileImage)
         }
     }
     @IBOutlet weak var name: UILabel!
-    
     let imagePicker = UIImagePickerController()
+    
+    //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,6 +28,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate , 
         updateData()
     }
     
+    //MARK:- Update Data
     func updateData(){
         if let user = Shared.user {
             profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
@@ -80,7 +82,30 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate , 
         present(imagePicker, animated: true, completion: nil)
     }
     
-    
+    func updateUser(){
+        print("NOW")
+        if let imageUrl = Shared.Image , let user = Shared.user{
+            print("Updating")
+            DispatchQueue.global().async { [weak self] in
+                APIClient.updateUser(id_user: user.id, name: user.name, email: user.email, password: user.password, phone: user.phone, address: user.address, license: user.license, img: imageUrl) { (Result) in
+                    switch Result{
+                    case .success(let response):
+                        print(response)
+                        if response == "True" {
+                            Alert.show("Success".localized, massege: "Image Uploaded Successfully".localized, context: self!)
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        Alert.show("Failed".localized, massege: "Please Try Again".localized, context: self!)
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+extension ProfileViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as! UIImage
             profileImage.image = image
@@ -92,28 +117,5 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate , 
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func updateUser(){
-        print("NOW")
-        if let imageUrl = Shared.Image , let user = Shared.user{
-            print("Updating")
-            DispatchQueue.global().async { [weak self] in
-                APIClient.updateUser(id_user: user.id, name: user.name, email: user.email, password: user.password, phone: user.phone, address: user.address, license: user.license, img: imageUrl) { (Result) in
-                    switch Result{
-                    case .success(let response):
-                        print(response)
-                        if response == "True" {
-                            Alert.show("Success", massege: "image uploaded successfully", context: self!)
-                        }
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                        Alert.show("Failed", massege: "please try again", context: self!)
-                        
-                    }
-                }
-                
-            }
-        }
     }
 }
