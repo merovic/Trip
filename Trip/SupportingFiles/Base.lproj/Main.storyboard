@@ -4543,7 +4543,6 @@
         <!--Invite Friend View Controller-->
         <scene sceneID="FD0-RQ-72r">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iIg-YT-QCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AddFriend" id="gnb-6j-I8z" customClass="InviteFriendViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRY-3z-wXw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -4650,13 +4649,13 @@
                         <outlet property="popView" destination="Yxl-1b-08L" id="Naa-gb-fWq"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iIg-YT-QCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8851" y="3497"/>
         </scene>
         <!--Invite a Friend-->
         <scene sceneID="rsC-em-P9R">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nsf-SH-VfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="InviteByPhone" id="Gon-qj-3Og" customClass="InviteByPhoneViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PfR-ry-pg2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -4721,13 +4720,13 @@
                         <outlet property="phone" destination="9aJ-7p-yg0" id="iV1-Ii-t25"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsf-SH-VfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3541" y="5934"/>
         </scene>
         <!--Invite a Friend-->
         <scene sceneID="mrl-t5-Jpv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-UR-DQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="InviteByMail" id="8Ur-A5-2L1" customClass="InviteByMailViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ST6-zy-BAe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -4792,6 +4791,7 @@
                         <outlet property="mail" destination="gRo-c4-J4y" id="WyL-Mc-BTg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-UR-DQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4271" y="5934"/>
         </scene>
