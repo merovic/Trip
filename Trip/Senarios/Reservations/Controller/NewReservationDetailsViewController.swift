@@ -34,8 +34,7 @@ class NewReservationDetailsViewController: UIViewController {
     }
     
     @IBAction func menuPressed(_ sender: Any) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
@@ -80,11 +79,11 @@ class NewReservationDetailsViewController: UIViewController {
             
             if "Lang".localized == "ar" {
                 note.text = "ملاحظة: سعر الكيلومتر الزائد \(car.priceKM) ريال"
-
+                
             }else {
                 note.text = "Note: extra KM price is \(car.priceKM) SR"
             }
-           
+            
             if let rating = Double(car.rate) {
                 rate.rating = rating
             }

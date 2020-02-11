@@ -30,8 +30,7 @@ class MenuViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction func goToProfile(sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
             self.navigationController?.pushViewController(vc, animated: false)
         }
     }
@@ -68,24 +67,21 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if #available(iOS 13.0, *) {
-            
-            switch indexPath.row {
-            case 5:
-                if let name = URL(string: "https://itunes.apple.com/us/app/Trip"), !name.absoluteString.isEmpty {
-                    let objectsToShare = [name]
-                    let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-                    self.present(activityVC, animated: true, completion: nil)
-                }
-            case 12:
-                if let vc = storyboard?.instantiateViewController(identifier: "LogIn") as? LogInViewController {
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true, completion: nil)
-                }
-            default:
-                guard let vc = storyboard?.instantiateViewController(identifier: data.controller[indexPath.row]) else { return  }
-                self.navigationController?.pushViewController(vc, animated: false)
+        switch indexPath.row {
+        case 5:
+            if let name = URL(string: "https://itunes.apple.com/us/app/Trip"), !name.absoluteString.isEmpty {
+                let objectsToShare = [name]
+                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                self.present(activityVC, animated: true, completion: nil)
             }
+        case 12:
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
+        default:
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: data.controller[indexPath.row]) else { return  }
+            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
 }

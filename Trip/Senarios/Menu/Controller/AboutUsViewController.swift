@@ -18,8 +18,7 @@ class AboutUsViewController: UIViewController {
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
         
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }

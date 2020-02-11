@@ -28,8 +28,7 @@ class NotificationsViewController: UIViewController {
     }
     
     @IBAction func menu(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
@@ -71,8 +70,8 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
     
     //MARK:- didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "NotificationDetails") as! NotificationDetailsViewController
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "NotificationDetails") as? NotificationDetailsViewController {
             vc.modalPresentationStyle = .overFullScreen
             vc.note = notes?[indexPath.row]
             vc.delegate = self
@@ -83,11 +82,9 @@ extension NotificationsViewController: UITableViewDelegate , UITableViewDataSour
 
 extension NotificationsViewController: NotificationsDelegate {
     func acceptNote(car_id: Int) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "NewDetails") as! NewReservationDetailsViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "NewDetails") as? NewReservationDetailsViewController {
             vc.idCar = car_id
             self.navigationController?.pushViewController(vc, animated: true)
-            
         }
     }
     

@@ -110,17 +110,13 @@ class EditCarDetailsViewController: UIViewController {
 
     }
     @IBAction func menuPressed(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController")
-            present(vc!, animated: true, completion: nil)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") {
+            present(vc, animated: true, completion: nil)
         }
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
     }
-    
-    
-    
     
     @IBAction func modelCarAtion(_ sender: UITextField) {
         flag = 1

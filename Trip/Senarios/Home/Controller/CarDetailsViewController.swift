@@ -52,8 +52,7 @@ class CarDetailsViewController: UIViewController {
     }
     
     @IBAction func reservePressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "ReserveCar") as! ReserveTripViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ReserveCar") as? ReserveTripViewController {
             vc.reservationDetails = carDetails
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(vc, animated: true)
@@ -71,12 +70,12 @@ class CarDetailsViewController: UIViewController {
         price.layer.borderWidth = 0
         
         imageCarSlider.auk.show(url: carDetails?.image ?? "")
-//        if let image = UIImage(named: "map1.jpg") {
-//            imageCarSlider.auk.show(image: image)
-//        }
-//        if let image = UIImage(named: "carSale") {
-//            imageCarSlider.auk.show(image: image)
-//        }
+        //        if let image = UIImage(named: "map1.jpg") {
+        //            imageCarSlider.auk.show(image: image)
+        //        }
+        //        if let image = UIImage(named: "carSale") {
+        //            imageCarSlider.auk.show(image: image)
+        //        }
         if let car = carDetails {
             let availableDateFrom = Shared.converDate(date: car.availableDateFrom)
             let availableDateTo = Shared.converDate(date: car.availableDateTo)

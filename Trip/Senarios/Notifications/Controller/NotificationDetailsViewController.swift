@@ -13,7 +13,6 @@ protocol NotificationsDelegate {
     func decilneNote()
 }
 
-@available(iOS 13.0, *)
 class NotificationDetailsViewController: UIViewController {
     
     @IBOutlet weak var bigView: UIView!{

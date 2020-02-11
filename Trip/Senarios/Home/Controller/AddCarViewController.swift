@@ -60,16 +60,14 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         self.present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
     }
     
     @IBAction func showMap(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "Map") as! MapKitViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Map") as? MapKitViewController {
             vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -101,24 +99,24 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     }
     
     @IBAction func modelCarAtion(_ sender: UITextField) {
-           flag = 1
-       }
-       
-       @IBAction func colorCarAction(_ sender: UITextField) {
-           flag = 2
-       }
-       
-       @IBAction func cityAction(_ sender: UITextField) {
-           flag = 3
-       }
+        flag = 1
+    }
     
-       @IBAction func dataFromAction(_ sender: UITextField) {
-           dataFlag = false
-       }
-
-       @IBAction func DataToAction(_ sender: UITextField) {
-           dataFlag = true
-       }
+    @IBAction func colorCarAction(_ sender: UITextField) {
+        flag = 2
+    }
+    
+    @IBAction func cityAction(_ sender: UITextField) {
+        flag = 3
+    }
+    
+    @IBAction func dataFromAction(_ sender: UITextField) {
+        dataFlag = false
+    }
+    
+    @IBAction func DataToAction(_ sender: UITextField) {
+        dataFlag = true
+    }
     
     func setDelegates(){
         currencyPicker.delegate = self
