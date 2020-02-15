@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
                 switch Result{
                 case .success(let response):
                     print(response)
-//                    self?.latestCars = response
+                    self?.latestCars = response
                     self?.recentCollectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)
