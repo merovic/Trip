@@ -56,11 +56,11 @@ class HomeViewController: UIViewController {
     
     func getCars(){
         DispatchQueue.main.async { [ weak self ] in
-            APIClient.getAllCars(number_of_select: 5) { (Result) in
+            APIClient.getAllCars(number_of_select: 10) { (Result) in
                 switch Result{
                 case .success(let response):
                     print(response)
-                    self?.latestCars = response
+//                    self?.latestCars = response
                     self?.recentCollectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)

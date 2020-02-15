@@ -47,6 +47,8 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     var lat: String = ""
     var long: String = ""
     
+    var fromHour , toDate , toHour, fromDate: String?
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,11 +77,11 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     
     //MARK:- Add a new car
     @IBAction func addPressed(_ sender: UIButton) {
-        if apartmentName.text != "" , stname.text != "" , refion.text != "" , city.text != "" , tripPrice.text != "" , kmPrice.text != "" , km.text != "" , number.text != "" , dateTo.text != "" , dateFrom.text != "" , pricePerDay.text != "" , color.text != "" , model.text != "" , name.text != "" , let image = Shared.Image{
+        if apartmentName.text != "" , stname.text != "" , refion.text != "" , city.text != "" , tripPrice.text != "" , kmPrice.text != "" , km.text != "" , number.text != "" , toDate != nil , fromDate != nil , fromHour != nil, toHour != nil , pricePerDay.text != "" , color.text != "" , model.text != "" , name.text != "" , let image = Shared.Image{
             self.startAnimating()
             
             DispatchQueue.main.async { [weak self ] in
-                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.dateFrom.text ?? "", available_date_to: self?.dateTo.text ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2", available_time_from: "", available_time_to: "", tax: "") { (Result) in
+                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.fromDate ?? "", available_date_to: self?.toDate ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2", available_time_from: self?.fromHour ?? "", available_time_to: self?.toHour ?? "", tax: "") { (Result) in
                     switch Result {
                     case .success(let respnse):
                         print(respnse)
@@ -151,7 +153,7 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     
     //MARK:- change textField inputView to datePicker
     func openDatePicker(for textField: UITextField) {
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
         textField.inputView = datePicker
         let toolbaar = UIToolbar()
         toolbaar.sizeToFit()
@@ -164,11 +166,20 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         let dateformter = DateFormatter()
         dateformter.dateStyle = .short
         dateformter.dateFormat = Shared.dateFormate
+
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeStyle = .short
+        timeFormatter.dateFormat = Shared.timeFormate
         if dataFlag == false {
+            fromHour = timeFormatter.string(from: datePicker.date)
+            fromDate = dateformter.string(from: datePicker.date)
             dateFrom.text = dateformter.string(from: datePicker.date)
+            print(fromHour , fromDate)
         } else {
+            toHour = timeFormatter.string(from: datePicker.date)
+            toDate = dateformter.string(from: datePicker.date)
             dateTo.text = dateformter.string(from: datePicker.date)
-            
+            print(toHour , toDate)
         }
         self.view.endEditing(true)
         

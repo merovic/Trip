@@ -13,7 +13,7 @@ struct Controllers {
 class Shared {
     static var user: Login?
     static var Image: String?
-//    static let dateFormate = "yyyy-dd-MM"
+    static let timeFormate = "hh:mm:ss"
     static let dateFormate = "yyyy-dd-MM"
     static let Header: CGFloat = 16
     static let body:CGFloat = 14
