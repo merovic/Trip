@@ -13,13 +13,13 @@ enum APIRouter: URLRequestConvertible {
     case agrre_refuse(id_request:Int)
     case forgete_password_by_email(email:String)
     case agrre_request(id_request: Int)
-    case insert_car( id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String)
+    case insert_car( id_owner: Int ,owner: String ,image: String, price_rent_per_day: String ,available_date_from: String ,available_date_to: String ,number_km: String ,price_km: String ,price_trip: String ,city: String ,area: String ,st_name: String ,number_hone: String ,lon: String ,lat: String ,number_of_trip: String ,model: String, type: String, rate: String ,available_time_from: String ,available_time_to: String ,tax: String)
     case insert_note_car(id_user:Int ,id_owner:Int , id_car:Int , title:String , details:String , datee:String)
     case insert_request_car(id_user:Int ,id_owner:Int , id_car:Int , message:String , datee:String)
     case login_user(email:String, pass:String)
     case register( name : String ,email : String ,password:String,phone : String ,address : String ,license : String ,rate : String )
     case select_all_car_by_city(city : String)
-    case select_all_car_by_city_and_date(city: String ,available_date_from: String , available_date_to: String)
+    case select_all_car_by_city_and_date(city: String ,available_date_from: String , available_date_to: String , type: String)
     case select_all_car_by_id(id : Int)
     case select_all_cars(number_of_select : Int)
     case select_all_cars_by_rate (number_of_select : Int)
@@ -196,8 +196,6 @@ enum APIRouter: URLRequestConvertible {
             return [K.forgete_password_by_email.email: email]
         case .agrre_request(let id_request):
             return [K.agrre_request.id_request: id_request]
-        case .insert_car(let id_owner, let owner, let image, let price_rent_per_day, let available_date_from, let available_date_to, let number_km, let price_km, let price_trip, let city, let area, let st_name, let number_hone, let lon, let lat, let number_of_trip, let model, let type, let rate):
-            return [K.insert_car.id_owner: id_owner ,K.insert_car.owner: owner ,K.insert_car.image: image ,K.insert_car.price_rent_per_day: price_rent_per_day ,K.insert_car.available_date_from: available_date_from ,K.insert_car.available_date_to: available_date_to ,K.insert_car.number_km: number_km ,K.insert_car.price_km: price_km ,K.insert_car.price_trip: price_trip ,K.insert_car.city: city ,K.insert_car.area: area ,K.insert_car.st_name: st_name ,K.insert_car.number_hone: number_hone ,K.insert_car.lon: lon ,K.insert_car.lat: lat ,K.insert_car.number_of_trip: number_of_trip ,K.insert_car.model: model ,K.insert_car.type: type ,K.insert_car.rate: rate]
         case .insert_note_car(let id_user, let id_owner, let id_car, let title, let details, let datee):
             return [K.insert_note_car.id_user: id_user ,K.insert_note_car.id_owner: id_owner ,K.insert_note_car.id_car: id_car ,K.insert_note_car.title: title , K.insert_note_car.details: details ,K.insert_note_car.datee: datee]
         case .insert_request_car(let id_user, let id_owner, let id_car, let message, let datee):
@@ -208,8 +206,6 @@ enum APIRouter: URLRequestConvertible {
             return [K.register.name: name ,K.register.email:email ,K.register.password:password ,K.register.phone: phone, K.register.address: address ,K.register.license: license ,K.register.rate: rate]
         case .select_all_car_by_city(let city):
             return [K.select_all_car_by_city.city: city]
-        case .select_all_car_by_city_and_date(let city, let available_date_from, let available_date_to):
-            return [K.select_all_car_by_city_and_date.city: city ,K.select_all_car_by_city_and_date.available_date_from: available_date_from ,K.select_all_car_by_city_and_date.available_date_to: available_date_to]
         case .select_all_car_by_id(let id):
             return [K.select_all_car_by_id.id: id]
         case .select_all_cars(let number_of_select):
@@ -254,6 +250,10 @@ enum APIRouter: URLRequestConvertible {
             return [K.update_car.id_car: id_car , K.update_car.id_owner: id_owner ,K.update_car.owner: owner ,K.update_car.image: image ,K.update_car.price_rent_per_day: price_rent_per_day ,K.update_car.available_date_from: available_date_from ,K.update_car.available_date_to: available_date_to ,K.update_car.number_km: number_km ,K.update_car.price_km: price_km ,K.update_car.price_trip: price_trip ,K.update_car.city: city ,K.update_car.area: area ,K.update_car.st_name: st_name ,K.update_car.number_hone: number_hone ,K.update_car.lon: lon ,K.update_car.lat: lat ,K.update_car.number_of_trip: number_of_trip ,K.insert_car.model: model ,K.update_car.type: type ,K.update_car.rate: rate]
         case .update_user(let id_user, let name, let email, let password, let phone, let address, let license, let img):
             return [K.update_user.id_user: id_user , K.update_user.name: name ,K.update_user.email: email ,K.update_user.password: password ,K.update_user.phone: phone ,K.update_user.address: address, K.update_user.license: license, K.update_user.img: img]
+        case .insert_car(let id_owner, let owner, let image, let price_rent_per_day, let available_date_from, let available_date_to, let number_km, let price_km, let price_trip, let city, let area, let st_name, let number_hone, let lon, let lat, let number_of_trip, let model, let type, let rate, let available_time_from, let available_time_to, let tax):
+            return [K.insert_car.id_owner: id_owner ,K.insert_car.owner: owner ,K.insert_car.image: image ,K.insert_car.price_rent_per_day: price_rent_per_day ,K.insert_car.available_date_from: available_date_from ,K.insert_car.available_date_to: available_date_to ,K.insert_car.number_km: number_km ,K.insert_car.price_km: price_km ,K.insert_car.price_trip: price_trip ,K.insert_car.city: city ,K.insert_car.area: area ,K.insert_car.st_name: st_name ,K.insert_car.number_hone: number_hone ,K.insert_car.lon: lon ,K.insert_car.lat: lat ,K.insert_car.number_of_trip: number_of_trip ,K.insert_car.model: model ,K.insert_car.type: type ,K.insert_car.rate: rate ,K.insert_car.available_time_from: available_time_from , K.insert_car.available_time_to: available_time_to ,K.insert_car.tax: tax]
+        case .select_all_car_by_city_and_date(let city ,let available_date_from ,let available_date_to ,let type ):
+            return [K.select_all_car_by_city_and_date.city: city ,K.select_all_car_by_city_and_date.available_date_from: available_date_from ,K.select_all_car_by_city_and_date.available_date_to: available_date_to ,K.select_all_car_by_city_and_date.type: type]
         }
     }
     

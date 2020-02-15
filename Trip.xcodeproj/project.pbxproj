@@ -557,9 +557,9 @@
 		819A19C623F3628400408E08 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				819A19C823F3629A00408E08 /* APIClient.swift */,
-				819A19C723F3629900408E08 /* APIRouter.swift */,
 				819A19C923F3629A00408E08 /* Constants.swift */,
+				819A19C723F3629900408E08 /* APIRouter.swift */,
+				819A19C823F3629A00408E08 /* APIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

@@ -79,7 +79,7 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
             self.startAnimating()
             
             DispatchQueue.main.async { [weak self ] in
-                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.dateFrom.text ?? "", available_date_to: self?.dateTo.text ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2") { (Result) in
+                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.dateFrom.text ?? "", available_date_to: self?.dateTo.text ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2", available_time_from: "", available_time_to: "", tax: "") { (Result) in
                     switch Result {
                     case .success(let respnse):
                         print(respnse)

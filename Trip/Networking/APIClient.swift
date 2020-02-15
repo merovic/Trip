@@ -60,8 +60,8 @@ class APIClient {
     static func register( name : String ,email : String ,password:String,phone : String ,address : String ,license : String ,rate : String ,completion: @escaping (Result<String,AFError>)->Void) {
         performRequestSimple(route: APIRouter.register(name: name, email: email, password: password, phone: phone, address: address, license: license, rate: rate), completion: completion)
     }
-    static func addCar( id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String ,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.insert_car(id_owner: id_owner, owner: owner, image: image, price_rent_per_day: price_rent_per_day, available_date_from: available_date_from, available_date_to: available_date_to, number_km: number_km, price_km: price_km, price_trip: price_trip, city: city, area: area, st_name: st_name, number_hone: number_hone, lon: lon, lat: lat, number_of_trip: number_of_trip, model: model, type: type, rate: rate), completion: completion)
+    static func addCar( id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String , available_time_from:String , available_time_to: String , tax: String , completion: @escaping (Result<String,AFError>)->Void){
+        performRequestSimple(route: APIRouter.insert_car(id_owner: id_owner, owner: owner, image: image, price_rent_per_day: price_rent_per_day, available_date_from: available_date_from, available_date_to: available_date_to, number_km: number_km, price_km: price_km, price_trip: price_trip, city: city, area: area, st_name: st_name, number_hone: number_hone, lon: lon, lat: lat, number_of_trip: number_of_trip, model: model, type: type, rate: rate, available_time_from: available_time_from, available_time_to: available_time_to, tax: tax), completion: completion)
     }
     
     static func getAllRequestsByRequestID(Id_Request: Int , completion: @escaping (Result<[Request],AFError>)->Void) {
@@ -97,8 +97,8 @@ class APIClient {
         performRequest(route: APIRouter.select_all_car_by_id(id: id), completion: completion)
     }
     
-    static func getAllCarsByCityAndDate(city: String ,available_date_from: String , available_date_to: String ,completion: @escaping (Result<String,AFError>)->Void){
-        performRequestSimple(route: APIRouter.select_all_car_by_city_and_date(city: city, available_date_from: available_date_from, available_date_to: available_date_to), completion: completion)
+    static func getAllCarsByCityAndDate(city: String ,available_date_from: String , available_date_to: String , type: String ,completion: @escaping (Result<String,AFError>)->Void){
+        performRequestSimple(route: APIRouter.select_all_car_by_city_and_date(city: city, available_date_from: available_date_from, available_date_to: available_date_to, type: type), completion: completion)
     }
     
     static func getAllCarsByCity(city : String ,completion: @escaping (Result<String,AFError>)->Void) {
