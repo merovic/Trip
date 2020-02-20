@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
     
     func getCars(){
         DispatchQueue.main.async { [ weak self ] in
-            APIClient.getAllCars(number_of_select: 10) { (Result) in
+            APIClient.getAllCars(number_of_select: 5) { (Result) in
                 switch Result{
                 case .success(let response):
                     print(response)
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
             APIClient.getAllCarsByRate(number_of_select: 10) { (Result) in
                 switch Result{
                 case .success(let response):
-                    print(response)
+//                    print(response)
                     self?.topRatedCars = response
                     self?.topRatedCollectionView.reloadData()
                 case .failure(let error):
@@ -104,8 +104,8 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 }
                 cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.model
-                cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
-                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
+                cell.price.attributedText = NSAttributedString.withDualText(text1: car.price_rent_per_day, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
+                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.number_of_trip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
             }
             return cell
             
@@ -117,8 +117,8 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 }
                 cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.model
-                cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
-                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
+                cell.price.attributedText = NSAttributedString.withDualText(text1: car.price_rent_per_day, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
+                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.number_of_trip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
             }
             
             return cell

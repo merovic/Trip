@@ -77,16 +77,18 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     
     //MARK:- Add a new car
     @IBAction func addPressed(_ sender: UIButton) {
-        if apartmentName.text != "" , stname.text != "" , refion.text != "" , city.text != "" , tripPrice.text != "" , kmPrice.text != "" , km.text != "" , number.text != "" , toDate != nil , fromDate != nil , fromHour != nil, toHour != nil , pricePerDay.text != "" , color.text != "" , model.text != "" , name.text != "" , let image = Shared.Image{
+        let user = Shared.user
+        if apartmentName.text != "" , stname.text != "" , refion.text != "" , city.text != "" , tripPrice.text != "" , kmPrice.text != "" , km.text != "" , number.text != "" , toDate != nil , fromDate != nil , fromHour != nil, toHour != nil , pricePerDay.text != "" , color.text != "" , model.text != "" , name.text != "" , let image = Shared.Image , lat != "", long != ""{
+            
             self.startAnimating()
             
             DispatchQueue.main.async { [weak self ] in
-                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.fromDate ?? "", available_date_to: self?.toDate ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2", available_time_from: self?.fromHour ?? "", available_time_to: self?.toHour ?? "", tax: "") { (Result) in
+                APIClient.addCar(id_owner: user?.id ?? 0 , owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.fromDate ?? "", available_date_to: self?.toDate ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2", available_time_from: self?.fromHour ?? "", available_time_to: self?.toHour ?? "", tax: "10") { (Result) in
                     switch Result {
                     case .success(let respnse):
                         print(respnse)
                         self?.stopAnimating()
-                        Alert.show("Success".localized, massege: "Car Added Successfully".localized, context: self!)
+                        self?.showAlert(title: "Success".localized, message: "Car Added Successfully".localized)
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
@@ -96,9 +98,12 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
             }
         }
         else {
-            Alert.show("Failed".localized, massege: "All Fields Are Required" , context: self)
+            Alert.show("Failed".localized, massege: "All Fields Are Required".localized , context: self)
+            
         }
     }
+    
+    
     
     @IBAction func modelCarAtion(_ sender: UITextField) {
         flag = 1
@@ -166,7 +171,7 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         let dateformter = DateFormatter()
         dateformter.dateStyle = .short
         dateformter.dateFormat = Shared.dateFormate
-
+        
         let timeFormatter = DateFormatter()
         timeFormatter.timeStyle = .short
         timeFormatter.dateFormat = Shared.timeFormate
@@ -174,12 +179,10 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
             fromHour = timeFormatter.string(from: datePicker.date)
             fromDate = dateformter.string(from: datePicker.date)
             dateFrom.text = dateformter.string(from: datePicker.date)
-            print(fromHour , fromDate)
         } else {
             toHour = timeFormatter.string(from: datePicker.date)
             toDate = dateformter.string(from: datePicker.date)
             dateTo.text = dateformter.string(from: datePicker.date)
-            print(toHour , toDate)
         }
         self.view.endEditing(true)
         
@@ -203,6 +206,16 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     //MARK:- Data from MapKit -- Map Protocol 
     func dataReceived(lat: String, long: String) {
         self.lat = lat; self.long = long
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: okHandler(Aler:)))
+        self.present(alert, animated: true)
+    }
+    
+    func okHandler(Aler: UIAlertAction) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -42,10 +42,11 @@ class ReserveTripViewController: UIViewController {
             dateformter.dateStyle = .short
             let date = dateformter.string(from: currentDate)
             
-            APIClient.addRequest(id_user: user.id, id_owner: reservationDetails?.idOwner ?? 0, id_car: reservationDetails?.id ?? 0, message: "New Car Rent Request", datee: date) { (Result) in
+            APIClient.addRequest(id_user: user.id, id_owner: reservationDetails?.id_owner ?? 0, id_car: reservationDetails?.id ?? 0, message: "New Car Rent Request", datee: date) { (Result) in
                 switch Result {
                 case .success(let response):
                     print(response)
+                    self.showAlert(title: "", message: "Success".localized)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -56,25 +57,35 @@ class ReserveTripViewController: UIViewController {
     func updateView(){
         
         if let car = reservationDetails {
-            let availableDateFrom = Shared.converDate(date: car.availableDateFrom)
-            let availableDateTo = Shared.converDate(date: car.availableDateTo)
+            let availableDateFrom = Shared.converDate(date: car.available_date_from)
+            let availableDateTo = Shared.converDate(date: car.available_date_to)
             
             details.text = "There is no details".localized
-            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: Shared.Header, text2: "SR".localized, ofSizeText2: Shared.body)
-            km.attributedText = NSAttributedString.withDualText(text1: car.numberKM, ofSizeText1: Shared.Header, text2: "KM".localized, ofSizeText2: Shared.body)
+            price.attributedText = NSAttributedString.withDualText(text1: car.price_rent_per_day, ofSizeText1: Shared.Header, text2: "SR".localized, ofSizeText2: Shared.body)
+            km.attributedText = NSAttributedString.withDualText(text1: car.number_km, ofSizeText1: Shared.Header, text2: "KM".localized, ofSizeText2: Shared.body)
             tax.attributedText = NSAttributedString.withDualText(text1: "\(taxAmount)", ofSizeText1: Shared.Header, text2: "SR".localized, ofSizeText2: Shared.body)
             dateFrom.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: Shared.body, text2: availableDateFrom[0], ofSizeText2: Shared.Header)
             dateTo.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: Shared.body, text2: availableDateTo[0], ofSizeText2: Shared.Header)
-            totalPrice.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 24, text2: "SR".localized, ofSizeText2: 16)
+            totalPrice.attributedText = NSAttributedString.withDualText(text1: car.price_rent_per_day, ofSizeText1: 24, text2: "SR".localized, ofSizeText2: 16)
             hourFrom.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: 10, text2: availableDateFrom[1], ofSizeText2: 14)
             hourTo.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: 10, text2: availableDateTo[1], ofSizeText2: 14)
             
             if "Lang".localized == "ar"{
-                note.text = "ملاحظة: سعر الكيلومتر الزائد \(car.priceKM) ريال"
+                note.text = "ملاحظة: سعر الكيلومتر الزائد \(car.price_km) ريال"
             }else {
-                note.text = "Note: extra KM price is \(car.priceKM) SR"
+                note.text = "Note: extra KM price is \(car.price_km) SR"
             }
             
         }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: okHandler(Aler:)))
+        self.present(alert, animated: true)
+    }
+    
+    func okHandler(Aler: UIAlertAction) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

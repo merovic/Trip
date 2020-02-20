@@ -148,7 +148,9 @@ extension ReservationViewController: CurrentReservationDelegate , PreviosReserva
             vc.id_request = id
             vc.delegate = self
             vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true) { [weak self] in
+                self?.getAgreedRequests()
+            }
         }
     }
     

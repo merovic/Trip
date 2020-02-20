@@ -13,8 +13,8 @@ struct Controllers {
 class Shared {
     static var user: Login?
     static var Image: String?
-    static let timeFormate = "hh:mm:ss"
-    static let dateFormate = "yyyy-dd-MM"
+    static let timeFormate = "hh:mm:ss aa"
+    static let dateFormate = "yyyy-MM-dd"
     static let Header: CGFloat = 16
     static let body:CGFloat = 14
     static let title:CGFloat = 20
@@ -33,6 +33,7 @@ class Shared {
         var settings = SideMenuSettings()
         settings.statusBarEndAlpha = 0
         settings.presentationStyle = presentationStyle
+        settings.allowPushOfSameClassTwice = false
         settings.menuWidth = view.frame.width-view.frame.width*(1/5)
         
     

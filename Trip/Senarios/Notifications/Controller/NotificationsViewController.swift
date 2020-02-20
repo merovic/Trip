@@ -38,7 +38,7 @@ class NotificationsViewController: UIViewController {
     func getData(){
         if let id = Shared.user?.id {
             DispatchQueue.global().async { [weak self] in
-                APIClient.getAllNoteByOwnerID(id_owner: id) { (Result) in
+                APIClient.getNoteByUserID(id_user: id) { (Result) in
                     switch Result {
                     case .success(let response):
                         print(response)

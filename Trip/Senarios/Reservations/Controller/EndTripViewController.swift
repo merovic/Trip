@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 
-class EndTripViewController: UIViewController {
+class EndTripViewController: UIViewController , UITextViewDelegate{
     
     @IBOutlet weak var numOfKm: UILabel!
     @IBOutlet weak var numOfFreeKm: UILabel!
@@ -106,5 +106,11 @@ class EndTripViewController: UIViewController {
                 }
             }
         }
+    }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        }
+        return true
     }
 }

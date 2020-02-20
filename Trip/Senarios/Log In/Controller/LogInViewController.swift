@@ -31,6 +31,12 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
         super.viewDidLoad()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        mailTF.text = ""
+        passwordTF.text = ""
+    }
+    
     //MARK:- logIn
     @IBAction func logInPressed(_ sender: UIButton) {
         self.startAnimating()
@@ -46,7 +52,11 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
-                        Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
+                        if error.localizedDescription == "The Internet connection appears to be offline" {
+                            
+                        } else {
+                             Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
+                        }
                     }
                 }
             }
@@ -132,18 +142,7 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
      })
      }
      */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
 }
 
 extension UIViewController: UITextFieldDelegate{

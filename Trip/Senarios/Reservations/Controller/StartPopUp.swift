@@ -31,7 +31,7 @@ class StartPopUp: UIViewController {
     
     // Start Trip
     @IBAction func start(_ sender: UIButton) {
-        if let id = idRequest , let km = kmRead.text{
+        if let id = idRequest , let km = kmRead.text , kmRead.text != "" {
             DispatchQueue.main.async { [weak self] in
                 APIClient.statTrip(id_request: id, new_km: km) { (Result) in
                     switch Result {
@@ -47,6 +47,10 @@ class StartPopUp: UIViewController {
                         
                     }
                 }
+            }
+        } else {
+            if kmRead.text == "" {
+                Alert.show("Error".localized, massege: "Enter the number of kilometers".localized, context: self)
             }
         }
     }
