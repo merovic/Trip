@@ -58,7 +58,7 @@ class SearchAdvancedViewController: UIViewController {
     
     @IBAction func searchBtnPressed(_ sender: UIButton) {
         DispatchQueue.main.async { [weak self] in
-            APIClient.getAllCarsByCityAndDate(city: self?.cityName.text ?? "", available_date_from: self?.from.text ?? "", available_date_to: self?.to.text ?? "") { (Result) in
+            APIClient.getAllCarsByCityAndDate(city: self?.cityName.text ?? "", available_date_from: self?.from.text ?? "", available_date_to: self?.to.text ?? "", type: self?.carType.text ?? "" ) { (Result) in
                 switch Result {
                 case .success(let response):
                     print(response)

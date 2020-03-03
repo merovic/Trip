@@ -52,8 +52,7 @@ class CarDetailsViewController: UIViewController {
     }
     
     @IBAction func reservePressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "ReserveCar") as! ReserveTripViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ReserveCar") as? ReserveTripViewController {
             vc.reservationDetails = carDetails
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(vc, animated: true)
@@ -71,25 +70,25 @@ class CarDetailsViewController: UIViewController {
         price.layer.borderWidth = 0
         
         imageCarSlider.auk.show(url: carDetails?.image ?? "")
-//        if let image = UIImage(named: "map1.jpg") {
-//            imageCarSlider.auk.show(image: image)
-//        }
-//        if let image = UIImage(named: "carSale") {
-//            imageCarSlider.auk.show(image: image)
-//        }
+        //        if let image = UIImage(named: "map1.jpg") {
+        //            imageCarSlider.auk.show(image: image)
+        //        }
+        //        if let image = UIImage(named: "carSale") {
+        //            imageCarSlider.auk.show(image: image)
+        //        }
         if let car = carDetails {
-            let availableDateFrom = Shared.converDate(date: car.availableDateFrom)
-            let availableDateTo = Shared.converDate(date: car.availableDateTo)
+            let availableDateFrom = Shared.converDate(date: car.available_date_from)
+            let availableDateTo = Shared.converDate(date: car.available_date_to)
             
-            price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 28, text2: "SR/Day".localized, ofSizeText2: 14)
+            price.attributedText = NSAttributedString.withDualText(text1: car.price_rent_per_day, ofSizeText1: 28, text2: "SR/Day".localized, ofSizeText2: 14)
             name.text = car.owner
             model.text = car.model
             from.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: Shared.body, text2: availableDateFrom[0], ofSizeText2: Shared.Header)
             to.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: Shared.body, text2: availableDateTo[0], ofSizeText2: Shared.Header)
             address.text = "\(car.city) ,\(car.area)"
-            tripsNum.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip, ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
-            fromHour.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: 10, text2: availableDateFrom[1], ofSizeText2: 14)
-            toHour.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: 10, text2: availableDateTo[1], ofSizeText2: 14)
+            tripsNum.attributedText = NSAttributedString.withDualText(text1: car.number_of_trip, ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
+            fromHour.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: 10, text2: car.available_time_from, ofSizeText2: 14)
+            toHour.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: 10, text2: car.available_time_to, ofSizeText2: 14)
             if let rating = Double(car.rate) {
                 rate.rating = rating
             }

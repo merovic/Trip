@@ -10,8 +10,9 @@ import Foundation
 
 struct K {
     struct ProductionServer {
-
-        static let baseURL = "http://trip.technowow.net/triping.asmx"
+        
+        static let baseURL = "http://f-trip.co/triping.asmx"
+//        static let baseURL = "http://trip.technowow.net/triping.asmx"
     }
     
     struct forgete_password_by_email {
@@ -48,6 +49,9 @@ struct K {
         static let model = "model"
         static let type = "type"
         static let rate = "rate"
+        static let available_time_from = "available_time_from"
+        static let available_time_to = "available_time_to"
+        static let tax = "tax"
     }
     
     struct insert_note_car {
@@ -57,7 +61,7 @@ struct K {
         static let title = "title"
         static let details = "details"
         static let datee = "datee"
-              
+        
     }
     
     struct insert_request_car {
@@ -69,8 +73,8 @@ struct K {
     }
     
     struct login_user {
-           static let email = "email"
-           static let password = "pass"
+        static let email = "email"
+        static let password = "pass"
     }
     
     struct register {
@@ -91,6 +95,7 @@ struct K {
     
     struct select_all_car_by_city_and_date {
         static let city = "city"
+        static let type = "type"
         static let available_date_from = "available_date_from"
         static let available_date_to = "available_date_to"
         
@@ -111,7 +116,7 @@ struct K {
     struct select_note_by_id_owner {
         
         static let id_owner = "id_owner"
-
+        
     }
     
     struct select_note_by_id_user {
@@ -138,21 +143,21 @@ struct K {
     }
     
     struct end_trip {
-           static let id_request = "id_request"
+        static let id_request = "id_request"
         static let new_km = "new_km"
-       }
+    }
     struct select_all_request_by_id_owner {
-           static let id_owner = "id_owner"
-       }
+        static let id_owner = "id_owner"
+    }
     struct select_all_request_by_id_user {
-           static let id_user = "id_user"
-       }
+        static let id_user = "id_user"
+    }
     struct select_request_that_have_aggree_by_id_owner {
-           static let id_owner = "id_owner"
-       }
+        static let id_owner = "id_owner"
+    }
     struct select_request_that_have_aggree_by_id_user {
-           static let id_user = "id_user"
-       }
+        static let id_user = "id_user"
+    }
     struct select_request_that_have_endtrip_by_id_owner {
         static let id_owner = "id_owner"
     }

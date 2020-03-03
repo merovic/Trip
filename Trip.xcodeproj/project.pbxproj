@@ -66,11 +66,11 @@
 		815A17BE23A63812001DDBEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 815A17BD23A63812001DDBEE /* Assets.xcassets */; };
 		8160076123AD48E1004C31F3 /* PreviousReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8160076323AD48E1004C31F3 /* PreviousReservationTableViewCell.xib */; };
 		8160076623AD4A6C004C31F3 /* CurrentReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8160076823AD4A6C004C31F3 /* CurrentReservationTableViewCell.xib */; };
-		8163803A238E6F9A002B58D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638037238E6F9A002B58D7 /* Constants.swift */; };
-		8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638038238E6F9A002B58D7 /* APIClient.swift */; };
-		8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81638039238E6F9A002B58D7 /* APIRouter.swift */; };
 		81638064238ED568002B58D7 /* second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81638063238ED568002B58D7 /* second.storyboard */; };
 		817BDC49239BFCD70066EC18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 817BDC48239BFCD70066EC18 /* GoogleService-Info.plist */; };
+		819A19CA23F3629A00408E08 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A19C723F3629900408E08 /* APIRouter.swift */; };
+		819A19CB23F3629A00408E08 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A19C823F3629A00408E08 /* APIClient.swift */; };
+		819A19CC23F3629A00408E08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A19C923F3629A00408E08 /* Constants.swift */; };
 		81CC1BF523CBAF4000B92D68 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CC1BF423CBAF4000B92D68 /* AboutUsViewController.swift */; };
 		81D66E2D2395483F009F8A13 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D66E2C2395483F009F8A13 /* Login.swift */; };
 		81D66E302395486D009F8A13 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D66E2F2395486D009F8A13 /* Notes.swift */; };
@@ -169,11 +169,11 @@
 		8160076523AD4926004C31F3 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PreviousReservationTableViewCell.strings; sourceTree = "<group>"; };
 		8160076723AD4A6C004C31F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CurrentReservationTableViewCell.xib; sourceTree = "<group>"; };
 		8160076A23AD4A72004C31F3 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CurrentReservationTableViewCell.strings; sourceTree = "<group>"; };
-		81638037238E6F9A002B58D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		81638038238E6F9A002B58D7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		81638039238E6F9A002B58D7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		81638063238ED568002B58D7 /* second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = second.storyboard; sourceTree = "<group>"; };
 		817BDC48239BFCD70066EC18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		819A19C723F3629900408E08 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		819A19C823F3629A00408E08 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		819A19C923F3629A00408E08 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81CC1BF423CBAF4000B92D68 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		81D66E2C2395483F009F8A13 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		81D66E2F2395486D009F8A13 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
@@ -239,8 +239,8 @@
 		18059E0223801E740007CA0A /* Trip */ = {
 			isa = PBXGroup;
 			children = (
+				819A19C623F3628400408E08 /* Networking */,
 				3B150FB7238E673400272A42 /* Utitlites */,
-				81638036238E6F9A002B58D7 /* Networking */,
 				3B150FB1238E673300272A42 /* Senarios */,
 				813E55D0239E61320043329A /* SupportingFiles */,
 				814014272393EB7E00B89210 /* model.swift */,
@@ -554,12 +554,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		81638036238E6F9A002B58D7 /* Networking */ = {
+		819A19C623F3628400408E08 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				81638038238E6F9A002B58D7 /* APIClient.swift */,
-				81638039238E6F9A002B58D7 /* APIRouter.swift */,
-				81638037238E6F9A002B58D7 /* Constants.swift */,
+				819A19C923F3629A00408E08 /* Constants.swift */,
+				819A19C723F3629900408E08 /* APIRouter.swift */,
+				819A19C823F3629A00408E08 /* APIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -843,9 +843,9 @@
 				8135852E2392C9FC006978CE /* TabBarViewController.swift in Sources */,
 				3B150FBD238E673400272A42 /* MenuTableViewCell.swift in Sources */,
 				81D66E302395486D009F8A13 /* Notes.swift in Sources */,
-				8163803B238E6F9A002B58D7 /* APIClient.swift in Sources */,
 				81D66E3323954892009F8A13 /* Cars.swift in Sources */,
 				3B177EC72397BB86001E5523 /* RequestCellTableViewCell.swift in Sources */,
+				819A19CC23F3629A00408E08 /* Constants.swift in Sources */,
 				3B150FBE238E673400272A42 /* Alert.swift in Sources */,
 				3B177EC92397E8BB001E5523 /* SettingsViewController.swift in Sources */,
 				814014322393FF2400B89210 /* CancelPopUp.swift in Sources */,
@@ -858,7 +858,6 @@
 				8140143E2394090400B89210 /* HelpViewController.swift in Sources */,
 				81D66E2D2395483F009F8A13 /* Login.swift in Sources */,
 				3B150FBF238E673400272A42 /* CardView.swift in Sources */,
-				8163803C238E6F9A002B58D7 /* APIRouter.swift in Sources */,
 				8140143A2394089D00B89210 /* TermsViewController.swift in Sources */,
 				3B6B798B239293A70071853C /* SocialLinksCollectionViewCell.swift in Sources */,
 				81358524238FEC7E006978CE /* NotificationsViewController.swift in Sources */,
@@ -870,15 +869,16 @@
 				8140141C2392DD3B00B89210 /* TopRatedCollectionViewCell.swift in Sources */,
 				814014302393FF0D00B89210 /* StartPopUp.swift in Sources */,
 				8140142E2393FEA900B89210 /* EditeProfileViewController.swift in Sources */,
+				819A19CB23F3629A00408E08 /* APIClient.swift in Sources */,
 				814014402394094400B89210 /* ContactUsViewController.swift in Sources */,
 				8135851E238FE52F006978CE /* Upload.swift in Sources */,
 				814014182392DB5D00B89210 /* HomeViewController.swift in Sources */,
 				81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */,
 				3B150FC1238E673400272A42 /* Maps.swift in Sources */,
 				3B1414EE2394211A003DD08C /* SearchViewController.swift in Sources */,
-				8163803A238E6F9A002B58D7 /* Constants.swift in Sources */,
 				814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */,
 				8140141E2393026400B89210 /* ReservationDetailsViewController.swift in Sources */,
+				819A19CA23F3629A00408E08 /* APIRouter.swift in Sources */,
 				3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */,
 				813E55CB239E60AD0043329A /* RequestAgree.swift in Sources */,
 				3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */,

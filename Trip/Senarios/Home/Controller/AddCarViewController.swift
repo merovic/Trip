@@ -47,6 +47,8 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     var lat: String = ""
     var long: String = ""
     
+    var fromHour , toDate , toHour, fromDate: String?
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +62,14 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         self.present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
     }
     
     @IBAction func showMap(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "Map") as! MapKitViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Map") as? MapKitViewController {
             vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -77,16 +77,18 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     
     //MARK:- Add a new car
     @IBAction func addPressed(_ sender: UIButton) {
-        if apartmentName.text != "" , stname.text != "" , refion.text != "" , city.text != "" , tripPrice.text != "" , kmPrice.text != "" , km.text != "" , number.text != "" , dateTo.text != "" , dateFrom.text != "" , pricePerDay.text != "" , color.text != "" , model.text != "" , name.text != "" , let image = Shared.Image{
+        let user = Shared.user
+        if apartmentName.text != "" , stname.text != "" , refion.text != "" , city.text != "" , tripPrice.text != "" , kmPrice.text != "" , km.text != "" , number.text != "" , toDate != nil , fromDate != nil , fromHour != nil, toHour != nil , pricePerDay.text != "" , color.text != "" , model.text != "" , name.text != "" , let image = Shared.Image , lat != "", long != ""{
+            
             self.startAnimating()
             
             DispatchQueue.main.async { [weak self ] in
-                APIClient.addCar(id_owner: 5, owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.dateFrom.text ?? "", available_date_to: self?.dateTo.text ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2") { (Result) in
+                APIClient.addCar(id_owner: user?.id ?? 0 , owner: self?.name.text ?? "", image: image , price_rent_per_day: self?.pricePerDay.text ?? "", available_date_from: self?.fromDate ?? "", available_date_to: self?.toDate ?? "", number_km: self?.km.text ?? "", price_km: self?.kmPrice.text ?? "", price_trip: self?.tripPrice.text ?? "", city: self?.city.text ?? "", area: self?.refion.text ?? "", st_name: self?.stname.text ?? "", number_hone: "22" , lon: self?.long ?? "", lat: self?.lat ?? "", number_of_trip: "19", model: self?.model.text ?? "", type:"ali" , rate: "2", available_time_from: self?.fromHour ?? "", available_time_to: self?.toHour ?? "", tax: "10") { (Result) in
                     switch Result {
                     case .success(let respnse):
                         print(respnse)
                         self?.stopAnimating()
-                        Alert.show("Success".localized, massege: "Car Added Successfully".localized, context: self!)
+                        self?.showAlert(title: "Success".localized, message: "Car Added Successfully".localized)
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
@@ -96,29 +98,32 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
             }
         }
         else {
-            Alert.show("Failed".localized, massege: "All Fields Are Required" , context: self)
+            Alert.show("Failed".localized, massege: "All Fields Are Required".localized , context: self)
+            
         }
     }
     
-    @IBAction func modelCarAtion(_ sender: UITextField) {
-           flag = 1
-       }
-       
-       @IBAction func colorCarAction(_ sender: UITextField) {
-           flag = 2
-       }
-       
-       @IBAction func cityAction(_ sender: UITextField) {
-           flag = 3
-       }
     
-       @IBAction func dataFromAction(_ sender: UITextField) {
-           dataFlag = false
-       }
-
-       @IBAction func DataToAction(_ sender: UITextField) {
-           dataFlag = true
-       }
+    
+    @IBAction func modelCarAtion(_ sender: UITextField) {
+        flag = 1
+    }
+    
+    @IBAction func colorCarAction(_ sender: UITextField) {
+        flag = 2
+    }
+    
+    @IBAction func cityAction(_ sender: UITextField) {
+        flag = 3
+    }
+    
+    @IBAction func dataFromAction(_ sender: UITextField) {
+        dataFlag = false
+    }
+    
+    @IBAction func DataToAction(_ sender: UITextField) {
+        dataFlag = true
+    }
     
     func setDelegates(){
         currencyPicker.delegate = self
@@ -153,7 +158,7 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     
     //MARK:- change textField inputView to datePicker
     func openDatePicker(for textField: UITextField) {
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
         textField.inputView = datePicker
         let toolbaar = UIToolbar()
         toolbaar.sizeToFit()
@@ -166,11 +171,18 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
         let dateformter = DateFormatter()
         dateformter.dateStyle = .short
         dateformter.dateFormat = Shared.dateFormate
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeStyle = .short
+        timeFormatter.dateFormat = Shared.timeFormate
         if dataFlag == false {
+            fromHour = timeFormatter.string(from: datePicker.date)
+            fromDate = dateformter.string(from: datePicker.date)
             dateFrom.text = dateformter.string(from: datePicker.date)
         } else {
+            toHour = timeFormatter.string(from: datePicker.date)
+            toDate = dateformter.string(from: datePicker.date)
             dateTo.text = dateformter.string(from: datePicker.date)
-            
         }
         self.view.endEditing(true)
         
@@ -194,6 +206,16 @@ class AddCarViewController: UIViewController ,CanReceive ,NVActivityIndicatorVie
     //MARK:- Data from MapKit -- Map Protocol 
     func dataReceived(lat: String, long: String) {
         self.lat = lat; self.long = long
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: okHandler(Aler:)))
+        self.present(alert, animated: true)
+    }
+    
+    func okHandler(Aler: UIAlertAction) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

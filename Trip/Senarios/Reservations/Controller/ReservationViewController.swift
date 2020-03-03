@@ -42,8 +42,7 @@ class ReservationViewController: UIViewController {
     }
     
     @IBAction func menuBtn(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
@@ -145,18 +144,18 @@ extension ReservationViewController: CurrentReservationDelegate , PreviosReserva
     
     //MARK:- Current Reservations
     func endTrip(id: Int) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "CancelReservation") as! CancelPopUp
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "CancelReservation") as? CancelPopUp {
             vc.id_request = id
             vc.delegate = self
             vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true) { [weak self] in
+                self?.getAgreedRequests()
+            }
         }
     }
     
     func startTrip(id: Int) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "StartReservation") as! StartPopUp
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "StartReservation") as? StartPopUp {
             vc.modalPresentationStyle = .overFullScreen
             vc.idRequest = id
             self.present(vc, animated: true, completion: nil)
@@ -172,17 +171,15 @@ extension ReservationViewController: CurrentReservationDelegate , PreviosReserva
     //MARK:- End Trip
     
     func endTrip(id: Int, endText: String) {
-        if #available(iOS 13.0, *) {
-            print("Try To Present")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                let vc = self?.storyboard?.instantiateViewController(identifier: "EndTrip") as! EndTripViewController
-                print(id)
-                print(endText)
-                vc.idRequest = id
-                vc.endKms = endText
-                vc.modalPresentationStyle = .overFullScreen
-                self?.present(vc, animated: true, completion: nil)
-            }
+        print("Try To Present")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            let vc = self?.storyboard?.instantiateViewController(withIdentifier: "EndTrip") as! EndTripViewController
+            print(id)
+            print(endText)
+            vc.idRequest = id
+            vc.endKms = endText
+            vc.modalPresentationStyle = .overFullScreen
+            self?.present(vc, animated: true, completion: nil)
         }
     }
 }

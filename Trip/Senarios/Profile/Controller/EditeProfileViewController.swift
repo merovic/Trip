@@ -62,8 +62,7 @@ class EditeProfileViewController: UIViewController, NVActivityIndicatorViewable{
     }
     
     @IBAction func showMenuPressed(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "Reservations") as! ReservationViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Reservations") as? ReservationViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

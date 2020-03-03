@@ -10,7 +10,7 @@ import UIKit
 import SideMenu
 
 class ReservationDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var hourTo: UILabel!
     @IBOutlet weak var hourFrom: UILabel!
     @IBOutlet weak var dateTo: UILabel!
@@ -38,12 +38,11 @@ class ReservationDetailsViewController: UIViewController {
     }
     
     @IBAction func menuPressed(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
     }
     
-
+    
 }

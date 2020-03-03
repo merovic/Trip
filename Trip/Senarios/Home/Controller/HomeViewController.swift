@@ -26,8 +26,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func addCarPressed(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "AddCar") as! AddCarViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "AddCar") as? AddCarViewController {
             vc.modalPresentationStyle = .fullScreen
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -42,21 +41,19 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func menuPressed(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
     }
-   
+    
     @IBAction func search(_ sender: DesignableUITextField) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "Search") as! SearchViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Search") as? SearchViewController {
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController( vc , animated: true)
         }
     }
-
+    
     func getCars(){
         DispatchQueue.main.async { [ weak self ] in
             APIClient.getAllCars(number_of_select: 5) { (Result) in
@@ -72,7 +69,7 @@ class HomeViewController: UIViewController {
             APIClient.getAllCarsByRate(number_of_select: 10) { (Result) in
                 switch Result{
                 case .success(let response):
-                    print(response)
+//                    print(response)
                     self?.topRatedCars = response
                     self?.topRatedCollectionView.reloadData()
                 case .failure(let error):
@@ -107,8 +104,8 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 }
                 cell.image.sd_setImage(with: URL(string: car.image ), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.model
-                cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
-                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
+                cell.price.attributedText = NSAttributedString.withDualText(text1: car.price_rent_per_day, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
+                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.number_of_trip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
             }
             return cell
             
@@ -120,8 +117,8 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 }
                 cell.image.sd_setImage(with: URL(string: car.image), placeholderImage: UIImage(named: "carPlaceholder"))
                 cell.name.text = car.model
-                cell.price.attributedText = NSAttributedString.withDualText(text1: car.priceRentPerDay, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
-                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.numberOfTrip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
+                cell.price.attributedText = NSAttributedString.withDualText(text1: car.price_rent_per_day, ofSizeText1: 18, text2:"SR/Day".localized , ofSizeText2: 13)
+                cell.trips.attributedText = NSAttributedString.withDualText(text1: car.number_of_trip , ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
             }
             
             return cell

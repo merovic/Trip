@@ -8,11 +8,8 @@
 
 import UIKit
 import NVActivityIndicatorView
-import FBSDKLoginKit
-import FBSDKCoreKit
-@available(iOS 13.0, *)
 class LogInViewController: UIViewController, NVActivityIndicatorViewable{
-
+    
     @IBOutlet weak var logInBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: logInBut)
@@ -34,6 +31,12 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
         super.viewDidLoad()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        mailTF.text = ""
+        passwordTF.text = ""
+    }
+    
     //MARK:- logIn
     @IBAction func logInPressed(_ sender: UIButton) {
         self.startAnimating()
@@ -49,7 +52,11 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
-                        Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
+                        if error.localizedDescription == "The Internet connection appears to be offline" {
+                            
+                        } else {
+                             Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
+                        }
                     }
                 }
             }
@@ -62,7 +69,7 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
     
     //MARK:- register
     @IBAction func signUpPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(identifier: "Register") as? RegisterViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Register") as? RegisterViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
@@ -70,7 +77,7 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
     
     //MARK:- forgot password
     @IBAction func forgotPassPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(identifier: "ForgotPassword") as? ForgotPasswordViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") as? ForgotPasswordViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         }
@@ -85,68 +92,57 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
     //MARK:- facebook sign in methodes
     @IBAction func signUpWithFb(_ sender: UIButton) {
         Alert.show("Error".localized, massege: "Facebook login is not yet ready", context: self)
-      //  facebooklogin()
+        //  facebooklogin()
     }
     @IBAction func showPassWord(_ sender: UIButton) {
         passwordTF.isSecureTextEntry = !passwordTF.isSecureTextEntry
     }
     
-    func facebooklogin() {
-        let fbLoginManager : LoginManager = LoginManager()
-        fbLoginManager.logIn(permissions: ["email"], from: self, handler: { (result, error) -> Void in
-            if (error == nil) {
-                let fbloginresult : LoginManagerLoginResult = result!
-                if(fbloginresult.isCancelled) {
-                    //Show Cancel alert
-                } else if(fbloginresult.grantedPermissions.contains("email")) {
-                 //  self.returnUserData()
-                    //fbLoginManager.logOut()
-                }
-            }
-        })
-    }
+    //    func facebooklogin() {
+    //        let fbLoginManager : LoginManager = LoginManager()
+    //        fbLoginManager.logIn(permissions: ["email"], from: self, handler: { (result, error) -> Void in
+    //            if (error == nil) {
+    //                let fbloginresult : LoginManagerLoginResult = result!
+    //                if(fbloginresult.isCancelled) {
+    //                    //Show Cancel alert
+    //                } else if(fbloginresult.grantedPermissions.contains("email")) {
+    //                 //  self.returnUserData()
+    //                    //fbLoginManager.logOut()
+    //                }
+    //            }
+    //        })
+    //    }
     
     /*
-    func returnUserData() {
-        let graphRequest : GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"email,name"])
-        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-            if ((error) != nil) {
-                // Process error
-                print("\n\n Error: \(error)")
-            } else {
-                let resultDic = result as! NSDictionary
-                print("\n\n  fetched user: \(result)")
-                
-                if (resultDic.value(forKey:"token") != nil) {
-                    let userName = resultDic.value(forKey:"access_token")! as! String as NSString?
-                    print("\n User Name is: \(userName)")
-                }
-                if(AccessToken.current != nil){
-                    print(AccessToken.current)
-                }
-                
-                if (resultDic.value(forKey:"email") != nil) {
-                    let userEmail = resultDic.value(forKey:"email")! as! String as NSString?
-                    print("\n User Email is: \(userEmail)")
-                }
-                
-            
-            }
-        })
-    }
- */
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     func returnUserData() {
+     let graphRequest : GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"email,name"])
+     graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+     if ((error) != nil) {
+     // Process error
+     print("\n\n Error: \(error)")
+     } else {
+     let resultDic = result as! NSDictionary
+     print("\n\n  fetched user: \(result)")
+     
+     if (resultDic.value(forKey:"token") != nil) {
+     let userName = resultDic.value(forKey:"access_token")! as! String as NSString?
+     print("\n User Name is: \(userName)")
+     }
+     if(AccessToken.current != nil){
+     print(AccessToken.current)
+     }
+     
+     if (resultDic.value(forKey:"email") != nil) {
+     let userEmail = resultDic.value(forKey:"email")! as! String as NSString?
+     print("\n User Email is: \(userEmail)")
+     }
+     
+     
+     }
+     })
+     }
+     */
+  
 }
 
 extension UIViewController: UITextFieldDelegate{

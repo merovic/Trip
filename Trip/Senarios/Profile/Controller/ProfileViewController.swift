@@ -58,8 +58,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func reservations(_ sender: UIButton) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "Reservations") as! ReservationViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Reservations") as? ReservationViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -69,8 +68,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showMenuPressed(_ sender: UIBarButtonItem) {
-        if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(identifier: "SideMenuNavigationController") as! SideMenuNavigationController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") as? SideMenuNavigationController {
             vc.settings = Shared.settings(view: self.view)
             present(vc, animated: true, completion: nil)
         }
@@ -108,7 +106,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as! UIImage
-            profileImage.image = image
+        profileImage.image = image
         FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: imagePicker, didFinishPickingMediaWithInfo: info) { [weak self] (success) in
             if success == true {
                 self?.updateUser()

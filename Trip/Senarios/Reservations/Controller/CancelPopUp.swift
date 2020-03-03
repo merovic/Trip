@@ -53,6 +53,10 @@ class CancelPopUp: UIViewController {
                     }
                 }
             }
+        } else {
+            if kmRead.text == "" {
+                Alert.show("Error".localized, massege: "Enter the number of kilometers".localized, context: self)
+            }
         }
     }
     
