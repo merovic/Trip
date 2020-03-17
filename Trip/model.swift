@@ -1,9 +1,9 @@
 import SideMenu
 
 struct Controllers {
-    var name = ["Browser cars" , "Recent adds" ,"Add car" , "About us" , "Requests" , "Add friend" , "Agreements" , "Help" , "privacy policy" , "Terms & conditions" , "Settings" , "Contact us" , "Sign Out"]
+    var name = ["Browser cars" , "Recent adds" ,"Add car" , "About us" , "Requests" , "Add friend" , "Agreements" , "Help" , "privacy policy" , "Terms & conditions" , "Settings" , "Contact us" , "Sign In"]
     
-    var nameAR = ["تصفح السيارات المعروضة" , "احدث الاعلانات" ,"اضافة سيارة" , "من نحن" , "الطلبات" , "دعوة صديق" , "الاتفاقية" , "المساعدة" , "سياسة الخصوصية" , "شروط الاستخدام" , "اعدادات التطبيق" , "اتصل بنا" , "تسجيل الخروج"]
+    var nameAR = ["تصفح السيارات المعروضة" , "احدث الاعلانات" ,"اضافة سيارة" , "من نحن" , "الطلبات" , "دعوة صديق" , "الاتفاقية" , "المساعدة" , "سياسة الخصوصية" , "شروط الاستخدام" , "اعدادات التطبيق" , "اتصل بنا" , "تسجيل الدخول"]
     
     var controller = ["Home" , "Home" ,"AddCar" , "AboutUs" , "Requests" , "AddFriend" , "agreements" , "Help" , "agreements" , "agreements" , "Settings" , "ContactUs" , "SignOut"]
     
@@ -18,6 +18,8 @@ class Shared {
     static let Header: CGFloat = 16
     static let body:CGFloat = 14
     static let title:CGFloat = 20
+    static var checkLogin = "didSignIn"
+
     
     
     static let addressArray =  ["Riydha","Mecca","Dammam","Medina","Jeddah","Ahsaa","Taif","Buraydah","Tabuk","Al-Khuttaif","Khamis Mushayt","Haql","Hafr Al-Batin","Jubail","Khobar","Abha","Najran","Yanbu","Kunfuza","Jizan","Al Kussem","Aseer"]
@@ -38,6 +40,13 @@ class Shared {
         
     
         return settings
+    }
+    
+    static func setcheckLogin (_ logedIn: Bool){
+        UserDefaults.standard.set(logedIn, forKey: checkLogin)
+    }
+    static func getcheckLogin() ->Bool{
+        return UserDefaults.standard.bool(forKey: checkLogin)
     }
     
    static func converDate(date: String) -> [String] {

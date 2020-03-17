@@ -11,4 +11,5 @@ struct Login: Codable {
     let name, email, password, address: String
     let license, rate, datee, phone: String
     let img: String?
+    
 }

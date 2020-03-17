@@ -47,6 +47,7 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
                     case .success(let response):
                         print(response)
                         Shared.user = response.first
+                        Shared.setcheckLogin(true)
                         self?.stopAnimating()
                         self?.performSegue(withIdentifier: "Log In", sender: self)
                     case .failure(let error):

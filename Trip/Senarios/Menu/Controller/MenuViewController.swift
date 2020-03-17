@@ -63,6 +63,11 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
             cell.Label.text = data.nameAR[indexPath.row]
         }
         cell.image1.image = UIImage(named: data.name[indexPath.row])
+        if indexPath.row ==  data.name.count - 1 {
+             if Shared.getcheckLogin() == true {
+                cell.Label.text = "Sign Out".localized
+            }
+        }
         return cell
     }
     
@@ -75,10 +80,18 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
                 self.present(activityVC, animated: true, completion: nil)
             }
         case 12:
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
+            if Shared.getcheckLogin() == false {
+                print("notLogin\(Shared.getcheckLogin())")
+                if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }else {
+                Shared.setcheckLogin(false)
+                Shared.user = nil
+                dismiss(animated: true, completion: nil)
             }
+            
         default:
             guard let vc = storyboard?.instantiateViewController(withIdentifier: data.controller[indexPath.row]) else { return  }
             self.navigationController?.pushViewController(vc, animated: false)

@@ -9,7 +9,7 @@
 import UIKit
 import SideMenu
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController , UITabBarControllerDelegate {
     //MARK:- IBActions
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +47,16 @@ class ProfileViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("ssssss")
+        let logedInStatus = Shared.getcheckLogin()
+        if !logedInStatus {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+                             vc.modalPresentationStyle = .fullScreen
+                             self.present(vc, animated: true, completion: nil)
+                         }
         }
     }
     
