@@ -8,6 +8,7 @@
 import Alamofire
 import SwiftyJSON
 class APIClient {
+    
     @discardableResult
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T,AFError>)->Void) -> DataRequest {
         return AF.request(route)
@@ -36,9 +37,8 @@ class APIClient {
             completion(response.result)
         }
     }
+    
     //---------------------------------------------------
-    
-    
     
     static func agrre_refuse(id_request: Int , completion: @escaping (Result<String,AFError>)->Void) {
         performRequestSimple(route: APIRouter.agrre_refuse(id_request: id_request), completion: completion)
@@ -52,7 +52,6 @@ class APIClient {
         performRequestSimple(route: APIRouter.forgete_password_by_email(email: email), completion: completion)
     }
     
-    
     static func logIn(email: String ,password: String , completion: @escaping (Result<[Login],AFError>)->Void) {
         performRequest(route: APIRouter.login_user(email: email, pass: password), completion: completion)
     }
@@ -60,6 +59,7 @@ class APIClient {
     static func register( name : String ,email : String ,password:String,phone : String ,address : String ,license : String ,rate : String ,completion: @escaping (Result<String,AFError>)->Void) {
         performRequestSimple(route: APIRouter.register(name: name, email: email, password: password, phone: phone, address: address, license: license, rate: rate), completion: completion)
     }
+    
     static func addCar( id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String , available_time_from:String , available_time_to: String , tax: String , completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.insert_car(id_owner: id_owner, owner: owner, image: image, price_rent_per_day: price_rent_per_day, available_date_from: available_date_from, available_date_to: available_date_to, number_km: number_km, price_km: price_km, price_trip: price_trip, city: city, area: area, st_name: st_name, number_hone: number_hone, lon: lon, lat: lat, number_of_trip: number_of_trip, model: model, type: type, rate: rate, available_time_from: available_time_from, available_time_to: available_time_to, tax: tax), completion: completion)
     }
@@ -71,11 +71,13 @@ class APIClient {
     static func addRequest(id_user:Int ,id_owner:Int , id_car:Int , message:String , datee:String,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.insert_request_car(id_user: id_user, id_owner: id_owner, id_car: id_car, message: message, datee: datee), completion: completion)
     }
+    
     static func updateUser (id_user: Int ,name: String ,
                             email : String , password: String , phone: String ,address: String ,license: String ,img:String ,completion: @escaping (Result<String,AFError>)->Void) {
         performRequestSimple(route: APIRouter.update_user(id_user: id_user, name: name, email: email, password: password, phone: phone, address: address, license: license,img: img), completion: completion)
         
     }
+    
     static func getNoteByUserID(id_user : Int ,completion: @escaping (Result<[Note],AFError>)->Void){
         performRequest(route: APIRouter.select_note_by_id_user(id_user: id_user), completion: completion)
     }
@@ -116,11 +118,6 @@ class APIClient {
     static func acceptRequest(id_request: Int,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.agrre_request(id_request: id_request), completion: completion)
     }
-    
-    
-    
-    // Newly added functions --------------------------------------
-    
     
     static func deleteNote(id: Int ,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.delete_not(id: id), completion: completion)
@@ -182,7 +179,13 @@ class APIClient {
         performRequestSimple(route: APIRouter.update_car(id_car: id_car,id_owner: id_owner, owner: owner, image: image, price_rent_per_day: price_rent_per_day, available_date_from: available_date_from, available_date_to: available_date_to, number_km: number_km, price_km: price_km, price_trip: price_trip, city: city, area: area, st_name: st_name, number_hone: number_hone, lon: lon, lat: lat, number_of_trip: number_of_trip, model: model, type: type, rate: rate), completion: completion)
     }
     
+    static func insertCommentAndRate(id_user: Int ,id_owner: Int ,number_rate: Double ,comment: String ,complition: @escaping(Result<String,AFError>)->Void) {
+        performRequestSimple(route: APIRouter.insert_rate_and_comment_owner(id_user: id_user, id_owner: id_owner, number_rate: number_rate, comment: comment), completion: complition)
+    }
     
+    static func showPhone(id_user: Int ,id_owner: Int ,id_car: Int ,complition: @escaping(Result<String,AFError>)->Void) {
+        performRequestSimple(route: APIRouter.show_phone(id_user: id_user, id_owner: id_owner, id_car: id_car), completion: complition)
+    }
     
 }
 

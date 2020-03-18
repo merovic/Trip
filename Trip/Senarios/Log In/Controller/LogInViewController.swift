@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import MOLH
 class LogInViewController: UIViewController, NVActivityIndicatorViewable{
     
     @IBOutlet weak var logInBut: UIButton!{
@@ -15,20 +16,31 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
             Rounded.roundedCornerButton1(button: logInBut)
         }
     }
-    @IBOutlet weak var passwordTF: UITextField!{didSet{ passwordTF.delegate = self }}
-    @IBOutlet weak var mailTF: UITextField!{didSet{
-        mailTF.delegate = self
-        mailTF.isSecureTextEntry = false
+    @IBOutlet weak var passwordTF: MOLHTextField!{didSet{
+        passwordTF.forceSwitchingRegardlessOfTag = true
+        }}
+    @IBOutlet weak var mailTF: MOLHTextField!{didSet{
+        mailTF.forceSwitchingRegardlessOfTag = true
         }}
     @IBOutlet weak var fbBut: UIButton!{
         didSet{
             Rounded.roundedCornerButton1(button: fbBut)
         }
     }
+    @IBOutlet weak var backButton: UIButton!{
+        didSet{
+            if "Lang".localized == "ar" {
+                self.backButton.setImage(UIImage(named: "backBlack")?.flippedImage(), for: .normal)
+            }
+        }
+    }
+    
+    @IBOutlet weak var write: UIImageView!
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        write.image?.imageFlippedForRightToLeftLayoutDirection()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -49,7 +61,8 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
                         Shared.user = response.first
                         Shared.setcheckLogin(true)
                         self?.stopAnimating()
-                        self?.performSegue(withIdentifier: "Log In", sender: self)
+                        self?.dismiss(animated: true, completion: nil)
+//                        self?.performSegue(withIdentifier: "Log In", sender: self)
                     case .failure(let error):
                         print(error.localizedDescription)
                         self?.stopAnimating()
@@ -81,6 +94,16 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") as? ForgotPasswordViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func cancel(_ sender: UIButton) {
+        if let tbvc = presentingViewController as? TabBarViewController {
+            tbvc.selectedIndex = 2
+            self.dismiss(animated: true, completion: nil)
+            print(tbvc.selectedIndex)
+        } else {
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

@@ -30,6 +30,7 @@
 #import "FBSDKConstants.h"
 #import "FBSDKDynamicFrameworkLoader.h"
 #import "FBSDKError.h"
+#import "FBSDKEventDeactivationManager.h"
 #import "FBSDKFeatureManager.h"
 #import "FBSDKGraphRequest+Internal.h"
 #import "FBSDKInternalUtility.h"
@@ -44,9 +45,12 @@
 #import "FBSDKUserDataStore.h"
 
 #if !TARGET_OS_TV
+
+#import "FBSDKAddressFilterManager.h"
 #import "FBSDKEventBindingManager.h"
 #import "FBSDKHybridAppEventsScriptMessageHandler.h"
 #import "FBSDKModelManager.h"
+
 #endif
 
 //
@@ -168,7 +172,6 @@ FBSDKAppEventName FBSDKAppEventNameFBDialogsPresentShareDialogOG    = @"fb_dialo
 FBSDKAppEventName FBSDKAppEventNameFBDialogsPresentLikeDialogOG     = @"fb_dialogs_present_like_og";
 FBSDKAppEventName FBSDKAppEventNameFBDialogsPresentMessageDialog      = @"fb_dialogs_present_message";
 FBSDKAppEventName FBSDKAppEventNameFBDialogsPresentMessageDialogPhoto = @"fb_dialogs_present_message_photo";
-FBSDKAppEventName FBSDKAppEventNameFBDialogsPresentMessageDialogOG    = @"fb_dialogs_present_message_og";
 
 FBSDKAppEventName FBSDKAppEventNameFBDialogsNativeLoginDialogStart  = @"fb_dialogs_native_login_dialog_start";
 NSString *const FBSDKAppEventsNativeLoginDialogStartTime          = @"fb_native_login_dialog_start_time";
@@ -275,14 +278,10 @@ NSString *const FBSDKAppEventsDialogShareModeFeedBrowser    = @"FeedBrowser";
 NSString *const FBSDKAppEventsDialogShareModeFeedWeb        = @"FeedWeb";
 NSString *const FBSDKAppEventsDialogShareModeUnknown        = @"Unknown";
 
-NSString *const FBSDKAppEventsDialogShareContentTypeOpenGraph                         = @"OpenGraph";
 NSString *const FBSDKAppEventsDialogShareContentTypeStatus                            = @"Status";
 NSString *const FBSDKAppEventsDialogShareContentTypePhoto                             = @"Photo";
 NSString *const FBSDKAppEventsDialogShareContentTypeVideo                             = @"Video";
 NSString *const FBSDKAppEventsDialogShareContentTypeCamera                            = @"Camera";
-NSString *const FBSDKAppEventsDialogShareContentTypeMessengerGenericTemplate          = @"GenericTemplate";
-NSString *const FBSDKAppEventsDialogShareContentTypeMessengerMediaTemplate            = @"MediaTemplate";
-NSString *const FBSDKAppEventsDialogShareContentTypeMessengerOpenGraphMusicTemplate   = @"OpenGraphMusicTemplate";
 NSString *const FBSDKAppEventsDialogShareContentTypeUnknown                           = @"Unknown";
 
 NSString *const FBSDKGateKeeperAppEventsKillSwitch                                    = @"app_events_killswitch";
@@ -1150,7 +1149,14 @@ static dispatch_once_t *onceTokenPointer;
   if (failed) {
     return;
   }
+  // Filter out deactivated params
+  parameters = [FBSDKEventDeactivationManager processParameters:parameters eventName:eventName];
 
+#if !defined BUCK && !TARGET_OS_TV
+  // Filter out address data
+  parameters = [FBSDKAddressFilterManager processParameters:parameters];
+#endif
+  // Filter out restrictive keys
   parameters = [FBSDKRestrictiveDataFilterManager processParameters:parameters
                                                           eventName:eventName];
 

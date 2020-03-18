@@ -12,7 +12,6 @@ import Cosmos
 class CarDetailsViewController: UIViewController {
     
     @IBOutlet weak var imageCarSlider: UIScrollView!
-    
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var userType: UILabel!
@@ -29,6 +28,7 @@ class CarDetailsViewController: UIViewController {
             Rounded.roundedCornerButton1(button: reserveBut)
         }
     }
+    @IBOutlet weak var mobileNumber: UILabel!
     @IBOutlet weak var detailsCarView: UIView!{
         didSet{
             detailsCarView.layer.cornerRadius = 40
@@ -41,9 +41,12 @@ class CarDetailsViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkToShowPhoneNumber()
         updateView()
     }
     
+    @IBAction func showNumberTapped(_ sender: UIButton) {
+    }
     //MARK:- Open location in Maps app
     @IBAction func showMaps(_ sender: UIButton) {
         if let lat = carDetails?.lat , let long = carDetails?.lon , let model = carDetails?.model{
@@ -52,10 +55,18 @@ class CarDetailsViewController: UIViewController {
     }
     
     @IBAction func reservePressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "ReserveCar") as? ReserveTripViewController {
-            vc.reservationDetails = carDetails
-            vc.modalPresentationStyle = .fullScreen
-            self.navigationController?.pushViewController(vc, animated: true)
+        let logged = Shared.getcheckLogin()
+        if logged {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "ReserveCar") as? ReserveTripViewController {
+                vc.reservationDetails = carDetails
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         
     }
@@ -93,7 +104,26 @@ class CarDetailsViewController: UIViewController {
                 rate.rating = rating
             }
         }
+        
     }
     
+    func checkToShowPhoneNumber(){
+        if let car = carDetails , let user = Shared.user{
+            print("yes")
+            DispatchQueue.main.async { [weak self] in
+                APIClient.showPhone(id_user: user.id , id_owner: car.id_owner, id_car: car.id) { (result) in
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                        if response == "True" {
+                            self?.mobileNumber.text = "0103112301"
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
     
 }

@@ -51,7 +51,7 @@
 		814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140141F2393057600B89210 /* NewReservationDetailsViewController.swift */; };
 		814014242393B9B200B89210 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014232393B9B200B89210 /* ProfileViewController.swift */; };
 		814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014252393BABD00B89210 /* EditCarDetailsViewController.swift */; };
-		814014282393EB7E00B89210 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014272393EB7E00B89210 /* model.swift */; };
+		814014282393EB7E00B89210 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814014272393EB7E00B89210 /* Utilities.swift */; };
 		8140142C2393FE7B00B89210 /* NotificationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142B2393FE7B00B89210 /* NotificationDetailsViewController.swift */; };
 		8140142E2393FEA900B89210 /* EditeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142D2393FEA900B89210 /* EditeProfileViewController.swift */; };
 		814014302393FF0D00B89210 /* StartPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140142F2393FF0D00B89210 /* StartPopUp.swift */; };
@@ -68,6 +68,9 @@
 		8160076623AD4A6C004C31F3 /* CurrentReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8160076823AD4A6C004C31F3 /* CurrentReservationTableViewCell.xib */; };
 		81638064238ED568002B58D7 /* second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81638063238ED568002B58D7 /* second.storyboard */; };
 		817BDC49239BFCD70066EC18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 817BDC48239BFCD70066EC18 /* GoogleService-Info.plist */; };
+		818603EE24226E7200DADAE5 /* Changa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818603ED24226E7200DADAE5 /* Changa-Medium.ttf */; };
+		818603F0242270E800DADAE5 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818603EF242270E800DADAE5 /* OpenSans-SemiBold.ttf */; };
+		818603F624228B1500DADAE5 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818603F524228B1400DADAE5 /* Cairo-Regular.ttf */; };
 		819A19CA23F3629A00408E08 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A19C723F3629900408E08 /* APIRouter.swift */; };
 		819A19CB23F3629A00408E08 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A19C823F3629A00408E08 /* APIClient.swift */; };
 		819A19CC23F3629A00408E08 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A19C923F3629A00408E08 /* Constants.swift */; };
@@ -151,7 +154,7 @@
 		8140141F2393057600B89210 /* NewReservationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReservationDetailsViewController.swift; sourceTree = "<group>"; };
 		814014232393B9B200B89210 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		814014252393BABD00B89210 /* EditCarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCarDetailsViewController.swift; sourceTree = "<group>"; };
-		814014272393EB7E00B89210 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		814014272393EB7E00B89210 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8140142B2393FE7B00B89210 /* NotificationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsViewController.swift; sourceTree = "<group>"; };
 		8140142D2393FEA900B89210 /* EditeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditeProfileViewController.swift; sourceTree = "<group>"; };
 		8140142F2393FF0D00B89210 /* StartPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPopUp.swift; sourceTree = "<group>"; };
@@ -171,6 +174,9 @@
 		8160076A23AD4A72004C31F3 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CurrentReservationTableViewCell.strings; sourceTree = "<group>"; };
 		81638063238ED568002B58D7 /* second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = second.storyboard; sourceTree = "<group>"; };
 		817BDC48239BFCD70066EC18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		818603ED24226E7200DADAE5 /* Changa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa-Medium.ttf"; sourceTree = "<group>"; };
+		818603EF242270E800DADAE5 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		818603F524228B1400DADAE5 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		819A19C723F3629900408E08 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		819A19C823F3629A00408E08 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		819A19C923F3629A00408E08 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -243,7 +249,7 @@
 				3B150FB7238E673400272A42 /* Utitlites */,
 				3B150FB1238E673300272A42 /* Senarios */,
 				813E55D0239E61320043329A /* SupportingFiles */,
-				814014272393EB7E00B89210 /* model.swift */,
+				814014272393EB7E00B89210 /* Utilities.swift */,
 				18059E1123801E760007CA0A /* Info.plist */,
 				817BDC48239BFCD70066EC18 /* GoogleService-Info.plist */,
 			);
@@ -526,6 +532,7 @@
 		813E55D0239E61320043329A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				818603E624222AC100DADAE5 /* Fonts */,
 				3B14AB73238D22360065EB8C /* AppDelegate.swift */,
 				815A17BD23A63812001DDBEE /* Assets.xcassets */,
 				815A17BB23A61FBE001DDBEE /* Localizable.strings */,
@@ -552,6 +559,16 @@
 				8140142D2393FEA900B89210 /* EditeProfileViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		818603E624222AC100DADAE5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				818603F524228B1400DADAE5 /* Cairo-Regular.ttf */,
+				818603ED24226E7200DADAE5 /* Changa-Medium.ttf */,
+				818603EF242270E800DADAE5 /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		819A19C623F3628400408E08 /* Networking */ = {
@@ -708,9 +725,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81638064238ED568002B58D7 /* second.storyboard in Resources */,
+				818603EE24226E7200DADAE5 /* Changa-Medium.ttf in Resources */,
+				818603F0242270E800DADAE5 /* OpenSans-SemiBold.ttf in Resources */,
 				18059E1023801E760007CA0A /* LaunchScreen.storyboard in Resources */,
 				8160076123AD48E1004C31F3 /* PreviousReservationTableViewCell.xib in Resources */,
 				8160076623AD4A6C004C31F3 /* CurrentReservationTableViewCell.xib in Resources */,
+				818603F624228B1500DADAE5 /* Cairo-Regular.ttf in Resources */,
 				815A17B923A61FBE001DDBEE /* Localizable.strings in Resources */,
 				18059E0B23801E740007CA0A /* Main.storyboard in Resources */,
 				815A17BE23A63812001DDBEE /* Assets.xcassets in Resources */,
@@ -835,7 +855,7 @@
 				3B14AB74238D22360065EB8C /* AppDelegate.swift in Sources */,
 				3B72024A23950FB60088714B /* SearchAdvancedViewController.swift in Sources */,
 				3B150FBC238E673400272A42 /* MenuViewController.swift in Sources */,
-				814014282393EB7E00B89210 /* model.swift in Sources */,
+				814014282393EB7E00B89210 /* Utilities.swift in Sources */,
 				814014202393057600B89210 /* NewReservationDetailsViewController.swift in Sources */,
 				3B72024D2395206D0088714B /* SearchCellTableViewCell.swift in Sources */,
 				814014242393B9B200B89210 /* ProfileViewController.swift in Sources */,

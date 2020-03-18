@@ -9,20 +9,30 @@
 import UIKit
 import SideMenu
 
-class ProfileViewController: UIViewController , UITabBarControllerDelegate {
+class ProfileViewController: UIViewController {
     //MARK:- IBActions
     @IBOutlet weak var profileImage: UIImageView!{
         didSet{
             Rounded.roundedImage(imageView: profileImage)
         }
     }
+    
+    @IBOutlet var arrowImages: [UIImageView]!{
+        didSet{
+            if "Lang".localized == "ar" {
+                for imagView in arrowImages {
+                    imagView.image = UIImage(named: "rightArrow")?.flippedImage()
+                }
+            }
+        }
+    }
+    
     @IBOutlet weak var name: UILabel!
     let imagePicker = UIImagePickerController()
     
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,16 +59,6 @@ class ProfileViewController: UIViewController , UITabBarControllerDelegate {
             }
         }
     }
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("ssssss")
-        let logedInStatus = Shared.getcheckLogin()
-        if !logedInStatus {
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
-                             vc.modalPresentationStyle = .fullScreen
-                             self.present(vc, animated: true, completion: nil)
-                         }
-        }
-    }
     
     @IBAction func editProfile(_ sender: UIButton) {
         
@@ -75,7 +75,10 @@ class ProfileViewController: UIViewController , UITabBarControllerDelegate {
     }
     
     @IBAction func signOut(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Home") as? HomeViewController {
+            Shared.setcheckLogin(false)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func showMenuPressed(_ sender: UIBarButtonItem) {

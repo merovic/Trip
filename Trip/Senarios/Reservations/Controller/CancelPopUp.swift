@@ -32,6 +32,7 @@ class CancelPopUp: UIViewController {
     
     var id_request: Int?
     var delegate: EndTripDelegate?
+    
     //MARK:- viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.352739726)
@@ -64,5 +65,4 @@ class CancelPopUp: UIViewController {
         self.view.backgroundColor = .clear
         dismiss(animated: true, completion: nil)
     }
-    
 }

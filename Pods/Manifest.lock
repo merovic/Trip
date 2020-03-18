@@ -4,6 +4,16 @@ PODS:
     - moa
   - BEMCheckBox (1.4.1)
   - Cosmos (19.0.3)
+  - FBSDKCoreKit (6.0.0):
+    - FBSDKCoreKit/Basics (= 6.0.0)
+    - FBSDKCoreKit/Core (= 6.0.0)
+  - FBSDKCoreKit/Basics (6.0.0)
+  - FBSDKCoreKit/Core (6.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (6.0.0):
+    - FBSDKLoginKit/Login (= 6.0.0)
+  - FBSDKLoginKit/Login (6.0.0):
+    - FBSDKCoreKit (~> 6.0.0)
   - Firebase/Core (6.13.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.1.6)
@@ -96,9 +106,9 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
   - Protobuf (3.11.1)
-  - SDWebImage (5.4.0):
-    - SDWebImage/Core (= 5.4.0)
-  - SDWebImage/Core (5.4.0)
+  - SDWebImage (5.5.2):
+    - SDWebImage/Core (= 5.5.2)
+  - SDWebImage/Core (5.5.2)
   - SideMenu (6.4.7)
   - SwiftyJSON (4.3.0)
 
@@ -107,6 +117,7 @@ DEPENDENCIES:
   - Auk
   - BEMCheckBox
   - Cosmos (~> 19.0)
+  - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Messaging
   - Firebase/Storage
@@ -123,6 +134,8 @@ SPEC REPOS:
     - Auk
     - BEMCheckBox
     - Cosmos
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -153,6 +166,8 @@ SPEC CHECKSUMS:
   Auk: 7cc533252e2caaaa36b2be19c0b799f6057c365a
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
+  FBSDKCoreKit: fe738b172590e622c86735b45e20d196848b54df
+  FBSDKLoginKit: fa57df1b967fe0e147b25bede6ea4e9cdf4d64be
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
   FirebaseAnalyticsInterop: d48b6ab67bcf016a05e55b71fc39c61c0cb6b7f3
@@ -174,10 +189,10 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   Protobuf: 20d79da7f20b5928b80043b05080b816e802659e
-  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 21b60edd5aeef41e7e33c569ecab8061b35b7ab8
+PODFILE CHECKSUM: 0e279d3d22f99295b95a4659d18c6353c9bf3f4e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0.beta.3

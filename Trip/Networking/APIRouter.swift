@@ -43,11 +43,12 @@ enum APIRouter: URLRequestConvertible {
     case update_car_rate(id_car: Int , number_rate: Double)
     case update_user_rate(id_user: Int , number_rate: Double)
     case update_car( id_car: Int ,id_owner : Int ,owner : String ,image:String,price_rent_per_day : String ,available_date_from : String ,available_date_to : String ,number_km : String ,price_km : String ,price_trip: String ,city : String,area : String,st_name : String,number_hone : String,lon : String,lat : String,number_of_trip : String,model : String,type : String,rate : String)
+    case insert_rate_and_comment_owner(id_user: Int ,id_owner: Int ,number_rate: Double ,comment: String)
+    case show_phone(id_user: Int ,id_owner: Int ,id_car: Int)
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-            
         case .agrre_refuse:
             return .get
         case .forgete_password_by_email:
@@ -111,6 +112,10 @@ enum APIRouter: URLRequestConvertible {
         case .update_user_rate:
             return .get
         case .update_car:
+            return .get
+        case .insert_rate_and_comment_owner:
+            return .get
+        case .show_phone:
             return .get
         }
     }
@@ -183,6 +188,10 @@ enum APIRouter: URLRequestConvertible {
             return "/update_user_rate"
         case .update_car:
             return "/update_car"
+        case .insert_rate_and_comment_owner:
+            return "/insert_rate_and_comment_owner"
+        case .show_phone:
+            return "/check_show_phone"
         }
     }
     
@@ -254,6 +263,10 @@ enum APIRouter: URLRequestConvertible {
             return [K.insert_car.id_owner: id_owner ,K.insert_car.owner: owner ,K.insert_car.image: image ,K.insert_car.price_rent_per_day: price_rent_per_day ,K.insert_car.available_date_from: available_date_from ,K.insert_car.available_date_to: available_date_to ,K.insert_car.number_km: number_km ,K.insert_car.price_km: price_km ,K.insert_car.price_trip: price_trip ,K.insert_car.city: city ,K.insert_car.area: area ,K.insert_car.st_name: st_name ,K.insert_car.number_hone: number_hone ,K.insert_car.lon: lon ,K.insert_car.lat: lat ,K.insert_car.number_of_trip: number_of_trip ,K.insert_car.model: model ,K.insert_car.type: type ,K.insert_car.rate: rate ,K.insert_car.available_time_from: available_time_from , K.insert_car.available_time_to: available_time_to ,K.insert_car.tax: tax]
         case .select_all_car_by_city_and_date(let city ,let available_date_from ,let available_date_to ,let type ):
             return [K.select_all_car_by_city_and_date.city: city ,K.select_all_car_by_city_and_date.available_date_from: available_date_from ,K.select_all_car_by_city_and_date.available_date_to: available_date_to ,K.select_all_car_by_city_and_date.type: type]
+        case .insert_rate_and_comment_owner(let id_user, let id_owner, let number_rate, let comment):
+            return [K.insert_rate_and_comment_owner.id_user: id_user ,K.insert_rate_and_comment_owner.id_onwer: id_owner ,K.insert_rate_and_comment_owner.number_rate: number_rate ,K.insert_rate_and_comment_owner.comment: comment]
+        case .show_phone(let id_user, let id_owner, let id_car):
+            return [K.show_phone.id_user: id_user ,K.show_phone.id_owner: id_owner ,K.show_phone.id_car: id_car]
         }
     }
     

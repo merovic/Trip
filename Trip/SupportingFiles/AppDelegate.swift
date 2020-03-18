@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         FirebaseApp.configure()
         MOLH.shared.activate(true)
         MOLHLanguage.setDefaultLanguage("en")
+        print("DidReset")
         return true
     }
     
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
         let stry = UIStoryboard(name: "Main", bundle: nil)
         rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "TabBar")
+        UIFont.overrideInitialize()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -52,6 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+    override init() {
+        super.init()
+        UIFont.overrideInitialize()
+    }
 }
 

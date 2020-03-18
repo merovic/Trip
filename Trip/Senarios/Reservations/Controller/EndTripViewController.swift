@@ -36,7 +36,7 @@ class EndTripViewController: UIViewController , UITextViewDelegate{
     }
     
     @IBAction func colsedTripBtnPreesed(_ sender: UIButton) {
-        rateUser()
+        rateAndComment()
         cancelBtn(colsedTripBtn)
     }
     
@@ -112,5 +112,19 @@ class EndTripViewController: UIViewController , UITextViewDelegate{
             textView.resignFirstResponder()
         }
         return true
+    }
+    func rateAndComment(){
+        if let owner = requestInfo , let user = Shared.user {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.insertCommentAndRate(id_user: user.id, id_owner: owner.idOwner, number_rate: self?.rate.rating ?? 5, comment: self?.comment.text ?? "") { (result) in
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
 }

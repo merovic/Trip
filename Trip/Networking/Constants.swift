@@ -208,6 +208,18 @@ struct K {
         static let rate = "rate"
     }
     
+    struct insert_rate_and_comment_owner {
+        static let id_user = "id_user"
+        static let id_onwer = "id_onwer"
+        static let number_rate = "number_rate"
+        static let comment = "comment"
+    }
+    
+    struct show_phone {
+        static let id_user = "id_user"
+        static let id_owner = "id_owner"
+        static let id_car = "id_car"
+    }
 }
 
 

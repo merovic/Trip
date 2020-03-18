@@ -29,6 +29,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var licenseView: UIView!
     @IBOutlet weak var licenseViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var backButton: UIButton!{
+        didSet{
+            if "Lang".localized == "ar" {
+                self.backButton.setImage(UIImage(named: "backBlack")?.flippedImage(), for: .normal)
+            }
+        }
+    }
     
     let ImagePicker = UIImagePickerController()
     let currencyPicker = UIPickerView()

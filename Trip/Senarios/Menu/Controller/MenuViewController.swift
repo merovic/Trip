@@ -30,8 +30,16 @@ class MenuViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction func goToProfile(sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
-            self.navigationController?.pushViewController(vc, animated: false)
+        let logged = Shared.getcheckLogin()
+        if logged {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
+                self.navigationController?.pushViewController(vc, animated: false)
+            }
+        } else {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
     
@@ -64,8 +72,8 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
         }
         cell.image1.image = UIImage(named: data.name[indexPath.row])
         if indexPath.row ==  data.name.count - 1 {
-             if Shared.getcheckLogin() == true {
-                cell.Label.text = "Sign Out".localized
+             if Shared.getcheckLogin() == false {
+                cell.Label.text = "Sign In".localized
             }
         }
         return cell
@@ -81,7 +89,6 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
             }
         case 12:
             if Shared.getcheckLogin() == false {
-                print("notLogin\(Shared.getcheckLogin())")
                 if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)

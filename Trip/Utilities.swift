@@ -1,7 +1,11 @@
+
+
+
 import SideMenu
+import MOLH
 
 struct Controllers {
-    var name = ["Browser cars" , "Recent adds" ,"Add car" , "About us" , "Requests" , "Add friend" , "Agreements" , "Help" , "privacy policy" , "Terms & conditions" , "Settings" , "Contact us" , "Sign In"]
+    var name = ["Browser cars" , "Recent adds" ,"Add car" , "About us" , "Requests" , "Add friend" , "Agreements" , "Help" , "Privacy policy" , "Terms & conditions" , "Settings" , "Contact us" , "Sign Out"]
     
     var nameAR = ["تصفح السيارات المعروضة" , "احدث الاعلانات" ,"اضافة سيارة" , "من نحن" , "الطلبات" , "دعوة صديق" , "الاتفاقية" , "المساعدة" , "سياسة الخصوصية" , "شروط الاستخدام" , "اعدادات التطبيق" , "اتصل بنا" , "تسجيل الدخول"]
     
@@ -19,7 +23,7 @@ class Shared {
     static let body:CGFloat = 14
     static let title:CGFloat = 20
     static var checkLogin = "didSignIn"
-
+    
     
     
     static let addressArray =  ["Riydha","Mecca","Dammam","Medina","Jeddah","Ahsaa","Taif","Buraydah","Tabuk","Al-Khuttaif","Khamis Mushayt","Haql","Hafr Al-Batin","Jubail","Khobar","Abha","Najran","Yanbu","Kunfuza","Jizan","Al Kussem","Aseer"]
@@ -38,7 +42,7 @@ class Shared {
         settings.allowPushOfSameClassTwice = false
         settings.menuWidth = view.frame.width-view.frame.width*(1/5)
         
-    
+        
         return settings
     }
     
@@ -49,7 +53,7 @@ class Shared {
         return UserDefaults.standard.bool(forKey: checkLogin)
     }
     
-   static func converDate(date: String) -> [String] {
+    static func converDate(date: String) -> [String] {
         if let firstPracetIndex = date.firstIndex(of: "(") , let lastPracit = date.lastIndex(of: ")") {
             let startIndex = date.index(firstPracetIndex, offsetBy: 1)
             let finalDate = date[startIndex..<lastPracit]
@@ -76,8 +80,81 @@ extension Date {
     var millisecondsSince1970:Int64 {
         return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
     }
-
+    
     init(milliseconds:Int64) {
         self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
+}
+
+struct TripFonts {
+    static let appCustomFont = "localized-Font".localized
+}
+
+extension UIFontDescriptor.AttributeName {
+    static let nsctFontUIUsage = UIFontDescriptor.AttributeName(rawValue: "NSCTFontUIUsageAttribute")
+}
+
+extension UIFont {
+    
+    @objc class func mySystemFont(ofSize size: CGFloat) -> UIFont {
+        
+        return UIFont(name: TripFonts.appCustomFont , size: size)!
+    }
+    
+    @objc class func myBoldSystemFont(ofSize size: CGFloat) -> UIFont {
+        return UIFont(name: TripFonts.appCustomFont, size: size)!
+    }
+    
+    @objc class func myItalicSystemFont(ofSize size: CGFloat) -> UIFont {
+        return UIFont(name: TripFonts.appCustomFont, size: size)!
+    }
+    
+    @objc convenience init(myCoder aDecoder: NSCoder) {
+        guard
+            let fontDescriptor = aDecoder.decodeObject(forKey: "UIFontDescriptor") as? UIFontDescriptor,
+            let fontAttribute = fontDescriptor.fontAttributes[.nsctFontUIUsage] as? String else {
+                self.init(myCoder: aDecoder)
+                return
+        }
+        var fontName = ""
+        switch fontAttribute {
+        case "CTFontRegularUsage":
+            fontName = TripFonts.appCustomFont
+        case "CTFontEmphasizedUsage", "CTFontBoldUsage":
+            fontName = TripFonts.appCustomFont
+        case "CTFontObliqueUsage":
+            fontName = TripFonts.appCustomFont
+        default:
+            fontName = TripFonts.appCustomFont
+        }
+        self.init(name: fontName, size: fontDescriptor.pointSize)!
+    }
+    
+    class func overrideInitialize() {
+        guard self == UIFont.self else { return }
+        
+        if let systemFontMethod = class_getClassMethod(self, #selector(systemFont(ofSize:))),
+            let mySystemFontMethod = class_getClassMethod(self, #selector(mySystemFont(ofSize:))) {
+            method_exchangeImplementations(systemFontMethod, mySystemFontMethod)
+        }
+        
+        if let boldSystemFontMethod = class_getClassMethod(self, #selector(boldSystemFont(ofSize:))),
+            let myBoldSystemFontMethod = class_getClassMethod(self, #selector(myBoldSystemFont(ofSize:))) {
+            method_exchangeImplementations(boldSystemFontMethod, myBoldSystemFontMethod)
+        }
+        
+        if let italicSystemFontMethod = class_getClassMethod(self, #selector(italicSystemFont(ofSize:))),
+            let myItalicSystemFontMethod = class_getClassMethod(self, #selector(myItalicSystemFont(ofSize:))) {
+            method_exchangeImplementations(italicSystemFontMethod, myItalicSystemFontMethod)
+        }
+        
+        if let initCoderMethod = class_getInstanceMethod(self, #selector(UIFontDescriptor.init(coder:))), // Trick to get over the lack of UIFont.init(coder:))
+            let myInitCoderMethod = class_getInstanceMethod(self, #selector(UIFont.init(myCoder:))) {
+            method_exchangeImplementations(initCoderMethod, myInitCoderMethod)
+        }
+    }
+}
+
+extension UIImage {
+    
 }

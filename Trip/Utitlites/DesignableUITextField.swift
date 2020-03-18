@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MOLH
 
 @IBDesignable
-class DesignableUITextField: UITextField {
+class DesignableUITextField: MOLHTextField {
 
     // Provides left padding for images
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
@@ -87,4 +88,5 @@ class DesignableUITextField: UITextField {
         // Placeholder text color
         attributedPlaceholder = NSAttributedString(string: placeholder != nil ?  placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: color])
     }
+    
 }

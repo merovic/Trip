@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var recentCollectionView: UICollectionView!
     @IBOutlet weak var addCar: UIButton!{didSet{Rounded.roundedCornerButton1(button: addCar)}}
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
+    @IBOutlet weak var searchTF: DesignableUITextField!{
+        didSet{
+            searchTF.forceSwitchingRegardlessOfTag = true
+        }
+    }
     
     var latestCars: [Car]?
     var topRatedCars: [Car]?
