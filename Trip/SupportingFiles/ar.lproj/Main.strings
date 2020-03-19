@@ -666,7 +666,7 @@
 "nfV-jM-V7U.text" = "ملاحظة";
 
 /* Class = "UITextField"; placeholder = "Enter E-Mail"; ObjectID = "npt-N0-y4q"; */
-"npt-N0-y4q.placeholder" = "ادخل كلمة المرور";
+"npt-N0-y4q.placeholder" = " البريد الالكتروني";
 
 /* Class = "UILabel"; text = "Tax"; ObjectID = "nzC-lG-M5b"; */
 "nzC-lG-M5b.text" = "الضريبة";
@@ -786,7 +786,7 @@
 "xib-NS-72D.text" = "العرض علي الخريطة";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "yA4-1d-veq"; */
-"yA4-1d-veq.text" = "البريد الاكتؤوني";
+"yA4-1d-veq.text" = "البريد الالكتروني";
 
 /* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "yks-1F-3Ci"; */
 "yks-1F-3Ci.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";

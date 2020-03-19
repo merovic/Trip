@@ -74,6 +74,8 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
         if indexPath.row ==  data.name.count - 1 {
              if Shared.getcheckLogin() == false {
                 cell.Label.text = "Sign In".localized
+             } else {
+                cell.Label.text = "Sign Out".localized
             }
         }
         return cell

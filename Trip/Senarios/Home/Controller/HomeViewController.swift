@@ -31,9 +31,17 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func addCarPressed(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "AddCar") as? AddCarViewController {
-            vc.modalPresentationStyle = .fullScreen
-            navigationController?.pushViewController(vc, animated: true)
+        let logged = Shared.getcheckLogin()
+        if logged {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "AddCar") as? AddCarViewController {
+                vc.modalPresentationStyle = .fullScreen
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
     

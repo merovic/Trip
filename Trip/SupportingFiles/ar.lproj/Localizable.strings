@@ -42,3 +42,9 @@
 "Sign In" = "تسجيل الدخول ";
 "Sign Out" = "تسجيل الخروج";
 "localized-Font" = "Cairo-Regular";
+"Account Regestered Successfully" = "تم تسجيل الدخول بنجاح";
+"Couldn't Create Account" = "لم يتم التسجيل";
+"Can't create Account ,please check your connection" = "لم يتم تسجيل الدخول ,برجاء التاكد من الاتصال بالانترنت";
+"Thank You ,request accepted successfully" = "شكرا لك ,تم قبول الطلب بنجاح";
+"Request Refused Successfully" = "تم رفض الطلب بنجاح";
+"OK" = "حسنا";

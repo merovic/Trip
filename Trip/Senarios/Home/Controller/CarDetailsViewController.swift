@@ -65,7 +65,7 @@ class CarDetailsViewController: UIViewController {
         } else {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "LogIn") as? LogInViewController {
                 vc.modalPresentationStyle = .fullScreen
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.present(vc, animated: true, completion: nil)
             }
         }
         

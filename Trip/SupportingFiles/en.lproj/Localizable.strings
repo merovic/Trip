@@ -42,3 +42,9 @@
 "Sign In" = "SignIn";
 "Sign Out" = "SignOut";
 "localized-Font" = "OpenSans-SemiBold";
+"Account Regestered Successfully" = "Account Regestered Successfully";
+"Couldn't Create Account" = "Couldn't Create Account";
+"Can't create Account ,please check your connection" = "Can't create Account ,please check your connection";
+"hank You ,request accepted successfully" = "hank You ,request accepted successfully";
+"Request Refused Successfully" = "Request Refused Successfully";
+"OK" = "OK";

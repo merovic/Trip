@@ -8,7 +8,7 @@
 
 import UIKit
 import BEMCheckBox
-
+import NVActivityIndicatorView
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var nameTF: UITextField!
@@ -90,19 +90,23 @@ class RegisterViewController: UIViewController {
     
     func registerNow(){
         if let name = nameTF.text , nameTF.text != "" , let address = addressTF.text , addressTF.text != "", let phone = phoneTf.text , phoneTf.text != "" , let password = passwordTF.text , passwordTF.text != "", passwordComfirmTF.text == passwordTF.text , let email = mailTF.text , mailTF.text != "" {
+            self.startAnimating()
             DispatchQueue.main.async {
                 APIClient.register(name: name, email: email, password: password, phone: phone, address: address, license: Shared.Image ?? "", rate: "5") { (Result) in
                     switch Result{
                     case .success(let response):
                         print(response)
+                        self.stopAnimating()
                         if response != "True" {
-                            Alert.show("Error", massege: response, context: self)
+                            Alert.show("Error".localized, massege: "Couldn't Create Account".localized, context: self)
                         } else {
-                            Alert.show("Done".localized, massege: "", context: self)
+                            Alert.show("Done".localized, massege: "Account Regestered Successfully".localized, context: self) { (action) in
+                                self.logInToHome()
+                            }
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
-                        Alert.show("Failed".localized, massege: error.localizedDescription, context: self)
+                        Alert.show("Failed".localized, massege: "Can't create Account ,please check your connection".localized, context: self)
                     }
                 }
             }
@@ -113,6 +117,36 @@ class RegisterViewController: UIViewController {
             Alert.show("Error".localized, massege: "All Fields Are Required".localized, context: self)
         }
     }
+    
+    func logInToHome() {
+            self.startAnimating()
+            if mailTF.text != nil , passwordTF.text != nil , mailTF.text != "" , passwordTF.text != ""   {
+                DispatchQueue.main.async { [weak self ] in
+                    APIClient.logIn(email: self?.mailTF.text ?? "", password: self?.passwordTF.text ?? "") { (Result) in
+                        switch Result {
+                        case .success(let response):
+                            print(response)
+                            Shared.user = response.first
+                            Shared.setcheckLogin(true)
+                            self?.stopAnimating()
+                            self?.performSegue(withIdentifier: "Log In", sender: self)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                            self?.stopAnimating()
+                            if error.localizedDescription == "The Internet connection appears to be offline" {
+                                
+                            } else {
+                                 Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
+                            }
+                        }
+                    }
+                }
+            }
+            else {
+                self.stopAnimating()
+                Alert.show("Error".localized, massege: "Enter Your Email And Password".localized, context: self)
+            }
+        }
     
     func doneButtonForCitiesPicker(for textField: UITextField){
         textField.inputView = currencyPicker
@@ -147,10 +181,18 @@ class RegisterViewController: UIViewController {
         licenseViewHeight.constant = 0
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Log In" {
+            if let vc = segue.destination as? TabBarViewController {
+                vc.modalPresentationStyle = .fullScreen
+            }
+        }
+    }
+    
 }
 
 //MARK:- imagePicker setUp
-extension RegisterViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate {
+extension RegisterViewController: UINavigationControllerDelegate , UIImagePickerControllerDelegate ,NVActivityIndicatorViewable{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         _ = FirebaseUploader.uploadToFirebase(viewController: self, imagePicker: ImagePicker, didFinishPickingMediaWithInfo: info, completion: nil)
     }
