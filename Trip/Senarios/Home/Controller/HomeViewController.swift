@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("fghjkl;'wdahgxjkwsldxnksm\(Shared.getcheckLogin())")
+        print(Shared.user)
         getCars()
     }
     override func viewDidAppear(_ animated: Bool) {

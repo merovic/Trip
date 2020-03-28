@@ -36,17 +36,17 @@ class ReserveTripViewController: UIViewController {
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
+        print(Shared.user)
         if let user = Shared.user {
             let currentDate = Date()
             let dateformter = DateFormatter()
             dateformter.dateStyle = .short
             let date = dateformter.string(from: currentDate)
-            
             APIClient.addRequest(id_user: user.id, id_owner: reservationDetails?.id_owner ?? 0, id_car: reservationDetails?.id ?? 0, message: "New Car Rent Request", datee: date) { (Result) in
                 switch Result {
                 case .success(let response):
                     print(response)
-                    self.showAlert(title: "", message: "Success".localized)
+                    self.showAlert(title: "", message: "Booked successfully".localized)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

@@ -23,6 +23,7 @@ class Shared {
     static let body:CGFloat = 14
     static let title:CGFloat = 20
     static var checkLogin = "didSignIn"
+
     
     
     
@@ -52,6 +53,7 @@ class Shared {
     static func getcheckLogin() ->Bool{
         return UserDefaults.standard.bool(forKey: checkLogin)
     }
+    
     
     static func converDate(date: String) -> [String] {
         if let firstPracetIndex = date.firstIndex(of: "(") , let lastPracit = date.lastIndex(of: ")") {
