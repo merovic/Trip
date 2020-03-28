@@ -24,7 +24,7 @@ class SearchNormalViewController: UIViewController {
     }
     
     var arrayText = ["egy" , "bra" , "alg" , "mrc" ]
-    
+    var allCarsByCity  : AllCarsByCity?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +35,9 @@ class SearchNormalViewController: UIViewController {
     }
     
     @IBAction func searchBtnPressed(_ sender: UIButton) {
+        /*
         if searchTF.text != "" {
+            
             DispatchQueue.main.async { [weak self] in
                 APIClient.getAllCarsByCity(city: self?.searchTF.text ?? "") { (Result) in
                     switch Result {
@@ -47,23 +49,46 @@ class SearchNormalViewController: UIViewController {
                 }
             }
         }
+ */
+            
+        getSearch()
+    }
+    
+    func getSearch()  {
+        if searchTF.text != "" {
+            DispatchQueue.main.async { [weak self] in
+                APIClient.getAllCarsByCityModel(city: self?.searchTF.text ?? "") { (Result) in
+                    switch Result {
+                    case .success(let response):
+                       // print(response)
+                        self?.allCarsByCity = response
+                        print(self?.allCarsByCity)
+                        self?.searchTableView.reloadData()
+
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        Alert.show("Error".localized, massege: "Enter the city name correctly".localized, context: self!)
+                    }
+                }
+            }
+        }
     }
     
 }
 
 extension SearchNormalViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayText.count
+        return allCarsByCity?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = tableView.dequeueReusableCell(withIdentifier: "SearchCellTableViewCell", for: indexPath) as! SearchCellTableViewCell
-        cell.textLable.text = arrayText[indexPath.row]
+        cell.textLable.text = allCarsByCity?[indexPath.row].owner
                  return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchTF.text = arrayText[indexPath.row]
+        searchTF.text = allCarsByCity?[indexPath.row].owner
     }
     
 }

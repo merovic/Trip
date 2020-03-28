@@ -95,17 +95,26 @@ class APIClient {
         performRequest(route: APIRouter.select_all_cars(number_of_select: number_of_select), completion: completion)
     }
     
+    
     static func getAllCarsById(id : Int ,completion: @escaping (Result<[Car],AFError>)->Void){
         performRequest(route: APIRouter.select_all_car_by_id(id: id), completion: completion)
+    }
+    
+    static func getAllCarsByCityModel(city : String ,completion: @escaping (Result<AllCarsByCity,AFError>)->Void) {
+        performRequest(route: APIRouter.select_all_car_by_city(city: city), completion: completion)
     }
     
     static func getAllCarsByCityAndDate(city: String ,available_date_from: String , available_date_to: String , type: String ,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.select_all_car_by_city_and_date(city: city, available_date_from: available_date_from, available_date_to: available_date_to, type: type), completion: completion)
     }
     
+    
+    
     static func getAllCarsByCity(city : String ,completion: @escaping (Result<String,AFError>)->Void) {
         performRequestSimple(route: APIRouter.select_all_car_by_city(city: city), completion: completion)
     }
+    
+    
     
     static func addNote(id_user:Int ,id_owner:Int , id_car:Int , title:String , details:String , datee:String ,completion: @escaping (Result<String,AFError>)->Void){
         performRequestSimple(route: APIRouter.insert_note_car(id_user: id_user, id_owner: id_owner, id_car: id_car, title: title, details: details, datee: datee), completion: completion)

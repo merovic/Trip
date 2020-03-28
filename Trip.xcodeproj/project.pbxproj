@@ -32,6 +32,7 @@
 		3B72024823950F810088714B /* SearchNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024723950F810088714B /* SearchNormalViewController.swift */; };
 		3B72024A23950FB60088714B /* SearchAdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024923950FB60088714B /* SearchAdvancedViewController.swift */; };
 		3B72024D2395206D0088714B /* SearchCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72024C2395206D0088714B /* SearchCellTableViewCell.swift */; };
+		3B9B3D75242FE437003B1512 /* AllCarsByCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B3D74242FE437003B1512 /* AllCarsByCity.swift */; };
 		6853591C1B8BBFBEC058E730 /* Pods_Trip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C4BBEA25965A0590A26ECF /* Pods_Trip.framework */; };
 		7274CDF3E11DAA7FE550425A /* Pods_TripUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00D0E18D77A60A26CF40F60 /* Pods_TripUITests.framework */; };
 		81034E58238FC02A00A9AC53 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81034E57238FC02A00A9AC53 /* LogInViewController.swift */; };
@@ -132,6 +133,7 @@
 		3B72024723950F810088714B /* SearchNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNormalViewController.swift; sourceTree = "<group>"; };
 		3B72024923950FB60088714B /* SearchAdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdvancedViewController.swift; sourceTree = "<group>"; };
 		3B72024C2395206D0088714B /* SearchCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellTableViewCell.swift; sourceTree = "<group>"; };
+		3B9B3D74242FE437003B1512 /* AllCarsByCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsByCity.swift; sourceTree = "<group>"; };
 		651A078D2B566B6D10F44B67 /* Pods-Trip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trip.debug.xcconfig"; path = "Target Support Files/Pods-Trip/Pods-Trip.debug.xcconfig"; sourceTree = "<group>"; };
 		74D56256D24FE49A85310761 /* Pods-TripUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripUITests/Pods-TripUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B9C62475F4CD85454C33673 /* Pods-TripUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripUITests.release.xcconfig"; path = "Target Support Files/Pods-TripUITests/Pods-TripUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		3B1414EB239420EF003DD08C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				3B9B3D73242FE420003B1512 /* Model */,
 				3B72024B239520440088714B /* View */,
 				3B1414EC239420FB003DD08C /* Controller */,
 			);
@@ -428,6 +431,14 @@
 				3B72024C2395206D0088714B /* SearchCellTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3B9B3D73242FE420003B1512 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B3D74242FE437003B1512 /* AllCarsByCity.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6C5768CC5D8326E1553CA698 /* Pods */ = {
@@ -899,6 +910,7 @@
 				814014262393BABD00B89210 /* EditCarDetailsViewController.swift in Sources */,
 				8140141E2393026400B89210 /* ReservationDetailsViewController.swift in Sources */,
 				819A19CA23F3629A00408E08 /* APIRouter.swift in Sources */,
+				3B9B3D75242FE437003B1512 /* AllCarsByCity.swift in Sources */,
 				3B0BC9C1238FC9BD00CDED5A /* ReservationViewController.swift in Sources */,
 				813E55CB239E60AD0043329A /* RequestAgree.swift in Sources */,
 				3B0BC9C8238FCB2900CDED5A /* CurrentReservationTableViewCell.swift in Sources */,
