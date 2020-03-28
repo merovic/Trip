@@ -95,11 +95,6 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>FirebaseInstallations.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>33</integer>
-		</dict>
 		<key>FirebaseInstanceID.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -163,11 +158,6 @@
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
-		<key>LocationPicker.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>34</integer>
-		</dict>
 		<key>MOLH.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -202,11 +192,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>28</integer>
-		</dict>
-		<key>PromisesObjC.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>35</integer>
 		</dict>
 		<key>Protobuf.xcscheme</key>
 		<dict>

@@ -29,6 +29,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         getCars()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getCars()
+    }
     
     @IBAction func addCarPressed(_ sender: UIButton) {
         let logged = Shared.getcheckLogin()

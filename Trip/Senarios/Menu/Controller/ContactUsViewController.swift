@@ -29,7 +29,10 @@ class ContactUsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        message.text = "Type message here".localized
     }
+    
+   
     
     
     @IBAction func sendPressed(_ sender: UIButton) {

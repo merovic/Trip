@@ -12,6 +12,8 @@ import BEMCheckBox
 class SearchViewController: UIViewController {
     weak var currentViewController : UIViewController?
     
+    @IBOutlet weak var searchLbl: UILabel!
+    @IBOutlet weak var advancedSearchLbl: UILabel!
     @IBOutlet weak var advanSearchChk: BEMCheckBox!
     @IBOutlet weak var searchChk: BEMCheckBox!
     @IBOutlet weak var bigView: UIView!
@@ -19,12 +21,16 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateDesign()
         self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchNormalViewController")
         self.currentViewController?.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(self.currentViewController!)
         self.addSubview(subView: self.currentViewController!.view, toView: self.bigView)
         super.viewDidLoad()
+    }
+    func updateDesign()  {
+        searchLbl.text = "Search".localized
+        advancedSearchLbl.text = "Advanced Search".localized
     }
     
     @IBAction func chechSearch(_ sender: BEMCheckBox) {
