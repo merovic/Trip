@@ -5,7 +5,7 @@ import SideMenu
 import MOLH
 
 struct Controllers {
-    var name = ["Browser cars" , "Recent adds" ,"Add car" , "About us" , "Requests" , "Add friend" , "Agreements" , "help" , "Privacy policy" , "Terms & conditions" , "Settings" , "Contact us" , "Sign Out"]
+    var name = ["Browser cars" , "Recent adds" ,"Add car" , "About us" , "Requests" , "Add friend" , "Agreements" , "Help" , "Privacy policy" , "Terms & conditions" , "Settings" , "Contact us" , "Sign Out"]
     
     var nameAR = ["تصفح السيارات المعروضة" , "احدث الاعلانات" ,"اضافة سيارة" , "من نحن" , "الطلبات" , "دعوة صديق" , "الاتفاقية" , "المساعدة" , "سياسة الخصوصية" , "شروط الاستخدام" , "اعدادات التطبيق" , "اتصل بنا" , "تسجيل الدخول"]
     
