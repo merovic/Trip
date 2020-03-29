@@ -96,6 +96,7 @@ extension UIFontDescriptor.AttributeName {
     static let nsctFontUIUsage = UIFontDescriptor.AttributeName(rawValue: "NSCTFontUIUsageAttribute")
 }
 
+
 extension UIFont {
     
     @objc class func mySystemFont(ofSize size: CGFloat) -> UIFont {
@@ -132,6 +133,7 @@ extension UIFont {
         self.init(name: fontName, size: fontDescriptor.pointSize)!
     }
     
+//    @available(iOS 12.0, *)
     class func overrideInitialize() {
         guard self == UIFont.self else { return }
         
@@ -155,8 +157,4 @@ extension UIFont {
             method_exchangeImplementations(initCoderMethod, myInitCoderMethod)
         }
     }
-}
-
-extension UIImage {
-    
 }

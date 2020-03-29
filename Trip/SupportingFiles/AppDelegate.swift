@@ -15,10 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UIFont.overrideInitialize()
         FirebaseApp.configure()
         MOLH.shared.activate(true)
-        MOLHLanguage.setDefaultLanguage("en")
-        print("DidReset")
+        MOLHLanguage.setDefaultLanguage("ar")
         return true
     }
     
@@ -50,11 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate , MOLHResetable {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         Shared.setcheckLogin(false)
-    }
-    
-    override init() {
-        super.init()
-        UIFont.overrideInitialize()
     }
 }
 
