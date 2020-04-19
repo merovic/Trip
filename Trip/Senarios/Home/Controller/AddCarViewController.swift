@@ -238,26 +238,56 @@ extension AddCarViewController: UIPickerViewDataSource , UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
+
         if flag == 1 {
-            return Shared.modelArray[row]
-        } else if flag == 2 {
-            return Shared.colorArray[row]
-        } else {
-            return Shared.addressArray[row]
-        }
+                   return Shared.modelArray[row]
+               } else if flag == 2 {
+                   if "Lang".localized == "en" {
+                       return Shared.colorArray[row]
+                   } else if "Lang".localized == "ar"  {
+                       return Shared.colorArrayAr[row]
+                   }
+                   return Shared.colorArrayAr[row]
+                   
+               } else {
+                   if "Lang".localized == "en" {
+                       return Shared.addressArray[row]
+                   } else if "Lang".localized == "ar"  {
+                       return Shared.addressArrayAr[row]
+                   }
+                   return Shared.addressArrayAr[row]
+                   
+               }
         
     }
     
     //MARK:- didSelectRow for pickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+        
         if flag == 1 {
-            model.text = Shared.modelArray[row]
-        } else if flag == 2 {
-            color.textColor = UIColor(named: Shared.colorArray[row])
-            color.text =  Shared.colorArray[row]
-        } else {
-            city.text = Shared.addressArray[row]
-        }
+                   model.text = Shared.modelArray[row]
+               } else if flag == 2 {
+                   if "Lang".localized == "en" {
+                       color.textColor = UIColor(named: Shared.colorArray[row])
+                       color.text =  Shared.colorArray[row]
+                       
+                   }
+                   else if "Lang".localized == "ar"  {
+                       color.textColor = UIColor(named: Shared.colorArrayAr[row])
+                       color.text =  Shared.colorArrayAr[row]                       }
+                   
+               } else {
+                   
+                   if "Lang".localized == "en" {
+                       city.text = Shared.addressArray[row]
+                   } else if "Lang".localized == "ar"  {
+                       city.text = Shared.addressArrayAr[row]
+                   }
+                   
+                   
+               }
+               
     }
 }
 
