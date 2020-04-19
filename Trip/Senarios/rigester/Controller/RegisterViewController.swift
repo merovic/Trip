@@ -119,34 +119,37 @@ class RegisterViewController: UIViewController {
     }
     
     func logInToHome() {
-            self.startAnimating()
-            if mailTF.text != nil , passwordTF.text != nil , mailTF.text != "" , passwordTF.text != ""   {
-                DispatchQueue.main.async { [weak self ] in
-                    APIClient.logIn(email: self?.mailTF.text ?? "", password: self?.passwordTF.text ?? "") { (Result) in
-                        switch Result {
-                        case .success(let response):
-                            print(response)
-                            Shared.user = response.first
-                            Shared.setcheckLogin(true)
-                            self?.stopAnimating()
-                            self?.performSegue(withIdentifier: "Log In", sender: self)
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                            self?.stopAnimating()
-                            if error.localizedDescription == "The Internet connection appears to be offline" {
-                                
-                            } else {
-                                 Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
-                            }
+        self.startAnimating()
+        if mailTF.text != nil , passwordTF.text != nil , mailTF.text != "" , passwordTF.text != ""   {
+            DispatchQueue.main.async { [weak self ] in
+                APIClient.logIn(email: self?.mailTF.text ?? "", password: self?.passwordTF.text ?? "") { (Result) in
+                    switch Result {
+                    case .success(let response):
+                        print(response)
+                        Shared.user = response.first
+                        Shared.setcheckLogin(true)
+                        Shared.setname(response.first!.name)
+                        Shared.setemail(response.first!.email)
+                        Shared.seteimage(response.first!.img!)
+                        self?.stopAnimating()
+                        self?.performSegue(withIdentifier: "Log In", sender: self)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        self?.stopAnimating()
+                        if error.localizedDescription == "The Internet connection appears to be offline" {
+                            
+                        } else {
+                            Alert.show("Failed".localized, massege: "Wrong Email or Password".localized , context: self!)
                         }
                     }
                 }
             }
-            else {
-                self.stopAnimating()
-                Alert.show("Error".localized, massege: "Enter Your Email And Password".localized, context: self)
-            }
         }
+        else {
+            self.stopAnimating()
+            Alert.show("Error".localized, massege: "Enter Your Email And Password".localized, context: self)
+        }
+    }
     
     func doneButtonForCitiesPicker(for textField: UITextField){
         textField.inputView = currencyPicker
@@ -213,11 +216,22 @@ extension RegisterViewController: UIPickerViewDataSource , UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Shared.addressArray[row]
+        if "Lang".localized == "en" {
+                   return Shared.addressArray[row]
+               } else if "Lang".localized == "ar"  {
+                   return Shared.addressArrayAr[row]
+               }
+        return Shared.addressArrayAr[row]
+
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        addressTF.text = Shared.addressArray[row]
+        if "Lang".localized == "en" {
+            addressTF.text = Shared.addressArray[row]
+        } else if "Lang".localized == "ar"  {
+            addressTF.text = Shared.addressArrayAr[row]
+        }
+        
     }
 }
 

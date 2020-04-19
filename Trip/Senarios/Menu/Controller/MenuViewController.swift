@@ -25,6 +25,8 @@ class MenuViewController: UIViewController {
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Shared.user?.name)
+        nameLbl.text = Shared.getname()
         updateView()
     }
     
@@ -49,7 +51,7 @@ class MenuViewController: UIViewController {
     
     func updateView(){
         if let user = Shared.user {
-            nameLbl.text = user.name
+            //nameLbl.text = user.name
             profileImage.sd_setImage(with: URL(string: user.img ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
         }
     }
@@ -98,6 +100,9 @@ extension MenuViewController: UITableViewDelegate , UITableViewDataSource {
             }else {
                 Shared.setcheckLogin(false)
                 Shared.user = nil
+                Shared.setname("")
+                Shared.setemail("")
+                Shared.seteimage("")
                 dismiss(animated: true, completion: nil)
             }
             

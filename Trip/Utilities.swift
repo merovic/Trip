@@ -23,12 +23,22 @@ class Shared {
     static let body:CGFloat = 14
     static let title:CGFloat = 20
     static var checkLogin = "didSignIn"
+    static var names = "name"
+    static var emails = "email"
+    static var images = "image"
+
+    
 
     
     
     
-    static let addressArray =  ["Riydha","Mecca","Dammam","Medina","Jeddah","Ahsaa","Taif","Buraydah","Tabuk","Al-Khuttaif","Khamis Mushayt","Haql","Hafr Al-Batin","Jubail","Khobar","Abha","Najran","Yanbu","Kunfuza","Jizan","Al Kussem","Aseer"]
+    static let addressArray =  ["Riydha","Mecca","Dammam","Medina","Jeddah","Ahsaa","Taif","Buraydah","Tabuk","Al-Khuttaif","Khamis Mushayt","Haql","Hafr Al-Batin","Jubail","Khobar","Abha","Najran","Yanbu","Jizan","Al Kussem","Aseer"]
+    
+     static let addressArrayAr =  ["الرياض","مكه","الدمام","المدينه","جدة","الأحساء","الطائف","بريدة","تبوك","الخطاف","خميس مشيط","حقل","حفر الباطن","الجبيل","مدينه الخبر","أبها","نجران","ينبع","جيزان","القصيم","عسير"]
+    
+    
     static let colorArray = ["Brown","blue","Black","Green","Gray","Orange" ,"Pink", "Purple", "Red ","White","Yellow"]
+     static let colorArrayAr = ["بني","أزرق","اسود","اخضر","رمادي","برتقالي" ,"بينك", "أرجواني", "احمر ","ابيض","اصفر"]
     
     static let modelArray = ["Toyota","Ford","Chevrolet","Nissan","Hyundai","Lexus","GMC","Trucks","Mercedes Benz","Honda","BMW","Spar Parts","Tanks","Kia","Dodge","Chrysler","Jeep","Mitsubishi","Mazda","Land Rover","Isuzu","Cadillac","Porsche","Audi","Suzuki","Infinity","Hammer","Lincoln","Volkswagen","Daihatsu","Jelly","Mercury","Volvo","Peugeot","Bentley","Jaguar","Subaru","MG","ZXO","Renault","Buick","Maserati","RollsRoyce","Lamborghini","Opel","Skoda","Ferrari","Citroen","Cherry","Seat","Daewoo","Saab","Fiat","Ssangyong","Aston Martin","Proton","Smashed Cars","Cars for Surrender","Traditional Cars"]
     
@@ -53,6 +63,25 @@ class Shared {
     static func getcheckLogin() ->Bool{
         return UserDefaults.standard.bool(forKey: checkLogin)
     }
+    
+    static func setname (_ name: String){
+          UserDefaults.standard.set(name, forKey: names)
+      }
+      static func getname() ->String{
+        return UserDefaults.standard.string(forKey: names) ?? ""
+      }
+    static func setemail (_ email: String){
+             UserDefaults.standard.set(email, forKey: emails)
+         }
+         static func getemail() ->String{
+           return UserDefaults.standard.string(forKey: emails) ?? ""
+         }
+    static func seteimage (_ image: String){
+                UserDefaults.standard.set(image, forKey: images)
+            }
+            static func getimage() ->String{
+              return UserDefaults.standard.string(forKey: images) ?? ""
+            }
     
     
     static func converDate(date: String) -> [String] {

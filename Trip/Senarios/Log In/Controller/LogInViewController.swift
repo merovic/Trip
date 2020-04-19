@@ -60,6 +60,9 @@ class LogInViewController: UIViewController, NVActivityIndicatorViewable{
                         print(response)
                         Shared.user = response.first
                         Shared.setcheckLogin(true)
+                        Shared.setname(response.first!.name)
+                        Shared.setemail(response.first!.email)
+                        Shared.seteimage(response.first!.img!)
                         self?.stopAnimating()
                         self?.dismiss(animated: true, completion: nil)
 //                        self?.performSegue(withIdentifier: "Log In", sender: self)

@@ -38,16 +38,16 @@ class EditCarDetailsViewController: UIViewController {
     @IBOutlet weak var detailsDescription: UITextView!
     let ImagePicker = UIImagePickerController()
     let currencyPicker = UIPickerView()
-     var datePicker = UIDatePicker()
-   
+    var datePicker = UIDatePicker()
+    
     var flag =  0
     var dataFlag = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
         
-       //doneButtonForCitiesPicker(for: model)
+        //doneButtonForCitiesPicker(for: model)
         
         
     }
@@ -65,7 +65,7 @@ class EditCarDetailsViewController: UIViewController {
     }
     
     
-  
+    
     
     func openDatePicker(for textField: UITextField) {
         datePicker.datePickerMode = .date
@@ -82,10 +82,10 @@ class EditCarDetailsViewController: UIViewController {
         dateformter.dateStyle = .short
         dateformter.dateFormat = Shared.dateFormate
         if dataFlag == false {
-        dateFrom.text = dateformter.string(from: datePicker.date)
+            dateFrom.text = dateformter.string(from: datePicker.date)
         } else {
             dateTo.text = dateformter.string(from: datePicker.date)
-
+            
         }
         self.view.endEditing(true)
         
@@ -107,7 +107,7 @@ class EditCarDetailsViewController: UIViewController {
     
     @IBAction func attachPressed(_ sender: UIButton) {
         present(ImagePicker, animated: true, completion: nil)
-
+        
     }
     @IBAction func menuPressed(_ sender: UIBarButtonItem) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") {
@@ -166,9 +166,21 @@ extension EditCarDetailsViewController: UIPickerViewDataSource , UIPickerViewDel
         if flag == 1 {
             return Shared.modelArray[row]
         } else if flag == 2 {
-            return Shared.colorArray[row]
+            if "Lang".localized == "en" {
+                return Shared.colorArray[row]
+            } else if "Lang".localized == "ar"  {
+                return Shared.colorArrayAr[row]
+            }
+            return Shared.colorArrayAr[row]
+            
         } else {
-            return Shared.addressArray[row]
+            if "Lang".localized == "en" {
+                return Shared.addressArray[row]
+            } else if "Lang".localized == "ar"  {
+                return Shared.addressArrayAr[row]
+            }
+            return Shared.addressArrayAr[row]
+            
         }
         
     }
@@ -176,10 +188,24 @@ extension EditCarDetailsViewController: UIPickerViewDataSource , UIPickerViewDel
         if flag == 1 {
             model.text = Shared.modelArray[row]
         } else if flag == 2 {
-            color.textColor = UIColor(named: Shared.colorArray[row])
-            color.text =  Shared.colorArray[row]
+            if "Lang".localized == "en" {
+                color.textColor = UIColor(named: Shared.colorArray[row])
+                color.text =  Shared.colorArray[row]
+                
+            }
+            else if "Lang".localized == "ar"  {
+                color.textColor = UIColor(named: Shared.colorArrayAr[row])
+                color.text =  Shared.colorArrayAr[row]                       }
+            
         } else {
-            city.text = Shared.addressArray[row]
+            
+            if "Lang".localized == "en" {
+                city.text = Shared.addressArray[row]
+            } else if "Lang".localized == "ar"  {
+                city.text = Shared.addressArrayAr[row]
+            }
+            
+            
         }
         
         

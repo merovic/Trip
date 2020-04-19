@@ -23,11 +23,16 @@ class SearchNormalViewController: UIViewController {
         }
     }
     
-    var arrayText = ["egy" , "bra" , "alg" , "mrc" ]
+    let currencyPicker = UIPickerView()
+    
     var allCarsByCity  : AllCarsByCity?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        doneButtonForCitiesPicker(for: searchTF)
+        searchTF.delegate = self
+        currencyPicker.delegate = self
+        currencyPicker.dataSource = self
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -35,23 +40,22 @@ class SearchNormalViewController: UIViewController {
     }
     
     @IBAction func searchBtnPressed(_ sender: UIButton) {
-        /*
-        if searchTF.text != "" {
-            
-            DispatchQueue.main.async { [weak self] in
-                APIClient.getAllCarsByCity(city: self?.searchTF.text ?? "") { (Result) in
-                    switch Result {
-                    case .success(let response):
-                        print(response)
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
- */
-            
         getSearch()
+    }
+    
+    
+    func doneButtonForCitiesPicker(for textField: UITextField){
+        textField.inputView = currencyPicker
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneCityPicker));
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        textField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneCityPicker(){
+        self.view.endEditing(true)
     }
     
     func getSearch()  {
@@ -60,11 +64,11 @@ class SearchNormalViewController: UIViewController {
                 APIClient.getAllCarsByCityModel(city: self?.searchTF.text ?? "") { (Result) in
                     switch Result {
                     case .success(let response):
-                       // print(response)
+                        // print(response)
                         self?.allCarsByCity = response
                         print(self?.allCarsByCity)
                         self?.searchTableView.reloadData()
-
+                        
                     case .failure(let error):
                         print(error.localizedDescription)
                         Alert.show("Error".localized, massege: "Enter the city name correctly".localized, context: self!)
@@ -84,11 +88,41 @@ extension SearchNormalViewController : UITableViewDelegate , UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = tableView.dequeueReusableCell(withIdentifier: "SearchCellTableViewCell", for: indexPath) as! SearchCellTableViewCell
         cell.textLable.text = allCarsByCity?[indexPath.row].owner
-                 return cell
+        return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchTF.text = allCarsByCity?[indexPath.row].owner
     }
     
+}
+
+
+
+//MARK:- pickerView setUp
+extension SearchNormalViewController: UIPickerViewDataSource , UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Shared.addressArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if "Lang".localized == "en" {
+            return Shared.addressArray[row]
+        } else if "Lang".localized == "ar"  {
+            return Shared.addressArrayAr[row]
+        }
+         return Shared.addressArrayAr[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if "Lang".localized == "en" {
+            searchTF.text = Shared.addressArray[row]
+        } else if "Lang".localized == "ar"  {
+            searchTF.text = Shared.addressArrayAr[row]
+        }
+    }
 }

@@ -33,11 +33,19 @@ class ProfileViewController: UIViewController {
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        update()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateData()
     }
+    
+    func update()  {
+        name.text = Shared.getname()
+        profileImage.sd_setImage(with: URL(string: Shared.getimage() ?? ""), placeholderImage: UIImage(named: "userPlaceholder"))
+        
+    }
+    
     
     //MARK:- Update Data
     func updateData(){
