@@ -37,6 +37,20 @@ class CarDetailsViewController: UIViewController {
     }
     
     var carDetails: Car?
+    var lat : String?
+    var long  : String?
+    var models : String?
+    var available_date_from : String?
+    var available_date_to : String?
+    var price_rent_per_day : String?
+    var owner : String?
+    var city : String?
+    var area : String?
+    var rates : String?
+    var number_of_trip : String?
+    var available_time_from : String?
+    var available_time_to : String?
+    
     
     //MARK:- viewDidLoad
     override func viewDidLoad() {
@@ -50,6 +64,9 @@ class CarDetailsViewController: UIViewController {
     //MARK:- Open location in Maps app
     @IBAction func showMaps(_ sender: UIButton) {
         if let lat = carDetails?.lat , let long = carDetails?.lon , let model = carDetails?.model{
+            Maps.openMaps(lat: lat , long: long , distance: 1000, name: model)
+        }
+        if let lat = lat , let long = long , let model = models{
             Maps.openMaps(lat: lat , long: long , distance: 1000, name: model)
         }
     }
@@ -104,6 +121,25 @@ class CarDetailsViewController: UIViewController {
                 rate.rating = rating
             }
         }
+        
+        if let available_date_from = available_date_from ,let available_date_to = available_date_to ,let owner = owner , let models = models  , let price_rent_per_day = price_rent_per_day , let city = city , let area = area , let rates = rates , let number_of_trip = number_of_trip , let  available_time_from = available_time_from , let available_time_to = available_time_to {
+                   let availableDateFrom = Shared.converDate(date: available_date_from)
+                   let availableDateTo = Shared.converDate(date:available_date_to)
+                   
+                   price.attributedText = NSAttributedString.withDualText(text1: price_rent_per_day, ofSizeText1: 28, text2: "SR/Day".localized, ofSizeText2: 14)
+                   name.text = owner
+                   model.text = models
+                   from.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: Shared.body, text2: availableDateFrom[0], ofSizeText2: Shared.Header)
+                   to.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: Shared.body, text2: availableDateTo[0], ofSizeText2: Shared.Header)
+                   address.text = "\(city) ,\(area)"
+                   tripsNum.attributedText = NSAttributedString.withDualText(text1: number_of_trip, ofSizeText1: 14, text2: "Trips".localized, ofSizeText2: 10)
+                   fromHour.attributedText = NSAttributedString.withDualText2(text1: "From".localized, ofSizeText1: 10, text2: available_time_from, ofSizeText2: 14)
+                   toHour.attributedText = NSAttributedString.withDualText2(text1: "To".localized, ofSizeText1: 10, text2: available_time_to, ofSizeText2: 14)
+                   if let rating = Double(rates) {
+                       rate.rating = rating
+                   }
+               }
+               
         
     }
     

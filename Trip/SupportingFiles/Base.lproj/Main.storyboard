@@ -31,7 +31,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="315"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-J9-9sI">
-                                                        <rect key="frame" x="81" y="31.5" width="252" height="252"/>
+                                                        <rect key="frame" x="144" y="94.5" width="126" height="126"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xq-Wq-Tgs">
                                                         <rect key="frame" x="20" y="60" width="25" height="25"/>
@@ -465,7 +465,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="183"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-GI-0sO">
-                                                        <rect key="frame" x="81" y="-34.5" width="252" height="252"/>
+                                                        <rect key="frame" x="144" y="28.5" width="126" height="126"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mI-FZ-ThS">
                                                         <rect key="frame" x="20" y="20" width="25" height="25"/>
@@ -2039,7 +2039,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6n-2x-oMT">
-                                                <rect key="frame" x="0.0" y="8" width="132" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="154" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="   Edit Profile" image="editYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2071,7 +2071,7 @@
                                         <rect key="frame" x="0.0" y="55" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-h5-ge3">
-                                                <rect key="frame" x="0.0" y="8" width="173" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="195" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="   Edit Car Details" image="carYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2102,7 +2102,7 @@
                                         <rect key="frame" x="0.0" y="110" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-yS-vee">
-                                                <rect key="frame" x="0.0" y="8" width="152" height="24"/>
+                                                <rect key="frame" x="0.0" y="-2" width="174" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="   Reservations" image="steetYellow">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2132,7 +2132,7 @@
                                         <rect key="frame" x="0.0" y="165" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-An-FJ5">
-                                                <rect key="frame" x="0.0" y="6" width="117" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="-8.5" width="145" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <state key="normal" title="   Sign out" image="Sign Out">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3358,14 +3358,14 @@
                         <segue destination="4fM-Vg-G4m" kind="relationship" relationship="viewControllers" id="BrB-d6-mIe"/>
                         <segue destination="xvi-9o-5XZ" kind="relationship" relationship="viewControllers" id="0GR-7Q-hDN"/>
                         <segue destination="ERV-NG-U6r" kind="relationship" relationship="viewControllers" id="JOp-uk-yTq"/>
-                        <segue destination="RcI-R7-z1u" kind="relationship" relationship="viewControllers" id="ppV-ph-YOz"/>
+                        <segue destination="X6X-Le-6YA" kind="relationship" relationship="viewControllers" id="ppV-ph-YOz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRY-jy-MoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5129" y="2049"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="3cO-ss-TXC">
             <objects>
                 <viewController storyboardIdentifier="Search" id="RcI-R7-z1u" customClass="SearchViewController" customModule="Trip" customModuleProvider="target" sceneMemberID="viewController">
@@ -3374,7 +3374,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qPq-IR-vOu">
-                                <rect key="frame" x="20" y="80" width="147.5" height="20"/>
+                                <rect key="frame" x="20" y="136" width="147.5" height="20"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-4v-0f8">
                                         <rect key="frame" x="0.0" y="0.0" width="59.5" height="20"/>
@@ -3452,7 +3452,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmu-4O-QSp">
-                                <rect key="frame" x="0.0" y="140" width="414" height="619"/>
+                                <rect key="frame" x="0.0" y="196" width="414" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -3467,7 +3467,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ttv-vI-OQg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="searchWhite" id="rSd-MF-9kl"/>
+                    <navigationItem key="navigationItem" id="qfu-1w-lYo"/>
                     <connections>
                         <outlet property="advanSearchChk" destination="pvq-vf-sZ5" id="ULv-Gu-uLm"/>
                         <outlet property="advancedSearchLbl" destination="RBa-Mc-aTk" id="wSd-Um-Mu8"/>
@@ -3478,7 +3478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gh7-ZR-AEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7103" y="2806"/>
+            <point key="canvasLocation" x="8013.04347826087" y="2805.8035714285711"/>
         </scene>
         <!--Search Normal View Controller-->
         <scene sceneID="aiR-Tr-Z7W">
@@ -3589,7 +3589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmO-KT-0AB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7843" y="2810"/>
+            <point key="canvasLocation" x="8752.1739130434798" y="2809.8214285714284"/>
         </scene>
         <!--Search Advanced View Controller-->
         <scene sceneID="ppW-xa-7zH">
@@ -4968,7 +4968,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUu-o3-2oh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9581" y="2810"/>
+            <point key="canvasLocation" x="10489.85507246377" y="2809.8214285714284"/>
         </scene>
         <!--Cancel Pop Up-->
         <scene sceneID="nCp-2x-g9f">
@@ -5726,7 +5726,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQ2-Tn-heU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8854" y="2810"/>
+            <point key="canvasLocation" x="9763.7681159420299" y="2809.8214285714284"/>
         </scene>
         <!--Add Your Car-->
         <scene sceneID="WeB-Pk-KXv">
@@ -7934,6 +7934,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVf-Ay-RJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2623" y="4187"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="Q9j-uy-jGV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X6X-Le-6YA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="searchWhite" id="rSd-MF-9kl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sTH-Vc-3SE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="TripColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RcI-R7-z1u" kind="relationship" relationship="rootViewController" id="vNB-4q-RLU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WgZ-Ic-1o6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7102.898550724638" y="2805.8035714285711"/>
         </scene>
     </scenes>
     <resources>

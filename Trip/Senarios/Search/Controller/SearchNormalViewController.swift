@@ -26,6 +26,7 @@ class SearchNormalViewController: UIViewController {
     let currencyPicker = UIPickerView()
     
     var allCarsByCity  : AllCarsByCity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButtonForCitiesPicker(for: searchTF)
@@ -87,12 +88,30 @@ extension SearchNormalViewController : UITableViewDelegate , UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = tableView.dequeueReusableCell(withIdentifier: "SearchCellTableViewCell", for: indexPath) as! SearchCellTableViewCell
-        cell.textLable.text = allCarsByCity?[indexPath.row].owner
+        cell.textLable.text = allCarsByCity?[indexPath.row].model
         return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchTF.text = allCarsByCity?[indexPath.row].owner
+        print("dsjkzxj")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CarDetails") as! CarDetailsViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.lat = allCarsByCity?[indexPath.row].lat
+        vc.long = allCarsByCity?[indexPath.row].lon
+        vc.models = allCarsByCity?[indexPath.row].model
+        vc.available_date_from = allCarsByCity?[indexPath.row].availableDateFrom
+        vc.available_date_to = allCarsByCity?[indexPath.row].availableDateTo
+        vc.price_rent_per_day = allCarsByCity?[indexPath.row].priceRentPerDay
+        vc.owner = allCarsByCity?[indexPath.row].owner
+        vc.city = allCarsByCity?[indexPath.row].city
+        vc.area = allCarsByCity?[indexPath.row].area
+        vc.rates = allCarsByCity?[indexPath.row].rate
+        vc.available_time_from = allCarsByCity?[indexPath.row].availableTimeFrom
+        vc.available_time_to = allCarsByCity?[indexPath.row].availableTimeTo
+        vc.number_of_trip = allCarsByCity?[indexPath.row].numberOfTrip
+
+            self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }
